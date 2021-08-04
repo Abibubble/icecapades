@@ -1,15 +1,16 @@
 {
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "python.linting.pycodestyleEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.terminal.activateEnvironment": false,
-    "python.formatting.autopep8Path": "/home/gitpod/.pyenv/shims/autopep8",
-    "python.linting.flake8Path": "/home/gitpod/.pyenv/shims/flake8",
-    // "cornflakes.linter.executablePath": "/home/gitpod/.pyenv/shims/flake8",
-    "files.exclude": {
+   "python.linting.pylintEnabled": true,
+   "python.linting.enabled": true,
+   "python.linting.pep8Enabled": false,
+   "python.linting.flake8Enabled": true,
+   "python.terminal.activateEnvironment": false,
+   "python.formatting.autopep8Path": "/home/gitpod/.pyenv/shims/autopep8",
+   "python.linting.flake8Path": "/home/gitpod/.pyenv/shims/flake8",
+   "cornflakes.linter.executablePath": "/home/gitpod/.pyenv/shims/flake8",
+   "files.exclude": {
       "**/.DS_Store": true,
       "**/.git": true,
+      "**/.github": true,
       "**/.gitp*": true,
       "**/.hg": true,
       "**/.svn": true,
@@ -18,178 +19,8 @@
       "**/core.mongo*": true,
       "**/core.python*": true,
       "**/CVS": true
-    },
-    "files.autoSave": "off",
-    "editor.wordWrap": "on",
-    "html.autoClosingTags": false,
-    "editor.defaultFormatter": "HookyQR.beautify",
-    "workbench.preferredDarkColorTheme": "Monokai Dimmed",
-    "workbench.preferredLightColorTheme": "Solarized Light",
-    "window.autoDetectColorScheme": true,
-    "workbench.colorTheme": "Solarized Light",
-
-    "workbench.colorCustomizations": {
-       "activityBarBadge.background": "#d71df0",
-    },
-     
-    "editor.tokenColorCustomizations": {
-        "[Monokai Dimmed]": {
-            "comments": "#FF9b9b",
-        },
-        "[Solarized Light]": {
-            "textMateRules": [
-                {
-                    "scope": [
-                        "support.type", "source.css",
-                    ],
-                    "settings": {
-                        "foreground": "#676867",
-                    },
-                },
-                {
-                    "scope": [
-                        "source.css", "entity.name.tag"
-                    ],
-                    "settings": {
-                        "foreground": "#6089B4",
-                    },
-                },
-                {
-                    "scope": [
-                        "entity.other.attribute-name",
-                    ],
-                    "settings": {
-                        "foreground": "#D0B344",
-                    },
-                },
-                {
-                    "scope": [
-                        "support.constant",
-                    ],
-                    "settings": {
-                        "foreground": "#C7444A",
-                    },
-                },
-                {
-                    "scope": [
-                        "support.function",
-                    ],
-                    "settings": {
-                        "foreground": "#9872A2",
-                    },
-                },
-                {
-                    "scope": [
-                        "constant.character",
-                    ],
-                "settings": {
-                        "foreground": "#8080FF",
-                    },                
-                },
-                {
-                    "scope": [
-                        "comment.block.documentation",
-                    ],
-                "settings": {
-                        "foreground": "#AACAD0",
-                    },                
-                },
-            ],
-                
-                    
-
-            "comments": "#FF9b9b",
-            "functions": "#5F4685",
-            // "keywords": "#FF0000",
-            "numbers": "#16D9E4",
-            "strings": "#40B910",
-            "types": "#E41616",
-            // "variables": "#AACAD0",
-        },
-
-    },
-
-    "git.defaultCloneDirectory": "D:/GitHub",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
-    "bracket-pair-colorizer-2.unmatchedScopeColor": "Black",
-    "bracket-pair-colorizer-2.colors": [
-
-        "Red",
-        "Blue",
-        "#10f910",
-        "Orchid",
-        "#b80000",
-        "#0000b8",
-        "#025002",
-        "#830c83"
-
-        
-    ],
-    // "bracket-pair-colorizer-2.colorMode": "Independent",
-
-    "better-comments.tags": [
-
-        {
-            "tag": "!",
-            "color": "#FF2D00",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": true,
-            "italic": false
-        },
-
-        {
-            "tag": "?",
-            "color": "#60d277",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": true,
-            "italic": false
-        },
-
-        {
-            "tag": "//",
-            "color": "#606060",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-
-        {
-            "tag": "todo",
-            "color": "#FF8C00",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-
-        {
-            "tag": "*",
-            "color": "#AB5959",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        }
-    ],
-
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.accessibilitySupport": "off",
-    "editor.tabSize": 2,
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "terminal.integrated.minimumContrastRatio": 4.5,
-
-    "markdownConverter.Document.HeaderTemplate":"",
-    "markdownConverter.Document.FooterTemplate": ""
-
+   },
+   "files.autoSave": "off",
+   "workbench.colorTheme": "Visual Studio Dark",
+   "editor.defaultFormatter": "HookyQR.beautify"
 }
-  
