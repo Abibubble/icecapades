@@ -1,104 +1,305 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Title
 
-Welcome USER_NAME,
+![GitHub contributors](https://img.shields.io/github/contributors/abibubble/REPO)
+![GitHub last commit](https://img.shields.io/github/last-commit/abibubble/REPO)
+![GitHub language count](https://img.shields.io/github/languages/count/abibubble/REPO)
+![GitHub top language](https://img.shields.io/github/languages/top/abibubble/REPO)
+![Font Awesome version](https://img.shields.io/badge/Font%20Awesome-v5.15.1-blue)
+![GitHub forks](https://img.shields.io/github/forks/abibubble/REPO?style=social)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+[Here is a link to the final project](https://abibubble.github.io/REPO)
 
-## Gitpod Reminders
+BASIC DESCRIPTION OF PROJECT
+It is designed to be responsive on a wide range of devices, whilst also being easy to navigate through. 
+WHY DID I CHOOSE THIS PROJECT
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![Final project image home page](assets/docs/finalpage.png)
 
-`python3 -m http.server`
+## Contents
 
-A blue button should appear to click: _Make Public_,
+* [User Experience (UX)](#user-experience-(ux))
+    * [Initial Discussion](#initial-discussion)
+    * [User Stories](#user-stories)
 
-Another blue button should appear to click: _Open Browser_.
+* [Design](#design)
+    * [Color Scheme](#color-scheme)
+    * [Typography](#typography)
+    * [Imagery](#imagery)
+    * [Wireframes](#wireframes)
+    * [Features](#features)
+    * [Audio](#audio)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* [Technologies Used](#technologies-used)
+    * [Languages Used](#languages-used)
+    * [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
 
-A blue button should appear to click: _Make Public_,
+* [Deployment](#deployment)
+    * [Initial Deployment](#initial-deployment)
+    * [How to Fork it](#how-to-fork-it)
+    * [How to Clone it](#how-to-clone-it)
+    * [Making a Local Clone](#making-a-local-clone)
 
-Another blue button should appear to click: _Open Browser_.
+* [Testing](#testing)
+    * [W3C Validator](#w3c-validator)
+    * [Testing User Stories](#testing-user-stories)
+    * [Full Testing](#full-testing)
+    * [Further Testing](#further-testing)
+    * [Solved Bugs](#solved-bugs)
+    * [Known Bugs](#known-bugs)
+    * [Lighthouse](#lighthouse)
+        * [Performance](#performance)
+        * [Accessibility](#accessibility)
+        * [Best Practices](#best-practices)
+        * [SEO](#seo)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+* [Credits](#credits)
+    * [Code](#code)
+    * [Content](#content)
+    * [Media](#media)
+    * [Acknowledgements](#acknowledgements)
 
 ---
+## User Experience (UX)
+### Initial Discussion
+WHAT I WANTED FROM THIS PROJECT
 
-Happy coding!
+### User Stories
+#### Client Goals
+* WHAT THE CLIENT WANTS, NOT THE USER
+
+#### First Time Visitor Goals
+* WHAT A FIRST TIME VISITOR WANTS, LIKE EASY TO UNDERSTAND, EASY TO NAVIGATE
+
+#### Returning Visitor Goals
+* LIKE REPLAYABILITY, WHY THEY WANT TO RETURN TO THE SITE, EXTRA FEATURES
+
+#### Frequent Visitor Goals
+* WHY SOMEONE WOULD COME BACK REPEATEDLY, AND WHAT THEY'D WANT, LIKE EASY TO BOOK SOMETHING, OR A SCOREBOARD, ETC.
+
+---
+## Design
+### Color Scheme
+* WHAT COLORS USED AND WHY
+
+### Typography
+* WHAT FONT AND WHY
+
+### Imagery
+* WHAT IMAGES ARE USED AND WHY
+
+### Wireframes
+[Here are the wireframes for desktop, mobile and tablet for this project](assets/docs/wireframes.pdf).
+
+### Features
+* WHAT FEATURES ARE ONE THE SITE, LIKE SCOREBOARD, FUNCTIONS, SCROLLING ALERT BAR, ETC.
+
+### Audio
+* WHAT AUDIO IS USED (IF ANY) AND WHY.
+---
+
+## Technologies Used
+### Languages Used
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Archive/CSS3#:~:text=CSS3%20is%20the%20latest%20evolution,flexible%20box%20or%20grid%20layouts.)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+### Frameworks Libraries and Programs Used
+#### Font Awesome:
+[Font Awesome](https://fontawesome.com/) was used on all pages to add the instructions, home, settings and copyright icons.
+#### Git:
+Git was used for version control by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
+#### GitHub:
+GitHub is used to store the code for this project after being pushed from Git.
+#### Balsamiq:
+Balsamiq was used to create the wireframes during the design process.
+#### Responsinator:
+[Responsinator](http://www.responsinator.com/) was used to help improve the responsive design on a variety of devices.
+#### Google DevTools:
+Google DevTools was used to help me find what code correlated to what feature.
+#### Am I Responsive Design:
+[Am I Responsive Design](http://ami.responsivedesign.is/#) was used to check the responsive design of the quiz.
+#### Shields.io:
+[Shields.io](https://shields.io/) was used to create the GitHub badges for this README.md file.
+#### Autoprefixer CSS online
+[Autoprefixer CSS online](https://autoprefixer.github.io/) was used to ensure all prefixes for browsers were included correctly.
+
+BOOTSTRAP, JASMINE TESTING, JQUERY, ETC. USED?
+
+## Deployment
+### Initial Deployment
+This site was deployed to GitHub Pages by following these steps:
+1. Login or Sign Up to [GitHub](www.github.com).
+2. Create a new repository named "REPO".
+3. Once created, click on "Settings" on the navigation bar under the repository title.
+4. Scroll down to "GitHub Pages".
+5. Under "Source", choose which branch to deploy. I chose "master", but this is sometimes shown as "main".
+6. Choose which folder to deploy from, usually "/root".
+7. Click "Save", then wait for it to be deployed. It can take some time for the page to be fully deployed.
+8. Your URL will be displayed above "Source".
+
+### How to Fork it
+1. Login or Sign Up to [GitHub](www.github.com).
+2. On GitHub, go to [Abibubble/REPO](https://github.com/Abibubble/REPO).
+3. In the top right, click "Fork".
+
+### How to Clone it
+1. Login or Sign Up to [GitHub](www.github.com).
+2. Fork the repository Abibubble/REPO using the steps above in [How to Fork it](#how-to-fork-it).
+3. Above the file list, click "Code".
+4. Choose if you want to clone using HTTPS, SSH, or GitHub CLI, then click the copy button to the right.
+5. Open Git Bash.
+6. Change the directory to where you want your clone to go.
+7. Type git clone and then paste the URL you copied in step 4.
+8. Press Enter to create your clone.
+
+### Making a Local Clone
+1. Log in to [GitHub](www.github.com) and locate the [Repository](https://github.com/Abibubble/REPO) for this site.
+2. Under the repository name, above the list of files, click "Code".
+3. Here you can either Clone or Download the repository.
+4. You should clone the repository using HTTPS, clicking on the icon to copy the link.
+5. Open Git Bash.
+6. Change the current working directory to the new location, where you want the cloned directory to be.
+6. Type git clone, and then paste the URL that was copied in Step 4.
+7. Press Enter, and your local clone will be created.
+
+For a more detailed version of these steps, go to the [Github Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) page on this topic.
+
+---
+## Testing
+### W3C Validator
+The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the project to ensure there were no syntax errors within the site.
+
+1. W3C Markup Validator
+    * [HTML Results](LINK)
+
+2. W3C CSS Validator
+    * [CSS Results](LINK)
+
+3. JSHint
+    * [JSHint](https://jshint.com/)
+
+
+### Testing User Stories
+#### Client Goals
+##### GOAL
+* HOW THE SITE COMPLETEES EACH GOAL
+
+#### First Time Visitor Goals
+##### GOAL
+* HOW THE SITE COMPLETEES EACH GOAL
+
+#### Returning Visitor Goals
+##### GOAL
+* HOW THE SITE COMPLETEES EACH GOAL
+
+#### Frequent Visitor Goals
+##### GOAL
+* HOW THE SITE COMPLETES EACH GOAL
+
+### Full Testing
+[Click here](assets/docs/testing.md) to view the full testing steps that were completed on every device and browser, and screenshots of testing.
+
+#### Desktop / Laptop
+1. Google Chrome
+    * All tested and working correctly.
+
+2. Microsoft Edge
+    * All tested and working correctly.
+
+3. Mozilla Firefox
+    * All tested and working correctly.
+
+4. Internet Explorer
+    * All tested and working correctly.
+
+5. Safari
+    * All tested and working correctly.
+
+#### Tablet
+1. Safari
+    * All tested and working correctly.
+
+#### Mobile
+1. Google Chrome
+    * All tested and working correctly.
+
+2. Safari
+    * All tested and working correctly.
+
+3. Samsung Internet
+    * All tested and working correctly.
+
+### Further Testing
+The website was tested on Google Chrome, Firefox, Internet Explorer, Microsoft Edge, Safari and Samsung Internet browsers.
+The website was viewed on a variety of devices, including:
+* Custom built desktop PC, running Windows 10
+* Acer Aspire V Nitro Laptop, running Windows 10
+* Lenovo B51 IntelCore i7 Laptop, running Ubuntu 16.04 LTS
+* MacBook Pro (15-inch, 2017), running macOS Catalina
+* MacBookAir7,2 (13-inch, 2017)
+* iPad 6,11 5th generation, running iOS 10.3
+* Amazon Fire tablet 7
+* iPhone 7
+* iPhone X
+* iPhone 12
+* OPPO Find X2
+* OPPO Find X2 Lite
+* Samsung Galaxy A70
+* Samsung Galaxy S9
+* Samsung Galaxy S10+
+* Samsung A20
+* xBox One
+
+A large amount of testing was done to ensure that all pages were visible or hidden correctly, all buttons worked as they should, and the site worked as it should.
+Friends, family members, and other developers were asked to review the site and documentation to point out any bugs and/or user experience issues that they came across.
+
+### Solved Bugs
+1. WHAT THE BUG IS
+    * WHAT STEPS I TOOK TO FIX IT
+
+### Known Bugs
+* ANY BUGS LEFT IN THE CODE AFTER FINAL DEPLOYMENT, FOR FIXING IN FUTURE RELEASES
+
+### Lighthouse
+I tested my website using DevTools Lighthouse feature, and got these results:
+
+#### Desktop
+![Lighthouse desktop first try](assets/docs/lighthouse.png)
+
+#### Mobile
+![Lighthouse mobile first try](assets/docs/lighthousemobile.png)
+
+#### Performance:
+* EXPLAIN SCORE AND HOW I IMPROVED IT IF NECESSARY
+
+#### Accessibility:
+* EXPLAIN SCORE AND HOW I IMPROVED IT IF NECESSARY
+
+#### Best Practices:
+* EXPLAIN SCORE AND HOW I IMPROVED IT IF NECESSARY
+
+#### SEO:
+* EXPLAIN SCORE AND HOW I IMPROVED IT IF NECESSARY
+
+---
+## Credits
+### Code
+* [Font Awesome](https://fontawesome.com/): Library of icons used for social media and download links.
+* [Autoprefixer CSS online](https://autoprefixer.github.io/): To aid in the CSS prefixing.
+* ANY CODE I USED FROM OTHER PEOPLE OR SITES AND WHO IT'S FROM, INCLUDING CREDITING ANYONE WHO HELPED ME FIX BUGS
+
+### Audio
+* WHO OWNS THE AUDIO AND WHO EDITED THE AUDIO
+
+### Content
+* WHO OWNS THE CONTENT OF THE SITE
+
+### Media
+* WHO OWNS ANY MEDIA ON THE SITE, SUCH AS IMAGES AND VIDEOS
+
+### Acknowledgements
+* My mentor, Antonio Rodriguez, at [Code Institute](https://codeinstitute.net/), for continuous helpful feedback and support.
+* [Eve Crabb](https://github.com/evecrabb), for her support through my learning, and for being a sounding board for bug fixes.
+* [Tom Crabb](https://github.com/tomcrabb), for his advice on how to make my code cleaner.
+* The team at [Code Institute](https://codeinstitute.net/), for teaching me the necessary skills to create this site.
+* Conor Nye for his continuous support throughout my coding journey.
