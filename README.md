@@ -1,17 +1,17 @@
 # Title
 
-![GitHub contributors](https://img.shields.io/github/contributors/abibubble/hackathon-aug)
-![GitHub last commit](https://img.shields.io/github/last-commit/abibubble/hackathon-aug)
-![GitHub language count](https://img.shields.io/github/languages/count/abibubble/hackathon-aug)
-![GitHub top language](https://img.shields.io/github/languages/top/abibubble/hackathon-aug)
+![GitHub contributors](https://img.shields.io/github/contributors/abibubble/icecapades)
+![GitHub last commit](https://img.shields.io/github/last-commit/abibubble/icecapades)
+![GitHub language count](https://img.shields.io/github/languages/count/abibubble/icecapades)
+![GitHub top language](https://img.shields.io/github/languages/top/abibubble/icecapades)
 ![Font Awesome version](https://img.shields.io/badge/Font%20Awesome-v5.15.1-blue)
-![GitHub forks](https://img.shields.io/github/forks/abibubble/hackathon-aug?style=social)
+![GitHub forks](https://img.shields.io/github/forks/abibubble/icecapades?style=social)
 
-[Here is a link to the final project](https://abibubble.github.io/hackathon-aug)
+[Here is a link to the final project](https://abibubble.github.io/icecapades)
 
 <!-- BASIC DESCRIPTION OF PROJECT
 It is designed to be responsive on a wide range of devices, whilst also being easy to navigate through. -->
-*game name here* is a modern take on the classic endless runner games. With simple controls and enjoyable gameplay, it aims to provide countless hours of entertainment.
+Icecapades is a modern take on the classic endless runner games. With simple controls and enjoyable gameplay, it aims to provide countless hours of entertainment.
 
 <!-- WHY DID I CHOOSE THIS PROJECT -->
 We chose this as our hackathon project to give an innovative new twist on a well known (and incredibly frustrating) style of gameplay. Repeatedly trying the same things in an attempt to achieve different results, perhaps something that is a little too relateable by many software developers!
@@ -96,21 +96,30 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 ---
 ## Design
 ### Color Scheme
-* WHAT COLORS USED AND WHY
+<!-- * WHAT COLORS USED AND WHY -->
+* The game will be played on an icy background
 
 ### Typography
 * WHAT FONT AND WHY
 
 ### Imagery
-* WHAT IMAGES ARE USED AND WHY
+<!-- * WHAT IMAGES ARE USED AND WHY -->
+We have chosen to have Tux, the Linux logo, as our playable character. He is related to code, fits into a theme very easily and promotes a positive emotive response.  
+His enemies are a couple of 'juiced-up' worms and slugs, seeking revenge on a bird for all their relatives that have been eaten throughout the years.  
+The boss is a snowman. This is in-keeping with the icy theme and provides a tangible enemy with fun projectiles.
+
+* To save time, we have utilised some free sprite libraries for animated characters and backgrounds. They were sourced from [gameartpuppy](https://www.gameartguppy.com/)
+* The sprite for the carrot projectile used by the boss snowman is from [opengameart](https://opengameart.org/content/easter-carrot-pick-up-item), the additional images to create the animation were generated using Paint 3D.
 
 ### Wireframes
+
 [Here are the wireframes for desktop, mobile and tablet for this project](assets/docs/wireframes.pdf).
 
 ### Features
-* WHAT FEATURES ARE ONE THE SITE, LIKE SCOREBOARD, FUNCTIONS, SCROLLING ALERT BAR, ETC.
+<!-- * WHAT FEATURES ARE ONE THE SITE, LIKE SCOREBOARD, FUNCTIONS, SCROLLING ALERT BAR, ETC. -->
 
 ### Audio
+
 * WHAT AUDIO IS USED (IF ANY) AND WHY.
 ---
 
@@ -143,8 +152,11 @@ Google DevTools was used to help me find what code correlated to what feature.
 BOOTSTRAP, JASMINE TESTING, JQUERY, ETC. USED?
 
 ## Deployment
+
 ### Initial Deployment
+
 This site was deployed to GitHub Pages by following these steps:
+
 1. Login or Sign Up to [GitHub](www.github.com).
 2. Create a new repository named "REPO".
 3. Once created, click on "Settings" on the navigation bar under the repository title.
@@ -155,11 +167,13 @@ This site was deployed to GitHub Pages by following these steps:
 8. Your URL will be displayed above "Source".
 
 ### How to Fork it
+
 1. Login or Sign Up to [GitHub](www.github.com).
 2. On GitHub, go to [Abibubble/REPO](https://github.com/Abibubble/REPO).
 3. In the top right, click "Fork".
 
 ### How to Clone it
+
 1. Login or Sign Up to [GitHub](www.github.com).
 2. Fork the repository Abibubble/REPO using the steps above in [How to Fork it](#how-to-fork-it).
 3. Above the file list, click "Code".
@@ -170,6 +184,7 @@ This site was deployed to GitHub Pages by following these steps:
 8. Press Enter to create your clone.
 
 ### Making a Local Clone
+
 1. Log in to [GitHub](www.github.com) and locate the [Repository](https://github.com/Abibubble/REPO) for this site.
 2. Under the repository name, above the list of files, click "Code".
 3. Here you can either Clone or Download the repository.
