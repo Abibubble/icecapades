@@ -96,7 +96,8 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 ---
 ## Design
 ### Color Scheme
-* WHAT COLORS USED AND WHY
+<!-- * WHAT COLORS USED AND WHY -->
+* The game will be played on an icy background
 
 ### Typography
 * WHAT FONT AND WHY
@@ -108,7 +109,7 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 [Here are the wireframes for desktop, mobile and tablet for this project](assets/docs/wireframes.pdf).
 
 ### Features
-* WHAT FEATURES ARE ONE THE SITE, LIKE SCOREBOARD, FUNCTIONS, SCROLLING ALERT BAR, ETC.
+<!-- * WHAT FEATURES ARE ONE THE SITE, LIKE SCOREBOARD, FUNCTIONS, SCROLLING ALERT BAR, ETC. -->
 
 ### Audio
 * WHAT AUDIO IS USED (IF ANY) AND WHY.
