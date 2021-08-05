@@ -1,17 +1,20 @@
 # Title
 
-![GitHub contributors](https://img.shields.io/github/contributors/abibubble/REPO)
-![GitHub last commit](https://img.shields.io/github/last-commit/abibubble/REPO)
-![GitHub language count](https://img.shields.io/github/languages/count/abibubble/REPO)
-![GitHub top language](https://img.shields.io/github/languages/top/abibubble/REPO)
+![GitHub contributors](https://img.shields.io/github/contributors/abibubble/hackathon-aug)
+![GitHub last commit](https://img.shields.io/github/last-commit/abibubble/hackathon-aug)
+![GitHub language count](https://img.shields.io/github/languages/count/abibubble/hackathon-aug)
+![GitHub top language](https://img.shields.io/github/languages/top/abibubble/hackathon-aug)
 ![Font Awesome version](https://img.shields.io/badge/Font%20Awesome-v5.15.1-blue)
-![GitHub forks](https://img.shields.io/github/forks/abibubble/REPO?style=social)
+![GitHub forks](https://img.shields.io/github/forks/abibubble/hackathon-aug?style=social)
 
-[Here is a link to the final project](https://abibubble.github.io/REPO)
+[Here is a link to the final project](https://abibubble.github.io/hackathon-aug)
 
-BASIC DESCRIPTION OF PROJECT
-It is designed to be responsive on a wide range of devices, whilst also being easy to navigate through. 
-WHY DID I CHOOSE THIS PROJECT
+<!-- BASIC DESCRIPTION OF PROJECT
+It is designed to be responsive on a wide range of devices, whilst also being easy to navigate through. -->
+*game name here* is a modern take on the classic endless runner games. With simple controls and enjoyable gameplay, it aims to provide countless hours of entertainment.
+
+<!-- WHY DID I CHOOSE THIS PROJECT -->
+We chose this as our hackathon project to give an innovative new twist on a well known (and incredibly frustrating) style of gameplay. Repeatedly trying the same things in an attempt to achieve different results, perhaps something that is a little too relateable by many software developers!
 
 ![Final project image home page](assets/docs/finalpage.png)
 
@@ -61,20 +64,34 @@ WHY DID I CHOOSE THIS PROJECT
 ---
 ## User Experience (UX)
 ### Initial Discussion
-WHAT I WANTED FROM THIS PROJECT
+<!-- WHAT I WANTED FROM THIS PROJECT -->
+The criteria for the August - [Code Institute](https://codeinstitute.net) - hackathon is **Retro Gaming**.  
+We intend to provide a user friendly, thoroughly enjoyable application that takes the user back to when games were great. Simple to play, extremely hard to put down. We are aiming for square eyes and cramping fingers as our users endeavour to go one step further than their peers.
 
 ### User Stories
 #### Client Goals
-* WHAT THE CLIENT WANTS, NOT THE USER
+<!-- * WHAT THE CLIENT WANTS, NOT THE USER -->
+* A retro game that provides clear and substantial value to the user
+* Use an original or innovative idea, design or implementation
+* Has a well structured and completed documentation (README & Wireframes)
+* Is well-planned and executed (using GitHub projects)
+* Focus is realistic, and has an overall sense of completeness.
 
 #### First Time Visitor Goals
-* WHAT A FIRST TIME VISITOR WANTS, LIKE EASY TO UNDERSTAND, EASY TO NAVIGATE
+<!-- * WHAT A FIRST TIME VISITOR WANTS, LIKE EASY TO UNDERSTAND, EASY TO NAVIGATE -->
+* Intuitive controls
+* Clear rules/goals of the game
+* Simple and logical navigation
+* Positive emotive response
 
 #### Returning Visitor Goals
-* LIKE REPLAYABILITY, WHY THEY WANT TO RETURN TO THE SITE, EXTRA FEATURES
+<!-- * LIKE REPLAYABILITY, WHY THEY WANT TO RETURN TO THE SITE, EXTRA FEATURES -->
+* High score feature
+* Varied gameplay with increasing difficulty
 
 #### Frequent Visitor Goals
-* WHY SOMEONE WOULD COME BACK REPEATEDLY, AND WHAT THEY'D WANT, LIKE EASY TO BOOK SOMETHING, OR A SCOREBOARD, ETC.
+<!-- * WHY SOMEONE WOULD COME BACK REPEATEDLY, AND WHAT THEY'D WANT, LIKE EASY TO BOOK SOMETHING, OR A SCOREBOARD, ETC. -->
+* Score board to compare other user's scores
 
 ---
 ## Design
@@ -159,8 +176,8 @@ This site was deployed to GitHub Pages by following these steps:
 4. You should clone the repository using HTTPS, clicking on the icon to copy the link.
 5. Open Git Bash.
 6. Change the current working directory to the new location, where you want the cloned directory to be.
-6. Type git clone, and then paste the URL that was copied in Step 4.
-7. Press Enter, and your local clone will be created.
+7. Type git clone, and then paste the URL that was copied in Step 4.
+8. Press Enter, and your local clone will be created.
 
 For a more detailed version of these steps, go to the [Github Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) page on this topic.
 
@@ -299,7 +316,4 @@ I tested my website using DevTools Lighthouse feature, and got these results:
 
 ### Acknowledgements
 * My mentor, Antonio Rodriguez, at [Code Institute](https://codeinstitute.net/), for continuous helpful feedback and support.
-* [Eve Crabb](https://github.com/evecrabb), for her support through my learning, and for being a sounding board for bug fixes.
-* [Tom Crabb](https://github.com/tomcrabb), for his advice on how to make my code cleaner.
 * The team at [Code Institute](https://codeinstitute.net/), for teaching me the necessary skills to create this site.
-* Conor Nye for his continuous support throughout my coding journey.
