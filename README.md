@@ -18,8 +18,6 @@ We chose this as our hackathon project to give an innovative new twist on a well
 
 ![Final project image home page](assets/docs/finalpage.png)
 
-<!-- github now automatically creates contents, have left commented out but happy to re-instate. -->
-<!-- 
 ## Contents
 
 * [User Experience (UX)](#user-experience-(ux))
@@ -61,7 +59,7 @@ We chose this as our hackathon project to give an innovative new twist on a well
     * [Code](#code)
     * [Content](#content)
     * [Media](#media)
-    * [Acknowledgements](#acknowledgements) -->
+    * [Acknowledgements](#acknowledgements)
 
 ---
 ## User Experience (UX)
