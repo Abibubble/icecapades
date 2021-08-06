@@ -109,7 +109,7 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 
 ### Typography
 
-* WHAT FONT AND WHY
+* We have chosen the Snowtop Caps font for our heading from [1001fonts](https://www.1001fonts.com/snowtop-caps-font.html) as it fits our ice/snow theme and is also free to use for commercial use.
 
 ### Imagery
 <!-- * WHAT IMAGES ARE USED AND WHY -->
