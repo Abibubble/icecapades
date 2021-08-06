@@ -62,10 +62,10 @@
         <section class="progress-container">
             <div class="progress-grid">
                 <div class="audio-buttons grid-item">
-                    <img class="height audio-button" id="play-button" onclick="toggleAudio();" src="static/background/block_UI_play.png" alt="A play block for the audio button">
-                    <img class="height audio-button hide" id="pause-button" onclick="toggleAudio();" src="static/background/block_UI_pause.png" alt="A pause block for the audio button">
-                    <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height" onclick="toggleInstructions();">
-                    <i class="fas fa-info instructions-i" onclick="toggleInstructions();"></i>
+                    <img class="height audio-button" id="play-button" onclick="toggleAudio()" src="static/background/block_UI_play.png" alt="A play block for the audio button">
+                    <img class="height audio-button hide" id="pause-button" onclick="toggleAudio()" src="static/background/block_UI_pause.png" alt="A pause block for the audio button">
+                    <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height" onclick="toggleInstructions()">
+                    <i class="fas fa-info instructions-i" onclick="toggleInstructions()"></i>
                 </div>
                 <div class="snowball-bar grid-item">
                     <img class="height progress-icon snowflake-icon" id="snowflake-icon-block" src="static/background/block_UI_snowflake.png" alt="An snowflake on a block">
@@ -83,6 +83,7 @@
                 </div>
             </div>
         </section>
+
         <section id="instructions-modal" class="modal hide">
             <div class="header">
                 <h2 class="modal-header">Instructions</h2>
@@ -106,12 +107,29 @@
                         <li>Press Space Bar to Throw Snowballs</li>
                     </ul>
                 </div>
-                
             </div>
         </section>
-        <section id="game-over-modal" class="modal hide">
 
+        <section id="game-over-modal" class="modal">
+            <div class="header">
+                <h2 class="modal-header">Game Over!</h2>
+                <i class="far fa-times-circle fa-3x close-button" onclick="closeModal()"></i>
+            </div>
+            <hr>
+            <div class="modal-text">
+                <p class="modal-p"><strong>Oh no!</strong></p>
+                <p class="modal-p">Tux was too badly hurt to make it home</p>
+                <p class="modal-p">Now his friends will be worried</p>
+                <p class="modal-p">You don't want them to worry, do you?</p>
+                <p class="modal-p">Try again?</p>
+                <div class="modal-grid">
+                    <button class="replay">Of course!</button>
+                    <button class="replay">Definitely!</button>
+                </div>
+                <button class="quit text-small" onclick="closeModal()">I'm a monster, leave Tux to fend for himself</button>
+            </div>
         </section>
+
         <section id="win-modal" class="modal hide">
 
         </section>
