@@ -79,38 +79,10 @@ footer {
 
 /* ------------------------------ Overlays */
 
-progress {
-  top: 13%;
-  height: 60%;
-  width: 100%;
-  border: 0;
-  border-radius: 10px;
-  position: relative;
-}
-
-progress.progress-bar-overlay {
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-progress.progress-bar-overlay::-webkit-progress-value {
-  background:aqua;
-}
-
-progress::-webkit-progress-bar {
-  color: white;
-}
-
-progress[value]::-webkit-progress-bar,
-progress[value]::-webkit-progress-value,
-progress[value]::-moz-progress-bar {
-  border: 0;
-  border-radius: 20px;
-}
-
 .progress-overlay {
   z-index: 2;
   width: 31%;
+  color: white;
 }
 
 .health-bar-div {
@@ -119,6 +91,19 @@ progress[value]::-moz-progress-bar {
 
 .snowball-bar-div {
   left: 22%;
+}
+
+.progress-bar-inner {
+  position: relative;
+  background-color: aqua;
+  height: 60%;
+  top: 13%;
+  z-index: 3;
+  border-radius: 10px;
+}
+
+#health-bar, #snowball-bar {
+  width: 100%;
 }
 
 /* ------------------------------ Audio button */
