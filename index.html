@@ -2,107 +2,171 @@
 <html lang="en-us">
 
 <head>
-<!--    <meta charset="utf-8">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<!--    &lt;!&ndash; Bootstrap &ndash;&gt;-->
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"-->
-<!--        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">-->
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"-->
-<!--        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+    <!-- Metas -->
+    <meta name="description" content="A side-scrolling game with the character Tux, the Linux mascot">
+    <meta name="keywords" content="Tux, penguin, game, side-scroll, side, scroll, side-scroller, shoot, snowman">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://abibubble.github.io/icecapades/">
+    <meta name="robots" content="index, follow">
+    <title>Icecapades</title>
 
-<!--    &lt;!&ndash; Metas &ndash;&gt;-->
-<!--    <meta name="description" content="DESCRIPTION">-->
-<!--    &lt;!&ndash; Length can be up to 160 chars on desktop, 130 on mobile, can have up to 158 description tags &ndash;&gt;-->
-<!--    &lt;!&ndash; Add a clear call to action, don't suplicate descriptions, include keywords, include discounts or offers &ndash;&gt;-->
-<!--    &lt;!&ndash; Each page should have a unique description &ndash;&gt;-->
+    <!-- Facebook, LinkedIn, Google  -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Icecapades" />
+    <meta property="og:description" content="A side-scrolling game with the character Tux, the Linux mascot" />
+    <meta name="image" property="og:image" content="static/docs/finalpage.png" />
+    <meta property="og:image:alt" content="An image of the final site on a range of screen sizes" />
+    <meta property="og:url" content="https://abibubble.github.io/icecapades/" />
+    <meta property="og:site_name" content="Icecapades" />
+    <meta name="author" content="1-Bit Short of a Flappy Disc">
 
-<!--    <meta name="keywords" content="KEYWORDS">-->
-
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-<!--    &lt;!&ndash; This sets the site up to be responsive, known as a responsive design meta tag. Don't use it if your site isn't responsive! &ndash;&gt;-->
-<!--    &lt;!&ndash; width makes the page match the screen's width, and initial scale sets the CSS pixels and the device pixels to a 1:1 ratio &ndash;&gt;-->
-
-<!--    <link rel="canonical" href="#">-->
-<!--    &lt;!&ndash; This tells search engines to use this URL as the main page, and that it shouldn't index other pages &ndash;&gt;-->
-<!--    &lt;!&ndash; So if you have a site with multiple URLs, they're treated as seperate sites. This messes with the SEO, so putting this in with the correct link-->
-<!--        gives you better results, and more accuracy with data tracking &ndash;&gt;-->
-
-<!--    <meta name="robots" content="index, follow">-->
-<!--    &lt;!&ndash; This tells search engines to index and follow this webpage. noindex, nofollow is the opposite. This is good for site crawlers &ndash;&gt;-->
-<!--    &lt;!&ndash; Set it to noindex, nofollow for 'thin' pages &ndash;&gt;-->
-
-<!--    <title>SITE TITLE</title>-->
-<!--    &lt;!&ndash; Title less than 60 chars, use words to indicate site function, use keywords with 4+ words, include numbers, first words should be main keyword &ndash;&gt;-->
-<!--    &lt;!&ndash; Unique title on every page, don't repeat yourself &ndash;&gt;-->
-<!--    &lt;!&ndash; Title can be changed to get the user's attention! 'Please come back, we miss you!', 'You have a new notification!' &ndash;&gt;-->
-
-<!--    &lt;!&ndash; Social media integration, for when people share your content &ndash;&gt;-->
-<!--    &lt;!&ndash; Facebook, LinkedIn, Google &ndash;&gt;-->
-<!--    <meta property="og:type" content="article" />-->
-<!--    <meta property="og:title" content="TITLE OF YOUR POST OR PAGE" /> &lt;!&ndash; Same as what's inside <title> tag &ndash;&gt;-->
-<!--    &lt;!&ndash; What title you want displayed when your page is linked to &ndash;&gt;-->
-<!--    <meta property="og:description" content="DESCRIPTION OF PAGE CONTENT" /> &lt;!&ndash; Same as what's inside description meta tag &ndash;&gt;-->
-<!--    &lt;!&ndash; What description you want displayed when your page is linked to (300 chars - Fb) &ndash;&gt;-->
-<!--    <meta name="image" property="og:image" content="URL TO IMAGE" />-->
-<!--    &lt;!&ndash; URL of image to be displayed when your site is linked to &ndash;&gt;-->
-<!--    <meta property="og:image:alt" content="ALT TEXT FOR IMAGE" /> &lt;!&ndash; Alt text for above image &ndash;&gt;-->
-<!--    <meta property="og:url" content="PERMALINK" /> &lt;!&ndash; Your page's URL &ndash;&gt;-->
-<!--    <meta property="og:site_name" content="SITE NAME" /> &lt;!&ndash; Same as what's inside <title> tag &ndash;&gt;-->
-<!--    <meta name="author" content="[Author name here]"> &lt;!&ndash; Your name &ndash;&gt;-->
-
-<!--    &lt;!&ndash; Twitter &ndash;&gt;-->
-<!--    <meta name="twitter:card"> &lt;!&ndash; Tells Twitter to expect information for a card &ndash;&gt;-->
-<!--    <meta name="twitter:title" content="TITLE OF POST OR PAGE"> &lt;!&ndash; Same as what's inside <title> tag &ndash;&gt;-->
-<!--    <meta name="twitter:description" content="DESCRIPTION OF PAGE CONTENT"> &lt;!&ndash; Same as what's inside description meta tag &ndash;&gt;-->
-<!--    <meta name="twitter:image" content="URL TO IMAGE"> &lt;!&ndash; Less than 5MB, JPG, PNG, WEBP, GIF &ndash;&gt;-->
-<!--    <meta name="twitter:image:alt" content="ALT TEXT FOR IMAGE"> &lt;!&ndash; Alt text for above image &ndash;&gt;-->
-<!--    <meta name="twitter:site" content="@USERNAME"> &lt;!&ndash; The site's Twitter handle &ndash;&gt;-->
-<!--    <meta name="twitter:creator" content="@USERNAME"> &lt;!&ndash; Your Twitter handle &ndash;&gt;-->
+    <!-- Twitter -->
+    <meta name="twitter:card">
+    <meta name="twitter:title" content="Icecapades">
+    <meta name="twitter:description" content="A side-scrolling game with the character Tux, the Linux mascot">
+    <meta name="twitter:image" content="static/docs/finalpage.png">
+    <meta name="twitter:image:alt" content="An image of the final site on a range of screen sizes">
 
     <!-- Local stylesheets -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="static/css/style.css" rel="stylesheet" />
 
     <!-- Font Awesome -->
-<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"-->
-<!--        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- Favicon -->
-<!--    <link rel="icon" type="image/x-icon" href="favicon.ico" />-->
-
-<!--    <link rel="stylesheet" href="style.css">-->
-
-    <!-- Image alt text should be a proper description, not keywords. 50-55 chars (16 words). Small file size is best, but keep the quality good -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
 <body>
+    <header>
+        <h1>Icecapades</h1>
+    </header>
+    
+    <noscript>
+        <div class="dead-tux"></div>
+        <p>
+            Sorry, this game uses JavaScript and you don't seem to have it enabled!
+        </p>
+        <div class="dead-tux"></div>
+    </noscript>
 
-<!--    <main>-->
-<!--        <h1>THIS SHOULD MATCH YOUR TITLE IN THE HEAD</h1>-->
-<!--    </main>-->
-<canvas id="canvas1"></canvas>
+    <main>
+        <canvas id="canvas1"></canvas>
+        <section class="progress-container">
+            <div class="progress-grid">
+                <div class="audio-buttons grid-item">
+                    <img class="height audio-button" id="play-button" onclick="toggleAudio()" src="static/background/block_UI_play.png" alt="A play block for the audio button">
+                    <img class="height audio-button hide" id="pause-button" onclick="toggleAudio()" src="static/background/block_UI_pause.png" alt="A pause block for the audio button">
+                    <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height" onclick="toggleInstructions()">
+                    <i class="fas fa-info instructions-i" onclick="toggleInstructions()"></i>
+                </div>
+                <div class="snowball-bar grid-item">
+                    <img class="height progress-icon snowflake-icon" id="snowflake-icon-block" src="static/background/block_UI_snowflake.png" alt="An snowflake on a block">
+                    <img class="height snowball-bar-back" id="snowball-bar-back" src="static/background/lifebar_back.png" alt="The back of the snowball bar">
+                    <div class="height progress-overlay snowball-bar-div">
+                        <div class="progress-bar-inner" id="snowball-bar"></div>
+                    </div>
+                </div>
+                <div class="health-bar grid-item">
+                    <img class="height progress-icon heart-icon" id="heart-icon" src="static/background/block_UI_heart.png" alt="An image of a heart">
+                    <img class="height health-bar-back" id="health-bar-back" src="static/background/lifebar_back.png" alt="The back of the health bar">
+                    <div class="height progress-overlay health-bar-div">
+                        <div class="progress-bar-inner" id="health-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!--    <footer>-->
-<!--        &lt;!&ndash; Auto-updating copyright &ndash;&gt;-->
-<!--        <p class="copyright">Copyright &copy; Abi Harrison <span id="copyright"></span></p>-->
+        <section id="instructions-modal" class="opaque-overlay hide">
+            <div class="modal">
+                <div class="header">
+                    <h2 class="modal-header">Instructions</h2>
+                    <i class="far fa-times-circle fa-3x close-button" onclick="toggleInstructions()"></i>
+                </div>
+                <hr>
+                <div class="modal-text">
+                    <p class="modal-p"><strong>Welcome to Icecapades!</strong></p>
+                    <p class="modal-p">You play as Tux, the Linux mascot, in this retro-style side-scrolling game</p>
+                    <p class="modal-p">Your job is to help Tux make it home safely</p>
+                    <div class="modal-grid">
+                        <ul>
+                            <li>Avoid being hurt by enemies on your journey</li>
+                            <li>Collect fish for extra health</li>
+                            <li>Collect snowflakes to turn into snowballs</li>
+                            <li>Throw snowballs at your enemies</li>
+                        </ul>
+                        <ul>
+                            <li>Press Up Arrow / W to Jump</li>
+                            <li>Press Down Arrow / S to Slide</li>
+                            <li>Press Space Bar to Throw Snowballs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!--        &lt;!&ndash; Always include a sitemap if your site has more than one page, so screen readers can easily navigate quickly &ndash;&gt;-->
-<!--    </footer>-->
+        <section id="game-over-modal" class="opaque-overlay hide">
+            <div class="modal">
+                <div class="header">
+                    <h2 class="modal-header">Game Over!</h2>
+                    <i class="far fa-times-circle fa-3x close-button" onclick="closeModal()"></i>
+                </div>
+                <hr>
+                <div class="modal-text">
+                    <p class="modal-p"><strong>Oh no!</strong></p>
+                    <p class="modal-p">Tux was too badly hurt to make it home</p>
+                    <p class="modal-p">Now his friends will be worried</p>
+                    <p class="modal-p">You don't want them to worry, do you?</p>
+                    <p class="modal-p">Why don't you try again?</p>
+                    <div class="modal-grid">
+                        <button class="replay game-over-button">Of course!</button>
+                        <button class="replay game-over-button">Definitely!</button>
+                    </div>
+                    <button class="quit-bad text-small" onclick="closeModal()">I'm a monster, leave Tux to fend for himself</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="win-modal" class="opaque-overlay hide">
+            <div class="modal">
+                <div class="header">
+                    <h2 class="modal-header">You Win!</h2>
+                    <i class="far fa-times-circle fa-3x close-button" onclick="closeModal()"></i>
+                </div>
+                <hr>
+                <div class="modal-text">
+                    <p class="modal-p"><strong>Tux got home safely!</strong></p>
+                    <p class="modal-p">Tux and all his friends are very grateful</p>
+                    <p class="modal-p">It's a scary world out there!</p>
+                    <p class="modal-p">Thanks for playing</p>
+                    <p class="modal-p">Would you like to play again?</p>
+                    <div class="modal-grid">
+                        <button class="replay">Definitely!</button>
+                        <button class="quit-good" onclick="closeModal()">Not right now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button type="button" id="run" onclick="die()">die</button>
+        <button type="button" id="walk" onclick="walk()">walk</button>
+        <button type="button" id="slide" onclick="slide()">slide</button>
+        <button type="button" id="jump" onclick="jump()"> jump </button>
+    </main>
+
+    <footer>
+        <!-- Auto-updating copyright -->
+        <p class="copyright">Copyright &copy; 1-Bit Short of a Flappy Disc <span id="copyright"></span></p>
+    </footer>
 
     <!-- Local scripts -->
     <script src="static/js/script.js"></script>
-
-    <!-- jQuery CDN -->
-<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"-->
-<!--        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
-
-    <!-- rel="nofollow" is like the robots meta tag, but on individual links, for links that you don't want Google to crawl as part of your site -->
-    <!-- If you're linking to a site you trust, it's a social media profile, or a guest post, follow -->
-    <!-- nofollow if you sold the link, if someone paid you to post the link, if you might be penalised for posting the link, or widgets -->
-
-    <!-- rel="sponsored" is to identify paid content or links, can also be used with a nofollow -->
-    <!-- rel="ugc" identifies user-generated content, like a blog post, can also be used with a nofollow -->
 </body>
 
 </html>
