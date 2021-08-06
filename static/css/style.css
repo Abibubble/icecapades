@@ -145,22 +145,41 @@ footer {
 
 /* ---------------------------------------------------------------------- Modals */
 
+.opaque-overlay {
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+  width: 100vw;
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .modal {
   width: 50%;
   left: 25%;
   position: absolute;
-  top: 30vh;
+  top: 20vh;
   border: 2px solid black;
-  padding: 25px;
+  padding: 35px;
   line-height: 30px;
-  background-color: white;
-  z-index: 4;
+  background-image: url('../background/modals.png');
+  z-index: 5;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  border-radius: 10px;
+}
+
+.header {
+  margin-top: 120px;
 }
 
 .close-button {
   position: absolute;
   top: 10px;
   right: 10px;
+  color: black;
+  text-shadow: 1px 1px 1px white;
 }
 
 .modal-text {
