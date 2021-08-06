@@ -36,7 +36,7 @@ canvas.style.backgroundColor = "lightblue"; //! for testing only
 const playerImage = new Image();
 playerImage.src = ('static/animations/penguin/spritesheet.png');
 // -- setup width and height of sprites
-const walkWidth = 64.5;
+const walkWidth = 64.7;
 const spriteHeight = 73;
 const slideWidth = 74;
 const jumpWidth = 73;
@@ -55,14 +55,16 @@ let jumpDirection;
  * maintained at constant speed
  */
 function frameRate() {
-    gameFrame++;
+    gameFrame++;  //TODO: add posibility to modify  speed for individual character so they can move at different speed
     requestAnimationFrame(frameRate);
 }
 
 frameRate();
 
 function walk() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let spawnx = 30;
+    let spawny = walkWidth;  //height where it would be shown
+    ctx.clearRect(spawnx, canvasHeight - (newSpriteHeight + floorHeight), walkWidth+141, spriteHeight+200); //ctx.clearRect(0, 0, canvas.width, canvas.height);
     // ctx.fillRect(100,50,100,100);
     //! reference for values https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
     // ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
@@ -119,6 +121,54 @@ document.body.onkeyup = function(e){
         walk();
     }
 }
+
+
+// --enemy snake---------------
+
+const wormImage = new Image();
+wormImage.src = ('static/animations/enemies/worm/worm-sprite1.png');
+// -- setup width and height of sprites
+const wormWidth = 508;
+const wormHeight = 256;
+let spriteSize = 100;
+let spawnx = canvasWidth;
+let spawny = 0;  //height where it would be shown
+function showWorm(){
+    let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
+    ctx.clearRect(spawnx, canvasHeight - (newSpriteHeight + floorHeight)-spawny, wormWidth, wormHeight);
+    ctx.drawImage(wormImage, wormWidth * position, 0 , wormWidth, wormHeight, spawnx--, canvasHeight - (newSpriteHeight + floorHeight)-spawny, newSpriteWidth-spriteSize, newSpriteHeight-spriteSize);
+   requestAnimationFrame(showWorm);
+   gameFrame++
+    if (spawnx == -100){
+        spawnx = canvasWidth+10;
+    }
+}
+
+
+
+// --enemy slug---------------
+
+const slugImage = new Image();
+slugImage.src = ('static/animations/enemies/slug/slug-sprite1.png');
+// -- setup width and height of sprites
+const slugWidth = 299;
+const slugHeight = 178;
+let spawnslugx = canvasWidth;
+let spawnslugy = 0;
+function showSlug(){
+    let position = Math.floor(gameFrame/staggerFrames) % 3;  // 4= Length of sprite images
+    ctx.clearRect(spawnslugx, canvasHeight - (newSpriteHeight + floorHeight)-spawnslugy, slugWidth, slugHeight);
+    ctx.drawImage(slugImage, slugWidth * position, 0 , slugWidth, slugHeight, spawnslugx--, canvasHeight - (newSpriteHeight + floorHeight)-spawnslugy, newSpriteWidth-spriteSize, newSpriteHeight-spriteSize);
+   requestAnimationFrame(showSlug);
+   gameFrame++
+    if (spawnslugx == -299){     //let slug to go behind screen
+        spawnslugx = canvasWidth+10;
+    }
+}
+
+showWorm();
+setTimeout(function() { showSlug(); }, 1000);
+
 
 
 // ------------ Health Bar--------------------------------------------------------
