@@ -105,18 +105,109 @@ footer {
 
 /* ------------------------------ Audio button */
 
+.audio-buttons {
+  margin-left: 5px;
+}
+
 .audio-button {
   z-index: 2;
   cursor: pointer;
 }
 
-.play-button:hover,
-.pause-button:hover,
-.play-button:focus,
-.pause-button:focus {
+.audio-button:hover,
+.audio-button:focus {
+  box-sizing: border-box;
   border: 1px solid aqua;
 }
 
 .hide {
   display: none;
+}
+
+/* ------------------------------ Instructions button */
+
+.instructions-button {
+  cursor: pointer;
+}
+
+.instructions:hover,
+.instructions:focus {
+  box-sizing: border-box;
+  border: 1px solid aqua;
+}
+
+.instructions-i {
+  color: black;
+  position: relative;
+  top: -16px;
+  left: -29px;
+}
+
+/* ---------------------------------------------------------------------- Modals */
+
+.modal {
+  width: 50%;
+  left: 25%;
+  position: absolute;
+  top: 30vh;
+  border: 2px solid black;
+  padding: 25px;
+  line-height: 30px;
+  background-color: white;
+  z-index: 4;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal-text {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.modal-header, .modal-p {
+  text-align: center;
+}
+
+.modal-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+button {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.replay {
+  background-color:forestgreen;
+}
+
+.game-over-button {
+  margin-bottom: 20px;
+}
+
+.text-small {
+  font-size: 0.5rem;
+}
+
+.quit-bad {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  padding: 3px;
+}
+
+.quit-good {
+  background-color: aqua;
 }

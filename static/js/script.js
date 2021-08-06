@@ -137,12 +137,11 @@ function pushHealth() {
 function checkHealth() {
     pushHealth();
     if (currentHealth <= deadTux ) {
-        // Oh no, Tux is dead!
+        die();
+        // Game over modal / replay?
     } else {
         if (currentHealth <= dangerZone) {
             healthBar.style.color = "red";
-        } else {
-            healthBar.style.color = "aqua";
         }
     }
 }
@@ -158,21 +157,63 @@ let maxSnowballs = 10;
 let currentAmmo = 10;
 let noAmmo = 0;
 let lowAmmo = 3;
+let snowballBar = document.getElementById("snowball-bar");
 
 function pushAmmo() {
-    document.getElementById("snowball-bar").value = currentAmmo;
+    snowballBar.style.width = (currentAmmo * 10) + "%";
 }
 
 function checkAmmo() {
-    currentAmmo--;
     if (currentAmmo <= noAmmo ) {
         // Oh no, Tux has no ammo!
     } else {
         pushAmmo();
         if (currentAmmo <= lowAmmo) {
-            // Health bar turns red
+            snowballBar.style.color = "red";
         }
     }
+}
+
+function shoot() {
+    currentAmmo--;
+    checkAmmo();
+}
+
+// -------------------------------------------------------------------- Instructions
+
+const instructionsModal = document.getElementById("instructions-modal");
+
+function toggleInstructions() {
+    if (instructionsModal.classList.contains("hide")) {
+        instructionsModal.classList.remove("hide");
+    } else {
+        instructionsModal.classList.add("hide");
+    }
+}
+
+// -------------------------------------------------------------------- Game over
+
+const gameOverModal = document.getElementById("game-over-modal");
+
+function openGameOverModal() {
+    gameOverModal.classList.remove("hide");
+}
+
+// -------------------------------------------------------------------- You win
+
+const winModal = document.getElementById("win-modal");
+
+function openWinModal() {
+    winModal.classList.remove("hide");
+}
+
+// -------------------------------------------------------------------- Close modal
+
+const closeButton = document.getElementById("close-modal-button");
+
+function closeModal() {
+    winModal.classList.add("hide");
+    gameOverModal.classList.add("hide");
 }
 
 // -------------------------------------------------------------------- Audio
