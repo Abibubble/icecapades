@@ -49,7 +49,7 @@ const staggerFrames = 5;  //adjust speed of the animation
 
 function walk() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // ctx.fillRect(100,50,100,100);
+
     //! reference for values https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
     // ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
     let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
@@ -78,7 +78,7 @@ function jump(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
     let jumpHeight = 0;
-    ctx.drawImage(playerImage, jumpWidth * position, 0 , jumpWidth, spriteHeight, 300, canvasHeight - (newSpriteHeight + floorHeight)-jumpHeight, newSpriteWidth, newSpriteHeight);
+    ctx.drawImage(playerImage, jumpWidth * position, 0 , jumpWidth, spriteHeight, 300, canvasHeight - (newSpriteHeight + floorHeight)-jumpHeight, 150, 150);
     gameFrame++;
     if (jumpHeight = 200) jumpHeight++;
     else jumpHeight =0;
@@ -98,6 +98,29 @@ document.body.onkeyup = function(e){
     }
 }
 
+
+// --enemy snake---------------
+
+const wormImage = new Image();
+wormImage.src = ('static/animations/enemies/worm/worm-sprite1.png');
+// -- setup width and height of sprites
+const wormWidth = 508;
+const wormHeight = 256;
+let spriteSize = 100;
+var spawnx = canvasWidth;
+var spawny = 0;  //height where it would be shown
+function showWorm(){
+    let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
+    ctx.clearRect(spawnx, canvasHeight - (newSpriteHeight + floorHeight)-spawny, wormWidth, wormHeight);
+    ctx.drawImage(wormImage, wormWidth * position, 0 , wormWidth, wormHeight, spawnx--, canvasHeight - (newSpriteHeight + floorHeight)-spawny, newSpriteWidth-spriteSize, newSpriteHeight-spriteSize);
+   requestAnimationFrame(showWorm);
+   gameFrame++
+    if (spawnx == -100){
+        spawnx = canvasWidth+10;
+    }
+}
+
+showWorm();
 
 // ------------ Health Bar--------------------------------------------------------
 
