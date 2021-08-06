@@ -112,7 +112,7 @@
             </div>
         </section>
 
-        <section id="game-over-modal" class="opaque-overlay hide">
+        <section id="game-over-modal" class="opaque-overlay">
             <div class="modal">
                 <div class="header">
                     <h2 class="modal-header">Game Over!</h2>
@@ -129,7 +129,9 @@
                         <button class="replay game-over-button">Of course!</button>
                         <button class="replay game-over-button">Definitely!</button>
                     </div>
-                    <button class="quit-bad text-small" onclick="closeModal()">I'm a monster, leave Tux to fend for himself</button>
+                    <button class="quit-bad text-small" id="quit-bad" onclick="movingQuitButton()" style="bottom: 2px;right: 2px;">
+                        I'm a monster, leave Tux to fend for himself
+                    </button>
                 </div>
             </div>
         </section>
