@@ -122,7 +122,6 @@ document.body.onkeyup = function(e){
     }
 }
 
-
 // --enemy snake---------------
 
 const wormImage = new Image();
@@ -137,14 +136,12 @@ function showWorm(){
     let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
     ctx.clearRect(spawnx, canvasHeight - (newSpriteHeight + floorHeight)-spawny, wormWidth, wormHeight);
     ctx.drawImage(wormImage, wormWidth * position, 0 , wormWidth, wormHeight, spawnx--, canvasHeight - (newSpriteHeight + floorHeight)-spawny, newSpriteWidth-spriteSize, newSpriteHeight-spriteSize);
-   requestAnimationFrame(showWorm);
-   gameFrame++
+    requestAnimationFrame(showWorm);
+    gameFrame++
     if (spawnx == -100){
         spawnx = canvasWidth+10;
     }
 }
-
-
 
 // --enemy slug---------------
 
@@ -159,8 +156,8 @@ function showSlug(){
     let position = Math.floor(gameFrame/staggerFrames) % 3;  // 4= Length of sprite images
     ctx.clearRect(spawnslugx, canvasHeight - (newSpriteHeight + floorHeight)-spawnslugy, slugWidth, slugHeight);
     ctx.drawImage(slugImage, slugWidth * position, 0 , slugWidth, slugHeight, spawnslugx--, canvasHeight - (newSpriteHeight + floorHeight)-spawnslugy, newSpriteWidth-spriteSize, newSpriteHeight-spriteSize);
-   requestAnimationFrame(showSlug);
-   gameFrame++
+    requestAnimationFrame(showSlug);
+    gameFrame++
     if (spawnslugx == -299){     //let slug to go behind screen
         spawnslugx = canvasWidth+10;
     }
@@ -169,12 +166,10 @@ function showSlug(){
 showWorm();
 setTimeout(function() { showSlug(); }, 1000);
 
-
-
 // ------------ Health Bar--------------------------------------------------------
 
 let maxHealth = 50;
-let currentHealth = 40;
+let currentHealth = 50;
 let deadTux = 0;
 let dangerZone = 10;
 let healthBar = document.getElementById("health-bar");
@@ -196,7 +191,12 @@ function checkHealth() {
 }
 
 function tuxIsHit() {
-    health -= 10;
+    currentHealth -= 10;
+    checkHealth();
+}
+
+function tuxEatsFish() {
+    currentHealth = 50;
     checkHealth();
 }
 
@@ -214,7 +214,7 @@ function pushAmmo() {
 
 function checkAmmo() {
     if (currentAmmo <= noAmmo ) {
-        // Oh no, Tux has no ammo!
+        // Oh no, Tux has no more ammo! Collect some snowflakes to make more snowballs!
     } else {
         pushAmmo();
         if (currentAmmo <= lowAmmo) {
@@ -227,101 +227,3 @@ function shoot() {
     currentAmmo--;
     checkAmmo();
 }
-
-// -------------------------------------------------------------------- Instructions
-
-const instructionsModal = document.getElementById("instructions-modal");
-
-function toggleInstructions() {
-    if (instructionsModal.classList.contains("hide")) {
-        instructionsModal.classList.remove("hide");
-    } else {
-        instructionsModal.classList.add("hide");
-    }
-}
-
-// -------------------------------------------------------------------- Game over
-
-const gameOverModal = document.getElementById("game-over-modal");
-
-function openGameOverModal() {
-    gameOverModal.classList.remove("hide");
-}
-
-// -------------------------------------------------------------------- You win
-
-const winModal = document.getElementById("win-modal");
-
-function openWinModal() {
-    winModal.classList.remove("hide");
-}
-
-// -------------------------------------------------------------------- Close modal
-
-const closeButton = document.getElementById("close-modal-button");
-
-function closeModal() {
-    winModal.classList.add("hide");
-    gameOverModal.classList.add("hide");
-}
-
-// -------------------------------------------------------------------- Moving button
-
-function movingQuitButton() {
-    let quitBad = document.getElementById("quit-bad");
-    console.log(quitBad);
-    if (quitBad.style.bottom == "2px") {
-        quitBad.style.bottom = "200px";
-        quitBad.style.right = "500px";
-        quitBad.innerText = "You didn't think we'd let you desert him that easily, did you?";
-    } else if (quitBad.style.bottom == "200px") {
-        quitBad.style.bottom = "400px";
-        quitBad.style.right = "200px";
-        quitBad.innerText = "Have you no heart?";
-    } else if (quitBad.style.bottom == "400px") {
-        quitBad.style.bottom = "250px";
-        quitBad.style.right = "20px";
-        quitBad.innerText = "You really should help him get home";
-    } else if (quitBad.style.bottom == "250px") {
-        quitBad.style.bottom = "2px";
-        quitBad.style.right = "2px";
-        quitBad.innerText = "I'm a monster, leave Tux to fend for himself";
-    }
-}
-
-// -------------------------------------------------------------------- Audio
-
-let audio = "off";
-const gameAudio = new Audio('static/audio/game.mp3');
-gameAudio.loop = true;
-
-function checkAudioButtons() {
-    if (audio === "on") {
-        document.getElementById("play-button").classList.add("hide");
-        document.getElementById("pause-button").classList.remove("hide");
-        gameAudio.play();
-    } else {
-        document.getElementById("play-button").classList.remove("hide");
-        document.getElementById("pause-button").classList.add("hide");
-        gameAudio.pause();
-    }
-}
-
-function toggleAudio() { // So that the user can toggle the audio off or on
-    if (audio === "off") {
-        audio = "on";
-    } else {
-        audio = "off";
-    }
-    checkAudioButtons();
-}
-
-// ----------- Auto-updating copyright---------------------------------------------------------
-
-function copyrightYear() {
-    var d = new Date();
-    var y = d.getFullYear();
-    document.getElementById("copyright").innerHTML = y;
-}
-
-copyrightYear();
