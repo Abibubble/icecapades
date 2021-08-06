@@ -83,13 +83,36 @@
                 </div>
             </div>
         </section>
-        <section id="instructions-modal" class="hide">
+        <section id="instructions-modal" class="modal">
+            <div class="header">
+                <h2 class="modal-header">Instructions</h2>
+                <i class="far fa-times-circle fa-3x close-button" onclick="toggleInstructions()"></i>
+            </div>
+            <hr>
+            <div class="modal-text">
+                <p class="modal-p"><strong>Welcome to Icecapades!</strong></p>
+                <p class="modal-p">You play as Tux, the Linux mascot, in this retro-style side-scrolling game</p>
+                <p class="modal-p">Your job is to help Tux make it home safely</p>
+                <div class="modal-grid">
+                    <ul>
+                        <li>Avoid being hurt by enemies on your journey</li>
+                        <li>Collect fish for extra health</li>
+                        <li>Collect snowflakes to turn into snowballs</li>
+                        <li>Throw snowballs at your enemies</li>
+                    </ul>
+                    <ul>
+                        <li>Press Up Arrow / W to Jump</li>
+                        <li>Press Down Arrow / S to Slide</li>
+                        <li>Press Space Bar to Throw Snowballs</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+        <section id="game-over-modal" class="modal hide">
 
         </section>
-        <section id="game-over-modal" class="hide">
-
-        </section>
-        <section id="win-modal" class="hide">
+        <section id="win-modal" class="modal hide">
 
         </section>
     </main>
