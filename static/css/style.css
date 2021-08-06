@@ -105,7 +105,7 @@ footer {
 
 /* ------------------------------ Audio button */
 
-.play-button, .pause-button {
+.audio-button {
   z-index: 2;
   cursor: pointer;
 }
