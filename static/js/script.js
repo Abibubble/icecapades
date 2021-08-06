@@ -44,7 +44,7 @@ const jumpWidth = 73;
 let frameX = 0; // scroll trough row of sprites
 let frameY = 0; // scroll trough column of sprites
 let gameFrame = 0;
-const staggerFrames = 8;  //adjust speed of the animation
+const staggerFrames = 5;  //adjust speed of the animation
 
 
 function walk() {
@@ -60,7 +60,7 @@ function walk() {
 
 function slide(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    let position = Math.floor((gameFrame)/staggerFrames) % 3;  // 4= Length of sprite images
+    let position = Math.floor(gameFrame/staggerFrames) % 3;  // 4= Length of sprite images
     ctx.drawImage(playerImage, slideWidth * position, 3 * spriteHeight, slideWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
     gameFrame++;
     requestAnimationFrame(slide);
@@ -68,20 +68,35 @@ function slide(){
 
 function die(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    let position = Math.floor((gameFrame)/staggerFrames) % 4;  // 4= Length of sprite images
-    ctx.drawImage(playerImage, slideWidth * position, 1 * spriteHeight, slideWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
+    let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
+    ctx.drawImage(playerImage, slideWidth * position, spriteHeight, slideWidth, spriteHeight, 300, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
     gameFrame++;
     requestAnimationFrame(die);
 }
 
 function jump(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    let position = Math.floor((gameFrame)/staggerFrames) % 4;  // 4= Length of sprite images
-    ctx.drawImage(playerImage, jumpWidth * position, 0 * spriteHeight, jumpWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
+    let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
+    let jumpHeight = 0;
+    ctx.drawImage(playerImage, jumpWidth * position, 0 , jumpWidth, spriteHeight, 300, canvasHeight - (newSpriteHeight + floorHeight)-jumpHeight, newSpriteWidth, newSpriteHeight);
     gameFrame++;
+    if (jumpHeight = 200) jumpHeight++;
+    else jumpHeight =0;
     requestAnimationFrame(jump);
 }
-walk();
+// sourcex, sourcey, sourcewidth, sourceheight, dest-x,dest-y, dest-w, dest-h
+
+document.body.onkeyup = function(e){
+    if(e.keyCode == 38){
+        jump();
+    }
+    else if(e.keyCode == 40){
+        slide();
+    }
+    else{
+        walk();
+    }
+}
 
 
 // ------------ Health Bar--------------------------------------------------------
