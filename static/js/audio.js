@@ -3,15 +3,23 @@
 let audio = "off";
 const gameAudio = new Audio('static/audio/game.mp3');
 gameAudio.loop = true;
+const playButton = document.getElementById("play-button");
+const playIcon = document.getElementById("play-icon");
+const pauseButton = document.getElementById("pause-button");
+const pauseIcon = document.getElementById("pause-icon");
 
 function checkAudioButtons() {
     if (audio === "on") {
-        document.getElementById("play-button").classList.add("hide");
-        document.getElementById("pause-button").classList.remove("hide");
+        playButton.classList.add("hide");
+        playIcon.classList.add("hide");
+        pauseButton.classList.remove("hide");
+        pauseIcon.classList.remove("hide");
         gameAudio.play();
     } else {
-        document.getElementById("play-button").classList.remove("hide");
-        document.getElementById("pause-button").classList.add("hide");
+        playButton.classList.remove("hide");
+        playIcon.classList.remove("hide");
+        pauseButton.classList.add("hide");
+        pauseIcon.classList.add("hide");
         gameAudio.pause();
     }
 }
