@@ -44,17 +44,30 @@ const jumpWidth = 73;
 let frameX = 0; // scroll trough row of sprites
 let frameY = 0; // scroll trough column of sprites
 let gameFrame = 0;
-const staggerFrames = 5;  //adjust speed of the animation
+const staggerFrames = 10;  //adjust speed of the animation
 
+let jumpCount = 0; // allows jump to be timed
+let jumpHeight = 0; // allow jump increase
+let jumpDirection;
+
+/**
+ * initiates game frame rate for all animations
+ * maintained at constant speed
+ */
+function frameRate() {
+    gameFrame++;
+    requestAnimationFrame(frameRate);
+}
+
+frameRate();
 
 function walk() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+    // ctx.fillRect(100,50,100,100);
     //! reference for values https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
     // ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
     let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
     ctx.drawImage(playerImage, walkWidth * position, 4 * spriteHeight, walkWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
-    gameFrame++;
     requestAnimationFrame(walk);
 }
 
@@ -62,7 +75,6 @@ function slide(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let position = Math.floor(gameFrame/staggerFrames) % 3;  // 4= Length of sprite images
     ctx.drawImage(playerImage, slideWidth * position, 3 * spriteHeight, slideWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
-    gameFrame++;
     requestAnimationFrame(slide);
 }
 
@@ -70,19 +82,29 @@ function die(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
     ctx.drawImage(playerImage, slideWidth * position, spriteHeight, slideWidth, spriteHeight, 300, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
-    gameFrame++;
     requestAnimationFrame(die);
 }
 
 function jump(){
+    jumpCount++;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
-    let jumpHeight = 0;
-    ctx.drawImage(playerImage, jumpWidth * position, 0 , jumpWidth, spriteHeight, 300, canvasHeight - (newSpriteHeight + floorHeight)-jumpHeight, 150, 150);
-    gameFrame++;
-    if (jumpHeight = 200) jumpHeight++;
-    else jumpHeight =0;
-    requestAnimationFrame(jump);
+    ctx.drawImage(playerImage, jumpWidth * position, 0 , jumpWidth, spriteHeight, 30, canvasHeight - ((newSpriteHeight + floorHeight) + jumpHeight), newSpriteWidth, newSpriteHeight);
+    // change jumpCount value for duration of jump animation
+    if (jumpCount < 75) {
+        jumpDirection = "up";
+        jumpHeight ++;
+        requestAnimationFrame(jump);
+    } else if (jumpCount >= 75) {
+        jumpDirection = "down";
+        jumpHeight --;
+        if (jumpHeight === 0 && jumpDirection === "down") {
+            jumpCount = 0;
+            requestAnimationFrame(walk);
+        } else {
+            requestAnimationFrame(jump);
+        }
+    }
 }
 // sourcex, sourcey, sourcewidth, sourceheight, dest-x,dest-y, dest-w, dest-h
 
