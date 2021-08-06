@@ -81,7 +81,6 @@ function jump(){
     gameFrame++;
     requestAnimationFrame(jump);
 }
-
 walk();
 
 
