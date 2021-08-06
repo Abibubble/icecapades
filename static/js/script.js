@@ -29,34 +29,63 @@ function handleChange() {
 
 handleChange();
 
+// --Main character animation-------------------------------------------
+
 canvas.style.backgroundColor = "lightblue"; //! for testing only
 
 const playerImage = new Image();
-playerImage.src = ('static/animations/penguin/penguin_walk.png');
-const spriteWidth = 63.2;
-const spriteHeight = 64;
-let frameX = 0;
-let frameY = 0;
+playerImage.src = ('static/animations/penguin/spritesheet.png');
+// -- setup width and height of sprites
+const walkWidth = 64.5;
+const spriteHeight = 73;
+const slideWidth = 74;
+const jumpWidth = 73;
+
+let frameX = 0; // scroll trough row of sprites
+let frameY = 0; // scroll trough column of sprites
 let gameFrame = 0;
-const staggerFrames = 4;
+const staggerFrames = 8;  //adjust speed of the animation
 
 
-function animate() {
+function walk() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     // ctx.fillRect(100,50,100,100);
     //! reference for values https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
     // ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
-    ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
-    if (gameFrame % staggerFrames == 0) {
-        if (frameX < 3) frameX++;
-        else frameX = 0;
-    }
+    let position = Math.floor(gameFrame/staggerFrames) % 4;  // 4= Length of sprite images
+    ctx.drawImage(playerImage, walkWidth * position, 4 * spriteHeight, walkWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
     gameFrame++;
-    requestAnimationFrame(animate);
+    requestAnimationFrame(walk);
 }
-animate();
 
-// -------------------------------------------------------------------- Health Bar
+function slide(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let position = Math.floor((gameFrame)/staggerFrames) % 3;  // 4= Length of sprite images
+    ctx.drawImage(playerImage, slideWidth * position, 3 * spriteHeight, slideWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
+    gameFrame++;
+    requestAnimationFrame(slide);
+}
+
+function die(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let position = Math.floor((gameFrame)/staggerFrames) % 4;  // 4= Length of sprite images
+    ctx.drawImage(playerImage, slideWidth * position, 1 * spriteHeight, slideWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
+    gameFrame++;
+    requestAnimationFrame(die);
+}
+
+function jump(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let position = Math.floor((gameFrame)/staggerFrames) % 4;  // 4= Length of sprite images
+    ctx.drawImage(playerImage, jumpWidth * position, 0 * spriteHeight, jumpWidth, spriteHeight, 30, canvasHeight - (newSpriteHeight + floorHeight), newSpriteWidth, newSpriteHeight);
+    gameFrame++;
+    requestAnimationFrame(jump);
+}
+
+walk();
+
+
+// ------------ Health Bar--------------------------------------------------------
 
 let maxHealth = 50;
 let currentHealth = 40;
@@ -109,7 +138,7 @@ function checkAmmo() {
     }
 }
 
-// -------------------------------------------------------------------- Auto-updating copyright
+// ----------- Auto-updating copyright---------------------------------------------------------
 
 function copyrightYear() {
     var d = new Date();
