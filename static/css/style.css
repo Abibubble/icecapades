@@ -105,18 +105,40 @@ footer {
 
 /* ------------------------------ Audio button */
 
+.audio-buttons {
+  margin-left: 5px;
+}
+
 .audio-button {
   z-index: 2;
   cursor: pointer;
 }
 
-.play-button:hover,
-.pause-button:hover,
-.play-button:focus,
-.pause-button:focus {
+.audio-button:hover,
+.audio-button:focus {
+  box-sizing: border-box;
   border: 1px solid aqua;
 }
 
 .hide {
   display: none;
+}
+
+/* ------------------------------ Instructions button */
+
+.instructions {
+  cursor: pointer;
+}
+
+.instructions:hover,
+.instructions:focus {
+  box-sizing: border-box;
+  border: 1px solid aqua;
+}
+
+.instructions-i {
+  color: black;
+  position: relative;
+  top: -16px;
+  left: -29px;
 }

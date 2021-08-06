@@ -100,12 +100,11 @@ function pushHealth() {
 function checkHealth() {
     pushHealth();
     if (currentHealth <= deadTux ) {
-        // Oh no, Tux is dead!
+        die();
+        // Game over modal / replay?
     } else {
         if (currentHealth <= dangerZone) {
             healthBar.style.color = "red";
-        } else {
-            healthBar.style.color = "aqua";
         }
     }
 }
@@ -121,21 +120,26 @@ let maxSnowballs = 10;
 let currentAmmo = 10;
 let noAmmo = 0;
 let lowAmmo = 3;
+let snowballBar = document.getElementById("snowball-bar");
 
 function pushAmmo() {
-    document.getElementById("snowball-bar").value = currentAmmo;
+    snowballBar.style.width = (currentAmmo * 10) + "%";
 }
 
 function checkAmmo() {
-    currentAmmo--;
     if (currentAmmo <= noAmmo ) {
         // Oh no, Tux has no ammo!
     } else {
         pushAmmo();
         if (currentAmmo <= lowAmmo) {
-            // Health bar turns red
+            snowballBar.style.color = "red";
         }
     }
+}
+
+function shoot() {
+    currentAmmo--;
+    checkAmmo();
 }
 
 // -------------------------------------------------------------------- Audio

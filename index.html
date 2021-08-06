@@ -33,6 +33,9 @@
     <!-- Local stylesheets -->
     <link href="static/css/style.css" rel="stylesheet" />
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -58,9 +61,11 @@
         <canvas id="canvas1"></canvas>
         <section class="progress-container">
             <div class="progress-grid">
-                <div class="audio-button grid-item">
+                <div class="audio-buttons grid-item">
                     <img class="height audio-button" id="play-button" onclick="toggleAudio();" src="static/background/block_UI_play.png" alt="A play block for the audio button">
                     <img class="height audio-button hide" id="pause-button" onclick="toggleAudio();" src="static/background/block_UI_pause.png" alt="A pause block for the audio button">
+                    <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height instructions" onclick="openInstructions();">
+                    <i class="fas fa-info instructions-i"></i>
                 </div>
                 <div class="snowball-bar grid-item">
                     <img class="height progress-icon snowflake-icon" id="snowflake-icon-block" src="static/background/block_UI_snowflake.png" alt="An snowflake on a block">
