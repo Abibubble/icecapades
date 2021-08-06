@@ -64,8 +64,8 @@
                 <div class="audio-buttons grid-item">
                     <img class="height audio-button" id="play-button" onclick="toggleAudio();" src="static/background/block_UI_play.png" alt="A play block for the audio button">
                     <img class="height audio-button hide" id="pause-button" onclick="toggleAudio();" src="static/background/block_UI_pause.png" alt="A pause block for the audio button">
-                    <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height instructions" onclick="toggleInstructions();">
-                    <i class="fas fa-info instructions-i"></i>
+                    <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height" onclick="toggleInstructions();">
+                    <i class="fas fa-info instructions-i" onclick="toggleInstructions();"></i>
                 </div>
                 <div class="snowball-bar grid-item">
                     <img class="height progress-icon snowflake-icon" id="snowflake-icon-block" src="static/background/block_UI_snowflake.png" alt="An snowflake on a block">
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </section>
-        <section id="instructions-modal" class="modal">
+        <section id="instructions-modal" class="modal hide">
             <div class="header">
                 <h2 class="modal-header">Instructions</h2>
                 <i class="far fa-times-circle fa-3x close-button" onclick="toggleInstructions()"></i>
