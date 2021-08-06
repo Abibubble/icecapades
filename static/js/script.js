@@ -87,37 +87,81 @@ walk();
 // ------------ Health Bar--------------------------------------------------------
 
 let maxHealth = 50;
-let health = 50;
+let currentHealth = 40;
 let deadTux = 0;
 let dangerZone = 10;
+let healthBar = document.getElementById("health-bar");
+
+function pushHealth() {
+    healthBar.style.width = (currentHealth * 2) + "%";
+}
 
 function checkHealth() {
-    if (health <= deadTux ) {
+    pushHealth();
+    if (currentHealth <= deadTux ) {
         // Oh no, Tux is dead!
     } else {
-        // Update health, -10 per hit?
-        if (health <= dangerZone) {
+        if (currentHealth <= dangerZone) {
+            healthBar.style.color = "red";
+        } else {
+            healthBar.style.color = "aqua";
+        }
+    }
+}
+
+function tuxIsHit() {
+    health -= 10;
+    checkHealth();
+}
+
+// -------------------------------------------------------------------- Snowballs Bar
+
+let maxSnowballs = 10;
+let currentAmmo = 10;
+let noAmmo = 0;
+let lowAmmo = 3;
+
+function pushAmmo() {
+    document.getElementById("snowball-bar").value = currentAmmo;
+}
+
+function checkAmmo() {
+    currentAmmo--;
+    if (currentAmmo <= noAmmo ) {
+        // Oh no, Tux has no ammo!
+    } else {
+        pushAmmo();
+        if (currentAmmo <= lowAmmo) {
             // Health bar turns red
         }
     }
 }
 
-// ----- Snowballs Bar ---------------------------------------------------------------
+// -------------------------------------------------------------------- Audio
 
-let maxSnowballs = 10;
-let snowballs = 10;
-let noAmmo = 0;
-let lowAmmo = 3;
+let audio = "off";
+const gameAudio = new Audio('static/audio/game.mp3');
+gameAudio.loop = true;
 
-function checkAmmo() {
-    if (snowballs <= noAmmo ) {
-        // Oh no, Tux has no ammo!
+function checkAudioButtons() {
+    if (audio === "on") {
+        document.getElementById("play-button").classList.add("hide");
+        document.getElementById("pause-button").classList.remove("hide");
+        gameAudio.play();
     } else {
-        // Update snowball counter
-        if (snowballs <= lowAmmo) {
-            // Health bar turns red
-        }
+        document.getElementById("play-button").classList.remove("hide");
+        document.getElementById("pause-button").classList.add("hide");
+        gameAudio.pause();
     }
+}
+
+function toggleAudio() { // So that the user can toggle the audio off or on
+    if (audio === "off") {
+        audio = "on";
+    } else {
+        audio = "off";
+    }
+    checkAudioButtons();
 }
 
 // ----------- Auto-updating copyright---------------------------------------------------------
