@@ -44,6 +44,7 @@ footer {
   height: 5vh;
   top: 10vh;
   width: 100%;
+  border-bottom: 2px solid black;
 }
 
 .position {
@@ -59,7 +60,7 @@ footer {
 }
 
 .snowball-bar-back {
-  left: 16.2%;
+  left: 20%;
 }
 
 /* ------------------------------ Icons */
@@ -69,11 +70,39 @@ footer {
 }
 
 .snowflake-icon {
-  left: 15%;
+  left: 16.2%;
 }
 
 .heart-icon {
   right: 35.4%;
+}
+
+/* ------------------------------ Overlays */
+
+progress {
+  height: 85%;
+  width: 100%;
+}
+
+.progress-overlay {
+  z-index: 2;
+  width: 31%;
+}
+
+.health-bar-div {
+  right: 2%;
+}
+
+.snowball-bar-div {
+  left: 22%;
+}
+
+.health-bar-overlay {
+  color: blue;
+}
+
+.snowball-bar-overlay {
+  color: white;
 }
 
 /* ------------------------------ Audio button */
