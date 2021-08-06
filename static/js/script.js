@@ -88,34 +88,51 @@ walk();
 // ------------ Health Bar--------------------------------------------------------
 
 let maxHealth = 50;
-let health = 50;
+let currentHealth = 40;
 let deadTux = 0;
 let dangerZone = 10;
+let healthBar = document.getElementById("health-bar");
+
+function pushHealth() {
+    healthBar.style.width = (currentHealth * 2) + "%";
+}
 
 function checkHealth() {
-    if (health <= deadTux ) {
+    pushHealth();
+    if (currentHealth <= deadTux ) {
         // Oh no, Tux is dead!
     } else {
-        // Update health, -10 per hit?
-        if (health <= dangerZone) {
-            // Health bar turns red
+        if (currentHealth <= dangerZone) {
+            healthBar.style.color = "red";
+        } else {
+            healthBar.style.color = "aqua";
         }
     }
 }
 
-// ----- Snowballs Bar ---------------------------------------------------------------
+function tuxIsHit() {
+    health -= 10;
+    checkHealth();
+}
+
+// -------------------------------------------------------------------- Snowballs Bar
 
 let maxSnowballs = 10;
-let snowballs = 10;
+let currentAmmo = 10;
 let noAmmo = 0;
 let lowAmmo = 3;
 
+function pushAmmo() {
+    document.getElementById("snowball-bar").value = currentAmmo;
+}
+
 function checkAmmo() {
-    if (snowballs <= noAmmo ) {
+    currentAmmo--;
+    if (currentAmmo <= noAmmo ) {
         // Oh no, Tux has no ammo!
     } else {
-        // Update snowball counter
-        if (snowballs <= lowAmmo) {
+        pushAmmo();
+        if (currentAmmo <= lowAmmo) {
             // Health bar turns red
         }
     }
