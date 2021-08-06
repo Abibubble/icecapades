@@ -62,10 +62,12 @@
         <section class="progress-container">
             <div class="progress-grid">
                 <div class="audio-buttons grid-item">
-                    <img class="height audio-button" id="play-button" onclick="toggleAudio()" src="static/background/block_UI_play.png" alt="A play block for the audio button">
-                    <img class="height audio-button hide" id="pause-button" onclick="toggleAudio()" src="static/background/block_UI_pause.png" alt="A pause block for the audio button">
-                    <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height" onclick="toggleInstructions()">
-                    <i class="fas fa-info instructions-i" onclick="toggleInstructions()"></i>
+                    <img class="height audio-button" id="play-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the play button">
+                    <i class="fas fa-volume-up play-icon" id="play-icon" onclick="toggleAudio()"></i>
+                    <img class="height audio-button hide" id="pause-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the pause button">
+                    <i class="fas fa-volume-mute pause-icon hide" id="pause-icon" onclick="toggleAudio()"></i>
+                    <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height instructions-click" onclick="toggleInstructions()">
+                    <i class="fas fa-info instructions-i instructions-click" onclick="toggleInstructions()"></i>
                 </div>
                 <div class="snowball-bar grid-item">
                     <img class="height progress-icon snowflake-icon" id="snowflake-icon-block" src="static/background/block_UI_snowflake.png" alt="An snowflake on a block">
@@ -112,7 +114,7 @@
             </div>
         </section>
 
-        <section id="game-over-modal" class="opaque-overlay">
+        <section id="game-over-modal" class="opaque-overlay hide">
             <div class="modal">
                 <div class="header">
                     <h2 class="modal-header">Game Over!</h2>

@@ -121,24 +121,32 @@ footer {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 /* ------------------------------ Instructions button */
 
-.instructions-button {
+.instructions-click:hover,
+.instructions-click:focus {
+  box-sizing: border-box;
+  border: 1px solid aqua;
   cursor: pointer;
 }
 
-.instructions:hover,
-.instructions:focus {
-  box-sizing: border-box;
-  border: 1px solid aqua;
-}
-
+.play-icon,
+.pause-icon,
 .instructions-i {
   color: black;
   position: relative;
+}
+
+.play-icon,
+.pause-icon {
+  top: -1.7vh;
+  left: -3.9vh;
+}
+
+.instructions-i {
   top: -16px;
   left: -29px;
 }
