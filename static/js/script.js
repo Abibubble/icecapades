@@ -56,7 +56,58 @@ function animate() {
 }
 animate();
 
+// -------------------------------------------------------------------- Health Bar
 
+let maxHealth = 50;
+let currentHealth = 40;
+let deadTux = 0;
+let dangerZone = 10;
+let healthBar = document.getElementById("health-bar");
+
+function pushHealth() {
+    healthBar.style.width = (currentHealth * 2) + "%";
+}
+
+function checkHealth() {
+    pushHealth();
+    if (currentHealth <= deadTux ) {
+        // Oh no, Tux is dead!
+    } else {
+        if (currentHealth <= dangerZone) {
+            healthBar.style.color = "red";
+        } else {
+            healthBar.style.color = "aqua";
+        }
+    }
+}
+
+function tuxIsHit() {
+    health -= 10;
+    checkHealth();
+}
+
+// -------------------------------------------------------------------- Snowballs Bar
+
+let maxSnowballs = 10;
+let currentAmmo = 10;
+let noAmmo = 0;
+let lowAmmo = 3;
+
+function pushAmmo() {
+    document.getElementById("snowball-bar").value = currentAmmo;
+}
+
+function checkAmmo() {
+    currentAmmo--;
+    if (currentAmmo <= noAmmo ) {
+        // Oh no, Tux has no ammo!
+    } else {
+        pushAmmo();
+        if (currentAmmo <= lowAmmo) {
+            // Health bar turns red
+        }
+    }
+}
 
 // -------------------------------------------------------------------- Auto-updating copyright
 
