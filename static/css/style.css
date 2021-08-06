@@ -1,0 +1,19 @@
+/* remove margins and padding from all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ? without this, there is a 4 pixel gap below the canvas and I don't know why */
+/* header and footer display with no spacing between */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  /*! styles only to test responsive canvas */
+  height: 10vh;
+  background-color: blue;
+}
