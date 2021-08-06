@@ -39,64 +39,61 @@ footer {
 
 /* ---------------------------------------------------------------------- Health / Snowballs / Audio bar */
 
-/* ------------------------------ Bars */
-.progress-bars {
+/* ------------------------------ Grid */
+
+.progress-container {
   height: 5vh;
+  position: absolute;
   top: 10vh;
   width: 100%;
   border-bottom: 2px solid black;
 }
 
-.position {
-  position: absolute;
+.progress-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid black;
 }
+
+.grid-item {
+  height: 5vh;
+}
+
+/* ------------------------------ Overall */
 
 .height {
   height: 100%;
 }
 
-.health-bar-back {
-  right: 0;
-}
-
-.snowball-bar-back {
-  left: 20%;
-}
-
-/* ------------------------------ Icons */
-
-.snowflake-img {
-  z-index: 2;
-}
-
-.snowflake-icon {
-  left: 16.2%;
-}
-
-.heart-icon {
-  right: 35.4%;
-}
-
 /* ------------------------------ Overlays */
+
+.snowball-meter, .health-meter {
+  height: 100%;
+}
 
 .progress-overlay {
   z-index: 2;
-  width: 31%;
-  color: white;
+  background-color: white;
+  border-radius: 15px;
+  height: 70%;
+  left: 20px;
+  padding: 0 10px;
+  width: 70%;
+  margin-left: 50px;
+  position: relative;
+  top: -5vh;
 }
 
-.health-bar-div {
-  right: 2%;
-}
-
-.snowball-bar-div {
-  left: 22%;
+.snowball-bar-back, .health-bar-back {
+  width: 81%;
 }
 
 .progress-bar-inner {
   position: relative;
   background-color: aqua;
-  height: 60%;
+  height: 70%;
   top: 13%;
   z-index: 3;
   border-radius: 10px;
@@ -109,8 +106,15 @@ footer {
 /* ------------------------------ Audio button */
 
 .play-button, .pause-button {
-  left: 0;
   z-index: 2;
+  cursor: pointer;
+}
+
+.play-button:hover,
+.pause-button:hover,
+.play-button:focus,
+.pause-button:focus {
+  border: 1px solid aqua;
 }
 
 .hide {
