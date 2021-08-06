@@ -190,7 +190,10 @@ button {
 }
 
 .replay {
-  background-color: green;
+  background-color:forestgreen;
+}
+
+.game-over-button {
   margin-bottom: 20px;
 }
 
@@ -198,9 +201,13 @@ button {
   font-size: 0.5rem;
 }
 
-.quit {
+.quit-bad {
   position: absolute;
   bottom: 2px;
   right: 2px;
   padding: 3px;
+}
+
+.quit-good {
+  background-color: aqua;
 }
