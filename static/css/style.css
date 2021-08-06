@@ -34,5 +34,55 @@ header,
 footer {
   /*! styles only to test responsive canvas */
   height: 10vh;
-  background-color: blue;
+  background-color: purple;
+}
+
+/* ---------------------------------------------------------------------- Health / Snowballs / Audio bar */
+
+/* ------------------------------ Bars */
+.progress-bars {
+  height: 5vh;
+  top: 10vh;
+  width: 100%;
+}
+
+.position {
+  position: absolute;
+}
+
+.height {
+  height: 100%;
+}
+
+.health-bar-back {
+  right: 0;
+}
+
+.snowball-bar-back {
+  left: 16.2%;
+}
+
+/* ------------------------------ Icons */
+
+.snowflake-img {
+  z-index: 2;
+}
+
+.snowflake-icon {
+  left: 15%;
+}
+
+.heart-icon {
+  right: 35.4%;
+}
+
+/* ------------------------------ Audio button */
+
+.play-button, .pause-button {
+  left: 0;
+  z-index: 2;
+}
+
+.hide {
+  display: none;
 }
