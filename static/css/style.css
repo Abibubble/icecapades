@@ -4,6 +4,26 @@
   padding: 0;
 }
 
+/* Add custom font */
+@font-face {
+  font-family: snowtopcaps;
+  src: url(../fonts/snowtopcaps.ttf);
+}
+
+/* snowtopcaps font class */
+.snowtopfont {
+  font-family: snowtopcaps, sans-serif;
+}
+
+header h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: black;
+  font-weight: normal;
+}
+
+
+
 /* ? without this, there is a 4 pixel gap below the canvas and I don't know why */
 /* header and footer display with no spacing between */
 body {
@@ -34,7 +54,8 @@ header,
 footer {
   /*! styles only to test responsive canvas */
   height: 10vh;
-  background-color: purple;
+  background-color: white;
+  background-image: linear-gradient(white, #ADD8E6);
 }
 
 /* ---------------------------------------------------------------------- Health / Snowballs / Audio bar */
