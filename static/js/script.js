@@ -142,6 +142,43 @@ function shoot() {
     checkAmmo();
 }
 
+// -------------------------------------------------------------------- Instructions
+
+const instructionsModal = document.getElementById("instructions-modal");
+
+function toggleInstructions() {
+    if (instructionsModal.classList.contains("hide")) {
+        instructionsModal.classList.remove("hide");
+    } else {
+        instructionsModal.classList.add("hide");
+    }
+}
+
+// -------------------------------------------------------------------- Game over
+
+const gameOverModal = document.getElementById("game-over-modal");
+
+function openGameOverModal() {
+    gameOverModal.classList.remove("hide");
+}
+
+// -------------------------------------------------------------------- You win
+
+const winModal = document.getElementById("win-modal");
+
+function openWinModal() {
+    winModal.classList.remove("hide");
+}
+
+// -------------------------------------------------------------------- Close modal
+
+const closeButton = document.getElementById("close-modal-button");
+
+function closeModal() {
+    winModal.classList.add("hide");
+    gameOverModal.classList.add("hide");
+}
+
 // -------------------------------------------------------------------- Audio
 
 let audio = "off";
