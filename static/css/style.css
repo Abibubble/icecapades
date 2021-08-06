@@ -127,7 +127,10 @@ footer {
 /* ------------------------------ Instructions button */
 
 .instructions-click:hover,
-.instructions-click:focus {
+.instructions-click:focus,
+.play-icon:hover + #play-button,
+.pause-icon:hover + #pause-button,
+.instructions-i:hover + .instructions-click {
   box-sizing: border-box;
   border: 1px solid aqua;
   cursor: pointer;
@@ -138,17 +141,18 @@ footer {
 .instructions-i {
   color: black;
   position: relative;
+  cursor: pointer;
 }
 
 .play-icon,
 .pause-icon {
   top: -1.7vh;
-  left: -3.9vh;
+  left: 3.9vh;
 }
 
 .instructions-i {
   top: -16px;
-  left: -29px;
+  left: 29px;
 }
 
 /* ---------------------------------------------------------------------- Modals */
