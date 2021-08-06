@@ -11,6 +11,25 @@ body {
   flex-direction: column;
 }
 
+/* noscript */
+noscript {
+  display: flex;
+  width: 60vw;
+  margin: 2rem auto;
+  text-align: center;
+  align-items: center;
+}
+
+.dead-tux {
+  height: 5rem;
+  width: 5rem;
+  background: url(../animations/penguin/penguin_die04.png) no-repeat center center / contain;
+}
+.dead-tux:last-of-type {
+  transform: scaleX(-1);
+}
+/* end of noscript */
+
 header,
 footer {
   /*! styles only to test responsive canvas */
