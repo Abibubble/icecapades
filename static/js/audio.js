@@ -41,7 +41,17 @@ function toggleAudio() {
 const jumAudio = new Audio('static/audio/jump.wav');
 jumAudio.loop = false;
 const hitAudio = new Audio('static/audio/hit.mp3');
-hitAudio.loop=false;
+hitAudio.loop = false;
 const slideAudio = new Audio('static/audio/slide.mp3');
-slideAudio.loop=false;
+slideAudio.loop = false;
+const reloadAudio = new Audio('static/audio/reload.mp3')
+slideAudio.loop = false;
+const killSlugAudio = new Audio('static/audio/kill-slug.mp3')
+slideAudio.loop = false;
+const eatFish = new Audio('static/audio/eat-fish.mp3')
+eatFish.loop = false;
+
+
+
+
 
