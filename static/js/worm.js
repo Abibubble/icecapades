@@ -22,7 +22,7 @@ class Worm {
             this.originalWidth, //this.originalWidth, //sw
             this.originalHeight, //this.originalHeight, //sh
             this.x, //dx
-            canvas.height - this.height, //dy
+            canvas.height - this.height - floorHeight, //dy
             this.width, //dw
             this.height //this.height + 10, dh
         );
