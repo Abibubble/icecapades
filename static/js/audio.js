@@ -51,7 +51,7 @@ slideAudio.loop = false;
 const eatFishAudio = new Audio('static/audio/eat-fish.mp3');
 eatFishAudio.loop = false;
 const throwSnowballAudio = new Audio('static/audio/throw-snowball.mp3');
-throwSnowbalAudio.loop = false;
+throwSnowballAudio.loop = false;
 const enemyHitSnowballAudio = new Audio('static/audio/enemy-hit-snowball.mp3');
 enemyHitSnowballAudio.loop = false;
 

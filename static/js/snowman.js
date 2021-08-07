@@ -5,8 +5,8 @@ class Snowman {
         this.vy = 0; // y velocity
         this.originalWidth = 138; // individual sprite width from sprite sheet
         this.originalHeight = 142; // individual sprite height from sprite sheet
-        this.width = this.originalWidth / 5; // sensible width for game
-        this.height = this.originalHeight / 5; // sensible height for game
+        this.width = this.originalWidth * 3; // sensible width for game
+        this.height = this.originalHeight * 3; // sensible height for game
         this.weight = 1; // gravity effect
         this.frameX = 0; // sprite sheet x position (column)
         this.frameY = 0; // sprite sheet y position (row)
@@ -15,7 +15,12 @@ class Snowman {
     }
 
     update() {
-        let snowManColCalc = frameX % 2; // to cycle through 4 columns
+        // let snowManColCalc = frameX % 2; // to cycle through 4 columns
+        if (gameFrame % staggerFrames == 0) {
+            if (frameX < 1) this.frameX++;
+            else this.frameX = 0;
+        }
+        this.draw();
     }
 
     // frameX is main frame rate

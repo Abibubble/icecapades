@@ -8,6 +8,7 @@ let healthBar = document.getElementById("health-bar");
 
 function pushHealth() {
     healthBar.style.width = currentHealth * 2 + "%";
+
 }
 
 function checkHealth() {
@@ -25,11 +26,17 @@ function checkHealth() {
 function tuxIsHit(hurt) {
     currentHealth -= hurt;
     checkHealth();
+    if (audio == 'on') {
+         hitAudio.play();
+        }
 }
 
 function tuxGetsAFish() {
     currentHealth += 20;
     checkHealth();
+    if (audio == 'on') {
+        eatFishAudio.play();
+    }
 }
 
 // -------------------------------------------------------------------- Snowballs Bar
@@ -55,10 +62,16 @@ function shoot() {
     if (currentAmmo > noAmmo) {
         currentAmmo--;
         checkAmmo();
+        if (audio == 'on') {
+         throwSnowballAudio.play();
+     }
     }
-}
 
+}
 function tuxGetsASnowflake() {
     currentAmmo += 2;
     checkAmmo();
+    if (audio == 'on') {
+            reloadAudio.play();
+        }
 }
