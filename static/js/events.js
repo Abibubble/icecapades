@@ -23,7 +23,7 @@ window.addEventListener("keyup", (e) => {
   if (e.code === "ArrowRight") {
       arrowRightPressed = false;
       tux.sliding = false;
-      playerImage.src = "static/animations/penguin/penguin_walk.png";
+      playerImage.src = "static/animations/penguin/walk_spritesheet.png";
   }
   tux.frameX = 0;
 });
