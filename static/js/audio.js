@@ -37,3 +37,11 @@ function toggleAudio() {
 
 
 
+//-----------Tux sound effects
+const jumAudio = new Audio('static/audio/jump.wav');
+jumAudio.loop = false;
+const hitAudio = new Audio('static/audio/hit.mp3');
+hitAudio.loop=false;
+const slideAudio = new Audio('static/audio/slide.mp3');
+slideAudio.loop=false;
+
