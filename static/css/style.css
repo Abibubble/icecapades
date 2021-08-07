@@ -32,6 +32,21 @@ header {
   background-image: linear-gradient(white, #ADD8E6);
 }
 
+.header-box {
+  text-align: center;
+  height: 100px;
+  width: 100%;
+}
+
+.header-box div {
+  display: inline-block;
+  height: 120px;
+}
+
+.header-character {
+  height: 4.5em;
+}
+
 /* Set main heading text */
 header h1 {
   font-size: 4.5em;
