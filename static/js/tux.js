@@ -1,5 +1,4 @@
-const jumAudio = new Audio('static/audio/jump.wav');
-jumAudio.loop = false;
+
 
 class Tux {
     constructor() {
@@ -52,6 +51,9 @@ class Tux {
         //If ArrowDown pressed
         if (arrowDownPressed && !this.sliding && !this.jumping) {
             this.slide();
+               if (audio == 'on') {
+                slideAudio.play();
+            }
         }
 
         // Once let go of arrow down, set hitbox back to original position

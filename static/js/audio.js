@@ -37,3 +37,22 @@ function toggleAudio() {
 
 
 
+//-----------Tux sound effects
+const jumAudio = new Audio('static/audio/jump.wav');
+jumAudio.loop = false;
+const hitAudio = new Audio('static/audio/hit.mp3');
+hitAudio.loop = false;
+const slideAudio = new Audio('static/audio/slide.mp3');
+slideAudio.loop = false;
+const reloadAudio = new Audio('static/audio/reload.mp3');
+slideAudio.loop = false;
+const killSlugAudio = new Audio('static/audio/kill-slug.mp3');
+slideAudio.loop = false;
+const eatFishAudio = new Audio('static/audio/eat-fish.mp3');
+eatFishAudio.loop = false;
+const throwSnowballAudio = new Audio('static/audio/throw-snowball.mp3');
+throwSnowbalAudio.loop = false;
+const enemyHitSnowballAudio = new Audio('static/audio/enemy-hit-snowball.mp3');
+enemyHitSnowballAudio.loop = false;
+
+
