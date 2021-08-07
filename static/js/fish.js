@@ -64,8 +64,8 @@ class Fish {
     // frameX is main frame rate
 
     draw() {
-        ctx.fillStyle = "purple"; // Collision box
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        // ctx.fillStyle = "purple"; // Collision box
+        // ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(
             fishImage, //sprite sheet
             this.frameX * this.originalWidth, //x position of sprite sheet
