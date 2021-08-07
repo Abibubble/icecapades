@@ -1,8 +1,7 @@
+//-- Tux
 const playerImage = new Image();
 playerImage.src = "static/animations/penguin/penguin_walk.png";
 
-const wormImage = new Image();
-wormImage.src = "static/animations/enemies/worm/worm-sprite1.png"
 
 function tuxControl() {
     handleBackground();
@@ -17,6 +16,10 @@ function tuxControl() {
 
 tuxControl();
 
+// -- worm
+const wormImage = new Image();
+wormImage.src = "static/animations/enemies/worm/worm-sprite1.png"
+
 function newWorm() {
     worm.update();
     worm.draw();
@@ -24,7 +27,8 @@ function newWorm() {
 }
 
 newWorm(); // place inside a create function
-  
+
+//-- fish
 const fishImage = new Image();
 fishImage.src = 'static/animations/fish/purple-fish.png';
 
@@ -35,3 +39,12 @@ function newFish() {
 }
 
 newFish();
+
+//-- slug
+function newSlug() {
+    slug.update();
+    slug.draw();
+    requestAnimationFrame(newSlug);
+}
+
+newSlug();
