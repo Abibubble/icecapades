@@ -126,7 +126,7 @@ The boss is a snowman. This is in-keeping with the icy theme and provides a tang
 
 ### Wireframes
 
-[Here are the wireframes for desktop, mobile and tablet for this project](assets/docs/wireframes.pdf).
+[Here are the wireframes for desktop, mobile and tablet for this project](static/docs/icecapades.pdf).
 
 ### Features
 <!-- * WHAT FEATURES ARE ONE THE SITE, LIKE SCOREBOARD, FUNCTIONS, SCROLLING ALERT BAR, ETC. -->
