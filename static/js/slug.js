@@ -59,7 +59,7 @@ function animate(timestamp) {
     if (timeToNextSlug > slugInterval){
         slugs.push(new Slug());
         timeToNextSlug = 0;
-        console.log(slugs);
+        // console.log(slugs);
     }
     [...slugs].forEach(object => object.update(deltatime));
     [...slugs].forEach(object => object.draw());
