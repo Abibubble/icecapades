@@ -268,6 +268,16 @@ button {
   background-color: aqua;
 }
 
+/* ------------------------------ Modals transitions */
+
+#i-inner {
+  transition: all 1s;
+}
+
+.scale0 {
+  transform: scale(0);
+}
+
 /* ---------------------------------------------------------------------- Footer */
 
 /* Add gradient to footer */
