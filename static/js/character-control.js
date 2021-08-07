@@ -14,3 +14,13 @@ function tuxControl() {
 
 tuxControl();
   
+const fishImage = new Image();
+fishImage.src = 'static/animations/fish/purple-fish.png';
+
+function newFish() {
+    fish.update();
+    fish.draw();
+    requestAnimationFrame(newFish);
+}
+
+newFish();
