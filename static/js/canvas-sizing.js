@@ -4,6 +4,7 @@ let canvasWidth;
 let canvasHeight;
 let newSpriteWidth;
 let newSpriteHeight;
+let responsiveFloorHeight;
 
 window.addEventListener("resize", handleChange);
 /**
@@ -17,12 +18,12 @@ function handleChange() {
     if (canvasHeight > canvasWidth) { // portrait
         newSpriteWidth = canvasHeight / 7.5;
         newSpriteHeight = canvasHeight / 7.5;
-        floorHeight = canvasHeight / 5;
+        responsiveFloorHeight = canvasHeight / 5;
    
     } else { // landscape
         newSpriteWidth = canvasHeight / 6;
         newSpriteHeight = canvasHeight / 6;
-        floorHeight = canvasHeight / 10;
+        responsiveFloorHeight = canvasHeight / 10;
     }
 }
 

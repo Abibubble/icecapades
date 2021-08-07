@@ -1,7 +1,7 @@
 class Tux {
     constructor() {
         this.x = 150;
-        this.y = 0;
+        this.y = floorHeight;
         this.vy = 0;
         this.originalWidth = 154;
         this.originalHeight = 138;
@@ -17,8 +17,8 @@ class Tux {
 
     update() {
         //Stop character at floor level
-        if (this.y > canvas.height - this.height) {
-            this.y = canvas.height - this.height;
+        if (this.y > canvas.height - this.height - floorHeight) {
+            this.y = canvas.height - this.height - floorHeight;
             this.vy = 0;
         } else {
             //Otherwise set y velocity to act as gravity, along with setting y co-ord += y velocity
@@ -26,23 +26,28 @@ class Tux {
             this.vy *= 0.9; // slow down velocity
             this.y += this.vy;
         }
+
         //Don't allow character out the top of canvas
         if (this.y < 0 + this.height) {
             this.y = 0 + this.height;
             this.vy = 0;
         }
-        //If space bar pressed and char not jumping, call jump
+
+        //If arrow pressed and char not jumping, call jump
         if (arrowUpPressed && !this.jumping) {
             this.jump();
         }
+
         //Check if char is on floor, if so, set jumping to false;
-        if (this.y > canvas.height - this.height) {
+        if (this.y > canvas.height - this.height - floorHeight) {
             this.jumping = false;
         }
+
         //If ArrowDown pressed
         if (arrowDownPressed && !this.sliding && !this.jumping) {
             this.slide();
         }
+
         // Once let go of arrow down, set hitbox back to original position
         if (!arrowDownPressed) {
             this.height = this.originalHeight;
@@ -52,10 +57,11 @@ class Tux {
             this.jumpAnim();
         }
     }
+
     draw() {
         ctx.fillStyle = "red";
         ctx.fillRect(this.x, this.y, this.width, this.height);
-        if (this.y > canvas.height - this.height && !this.sliding) {
+        if (this.y > canvas.height - this.height - floorHeight && !this.sliding) {
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.originalWidth = 154;
             this.frameX = frameX;
