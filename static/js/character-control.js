@@ -4,7 +4,8 @@ playerImage.src = "static/animations/penguin/penguin_walk.png";
 
 function tuxControl() {
     handleBackground();
-    handleEnemies();
+    handleSlugs();
+    handleWorms();
     tux.update();
     tux.draw();
     if (gameFrame % staggerFrames == 0) {

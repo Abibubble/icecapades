@@ -84,8 +84,8 @@ class Tux {
 
     jumpAnim() {
         this.originalWidth = 144;
-        if (this.y >= (canvas.height - this.height - 80)) this.frameX = 0
-        else if (this.y >= (canvas.height - this.height - 160)) this.frameX = 1
+        if (this.y >= canvas.height - this.height - 80) this.frameX = 0;
+        else if (this.y >= canvas.height - this.height - 160) this.frameX = 1;
         else this.frameX = 2;
         playerImage.src = "static/animations/penguin/penguin_jump@2x.png";
     }
