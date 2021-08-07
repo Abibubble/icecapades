@@ -4,15 +4,17 @@
   padding: 0;
 }
 
+body {
+  background-color: #ADD8E6;
+}
+
 header {
   height: 100px;
-  background-color: white;
   background-image: linear-gradient(white, #ADD8E6);
 }
 
 footer {
   height: 100px;
-  background-color: white;
   background-image: linear-gradient(#ADD8E6, white);
 }
 
@@ -24,7 +26,7 @@ footer {
 
 /* snowtopcaps font class */
 .snowtopfont {
-  font-family: snowtopcaps, sans-serif;
+  font-family: snowtopcaps, Geneva, Tahoma, sans-serif;
 }
 
 header h1 {
@@ -37,6 +39,7 @@ header h1 {
 .copyright {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-right: 30px;
 }
 
 footer li {
@@ -50,6 +53,7 @@ footer li {
   text-align: center;
   margin: 0;
   padding: 0;
+  margin-right: 30px;
 }
 
 .team-github-links a {
