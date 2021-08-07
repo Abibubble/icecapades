@@ -8,8 +8,13 @@ const obstaclesArray = [];
 const slugSprite = new Image();
 slugSprite.src = "static/animations/enemies/slug/slug-sprite1.png";
 
+const wormSprite = new Image();
+slugSprite.src = "static/animations/enemies/slug/slug-sprite1.png";
+
 class Enemy {
     constructor() {
+        this.originalWidth = 298;
+        this.originalHeight = 178;
         this.topPipeHeight = (Math.random() * canvas.height) / 3 + 20;
         this.bottomPipeHeight = (Math.random() * canvas.height) / 3 + 20;
         this.height = slug.originalHeight / 3; //testing
@@ -34,15 +39,31 @@ class Enemy {
             this.width,
             this.height
         ); */
-        slug.draw();
-        slug.update();
+        ctx.drawImage(
+            //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+            slugSprite,
+            this.frameX * this.originalWidth, //this.x, //sx
+            0, //this.y, //sy
+            this.originalWidth, //this.originalWidth, //sw
+            this.originalHeight, //this.originalHeight, //sh
+            this.x, //dx
+            canvas.height - this.height, //dy
+            this.width, //dw
+            this.height //this.height + 10, dh
+        );
+        /* slug.draw(); */
+        /* slug.update(); */
     }
     update() {
         this.x -= gameSpeed;
-        /* if (!this.counted && this.x < slug.x) {
+        if (!this.counted && this.x < slug.x) {
             score++;
             this.counted = true;
-        } */
+        }
+        if (gameFrame % staggerFrames == 0) {
+            if (frameX < 2) this.frameX++;
+            else this.frameX = 0;
+        }
         this.draw();
     }
 }
