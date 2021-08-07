@@ -3,8 +3,8 @@ class Tux {
         this.x = 150;
         this.y = 0;
         this.vy = 0;
-        this.originalWidth = 64;
-        this.originalHeight = 70;
+        this.originalWidth = 154;
+        this.originalHeight = 138;
         this.width = this.originalWidth;
         this.height = this.originalHeight;
         this.weight = 1;
@@ -39,14 +39,17 @@ class Tux {
         if (this.y > canvas.height - this.height) {
             this.jumping = false;
         }
-        //If ArrowRight pressed
-        if (arrowRightPressed && !this.sliding) {
+        //If ArrowDown pressed
+        if (arrowDownPressed && !this.sliding && !this.jumping) {
             this.slide();
         }
-        // Once let go of arrow right, set hitbox back to original position
-        if (!arrowRightPressed) {
+        // Once let go of arrow down, set hitbox back to original position
+        if (!arrowDownPressed) {
             this.height = this.originalHeight;
             this.width = this.originalWidth;
+        }
+        if (this.jumping) {
+            this.jumpAnim();
         }
     }
     draw() {
@@ -54,10 +57,12 @@ class Tux {
         ctx.fillRect(this.x, this.y, this.width, this.height);
         if (this.y > canvas.height - this.height && !this.sliding) {
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
+            this.originalWidth = 154;
+            this.frameX = frameX;
         }
         ctx.drawImage(
             playerImage,
-            frameX * this.originalWidth,
+            this.frameX * this.originalWidth,
             0,
             this.originalWidth,
             this.originalHeight,
@@ -71,16 +76,31 @@ class Tux {
     }
 
     jump() {
-        this.vy -= 50;
+        this.vy -= 50; //jump height
         this.jumping = true;
-        playerImage.src = "static/animations/penguin/penguin_jump02.png";
+        this.frameX = 0;
+        this.jumpAnim();
+    }
+
+    jumpAnim() {
+        this.originalWidth = 144;
+        console.log(canvas.height - this.height);
+        if (this.y >= (canvas.height - this.height - 80)) this.frameX = 0
+        else if (this.y >= (canvas.height - this.height - 160)) this.frameX = 1
+        else this.frameX = 2;
+        playerImage.src = "static/animations/penguin/penguin_jump@2x.png";
     }
 
     slide() {
-        this.height = this.height - 20;
+        this.originalWidth = 144;
         this.width = this.width + 20;
-        playerImage.src = "static/animations/penguin/penguin_slide02.png";
+        this.frameX = 0;
+        playerImage.src = "static/animations/penguin/penguin_slide02@2x.png";
         this.sliding = true;
+    }
+
+    die() {
+        playerImage.src = "static/animations/penguin/penguin_die04@2x.png";
     }
 }
 
