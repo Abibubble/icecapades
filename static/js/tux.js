@@ -100,7 +100,7 @@ class Tux {
     }
 
     die() {
-        playerImage.src = "static/animations/penguin/penguin_die.png";
+        playerImage.src = "static/animations/penguin/penguin_die04@2x.png";
     }
 }
 

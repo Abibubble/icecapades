@@ -1,5 +1,5 @@
 const playerImage = new Image();
-playerImage.src = "static/animations/penguin/penguin_walk.png";
+playerImage.src = "static/animations/penguin/walk_spritesheet.png";
 
 function tuxControl() {
   tux.update();
