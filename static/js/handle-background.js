@@ -1,5 +1,6 @@
 const background = new Image();
-background.src = "static/background/background.png";
+background.src = "static/background/background-with-blocks.png";
+
 const BG = {
     x1: 0,
     x2: canvas.width,
@@ -7,6 +8,7 @@ const BG = {
     width: canvas.width,
     height: canvas.height,
 };
+
 function handleBackground() {
     if (BG.x1 <= -BG.width + gameSpeed) {
         BG.x1 = BG.width;

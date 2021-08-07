@@ -2,7 +2,6 @@
 const playerImage = new Image();
 playerImage.src = "static/animations/penguin/penguin_walk.png";
 
-
 function tuxControl() {
     handleBackground();
     tux.update();
