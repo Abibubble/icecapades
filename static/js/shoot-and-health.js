@@ -27,7 +27,7 @@ function tuxIsHit(hurt) {
     currentHealth -= hurt;
     checkHealth();
     if (audio == 'on') {
-            hitAudio.play();
+         hitAudio.play();
         }
 }
 
@@ -63,8 +63,8 @@ function shoot() {
         currentAmmo--;
         checkAmmo();
         if (audio == 'on') {
-            throwSnowballAudio.play();
-        }
+         throwSnowballAudio.play();
+     }
     }
 
 }
