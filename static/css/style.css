@@ -36,14 +36,15 @@ header {
   text-align: center;
   height: 100px;
   width: 100%;
-  padding: 0;
-  margin: 0;
+}
+
+.header-box div {
   display: inline-block;
+  height: 120px;
 }
 
 .header-character {
-  height: 90px;
-  display: inline-block;
+  height: 4.5em;
 }
 
 /* Set main heading text */
@@ -52,7 +53,6 @@ header h1 {
   text-align: center;
   color: black;
   font-weight: normal;
-  display: inline-block;
 }
 
 /* ---------------------------------------------------------------------- Noscript */
