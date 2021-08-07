@@ -42,7 +42,6 @@ window.addEventListener("keydown", (e) => {
 window.addEventListener("keyup", (e) => {
   if (e.key === "w" || e.code === "38") {
     arrowUpPressed = false;
-    tux.jumping = false;
     playerImage.src = "static/animations/penguin/walk_spritesheet.png";
   }
 });

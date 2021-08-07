@@ -32,7 +32,7 @@ class Tux {
             this.vy = 0;
         }
         //If space bar pressed and char not jumping, call jump
-        if (spacePressed && !this.jumping) {
+        if (arrowUpPressed && !this.jumping) {
             this.jump();
         }
         //Check if char is on floor, if so, set jumping to false;
