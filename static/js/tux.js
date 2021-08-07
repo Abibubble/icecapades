@@ -40,7 +40,7 @@ class Tux {
             this.jumping = false;
         }
         //If ArrowRight pressed
-        if (arrowRightPressed && !this.sliding) {
+        if (arrowRightPressed && !this.sliding && !this.jumping) {
             this.slide();
         }
         // Once let go of arrow right, set hitbox back to original position
@@ -48,16 +48,21 @@ class Tux {
             this.height = this.originalHeight;
             this.width = this.originalWidth;
         }
+        if (this.jumping) {
+            this.jumpAnim();
+        }
     }
     draw() {
         ctx.fillStyle = "red";
         ctx.fillRect(this.x, this.y, this.width, this.height);
         if (this.y > canvas.height - this.height && !this.sliding) {
             playerImage.src = "static/animations/penguin/penguin_walk.png";
+            this.originalWidth = 64;
+            this.frameX = frameX;
         }
         ctx.drawImage(
             playerImage,
-            frameX * this.originalWidth,
+            this.frameX * this.originalWidth,
             0,
             this.originalWidth,
             this.originalHeight,
@@ -71,16 +76,31 @@ class Tux {
     }
 
     jump() {
-        this.vy -= 50;
+        this.vy -= 50; //jump height
         this.jumping = true;
-        playerImage.src = "static/animations/penguin/penguin_jump02.png";
+        this.frameX = 0;
+        this.jumpAnim();
+    }
+
+    jumpAnim() {
+        this.originalWidth = 72;
+        console.log(canvas.height - this.height);
+        if (this.y >= (canvas.height - this.height - 80)) this.frameX = 1
+        else if (this.y >= (canvas.height - this.height - 160)) this.frameX = 2
+        else this.frameX = 3;
+        playerImage.src = "static/animations/penguin/penguin_jump.png";
     }
 
     slide() {
-        this.height = this.height - 20;
+        this.originalWidth = 72;
         this.width = this.width + 20;
-        playerImage.src = "static/animations/penguin/penguin_slide02.png";
+        this.frameX = 2;
+        playerImage.src = "static/animations/penguin/penguin_slide.png";
         this.sliding = true;
+    }
+
+    die() {
+        playerImage.src = "static/animations/penguin/penguin_die.png";
     }
 }
 
