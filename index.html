@@ -47,13 +47,13 @@
     <header>
         <div class="header-box">
             <div>
-                <img src="/static/header/tux-transparent.png" alt="Tux the Penguin" class="header-character">
+                <img src="static/header/tux-transparent.png" alt="Tux the Penguin" class="header-character">
             </div>
             <div>
                 <h1 class="snowtopfont">Icecapades</h1>
             </div>
             <div>
-                <img src="/static/header/snowman-transparent.png" alt="Snowman" class="header-character">
+                <img src="static/header/snowman-transparent.png" alt="Snowman" class="header-character">
             </div>
         </div>
     </header>
@@ -129,7 +129,7 @@
         </section>
 
         <section id="game-over-modal" class="opaque-overlay invisible">
-            <div id="win-inner" class="modal">
+            <div id="game-over-inner" class="modal">
                 <div class="header">
                     <h2 class="modal-header">Game Over!</h2>
                     <i class="far fa-times-circle fa-3x close-button" onclick="closeModal()"></i>
@@ -145,12 +145,15 @@
                         <button class="replay game-over-button">Of course!</button>
                         <button class="replay game-over-button">Definitely!</button>
                     </div>
+                    <button class="quit-bad text-small" id="quit-bad" onclick="movingQuitButton()" style="bottom: 2px;right: 2px;">
+                        I'm a monster, leave Tux to fend for himself
+                    </button>
                 </div>
             </div>
         </section>
 
         <section id="win-modal" class="opaque-overlay invisible">
-            <div id="game-over-inner" class="modal">
+            <div id="win-inner" class="modal">
                 <div class="header">
                     <h2 class="modal-header">You Win!</h2>
                     <i class="far fa-times-circle fa-3x close-button" onclick="closeModal()"></i>
