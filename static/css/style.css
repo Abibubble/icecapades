@@ -65,7 +65,7 @@ noscript {
 /* ------------------------------ Grid */
 
 .progress-container {
-  height: 5vh;
+  height: 6vh;
   position: absolute;
   top: 10vh;
   width: 100%;
@@ -110,7 +110,7 @@ noscript {
 }
 
 .snowball-bar-back, .health-bar-back {
-  width: 81%;
+  width: 76%;
 }
 
 .progress-bar-inner {
@@ -135,6 +135,7 @@ noscript {
 .audio-button {
   z-index: 2;
   cursor: pointer;
+  padding: 4px;
 }
 
 .audio-button:hover,
