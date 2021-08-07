@@ -2,9 +2,10 @@
 const playerImage = new Image();
 playerImage.src = "static/animations/penguin/penguin_walk.png";
 
-
 function tuxControl() {
     handleBackground();
+    handleSlugs();
+    handleWorms();
     tux.update();
     tux.draw();
     if (gameFrame % staggerFrames == 0) {
@@ -16,9 +17,9 @@ function tuxControl() {
 
 tuxControl();
 
-// -- worm
+/* // -- worm
 const wormImage = new Image();
-wormImage.src = "static/animations/enemies/worm/worm-sprite1.png"
+wormImage.src = "static/animations/enemies/worm/worm-sprite1.png";
 
 function newWorm() {
     worm.update();
@@ -26,11 +27,11 @@ function newWorm() {
     requestAnimationFrame(newWorm);
 }
 
-newWorm(); // place inside a create function
+newWorm(); // place inside a create function */
 
 //-- fish
 const fishImage = new Image();
-fishImage.src = 'static/animations/fish/purple-fish.png';
+fishImage.src = "static/animations/fish/purple-fish.png";
 
 function newFish() {
     fish.update();
@@ -41,10 +42,10 @@ function newFish() {
 newFish();
 
 //-- slug
-function newSlug() {
+/* function newSlug() {
     slug.update();
     slug.draw();
     requestAnimationFrame(newSlug);
 }
 
-newSlug();
+newSlug(); */

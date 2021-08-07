@@ -9,9 +9,9 @@ canvas.style.backgroundColor = "lightblue"; //! for testing only
  * clears canvas every frame
  */
 function frameRate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  gameFrame++;  //TODO: add posibility to modify  speed for individual character so they can move at different speed
-  requestAnimationFrame(frameRate); 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    gameFrame++; //TODO: add posibility to modify  speed for individual character so they can move at different speed
+    requestAnimationFrame(frameRate);
 }
 
 /**
@@ -19,10 +19,10 @@ function frameRate() {
  * 1 per second
  */
 function scoreCount() {
-  timerCount = setInterval(function() {
-    score++; // increment score by 1
-    console.log(score);
-  }, 1000); // 1000ms = 1 second
+    timerCount = setInterval(function () {
+        score++; // increment score by 1
+        console.log(score);
+    }, 1000); // 1000ms = 1 second
 }
 
 frameRate();
