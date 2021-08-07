@@ -26,23 +26,28 @@ class Tux {
             this.vy *= 0.9; // slow down velocity
             this.y += this.vy;
         }
+
         //Don't allow character out the top of canvas
         if (this.y < 0 + this.height) {
             this.y = 0 + this.height;
             this.vy = 0;
         }
-        //If space bar pressed and char not jumping, call jump
+
+        //If arrow up pressed and char not jumping, call jump
         if (arrowUpPressed && !this.jumping) {
             this.jump();
         }
+
         //Check if char is on floor, if so, set jumping to false;
         if (this.y > canvas.height - this.height) {
             this.jumping = false;
         }
+
         //If ArrowDown pressed
         if (arrowDownPressed && !this.sliding && !this.jumping) {
             this.slide();
         }
+
         // Once let go of arrow down, set hitbox back to original position
         if (!arrowDownPressed) {
             this.height = this.originalHeight;
@@ -52,6 +57,7 @@ class Tux {
             this.jumpAnim();
         }
     }
+
     draw() {
         ctx.fillStyle = "red";
         ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -60,6 +66,7 @@ class Tux {
             this.originalWidth = 154;
             this.frameX = frameX;
         }
+        
         ctx.drawImage(
             playerImage,
             this.frameX * this.originalWidth,
