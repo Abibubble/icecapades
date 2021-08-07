@@ -5,84 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- Metas -->
-        <meta
-            name="description"
-            content="A side-scrolling game with the character Tux, the Linux mascot"
-        />
-        <meta
-            name="keywords"
-            content="Tux, penguin, game, side-scroll, side, scroll, side-scroller, shoot, snowman"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="canonical" href="https://abibubble.github.io/icecapades/" />
+        <meta name="description" content="A side-scrolling game with the character Tux, the Linux mascot"/>
+        <meta name="keywords" content="Tux, penguin, game, side-scroll, side, scroll, side-scroller, shoot, snowman"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="canonical" href="https://abibubble.github.io/icecapades/"/>
         <meta name="robots" content="index, follow" />
         <title>Icecapades</title>
 
         <!-- Facebook, LinkedIn, Google  -->
         <meta property="og:type" content="article" />
         <meta property="og:title" content="Icecapades" />
-        <meta
-            property="og:description"
-            content="A side-scrolling game with the character Tux, the Linux mascot"
-        />
-        <meta
-            name="image"
-            property="og:image"
-            content="static/docs/finalpage.png"
-        />
-        <meta
-            property="og:image:alt"
-            content="An image of the final site on a range of screen sizes"
-        />
-        <meta
-            property="og:url"
-            content="https://abibubble.github.io/icecapades/"
-        />
+        <meta property="og:description" content="A side-scrolling game with the character Tux, the Linux mascot"/>
+        <meta name="image" property="og:image" content="static/docs/finalpage.png"/>
+        <meta property="og:image:alt" content="An image of the final site on a range of screen sizes"/>
+        <meta property="og:url" content="https://abibubble.github.io/icecapades/"/>
         <meta property="og:site_name" content="Icecapades" />
         <meta name="author" content="1-Bit Short of a Flappy Disc" />
 
         <!-- Twitter -->
         <meta name="twitter:card" />
         <meta name="twitter:title" content="Icecapades" />
-        <meta
-            name="twitter:description"
-            content="A side-scrolling game with the character Tux, the Linux mascot"
-        />
+        <meta name="twitter:description" content="A side-scrolling game with the character Tux, the Linux mascot"/>
         <meta name="twitter:image" content="static/docs/finalpage.png" />
-        <meta
-            name="twitter:image:alt"
-            content="An image of the final site on a range of screen sizes"
-        />
+        <meta name="twitter:image:alt" content="An image of the final site on a range of screen sizes"/>
 
         <!-- Local stylesheets -->
         <link href="static/css/style.css" rel="stylesheet" />
 
         <!-- Font Awesome -->
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-            crossorigin="anonymous"
-        />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
 
         <!-- Favicon -->
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="favicon-16x16.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
     </head>
@@ -91,21 +47,13 @@
         <header>
             <div class="header-box">
                 <div>
-                    <img
-                        src="static/header/tux-transparent.png"
-                        alt="Tux the Penguin"
-                        class="header-character"
-                    />
+                    <img src="static/header/tux-transparent.png" alt="Tux the Penguin" class="header-character"/>
                 </div>
                 <div>
                     <h1 class="snowtopfont">Icecapades</h1>
                 </div>
                 <div>
-                    <img
-                        src="static/header/snowman-transparent.png"
-                        alt="Snowman"
-                        class="header-character"
-                    />
+                    <img src="static/header/snowman-transparent.png" alt="Snowman" class="header-character" />
                 </div>
             </div>
         </header>
@@ -113,8 +61,7 @@
         <noscript>
             <div class="dead-tux"></div>
             <p>
-                Sorry, this game uses JavaScript and you don't seem to have it
-                enabled!
+                Sorry, this game uses JavaScript and you don't seem to have it enabled!
             </p>
             <div class="dead-tux"></div>
         </noscript>
@@ -125,81 +72,27 @@
             <section class="progress-container">
                 <div class="progress-grid">
                     <div class="audio-buttons grid-item">
-                        <i
-                            class="fas fa-volume-up play-icon"
-                            id="play-icon"
-                            onclick="toggleAudio()"
-                        ></i>
-                        <img
-                            class="height audio-button"
-                            id="play-button"
-                            onclick="toggleAudio()"
-                            src="static/background/block_UI_blank.png"
-                            alt="A block for the play button"
-                        />
-                        <i
-                            class="fas fa-volume-mute pause-icon hide"
-                            id="pause-icon"
-                            onclick="toggleAudio()"
-                        ></i>
-                        <img
-                            class="height audio-button hide"
-                            id="pause-button"
-                            onclick="toggleAudio()"
-                            src="static/background/block_UI_blank.png"
-                            alt="A block for the pause button"
-                        />
-                        <i
-                            class="fas fa-info instructions-i"
-                            onclick="toggleInstructions()"
-                        ></i>
-                        <img
-                            src="static/background/block_UI_blank.png"
-                            alt="A block for instructions"
-                            class="height instructions-click"
-                            onclick="toggleInstructions()"
-                        />
+                        <i class="fas fa-volume-up play-icon" id="play-icon" onclick="toggleAudio()" ></i>
+                        <img class="height audio-button" id="play-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the play button"/>
+                        <i class="fas fa-volume-mute pause-icon hide" id="pause-icon" onclick="toggleAudio()"></i>
+                        <img class="height audio-button hide" id="pause-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the pause button"/>
+                        <i class="fas fa-info instructions-i" onclick="toggleInstructions()"></i>
+                        <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height instructions-click" onclick="toggleInstructions()"/>
                     </div>
 
                     <div class="snowball-bar grid-item">
-                        <img
-                            class="height progress-icon snowflake-icon"
-                            id="snowflake-icon-block"
-                            src="static/background/block_UI_snowflake.png"
-                            alt="An snowflake on a block"
-                        />
-                        <img
-                            class="height snowball-bar-back"
-                            id="snowball-bar-back"
-                            src="static/background/lifebar_back.png"
-                            alt="The back of the snowball bar"
-                        />
+                        <img class="height progress-icon snowflake-icon" id="snowflake-icon-block" src="static/background/block_UI_snowflake.png" alt="An snowflake on a block"/>
+                        <img class="height snowball-bar-back" id="snowball-bar-back" src="static/background/lifebar_back.png" alt="The back of the snowball bar"/>
                         <div class="height progress-overlay snowball-bar-div">
-                            <div
-                                class="progress-bar-inner"
-                                id="snowball-bar"
-                            ></div>
+                            <div class="progress-bar-inner" id="snowball-bar"></div>
                         </div>
                     </div>
 
                     <div class="health-bar grid-item">
-                        <img
-                            class="height progress-icon heart-icon"
-                            id="heart-icon"
-                            src="static/background/block_UI_heart.png"
-                            alt="An image of a heart"
-                        />
-                        <img
-                            class="height health-bar-back"
-                            id="health-bar-back"
-                            src="static/background/lifebar_back.png"
-                            alt="The back of the health bar"
-                        />
+                        <img class="height progress-icon heart-icon" id="heart-icon" src="static/background/block_UI_heart.png" alt="An image of a heart"/>
+                        <img class="height health-bar-back" id="health-bar-back" src="static/background/lifebar_back.png" alt="The back of the health bar"/>
                         <div class="height progress-overlay health-bar-div">
-                            <div
-                                class="progress-bar-inner"
-                                id="health-bar"
-                            ></div>
+                            <div class="progress-bar-inner" id="health-bar"></div>
                         </div>
                     </div>
                 </div>
@@ -209,10 +102,7 @@
                 <div id="i-inner" class="modal">
                     <div class="header">
                         <h2 class="modal-header">Instructions</h2>
-                        <i
-                            class="far fa-times-circle fa-3x close-button"
-                            onclick="toggleInstructions()"
-                        ></i>
+                        <i class="far fa-times-circle fa-3x close-button" onclick="toggleInstructions()"></i>
                     </div>
                     <hr />
                     <div class="modal-text">
@@ -251,10 +141,7 @@
                 <div id="game-over-inner" class="modal">
                     <div class="header">
                         <h2 class="modal-header">Game Over!</h2>
-                        <i
-                            class="far fa-times-circle fa-3x close-button"
-                            onclick="closeModal()"
-                        ></i>
+                        <i class="far fa-times-circle fa-3x close-button" onclick="closeModal()"></i>
                     </div>
                     <hr />
                     <div class="modal-text">
@@ -275,12 +162,7 @@
                                 Definitely!
                             </button>
                         </div>
-                        <button
-                            class="quit-bad text-small"
-                            id="quit-bad"
-                            onclick="movingQuitButton()"
-                            style="bottom: 2px; right: 2px"
-                        >
+                        <button class="quit-bad text-small" id="quit-bad" onclick="movingQuitButton()" style="bottom: 2px; right: 2px">
                             I'm a monster, leave Tux to fend for himself
                         </button>
                     </div>
@@ -291,10 +173,7 @@
                 <div id="win-inner" class="modal">
                     <div class="header">
                         <h2 class="modal-header">You Win!</h2>
-                        <i
-                            class="far fa-times-circle fa-3x close-button"
-                            onclick="closeModal()"
-                        ></i>
+                        <i class="far fa-times-circle fa-3x close-button" onclick="closeModal()"></i>
                     </div>
                     <hr />
                     <div class="modal-text">
@@ -364,8 +243,8 @@
     <script src="static/js/fish.js"></script>
     <script src="static/js/shoot-and-health.js"></script>
     <script src="static/js/audio.js"></script>
-    <script src="static/js/tux.js"></script>
     <script src="static/js/worm.js"></script>
+    <script src="static/js/tux.js"></script>
     <script src="static/js/character-control.js"></script>
     <script src="static/js/modals.js"></script>
     <script src="static/js/moving-button.js"></script>
