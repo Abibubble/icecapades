@@ -32,17 +32,20 @@ header {
   background-image: linear-gradient(white, #ADD8E6);
 }
 
+/* header-box details */
 .header-box {
   text-align: center;
   height: 100px;
   width: 100%;
 }
 
+/* divs within the header-box */
 .header-box div {
   display: inline-block;
-  height: 120px;
+  height: 100px;
 }
 
+/* Character image height */
 .header-character {
   height: 4.5em;
 }
