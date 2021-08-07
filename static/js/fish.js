@@ -1,52 +1,83 @@
 class Fish {
     constructor() {
-        this.x = 150;
-        this.y = 100;
-        this.vy = 0;
-        this.originalWidth = 64;
-        this.originalHeight = 70;
-        this.width = this.originalWidth;
-        this.height = this.originalHeight;
-        this.weight = 1;
-        this.frameX = 0;
+        this.x = 0; // x position on canvas
+        this.y = 0; // y position on canvas
+        this.vy = 0; // y velocity
+        this.originalWidth = 498; //individual sprite width from sprite sheet
+        this.originalHeight = 327; //individual sprite height from sprite sheet
+        this.width = this.originalWidth / 5; // sensible width for game
+        this.height = this.originalHeight / 5; // sensible height for game
+        this.weight = 1; // gravity effect
+        this.frameX = 0; //sprite sheet x position (column)
+        this.frameY = 0; //sprite sheet y position (row)
+        this.row = 0; // row counter for sprite sheet
+        // this.color; // ??assign a value from a random array to select fish color??
     }
 
     update() {
-        //Stop character at floor level
-        if (this.y > canvas.height - this.height) {
-            this.y = canvas.height - this.height;
-            this.vy = 0;
-        } else {
-            //Otherwise set y velocity to act as gravity, along with setting y co-ord += y velocity
-            this.vy += this.weight;
-            this.vy *= 0.9; // slow down velocity
-            this.y += this.vy;
+        let fishColCalc = frameX % 4; // to cycle through 4 columns
+        switch (fishColCalc) {
+            case 0:
+                this.frameX = 0;
+                if (this.row <= 4) {  // for no.of rows
+                    this.row++; // increase row no. at end of row
+                } else {
+                    this.row = 0;
+                }
+                break;
+            case 1:
+                this.frameX = 1;
+                break;
+            case 2:
+                this.frameX = 2;
+                break;
+            case 3:
+                this.frameX = 3;
+                break;
+            default:
+                this.frameX = 0;
         }
-        //Don't allow character out the top of canvas
-        if (this.y < 0 + this.height) {
-            this.y = 0 + this.height;
-            this.vy = 0;
+        let fishRowCalc = this.row % 5; //cycle through 5 columns
+        switch (fishRowCalc) {
+            case 0:
+                this.frameY = 0;
+                break;
+            case 1:
+                this.frameY = 1;
+                break;
+            case 2:
+                this.frameY = 2;
+                break;
+            case 3:
+                this.frameY = 3;
+                break;
+            case 4:
+                this.frameY = 4;
+                break;
+            default:
+                this.frameY = 0;
         }
+
+        // TODO update this.x and this.y
     }
 
+    // frameX is main frame rate
+
     draw() {
-        ctx.fillStyle = "red";
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-        if (this.y > canvas.height - this.height) {
-            playerImage.src = "static/animations/fish/purple-fish.png";
-        }
+        // ctx.fillStyle = "purple"; // Collision box
+        // ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(
-            playerImage,
-            frameX * this.originalWidth,
-            0,
-            this.originalWidth,
-            this.originalHeight,
-            this.x,
-            this.y,
-            this.width + 5,
-            this.height + 10,
-            this.originalWidth,
-            this.originalHeight
+            fishImage, //sprite sheet
+            this.frameX * this.originalWidth, //x position of sprite sheet
+            this.frameY * this.originalHeight, //y position of sprite sheet
+            this.originalWidth, //individual sprite width
+            this.originalHeight, //individual sprite height
+            // this.x, //!add back in when position update done
+            // this.y, //!remove  lines below when re-introduced
+            canvas.width - 250, // position x
+            canvas.height - 250, // position y
+            this.width, //intended width
+            this.height,//intended height
         );
     }
 }
