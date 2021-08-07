@@ -164,7 +164,7 @@ function showSlug(){
 showWorm();
 setTimeout(function() { showSlug(); }, 1000);
 
-// ------------ Health Bar--------------------------------------------------------
+// -------------------------------------------------------------------- Health Bar
 
 let maxHealth = 50;
 let currentHealth = 50;
