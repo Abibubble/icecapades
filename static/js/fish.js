@@ -1,12 +1,12 @@
 class Fish {
     constructor() {
-        this.x = canvas.width - 100;
-        this.y = canvas.height - 150;
+        this.x = 0;
+        this.y = 0;
         this.vy = 0;
-        this.originalWidth = 1992;
-        this.originalHeight = 1634;
-        this.width = this.originalWidth / 4; // Take main image width + divide by 4 to find one frame width
-        this.height = this.originalHeight / 5; // Take main image height + divide by 5 to find one frame height
+        this.originalWidth = 498;
+        this.originalHeight = 370;
+        this.width = this.originalWidth;
+        this.height = this.originalHeight;
         this.weight = 1;
         this.frameX = 0;
         this.frameY = 0;
@@ -62,24 +62,19 @@ class Fish {
 
     // frameX is main frame rate
 
-    // this.x = canvas.width - 100;
-    // this.y = canvas.height - 150;
-
     draw() {
         ctx.fillStyle = "purple"; // Collision box
-        ctx.fillRect(this.x, this.y, this.hitWidth, this.hitHeight);
+        ctx.fillRect(this.x, this.y, this.originalWidth, this.originalHeight);
         ctx.drawImage(
             fishImage,
             this.frameX * this.originalWidth,
             this.frameY * this.originalHeight,
             this.width,
             this.height,
-            this.x, // position width
-            this.y, // position height
+            canvas.width - this.x - 100, // position width
+            canvas.height - this.y - 250, // position height
             75, // 75px width (x)
-            75, // 75px height (y)
-            this.originalWidth,
-            this.originalHeight
+            75 // 75px height (y)
         );
     }
 }
