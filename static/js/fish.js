@@ -1,7 +1,7 @@
 class Fish {
     constructor() {
-        this.x = 0; // x position on canvas
-        this.y = 0; // y position on canvas
+        this.x = 500; // x position on canvas
+        this.y = floorHeight; // y position on canvas
         this.vy = 0; // y velocity
         this.originalWidth = 498; //individual sprite width from sprite sheet
         this.originalHeight = 327; //individual sprite height from sprite sheet
@@ -72,10 +72,8 @@ class Fish {
             this.frameY * this.originalHeight, //y position of sprite sheet
             this.originalWidth, //individual sprite width
             this.originalHeight, //individual sprite height
-            // this.x, //!add back in when position update done
-            // this.y, //!remove  lines below when re-introduced
-            canvas.width - 250, // position x
-            canvas.height - 250, // position y
+            this.x, //!add back in when position update done
+            this.y + 200, //!remove  lines below when re-introduced
             this.width, //intended width
             this.height,//intended height
         );
