@@ -13,6 +13,8 @@ body {
   background-color: #ADD8E6;
 }
 
+/* ---------------------------------------------------------------------- Header */
+
 /* Add custom font */
 @font-face {
   font-family: snowtopcaps;
@@ -38,44 +40,8 @@ header h1 {
   font-weight: normal;
 }
 
-/* Add gradient to footer */
-footer {
-  height: 100px;
-  background-image: linear-gradient(#ADD8E6, white);
-}
+/* ---------------------------------------------------------------------- Noscript */
 
-/* List items inline and space out */
-footer li {
-  display: inline-block;
-  padding: 5px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-/* Center the text */
-.copyright {
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-/* Center the text */
-.team-github-links {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-/* Remove default underline and keep text black */
-.team-github-links a {
-  text-decoration: none;
-  color: black;
-}
-
-/* Underline on hover */
-.team-github-links a:hover {
-  text-decoration: underline;
-}
-
-/* noscript */
 noscript {
   display: flex;
   width: 60vw;
@@ -89,11 +55,10 @@ noscript {
   width: 5rem;
   background: url(../animations/penguin/penguin_die04.png) no-repeat center center / contain;
 }
+
 .dead-tux:last-of-type {
   transform: scaleX(-1);
 }
-/* end of noscript */
-
 
 /* ---------------------------------------------------------------------- Health / Snowballs / Audio bar */
 
@@ -240,6 +205,15 @@ noscript {
   border-radius: 10px;
 }
 
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* ------------------------------ Modals text */
+
 .header {
   margin-top: 120px;
 }
@@ -266,12 +240,11 @@ noscript {
   margin-bottom: 20px;
 }
 
-.modal-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 20px;
+.text-small {
+  font-size: 0.5rem;
 }
+
+/* ------------------------------ Modal buttons */
 
 button {
   border-radius: 10px;
@@ -286,10 +259,6 @@ button {
   margin-bottom: 20px;
 }
 
-.text-small {
-  font-size: 0.5rem;
-}
-
 .quit-bad {
   position: absolute;
   padding: 3px;
@@ -297,4 +266,43 @@ button {
 
 .quit-good {
   background-color: aqua;
+}
+
+/* ---------------------------------------------------------------------- Footer */
+
+/* Add gradient to footer */
+footer {
+  height: 100px;
+  background-image: linear-gradient(#ADD8E6, white);
+}
+
+/* List items inline and space out */
+footer li {
+  display: inline-block;
+  padding: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Center the text */
+.copyright {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Center the text */
+.team-github-links {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default underline and keep text black */
+.team-github-links a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Underline on hover */
+.team-github-links a:hover {
+  text-decoration: underline;
 }
