@@ -13,7 +13,7 @@ function pushHealth() {
 function checkHealth() {
     pushHealth();
     if (currentHealth <= deadTux) {
-        die();
+        tux.die();
         // Game over modal / replay?
     } else {
         if (currentHealth <= dangerZone) {
@@ -22,8 +22,13 @@ function checkHealth() {
     }
 }
 
-function tuxIsHit() {
-    health -= 10;
+function tuxIsHit(hurt) {
+    currentHealth -= hurt;
+    checkHealth();
+}
+
+function tuxGetsAFish() {
+    currentHealth += 20;
     checkHealth();
 }
 
@@ -40,17 +45,20 @@ function pushAmmo() {
 }
 
 function checkAmmo() {
-    if (currentAmmo <= noAmmo) {
-        // Oh no, Tux has no ammo!
-    } else {
-        pushAmmo();
-        if (currentAmmo <= lowAmmo) {
-            snowballBar.style.color = "red";
-        }
+    pushAmmo();
+    if (currentAmmo <= lowAmmo) {
+        snowballBar.style.color = "red";
     }
 }
 
 function shoot() {
-    currentAmmo--;
+    if (currentAmmo > noAmmo) {
+        currentAmmo--;
+        checkAmmo();
+    }
+}
+
+function tuxGetsASnowflake() {
+    currentAmmo += 2;
     checkAmmo();
 }
