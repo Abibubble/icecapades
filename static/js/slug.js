@@ -50,8 +50,8 @@ class Slug {
         // if (arrowRightPressed && !this.sliding) {
         //     this.slide();
         // }
-        // Once let go of arrow right, set hitbox back to original position
-        // if (!arrowRightPressed) {
+        // Once let go of arrow down, set hitbox back to original position
+        // if (!arrowDownPressed) {
         //     this.height = this.originalHeight;
         //     this.width = this.originalWidth;
         // }
