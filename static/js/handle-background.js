@@ -1,5 +1,5 @@
 const background = new Image();
-background.src = "static/background/Background.png";
+background.src = "static/background/background.png";
 const BG = {
     x1: 0,
     x2: canvas.width,
