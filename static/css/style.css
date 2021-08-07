@@ -37,27 +37,47 @@ header {
 /* header-box details */
 .header-box {
   text-align: center;
-  height: 100px;
   width: 100%;
+  margin-top: 5px;
 }
 
 /* divs within the header-box */
 .header-box div {
   display: inline-block;
   height: 100px;
+  vertical-align: top;
 }
 
+/* Header sizes if the screen size is 601px */
+@media screen and (min-width: 601px) {
 /* Character image height */
-.header-character {
-  height: 4.5em;
+  .header-character {
+    height: 5rem;
+  }
+
+  /* Set main heading text */
+  header h1 {
+    font-size: 4.5rem;
+    text-align: center;
+    color: black;
+    font-weight: normal;
+  }
 }
 
-/* Set main heading text */
-header h1 {
-  font-size: 4.5em;
-  text-align: center;
-  color: black;
-  font-weight: normal;
+/* Header sizes if the screen size is 600px wide or less */
+@media screen and (max-width: 600px) {
+  /* Character image height */
+  .header-character {
+    height: 3.5rem;
+  }
+
+  /* Set main heading text */
+  header h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: black;
+    font-weight: normal;
+  }
 }
 
 /* ---------------------------------------------------------------------- Noscript */
