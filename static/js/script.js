@@ -57,7 +57,7 @@ let jumpDirection;
  * maintained at constant speed
  */
 function frameRate() {
-    gameFrame++; //TODO: add posibility to modify  speed for individual character so they can move at different speed
+    gameFrame++;
     requestAnimationFrame(frameRate);
 }
 
@@ -155,7 +155,7 @@ function jump() {
         }
     }
 }
-// sourcex, sourcey, sourcewidth, sourceheight, dest-x,dest-y, dest-w, dest-h
+
 
 document.body.onkeyup = function (e) {
     if (e.keyCode == 38) {

@@ -41,11 +41,13 @@ function newFish() {
 
 newFish();
 
-//-- slug
-/* function newSlug() {
-    slug.update();
-    slug.draw();
-    requestAnimationFrame(newSlug);
+//-- snowman
+const  snowmanImage = new Image()
+snowmanImage.src = "static/animations/enemies/snowman/snowman-sprite-right.png"
+function newSnowman() {
+    snowman.update();
+    snowman.draw();
+    requestAnimationFrame(newSnowman);
 }
 
-newSlug(); */
+newSnowman();
