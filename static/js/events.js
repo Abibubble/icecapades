@@ -5,7 +5,6 @@ let arrowRightPressed = false;
 window.addEventListener("keydown", (e) => {
   if (e.code === "Space") {
       spacePressed = true;
-      console.log(newSpriteHeight);
   }
 });
 window.addEventListener("keyup", (e) => {
