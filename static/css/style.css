@@ -181,6 +181,10 @@ noscript {
 
 /* ---------------------------------------------------------------------- Modals */
 
+.invisible {
+  visibility: hidden;
+}
+
 .opaque-overlay {
   background-color: rgba(0,0,0,0.5);
   height: 100vh;
@@ -267,6 +271,22 @@ button {
 
 .quit-good {
   background-color: aqua;
+}
+
+/* ------------------------------ Modals transitions */
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-animation {
+  animation: fadeIn 2s;
 }
 
 /* ---------------------------------------------------------------------- Footer */
