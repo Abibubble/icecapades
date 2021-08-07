@@ -1,37 +1,36 @@
-const canvas = document.getElementById('canvas1');
-const ctx = canvas.getContext('2d');
-let canvasWidth;
-let canvasHeight;
-let newSpriteWidth;
-let newSpriteHeight;
+// const canvas = document.getElementById('canvas1');
+// const ctx = canvas.getContext('2d');
+// let canvasWidth;
+// let canvasHeight;
+// let newSpriteWidth;
+// let newSpriteHeight;
 let floorHeight;
 
-window.addEventListener("resize", handleChange);
-/**
- * Sets canvas to fill space between header and footer
- */
-function handleChange() {
-    let headerHeight = document.getElementsByTagName("header")[0].offsetHeight;
-    let footerHeight = document.getElementsByTagName("footer")[0].offsetHeight;
-    canvasWidth = canvas.width = window.innerWidth;
-    canvasHeight = canvas.height = window.innerHeight - (headerHeight + footerHeight);
-    if (canvasHeight > canvasWidth) { // portrait
-        newSpriteWidth = canvasHeight / 7.5;
-        newSpriteHeight = canvasHeight / 7.5;
-        floorHeight = canvasHeight / 5;
+// window.addEventListener("resize", handleChange);
+// /**
+//  * Sets canvas to fill space between header and footer
+//  */
+// function handleChange() {
+//     let headerHeight = document.getElementsByTagName("header")[0].offsetHeight;
+//     let footerHeight = document.getElementsByTagName("footer")[0].offsetHeight;
+//     canvasWidth = canvas.width = window.innerWidth;
+//     canvasHeight = canvas.height = window.innerHeight - (headerHeight + footerHeight);
+//     if (canvasHeight > canvasWidth) { // portrait
+//         newSpriteWidth = canvasHeight / 7.5;
+//         newSpriteHeight = canvasHeight / 7.5;
+//         floorHeight = canvasHeight / 5;
    
-    } else { // landscape
-        newSpriteWidth = canvasHeight / 5;
-        newSpriteHeight = canvasHeight / 5;
-        floorHeight = canvasHeight / 10;
-    }
-}
+//     } else { // landscape
+//         newSpriteWidth = canvasHeight / 5;
+//         newSpriteHeight = canvasHeight / 5;
+//         floorHeight = canvasHeight / 10;
+//     }
+// }
 
-handleChange();
+// handleChange();
 
 // --Main character animation-------------------------------------------
 
-canvas.style.backgroundColor = "lightblue"; //! for testing only
 
 const playerImage = new Image();
 playerImage.src = ('static/animations/penguin/spritesheet.png');
@@ -43,23 +42,22 @@ const jumpWidth = 73;
 
 let frameX = 0; // scroll trough row of sprites
 let frameY = 0; // scroll trough column of sprites
-let gameFrame = 0;
 const staggerFrames = 10;  //adjust speed of the animation
 
 let jumpCount = 0; // allows jump to be timed
 let jumpHeight = 0; // allow jump increase
 let jumpDirection;
 
-/**
- * initiates game frame rate for all animations
- * maintained at constant speed
- */
-function frameRate() {
-    gameFrame++;  //TODO: add posibility to modify  speed for individual character so they can move at different speed
-    requestAnimationFrame(frameRate);
-}
+// /**
+//  * initiates game frame rate for all animations
+//  * maintained at constant speed
+//  */
+// function frameRate() {
+//     gameFrame++;  //TODO: add posibility to modify  speed for individual character so they can move at different speed
+//     requestAnimationFrame(frameRate);
+// }
 
-frameRate();
+// frameRate();
 
 function walk() {
     let spawnx = 30;
