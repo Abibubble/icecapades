@@ -1,6 +1,9 @@
 const playerImage = new Image();
 playerImage.src = "static/animations/penguin/penguin_walk.png";
 
+const wormImage = new Image();
+wormImage.src = "static/animations/enemies/worm/worm-sprite1.png"
+
 function tuxControl() {
     handleBackground();
     tux.update();
@@ -13,4 +16,11 @@ function tuxControl() {
 }
 
 tuxControl();
-  
+
+function newWorm() {
+    worm.update();
+    worm.draw();
+    requestAnimationFrame(newWorm);
+}
+
+newWorm(); // place inside a create function
