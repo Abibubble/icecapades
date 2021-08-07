@@ -7,10 +7,12 @@
 /* ? without this, there is a 4 pixel gap below the canvas and I don't know why */
 /* header and footer display with no spacing between */
 /* -- added background-color to match game background */
+/* -- removed horizontal scrollbar */
 body {
   display: flex;
   flex-direction: column;
   background-color: #ADD8E6;
+  overflow-x: hidden;
 }
 
 /* ---------------------------------------------------------------------- Header */
