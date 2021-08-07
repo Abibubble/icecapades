@@ -10,6 +10,7 @@ window.addEventListener("keydown", (e) => {
         e.preventDefault();
         spacePressed = true;
         console.log("snowball time!");
+        shoot();
     }
 });
 

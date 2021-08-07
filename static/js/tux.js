@@ -66,7 +66,9 @@ class Tux {
 
         }
         
-        this.collision();
+        if (!busy && !tuxBeingHurt) {
+            this.collision();
+        }
     }
 
     draw() {
@@ -120,29 +122,43 @@ class Tux {
     }
 
     collision() {
+        let currentEnemy;
+        busy = true;
         for (let i = 0; i < slugsArray.length; i++) {
             let slugx = slugsArray[i].x;
-            if ((slugx > this.x && slugx < this.x + this.width) || (slugx + Slug.width > this.x && slugx + Slug.width < this.x + this.width)) {
-                tuxIsHit(10);
-                console.log("OH NO! SLUG!");
+            if (!tuxBeingHurt) {
+                if ((slugx > this.x && slugx < this.x + this.width) || (slugx + Slug.width > this.x && slugx + Slug.width < this.x + this.width)) {
+                    tuxBeingHurt = true;
+                    currentEnemy = slugx;
+                    console.log("tuxBeingHurt-slug = " + tuxBeingHurt);
+                    tuxIsHit(10);
+                }
             }
         }
         
         for (let i = 0; i < wormsArray.length; i++) {
             let wormx = wormsArray[i].x;
             if ((wormx > this.x && wormx < this.x + this.width) || (wormx + Worm.width > this.x && wormx + Worm.width < this.x + this.width)) {
+                tuxBeingHurt = true;
+                console.log("tuxBeingHurt-worm = " + tuxBeingHurt);
                 tuxIsHit(15);
                 console.log("OH NO! WORM!");
             }
         }
-
+        if (!(currentEnemy > this.x && currentEnemy < this.x + this.width) || (currentEnemy + Slug.width > this.x && currentEnemy + Slug.width < this.x + this.width)) {
+            tuxBeingHurt = false;
+            console.log("tuxBeingHurt-final = " + tuxBeingHurt);
+            busy = false;
+        }
+        
+        
         // if ((Fish.x > this.x && Fish.x < this.x + this.width) || (Fish.x + Fish.width > this.x && Fish.x + Fish.width < this.x + this.width)) {
-        //     tuxGetsAFish();
-        // }
-        // if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
-        //     tuxGetsASnowflake();
-        // }
+            //     tuxGetsAFish();
+            // }
+            // if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
+                //     tuxGetsASnowflake();
+                // }
     }
 }
-
+        
 const tux = new Tux();
