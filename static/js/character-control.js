@@ -16,6 +16,14 @@ function tuxControl() {
 }
 
 tuxControl();
+
+function newWorm() {
+    worm.update();
+    worm.draw();
+    requestAnimationFrame(newWorm);
+}
+
+newWorm(); // place inside a create function
   
 const fishImage = new Image();
 fishImage.src = 'static/animations/fish/purple-fish.png';
@@ -27,11 +35,3 @@ function newFish() {
 }
 
 newFish();
-
-function newWorm() {
-    worm.update();
-    worm.draw();
-    requestAnimationFrame(newWorm);
-}
-
-newWorm(); // place inside a create function

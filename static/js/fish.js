@@ -1,80 +1,83 @@
 class Fish {
     constructor() {
-        this.x = 0;
-        this.y = 0;
-        this.vy = 0;
-        this.originalWidth = 498;
-        this.originalHeight = 370;
-        this.width = this.originalWidth;
-        this.height = this.originalHeight;
-        this.weight = 1;
-        this.frameX = 0;
-        this.frameY = 0;
-        this.hitWidth = 75;
-        this.hitHeight = 75;
+        this.x = 0; // x position on canvas
+        this.y = 0; // y position on canvas
+        this.vy = 0; // y velocity
+        this.originalWidth = 498; //individual sprite width from sprite sheet
+        this.originalHeight = 327; //individual sprite height from sprite sheet
+        this.width = this.originalWidth / 5; // sensible width for game
+        this.height = this.originalHeight / 5; // sensible height for game
+        this.weight = 1; // gravity effect
+        this.frameX = 0; //sprite sheet x position (column)
+        this.frameY = 0; //sprite sheet y position (row)
+        this.row = 0; // row counter for sprite sheet
+        // this.color; // ??assign a value from a random array to select fish color??
     }
 
     update() {
-        if (gameFrame % staggerFrames == 0) {
-            let fishRow = 0;
-            switch (frameX) {
-                case (frameX % 4 == 0):
-                    this.frameX = 0;
-                    if (fishRow <= 4) {
-                        fishRow++;
-                    } else {
-                        fishRow = 0;
-                    }
-                    break;
-                case (frameX % 4 == 1):
-                    this.frameX = 1;
-                    break;
-                case (frameX % 4 == 2):
-                    this.frameX = 2;
-                    break;
-                case (frameX % 4 == 3):
-                    this.frameX = 3;
-                    break;
-                default:
-                    this.frameX = 0;
-            }
-            switch (fishRow) {
-                case (fishRow % 5 == 0):
-                    this.frameY = 0;
-                    break;
-                case (fishRow % 5 == 1):
-                    this.frameY = 1;
-                    break;
-                case (fishRow % 5 == 2):
-                    this.frameY = 2;
-                    break;
-                case (fishRow % 5 == 3):
-                    this.frameY = 3;
-                    break;
-                case (fishRow % 5 == 4):
-                    this.frameY = 4;
-                    break;
-                default:
-                    this.frameY = 0;
-            }
+        let fishColCalc = frameX % 4; // to cycle through 4 columns
+        switch (fishColCalc) {
+            case 0:
+                this.frameX = 0;
+                if (this.row <= 4) {  // for no.of rows
+                    this.row++; // increase row no. at end of row
+                } else {
+                    this.row = 0;
+                }
+                break;
+            case 1:
+                this.frameX = 1;
+                break;
+            case 2:
+                this.frameX = 2;
+                break;
+            case 3:
+                this.frameX = 3;
+                break;
+            default:
+                this.frameX = 0;
         }
+        let fishRowCalc = this.row % 5; //cycle through 5 columns
+        switch (fishRowCalc) {
+            case 0:
+                this.frameY = 0;
+                break;
+            case 1:
+                this.frameY = 1;
+                break;
+            case 2:
+                this.frameY = 2;
+                break;
+            case 3:
+                this.frameY = 3;
+                break;
+            case 4:
+                this.frameY = 4;
+                break;
+            default:
+                this.frameY = 0;
+        }
+
+        // TODO update this.x and this.y
     }
 
     // frameX is main frame rate
 
     draw() {
-        ctx.fillStyle = "purple"; // Collision box
-        ctx.fillRect(this.x, this.y, this.originalWidth, this.originalHeight);
+        // ctx.fillStyle = "purple"; // Collision box
+        // ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(
-            fishImage,
-            this.frameX * this.originalWidth,
-            this.frameY * this.originalHeight,
-            this.width,
-            this.height,
-            canvas.width - this.x - 100, // position width
-            canvas.height - this.y - 250, // position height
-            75, // 75px width (x)
-            75 // 75px height (y)
+            fishImage, //sprite sheet
+            this.frameX * this.originalWidth, //x position of sprite sheet
+            this.frameY * this.originalHeight, //y position of sprite sheet
+            this.originalWidth, //individual sprite width
+            this.originalHeight, //individual sprite height
+            // this.x, //!add back in when position update done
+            // this.y, //!remove  lines below when re-introduced
+            canvas.width - 250, // position x
+            canvas.height - 250, // position y
+            this.width, //intended width
+            this.height,//intended height
         );
     }
 }
