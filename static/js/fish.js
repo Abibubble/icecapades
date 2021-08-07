@@ -1,7 +1,7 @@
-class Slug {
+class Fish {
     constructor() {
         this.x = 150;
-        this.y = 0;
+        this.y = 100;
         this.vy = 0;
         this.originalWidth = 64;
         this.originalHeight = 70;
@@ -9,10 +9,6 @@ class Slug {
         this.height = this.originalHeight;
         this.weight = 1;
         this.frameX = 0;
-        this.jumping = true;
-        this.sliding = false;
-        this.charSlideWidth = 40;
-        this.charSlideheight = 20;
     }
 
     update() {
@@ -31,29 +27,13 @@ class Slug {
             this.y = 0 + this.height;
             this.vy = 0;
         }
-        //If space bar pressed and char not jumping, call jump
-        // if (spacePressed && !this.jumping) {
-        //     this.jump();
-        // }
-        //Check if char is on floor, if so, set jumping to false;
-        if (this.y > canvas.height - this.height) {
-            this.jumping = false;
-        }
-        //If ArrowDown pressed
-        // if (arrowDownPressed && !this.sliding) {
-        //     this.slide();
-        // }
-        // Once let go of arrow down, set hitbox back to original position
-        // if (!arrowDownPressed) {
-        //     this.height = this.originalHeight;
-        //     this.width = this.originalWidth;
-        // }
     }
+
     draw() {
         ctx.fillStyle = "red";
         ctx.fillRect(this.x, this.y, this.width, this.height);
-        if (this.y > canvas.height - this.height && !this.sliding) {
-            playerImage.src = "static/animations/enemies/slug/slug-sprite1.png";
+        if (this.y > canvas.height - this.height) {
+            playerImage.src = "static/animations/fish/purple-fish.png";
         }
         ctx.drawImage(
             playerImage,
@@ -71,4 +51,4 @@ class Slug {
     }
 }
 
-const slug = new Slug();
+const fish = new Fish();

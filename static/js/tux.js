@@ -39,12 +39,12 @@ class Tux {
         if (this.y > canvas.height - this.height) {
             this.jumping = false;
         }
-        //If ArrowRight pressed
-        if (arrowRightPressed && !this.sliding && !this.jumping) {
+        //If ArrowDown pressed
+        if (arrowDownPressed && !this.sliding && !this.jumping) {
             this.slide();
         }
-        // Once let go of arrow right, set hitbox back to original position
-        if (!arrowRightPressed) {
+        // Once let go of arrow down, set hitbox back to original position
+        if (!arrowDownPressed) {
             this.height = this.originalHeight;
             this.width = this.originalWidth;
         }

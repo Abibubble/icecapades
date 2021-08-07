@@ -8,6 +8,7 @@ const playIcon = document.getElementById("play-icon");
 const pauseButton = document.getElementById("pause-button");
 const pauseIcon = document.getElementById("pause-icon");
 
+// Change the button icons and play / pause the audio
 function checkAudioButtons() {
     if (audio === "on") {
         playButton.classList.add("hide");
@@ -24,7 +25,8 @@ function checkAudioButtons() {
     }
 }
 
-function toggleAudio() { // So that the user can toggle the audio off or on
+// So that the user can toggle the audio off or on
+function toggleAudio() {
     if (audio === "off") {
         audio = "on";
     } else {
