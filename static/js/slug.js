@@ -1,4 +1,4 @@
-class Tux {
+class Slug {
     constructor() {
         this.x = 150;
         this.y = 0;
@@ -32,28 +32,28 @@ class Tux {
             this.vy = 0;
         }
         //If space bar pressed and char not jumping, call jump
-        if (spacePressed && !this.jumping) {
-            this.jump();
-        }
+        // if (spacePressed && !this.jumping) {
+        //     this.jump();
+        // }
         //Check if char is on floor, if so, set jumping to false;
         if (this.y > canvas.height - this.height) {
             this.jumping = false;
         }
         //If ArrowRight pressed
-        if (arrowRightPressed && !this.sliding) {
-            this.slide();
-        }
+        // if (arrowRightPressed && !this.sliding) {
+        //     this.slide();
+        // }
         // Once let go of arrow right, set hitbox back to original position
-        if (!arrowRightPressed) {
-            this.height = this.originalHeight;
-            this.width = this.originalWidth;
-        }
+        // if (!arrowRightPressed) {
+        //     this.height = this.originalHeight;
+        //     this.width = this.originalWidth;
+        // }
     }
     draw() {
         ctx.fillStyle = "red";
         ctx.fillRect(this.x, this.y, this.width, this.height);
         if (this.y > canvas.height - this.height && !this.sliding) {
-            playerImage.src = "static/animations/penguin/walk_spritesheet.png";
+            playerImage.src = "static/animations/enemies/slug/slug-sprite1.png";
         }
         ctx.drawImage(
             playerImage,
@@ -70,18 +70,7 @@ class Tux {
         );
     }
 
-    jump() {
-        this.vy -= 50;
-        this.jumping = true;
-        playerImage.src = "static/animations/penguin/penguin_jump02.png";
-    }
 
-    slide() {
-        this.height = this.height - 20;
-        this.width = this.width + 20;
-        playerImage.src = "static/animations/penguin/penguin_slide02.png";
-        this.sliding = true;
-    }
 }
 
-const tux = new Tux();
+const slug = new Slug();
