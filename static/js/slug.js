@@ -7,8 +7,6 @@ class Slug {
     constructor() {
         // this.x = canvas.width+10;
         // this.y = canvas.height-floorHeight;
-        this.x = 250;
-        this.y = 250;
         this.vy = 0;
         this.originalWidth = 298;
         this.originalHeight = 178;
@@ -17,6 +15,8 @@ class Slug {
         // this.height = this.originalHeight * this.sizeModifier;
         this.width = this.originalWidth / 3;
         this.height = this.originalHeight / 3;
+        this.x = canvas.width;
+        this.y = canvas.height - this.height;
         this.weight = 1;
         this.frameX = 0;
         // this.charSlideWidth = 40;
@@ -33,6 +33,7 @@ class Slug {
 
     // }
     update() {
+        this.x -= gameSpeed;
         if (gameFrame % staggerFrames == 0) {
             if (frameX < 2) this.frameX++;
             else this.frameX = 0;
@@ -42,17 +43,17 @@ class Slug {
     draw() {
         ctx.fillStyle = "red";
         ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.drawImage( //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+        ctx.drawImage(
+            //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
             this.image,
-            this.frameX * this.originalWidth,//this.x, //sx
-            0,//this.y, //sy
-            this.originalWidth,//this.originalWidth, //sw
-            this.originalHeight,//this.originalHeight, //sh
+            this.frameX * this.originalWidth, //this.x, //sx
+            0, //this.y, //sy
+            this.originalWidth, //this.originalWidth, //sw
+            this.originalHeight, //this.originalHeight, //sh
             this.x, //dx
             this.y, //dy
             this.width, //dw
-            this.height,//this.height + 10, dh
-
+            this.height //this.height + 10, dh
         );
     }
 

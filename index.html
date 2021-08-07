@@ -1,234 +1,408 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Metas -->
-    <meta name="description" content="A side-scrolling game with the character Tux, the Linux mascot" />
-    <meta name="keywords" content="Tux, penguin, game, side-scroll, side, scroll, side-scroller, shoot, snowman" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="https://abibubble.github.io/icecapades/" />
-    <meta name="robots" content="index, follow" />
-    <title>Icecapades</title>
+        <!-- Metas -->
+        <meta
+            name="description"
+            content="A side-scrolling game with the character Tux, the Linux mascot"
+        />
+        <meta
+            name="keywords"
+            content="Tux, penguin, game, side-scroll, side, scroll, side-scroller, shoot, snowman"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href="https://abibubble.github.io/icecapades/" />
+        <meta name="robots" content="index, follow" />
+        <title>Icecapades</title>
 
-    <!-- Facebook, LinkedIn, Google  -->
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Icecapades" />
-    <meta property="og:description" content="A side-scrolling game with the character Tux, the Linux mascot" />
-    <meta name="image" property="og:image" content="static/docs/finalpage.png" />
-    <meta property="og:image:alt" content="An image of the final site on a range of screen sizes" />
-    <meta property="og:url" content="https://abibubble.github.io/icecapades/" />
-    <meta property="og:site_name" content="Icecapades" />
-    <meta name="author" content="1-Bit Short of a Flappy Disc" />
+        <!-- Facebook, LinkedIn, Google  -->
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Icecapades" />
+        <meta
+            property="og:description"
+            content="A side-scrolling game with the character Tux, the Linux mascot"
+        />
+        <meta
+            name="image"
+            property="og:image"
+            content="static/docs/finalpage.png"
+        />
+        <meta
+            property="og:image:alt"
+            content="An image of the final site on a range of screen sizes"
+        />
+        <meta
+            property="og:url"
+            content="https://abibubble.github.io/icecapades/"
+        />
+        <meta property="og:site_name" content="Icecapades" />
+        <meta name="author" content="1-Bit Short of a Flappy Disc" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" />
-    <meta name="twitter:title" content="Icecapades" />
-    <meta name="twitter:description" content="A side-scrolling game with the character Tux, the Linux mascot" />
-    <meta name="twitter:image" content="static/docs/finalpage.png" />
-    <meta name="twitter:image:alt" content="An image of the final site on a range of screen sizes" />
+        <!-- Twitter -->
+        <meta name="twitter:card" />
+        <meta name="twitter:title" content="Icecapades" />
+        <meta
+            name="twitter:description"
+            content="A side-scrolling game with the character Tux, the Linux mascot"
+        />
+        <meta name="twitter:image" content="static/docs/finalpage.png" />
+        <meta
+            name="twitter:image:alt"
+            content="An image of the final site on a range of screen sizes"
+        />
 
-    <!-- Local stylesheets -->
-    <link href="static/css/style.css" rel="stylesheet" />
+        <!-- Local stylesheets -->
+        <link href="static/css/style.css" rel="stylesheet" />
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous"
+        />
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-</head>
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    </head>
 
-<body>
-    <header>
-        <div class="header-box">
-            <div>
-                <img src="static/header/tux-transparent.png" alt="Tux the Penguin" class="header-character">
-            </div>
-            <div>
-                <h1 class="snowtopfont">Icecapades</h1>
-            </div>
-            <div>
-                <img src="static/header/snowman-transparent.png" alt="Snowman" class="header-character">
-            </div>
-        </div>
-    </header>
-
-    <noscript>
-        <div class="dead-tux"></div>
-        <p>
-            Sorry, this game uses JavaScript and you don't seem to have it
-            enabled!
-        </p>
-        <div class="dead-tux"></div>
-    </noscript>
-
-    <main>
-
-        <canvas id="canvas1"></canvas>
-
-        <section class="progress-container">
-            <div class="progress-grid">
-                <div class="audio-buttons grid-item">
-                    <i class="fas fa-volume-up play-icon" id="play-icon" onclick="toggleAudio()"></i>
-                    <img class="height audio-button" id="play-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the play button" />
-                    <i class="fas fa-volume-mute pause-icon hide" id="pause-icon" onclick="toggleAudio()" ></i>
-                    <img class="height audio-button hide" id="pause-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the pause button" />
-                    <i class="fas fa-info instructions-i" onclick="toggleInstructions()" ></i>
-                    <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height instructions-click" onclick="toggleInstructions()" />
+    <body>
+        <header>
+            <div class="header-box">
+                <div>
+                    <img
+                        src="static/header/tux-transparent.png"
+                        alt="Tux the Penguin"
+                        class="header-character"
+                    />
                 </div>
+                <div>
+                    <h1 class="snowtopfont">Icecapades</h1>
+                </div>
+                <div>
+                    <img
+                        src="static/header/snowman-transparent.png"
+                        alt="Snowman"
+                        class="header-character"
+                    />
+                </div>
+            </div>
+        </header>
 
-                <div class="snowball-bar grid-item">
-                    <img class="height progress-icon snowflake-icon" id="snowflake-icon-block" src="static/background/block_UI_snowflake.png" alt="An snowflake on a block" />
-                    <img class="height snowball-bar-back" id="snowball-bar-back" src="static/background/lifebar_back.png" alt="The back of the snowball bar" />
-                    <div class="height progress-overlay snowball-bar-div">
-                        <div class="progress-bar-inner" id="snowball-bar"></div>
+        <noscript>
+            <div class="dead-tux"></div>
+            <p>
+                Sorry, this game uses JavaScript and you don't seem to have it
+                enabled!
+            </p>
+            <div class="dead-tux"></div>
+        </noscript>
+
+        <main>
+            <canvas id="canvas1"></canvas>
+
+            <section class="progress-container">
+                <div class="progress-grid">
+                    <div class="audio-buttons grid-item">
+                        <i
+                            class="fas fa-volume-up play-icon"
+                            id="play-icon"
+                            onclick="toggleAudio()"
+                        ></i>
+                        <img
+                            class="height audio-button"
+                            id="play-button"
+                            onclick="toggleAudio()"
+                            src="static/background/block_UI_blank.png"
+                            alt="A block for the play button"
+                        />
+                        <i
+                            class="fas fa-volume-mute pause-icon hide"
+                            id="pause-icon"
+                            onclick="toggleAudio()"
+                        ></i>
+                        <img
+                            class="height audio-button hide"
+                            id="pause-button"
+                            onclick="toggleAudio()"
+                            src="static/background/block_UI_blank.png"
+                            alt="A block for the pause button"
+                        />
+                        <i
+                            class="fas fa-info instructions-i"
+                            onclick="toggleInstructions()"
+                        ></i>
+                        <img
+                            src="static/background/block_UI_blank.png"
+                            alt="A block for instructions"
+                            class="height instructions-click"
+                            onclick="toggleInstructions()"
+                        />
+                    </div>
+
+                    <div class="snowball-bar grid-item">
+                        <img
+                            class="height progress-icon snowflake-icon"
+                            id="snowflake-icon-block"
+                            src="static/background/block_UI_snowflake.png"
+                            alt="An snowflake on a block"
+                        />
+                        <img
+                            class="height snowball-bar-back"
+                            id="snowball-bar-back"
+                            src="static/background/lifebar_back.png"
+                            alt="The back of the snowball bar"
+                        />
+                        <div class="height progress-overlay snowball-bar-div">
+                            <div
+                                class="progress-bar-inner"
+                                id="snowball-bar"
+                            ></div>
+                        </div>
+                    </div>
+
+                    <div class="health-bar grid-item">
+                        <img
+                            class="height progress-icon heart-icon"
+                            id="heart-icon"
+                            src="static/background/block_UI_heart.png"
+                            alt="An image of a heart"
+                        />
+                        <img
+                            class="height health-bar-back"
+                            id="health-bar-back"
+                            src="static/background/lifebar_back.png"
+                            alt="The back of the health bar"
+                        />
+                        <div class="height progress-overlay health-bar-div">
+                            <div
+                                class="progress-bar-inner"
+                                id="health-bar"
+                            ></div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="health-bar grid-item">
-                    <img class="height progress-icon heart-icon" id="heart-icon" src="static/background/block_UI_heart.png" alt="An image of a heart" />
-                    <img class="height health-bar-back" id="health-bar-back" src="static/background/lifebar_back.png" alt="The back of the health bar" />
-                    <div class="height progress-overlay health-bar-div">
-                        <div class="progress-bar-inner" id="health-bar"></div>
+            </section>
+
+            <section id="instructions-modal" class="opaque-overlay invisible">
+                <div id="i-inner" class="modal">
+                    <div class="header">
+                        <h2 class="modal-header">Instructions</h2>
+                        <i
+                            class="far fa-times-circle fa-3x close-button"
+                            onclick="toggleInstructions()"
+                        ></i>
+                    </div>
+                    <hr />
+                    <div class="modal-text">
+                        <p class="modal-p">
+                            <strong>Welcome to Icecapades!</strong>
+                        </p>
+                        <p class="modal-p">
+                            You play as Tux, the Linux mascot, in this
+                            retro-style side-scrolling game
+                        </p>
+                        <p class="modal-p">
+                            Your job is to help Tux make it home safely
+                        </p>
+                        <div class="modal-grid">
+                            <ul>
+                                <li>
+                                    Avoid being hurt by enemies on your journey
+                                </li>
+                                <li>Collect fish for extra health</li>
+                                <li>
+                                    Collect snowflakes to turn into snowballs
+                                </li>
+                                <li>Throw snowballs at your enemies</li>
+                            </ul>
+                            <ul>
+                                <li>Press Up Arrow / W to Jump</li>
+                                <li>Press Down Arrow / S to Slide</li>
+                                <li>Press Space Bar to Throw Snowballs</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="instructions-modal" class="opaque-overlay invisible">
-            <div id="i-inner" class="modal">
-                <div class="header">
-                    <h2 class="modal-header">Instructions</h2>
-                    <i class="far fa-times-circle fa-3x close-button" onclick="toggleInstructions()"></i>
-                </div>
-                <hr>
-                <div class="modal-text">
-                    <p class="modal-p"><strong>Welcome to Icecapades!</strong></p>
-                    <p class="modal-p">You play as Tux, the Linux mascot, in this retro-style side-scrolling game</p>
-                    <p class="modal-p">Your job is to help Tux make it home safely</p>
-                    <div class="modal-grid">
-                        <ul>
-                            <li>Avoid being hurt by enemies on your journey</li>
-                            <li>Collect fish for extra health</li>
-                            <li>Collect snowflakes to turn into snowballs</li>
-                            <li>Throw snowballs at your enemies</li>
-                        </ul>
-                        <ul>
-                            <li>Press Up Arrow / W to Jump</li>
-                            <li>Press Down Arrow / S to Slide</li>
-                            <li>Press Space Bar to Throw Snowballs</li>
-                        </ul>
+            <section id="game-over-modal" class="opaque-overlay invisible">
+                <div id="game-over-inner" class="modal">
+                    <div class="header">
+                        <h2 class="modal-header">Game Over!</h2>
+                        <i
+                            class="far fa-times-circle fa-3x close-button"
+                            onclick="closeModal()"
+                        ></i>
+                    </div>
+                    <hr />
+                    <div class="modal-text">
+                        <p class="modal-p"><strong>Oh no!</strong></p>
+                        <p class="modal-p">
+                            Tux was too badly hurt to make it home
+                        </p>
+                        <p class="modal-p">Now his friends will be worried</p>
+                        <p class="modal-p">
+                            You don't want them to worry, do you?
+                        </p>
+                        <p class="modal-p">Why don't you try again?</p>
+                        <div class="modal-grid">
+                            <button class="replay game-over-button">
+                                Of course!
+                            </button>
+                            <button class="replay game-over-button">
+                                Definitely!
+                            </button>
+                        </div>
+                        <button
+                            class="quit-bad text-small"
+                            id="quit-bad"
+                            onclick="movingQuitButton()"
+                            style="bottom: 2px; right: 2px"
+                        >
+                            I'm a monster, leave Tux to fend for himself
+                        </button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="game-over-modal" class="opaque-overlay invisible">
-            <div id="game-over-inner" class="modal">
-                <div class="header">
-                    <h2 class="modal-header">Game Over!</h2>
-                    <i class="far fa-times-circle fa-3x close-button" onclick="closeModal()"></i>
-                </div>
-                <hr>
-                <div class="modal-text">
-                    <p class="modal-p"><strong>Oh no!</strong></p>
-                    <p class="modal-p">Tux was too badly hurt to make it home</p>
-                    <p class="modal-p">Now his friends will be worried</p>
-                    <p class="modal-p">You don't want them to worry, do you?</p>
-                    <p class="modal-p">Why don't you try again?</p>
-                    <div class="modal-grid">
-                        <button class="replay game-over-button">Of course!</button>
-                        <button class="replay game-over-button">Definitely!</button>
+            <section id="win-modal" class="opaque-overlay invisible">
+                <div id="win-inner" class="modal">
+                    <div class="header">
+                        <h2 class="modal-header">You Win!</h2>
+                        <i
+                            class="far fa-times-circle fa-3x close-button"
+                            onclick="closeModal()"
+                        ></i>
                     </div>
-                    <button class="quit-bad text-small" id="quit-bad" onclick="movingQuitButton()" style="bottom: 2px;right: 2px;">
-                        I'm a monster, leave Tux to fend for himself
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section id="win-modal" class="opaque-overlay invisible">
-            <div id="win-inner" class="modal">
-                <div class="header">
-                    <h2 class="modal-header">You Win!</h2>
-                    <i class="far fa-times-circle fa-3x close-button" onclick="closeModal()"></i>
-                </div>
-                <hr>
-                <div class="modal-text">
-                    <p class="modal-p"><strong>Tux got home safely!</strong></p>
-                    <p class="modal-p">Tux and all his friends are very grateful</p>
-                    <p class="modal-p">It's a scary world out there!</p>
-                    <p class="modal-p">Thanks for playing</p>
-                    <p class="modal-p">Would you like to play again?</p>
-                    <div class="modal-grid">
-                        <button class="replay">Definitely!</button>
-                        <button class="quit-good" onclick="closeModal()">Not right now</button>
+                    <hr />
+                    <div class="modal-text">
+                        <p class="modal-p">
+                            <strong>Tux got home safely!</strong>
+                        </p>
+                        <p class="modal-p">
+                            Tux and all his friends are very grateful
+                        </p>
+                        <p class="modal-p">It's a scary world out there!</p>
+                        <p class="modal-p">Thanks for playing</p>
+                        <p class="modal-p">Would you like to play again?</p>
+                        <div class="modal-grid">
+                            <button class="replay">Definitely!</button>
+                            <button class="quit-good" onclick="closeModal()">
+                                Not right now
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <button type="button" id="run" onclick="die()">die</button>
-        <button type="button" id="walk" onclick="walk()">walk</button>
-        <button type="button" id="slide" onclick="slide()">slide</button>
-        <button type="button" id="jump" onclick="jump()">jump</button>
+            <button type="button" id="run" onclick="die()">die</button>
+            <button type="button" id="walk" onclick="walk()">walk</button>
+            <button type="button" id="slide" onclick="slide()">slide</button>
+            <button type="button" id="jump" onclick="jump()">jump</button>
+        </main>
 
-    </main>
+        <footer>
+            <br />
+            <!-- Auto-updating copyright -->
+            <p class="copyright">
+                Copyright &copy;
+                <span class="snowtopfont">1-Bit Short of a Flappy Disc</span>
+                <span id="copyright"></span>
+            </p>
 
-    <footer>
-        <br/>
-        <!-- Auto-updating copyright -->
-        <p class="copyright">
-            Copyright &copy;
-            <span class="snowtopfont">1-Bit Short of a Flappy Disc</span>
-            <span id="copyright"></span>
-        </p>
-        
-        <ul class="team-github-links">
-            <li>
-                The <span class="snowtopfont">Icecapades</span> Dev Team:
-            </li>
-            <li>
-                <a href="https://github.com/Abibubble" target="_blank" rel="noopener">Abi</a>
-            </li>
-            <li>
-                <a href="https://github.com/aidant842" target="_blank" rel="noopener">Aidan</a>
-            </li>
-            <li>
-                <a href="https://github.com/alexandergrib" target="_blank" rel="noopener">Alex</a>
-            </li>
-            <li>
-                <a href="https://github.com/DaveyJH" target="_blank" rel="noopener">Dave</a>
-            </li>
-            <li>
-                <a href="https://github.com/manni8436" target="_blank" rel="noopener">Manni</a>
-            </li>
-            <li>
-                <a href="https://github.com/MadStu" target="_blank" rel="noopener">Stu</a>
-            </li>
-        </ul>
-    </footer>
+            <ul class="team-github-links">
+                <li>
+                    The <span class="snowtopfont">Icecapades</span> Dev Team:
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/Abibubble"
+                        target="_blank"
+                        rel="noopener"
+                        >Abi</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/aidant842"
+                        target="_blank"
+                        rel="noopener"
+                        >Aidan</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/alexandergrib"
+                        target="_blank"
+                        rel="noopener"
+                        >Alex</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/DaveyJH"
+                        target="_blank"
+                        rel="noopener"
+                        >Dave</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/manni8436"
+                        target="_blank"
+                        rel="noopener"
+                        >Manni</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/MadStu"
+                        target="_blank"
+                        rel="noopener"
+                        >Stu</a
+                    >
+                </li>
+            </ul>
+        </footer>
 
-    <!-- Local scripts -->
-    <script src="static/js/events.js"></script>
-    <script src="static/js/variables.js"></script>
-    <script src="static/js/canvas-sizing.js"></script>
-    <script src="static/js/level-control.js"></script>
-    <script src="static/js/handle-background.js"></script>
-    <script src="static/js/slug.js"></script>
-    <script src="static/js/fish.js"></script>
-    <script src="static/js/tux.js"></script>
-    <script src="static/js/worm.js"></script>
-    <script src="static/js/character-control.js"></script>
-    <script src="static/js/modals.js"></script>
-    <script src="static/js/moving-button.js"></script>
-    <script src="static/js/audio.js"></script>
-    <script src="static/js/copyright.js"></script>
-    <!-- <script src="static/js/script.js"></script> -->
-</body>
+        <!-- Local scripts -->
+        <script src="static/js/events.js"></script>
+        <script src="static/js/variables.js"></script>
+        <script src="static/js/canvas-sizing.js"></script>
+        <script src="static/js/enemies.js"></script>
+        <script src="static/js/level-control.js"></script>
+        <script src="static/js/handle-background.js"></script>
+        <script src="static/js/slug.js"></script>
+        <script src="static/js/fish.js"></script>
+        <script src="static/js/tux.js"></script>
+        <script src="static/js/worm.js"></script>
+        <script src="static/js/character-control.js"></script>
+        <script src="static/js/modals.js"></script>
+        <script src="static/js/moving-button.js"></script>
+        <script src="static/js/audio.js"></script>
+        <script src="static/js/copyright.js"></script>
+        <!-- <script src="static/js/script.js"></script> -->
+    </body>
 </html>
