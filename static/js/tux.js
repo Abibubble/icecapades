@@ -1,3 +1,7 @@
+const jumAudio = new Audio('static/audio/jump.wav');
+
+jumAudio.loop = false;
+
 class Tux {
     constructor() {
         this.x = 150;
@@ -36,6 +40,7 @@ class Tux {
         //If arrow pressed and char not jumping, call jump
         if (arrowUpPressed && !this.jumping) {
             this.jump();
+            jumAudio.play();
         }
 
         //Check if char is on floor, if so, set jumping to false;
@@ -55,6 +60,7 @@ class Tux {
         }
         if (this.jumping) {
             this.jumpAnim();
+
         }
     }
 
