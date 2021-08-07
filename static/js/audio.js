@@ -44,14 +44,15 @@ const hitAudio = new Audio('static/audio/hit.mp3');
 hitAudio.loop = false;
 const slideAudio = new Audio('static/audio/slide.mp3');
 slideAudio.loop = false;
-const reloadAudio = new Audio('static/audio/reload.mp3')
+const reloadAudio = new Audio('static/audio/reload.mp3');
 slideAudio.loop = false;
-const killSlugAudio = new Audio('static/audio/kill-slug.mp3')
+const killSlugAudio = new Audio('static/audio/kill-slug.mp3');
 slideAudio.loop = false;
-const eatFish = new Audio('static/audio/eat-fish.mp3')
-eatFish.loop = false;
-
-
-
+const eatFishAudio = new Audio('static/audio/eat-fish.mp3');
+eatFishAudio.loop = false;
+const throwSnowballAudio = new Audio('static/audio/throw-snowball.mp3');
+throwSnowbalAudio.loop = false;
+const enemyHitSnowballAudio = new Audio('static/audio/enemy-hit-snowball.mp3');
+enemyHitSnowballAudio.loop = false;
 
 
