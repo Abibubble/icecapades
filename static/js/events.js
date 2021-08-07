@@ -15,7 +15,7 @@ window.addEventListener("keyup", (e) => {
   if (e.key === "d" || e.key === " ") {
     spacePressed = false;
   }
-  tux.frameX = 0;
+  // tux.frameX = 0;
 });
 
 // S key or Down arrow key to Slide
@@ -28,10 +28,10 @@ window.addEventListener("keydown", (e) => {
 window.addEventListener("keyup", (e) => {
   if (e.key === "s" || e.code === "40") {
     arrowDownPressed = false;
-    tux.sliding = false;
+    // tux.sliding = false;
     playerImage.src = "static/animations/penguin/walk_spritesheet.png";
   }
-  tux.frameX = 0;
+  // tux.frameX = 0;
 });
 
 // W key or Up arrow key to Jump
@@ -44,8 +44,8 @@ window.addEventListener("keydown", (e) => {
 window.addEventListener("keyup", (e) => {
   if (e.key === "w" || e.code === "38") {
     arrowUpPressed = false;
-    tux.jumping = false;
+    // tux.jumping = false;
     playerImage.src = "static/animations/penguin/walk_spritesheet.png";
   }
-  tux.frameX = 0;
+  // tux.frameX = 0;
 });
