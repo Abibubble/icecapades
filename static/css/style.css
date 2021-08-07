@@ -333,8 +333,9 @@ button {
 
 /* Add gradient to footer */
 footer {
-  height: 100px;
+  width: 100%;
   background-image: linear-gradient(#ADD8E6, white);
+  bottom: 0px;
 }
 
 /* List items inline and space out */
