@@ -66,8 +66,8 @@ class Tux {
 
         }
         
-        if (!busy && !tuxBeingHurt) {
-            this.collision();
+        if (!busy && !tuxBeingHurt) { // If a collision isn't already being checked, and if Tux isn't already being hurt
+            this.collision(); // Check for collisions
         }
     }
 
@@ -122,21 +122,21 @@ class Tux {
     }
 
     collision() {
-        let currentEnemy;
-        busy = true;
-        for (let i = 0; i < slugsArray.length; i++) {
-            let slugx = slugsArray[i].x;
-            if (!tuxBeingHurt) {
+        let currentEnemy; // Variable for enemy that's currently hurting Tux
+        busy = true; // Checking for collision
+        for (let i = 0; i < slugsArray.length; i++) { // Loop through slugs
+            let slugx = slugsArray[i].x; // Get slug[i] x value
+            if (!tuxBeingHurt) { // if Tux isn't being hurt, allow to check for hit
                 if ((slugx > this.x && slugx < this.x + this.width) || (slugx + Slug.width > this.x && slugx + Slug.width < this.x + this.width)) {
-                    tuxBeingHurt = true;
-                    currentEnemy = slugx;
+                    tuxBeingHurt = true; // if hit, tux is being hurt
+                    currentEnemy = slugx; // store the current enemy
                     console.log("tuxBeingHurt-slug = " + tuxBeingHurt);
-                    tuxIsHit(10);
+                    tuxIsHit(10); // Add damage to Tux
                 }
             }
         }
         
-        for (let i = 0; i < wormsArray.length; i++) {
+        for (let i = 0; i < wormsArray.length; i++) { // See above
             let wormx = wormsArray[i].x;
             if ((wormx > this.x && wormx < this.x + this.width) || (wormx + Worm.width > this.x && wormx + Worm.width < this.x + this.width)) {
                 tuxBeingHurt = true;
@@ -145,13 +145,14 @@ class Tux {
                 console.log("OH NO! WORM!");
             }
         }
-        if (!(currentEnemy > this.x && currentEnemy < this.x + this.width) || (currentEnemy + Slug.width > this.x && currentEnemy + Slug.width < this.x + this.width)) {
-            tuxBeingHurt = false;
+
+        if (!(currentEnemy / 2) < this.x) { // I want this without the !, but it breaks everything. No clue why!
+            tuxBeingHurt = false; // But if currentEnemy x value is less than Tux's, Tux is no longer being hit
             console.log("tuxBeingHurt-final = " + tuxBeingHurt);
-            busy = false;
+            busy = false; // Allow for collision checking again
         }
         
-        
+        // These are just boiler plate at the moment, please ignore them for now
         // if ((Fish.x > this.x && Fish.x < this.x + this.width) || (Fish.x + Fish.width > this.x && Fish.x + Fish.width < this.x + this.width)) {
             //     tuxGetsAFish();
             // }
