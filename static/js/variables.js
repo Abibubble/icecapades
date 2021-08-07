@@ -6,3 +6,4 @@ const staggerFrames = 4;
 let gameSpeed = 6;
 const floorHeight = 45;
 let busy = false;
+let tuxBeingHurt = false;

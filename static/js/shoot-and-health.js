@@ -1,12 +1,13 @@
 // -------------------------------------------------------------------- Health Bar
 
 let maxHealth = 50;
-let currentHealth = 40;
+let currentHealth = 50;
 let deadTux = 0;
 let dangerZone = 10;
 let healthBar = document.getElementById("health-bar");
 
 function pushHealth() {
+    console.log("currentHealth = " + currentHealth);
     healthBar.style.width = currentHealth * 2 + "%";
 }
 
@@ -14,7 +15,8 @@ function checkHealth() {
     pushHealth();
     if (currentHealth <= deadTux) {
         tux.die();
-        // Game over modal / replay?
+        gameOverModal.classList.remove("invisible");
+        gameOverInner.classList.add("modal-animation");
     } else {
         if (currentHealth <= dangerZone) {
             healthBar.style.color = "red";
