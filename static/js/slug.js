@@ -69,8 +69,6 @@ class Slug {
             this.originalHeight
         );
     }
-
-
 }
 
 const slug = new Slug();
