@@ -1,8 +1,7 @@
 const playerImage = new Image();
-playerImage.src = "static/animations/penguin/penguin_walk.png";
+playerImage.src = "static/animations/penguin/walk_spritesheet.png";
 
 function tuxControl() {
-    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     handleBackground();
     tux.update();
     tux.draw();
