@@ -46,7 +46,7 @@
 
 <body>
     <header>
-        <h1>Icecapades</h1>
+        <h1 class="snowtopfont">Icecapades</h1>
     </header>
     
     <noscript>
@@ -62,12 +62,12 @@
         <section class="progress-container">
             <div class="progress-grid">
                 <div class="audio-buttons grid-item">
-                    <img class="height audio-button" id="play-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the play button">
                     <i class="fas fa-volume-up play-icon" id="play-icon" onclick="toggleAudio()"></i>
-                    <img class="height audio-button hide" id="pause-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the pause button">
+                    <img class="height audio-button" id="play-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the play button">
                     <i class="fas fa-volume-mute pause-icon hide" id="pause-icon" onclick="toggleAudio()"></i>
+                    <img class="height audio-button hide" id="pause-button" onclick="toggleAudio()" src="static/background/block_UI_blank.png" alt="A block for the pause button">
+                    <i class="fas fa-info instructions-i" onclick="toggleInstructions()"></i>
                     <img src="static/background/block_UI_blank.png" alt="A block for instructions" class="height instructions-click" onclick="toggleInstructions()">
-                    <i class="fas fa-info instructions-i instructions-click" onclick="toggleInstructions()"></i>
                 </div>
                 <div class="snowball-bar grid-item">
                     <img class="height progress-icon snowflake-icon" id="snowflake-icon-block" src="static/background/block_UI_snowflake.png" alt="An snowflake on a block">
@@ -165,16 +165,33 @@
     </main>
 
     <footer>
+        <br><br>
         <!-- Auto-updating copyright -->
-        <p class="copyright">Copyright &copy; 1-Bit Short of a Flappy Disc <span id="copyright"></span></p>
+        <p class="copyright">Copyright &copy; <span class="snowtopfont">1-Bit Short of a Flappy Disc</span> <span id="copyright"></span></p>
+        <ul class="team-github-links">
+            <li>The <span class="snowtopfont">Icecapades</span> Dev Team:</li>
+            <li><a href="https://github.com/Abibubble" target="_blank">Abi</a></li>
+            <li><a href="https://github.com/aidant842" target="_blank">Aidan</a></li>
+            <li><a href="https://github.com/alexandergrib" target="_blank">Alex</a></li>
+            <li><a href="https://github.com/DaveyJH" target="_blank">Dave</a></li>
+            <li><a href="https://github.com/manni8436" target="_blank">Manni</a></li>
+            <li><a href="https://github.com/MadStu" target="_blank">Stu</a></li>
+        </ul>
     </footer>
 
     <!-- Local scripts -->
+    <script src="static/js/events.js"></script>
+    <script src="static/js/variables.js"></script>
+    <script src="static/js/canvas-sizing.js"></script>
+    <script src="static/js/level-control.js"></script>
+    <script src="static/js/slug.js"></script>
+    <script src="static/js/tux.js"></script>
+    <script src="static/js/character-control.js"></script>
     <script src="static/js/modals.js"></script>
     <script src="static/js/moving-button.js"></script>
     <script src="static/js/audio.js"></script>
     <script src="static/js/copyright.js"></script>
-    <script src="static/js/script.js"></script>
+    <!-- <script src="static/js/script.js"></script> -->
 </body>
 
 </html>
