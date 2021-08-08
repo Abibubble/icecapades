@@ -43,7 +43,6 @@ function tuxGetsAFish() {
 // -------------------------------------------------------------------- Snowballs Bar
 
 let maxSnowballs = 10;
-let currentAmmo = 10;
 let noAmmo = 0;
 let lowAmmo = 3;
 let snowballBar = document.getElementById("snowball-bar");
@@ -63,9 +62,6 @@ function shoot() {
     if (currentAmmo > noAmmo) {
         currentAmmo--;
         checkAmmo();
-        if (audio == 'on') {
-            throwSnowballAudio.play();
-        }
     }
 }
 
