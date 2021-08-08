@@ -1,4 +1,4 @@
-const slugsArray = [];
+let slugsArray = [];
 
 const slugSprite = new Image();
 slugSprite.src = "static/animations/enemies/slug/slug-sprite1.png";
