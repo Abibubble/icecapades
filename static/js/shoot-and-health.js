@@ -28,10 +28,8 @@ function tuxIsHit(hurt) {
     if (audio == 'on') {
         hitAudio.play();
     }
-    setTimeout(() => {
-        currentHealth -= hurt;
-        checkHealth();
-    }, 600);
+    currentHealth -= hurt;
+    checkHealth();
 }
 
 function tuxGetsAFish() {
