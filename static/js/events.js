@@ -1,6 +1,7 @@
 // -------------------------------------------------------------------- Event listeners for keys
 
 let spacePressed = false;
+let spaceHeld = false;
 let arrowDownPressed = false;
 let arrowUpPressed = false;
 
@@ -9,14 +10,17 @@ window.addEventListener("keydown", (e) => {
     if (e.key === "d" || e.key === " " || e.key === "ArrowRight") {
         e.preventDefault();
         spacePressed = true;
-        console.log("snowball time!");
-        shoot();
+        if (!spaceHeld){
+            fire = true;
+        }
+        spaceHeld = true;
     }
 });
 
 window.addEventListener("keyup", (e) => {
     if (e.key === "d" || e.key === " " || e.key === "ArrowRight") {
         spacePressed = false;
+        spaceHeld = false;
     }
 });
 
