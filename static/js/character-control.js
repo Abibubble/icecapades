@@ -11,6 +11,11 @@ function tuxControl() {
     handleSnowball();
     tux.update();
     tux.draw();
+    if (score >= 10) {
+        gameSpeed = 0;
+        snowman.isSpawned = true;
+        handleSnowman();
+    }
     if (gameFrame % staggerFrames == 0) {
         if (frameX < 3) frameX++;
         else frameX = 0;
@@ -23,11 +28,9 @@ tuxControl();
 //-- snowman
 function newSnowman() {
     snowman.update();
-    snowman.draw();
+    /* snowman.draw(); */
     requestAnimationFrame(newSnowman);
 }
-
-newSnowman();
 
 //! for testing only
 

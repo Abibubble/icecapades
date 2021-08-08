@@ -13,10 +13,11 @@ class Snowman {
         this.hitBoxY = this.y + 20;
         this.hitBoxWidth = this.width - 15;
         this.hitBoxHeight = this.height - 20;
+        this.isSpawned = false;
     }
 
     update() {
-        if (gameFrame % staggerFrames == 0) {
+        if (gameFrame % staggerFrames == 0 && !endGame) {
             if (frameX < 1) this.frameX++;
             else this.frameX = 0;
         }
@@ -39,6 +40,10 @@ class Snowman {
             this.height, // intended height
         );
     }
+}
+
+const handleSnowman = () => {
+    snowman.update();
 }
 
 const snowman = new Snowman();
