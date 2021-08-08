@@ -69,6 +69,10 @@ class Tux {
         if (!busy && !tuxBeingHurt) { // If a collision isn't already being checked, and if Tux isn't already being hurt
             this.collision(); // Check for collisions
         }
+
+        if (spacePressed) {
+            setTimeout(snowballArray.unshift(new Snowball()), 3000);
+        }
     }
 
     draw() {
