@@ -43,8 +43,6 @@ function newFish() {
 newFish();
 
 //-- snowman
-const  snowmanImage = new Image()
-snowmanImage.src = "static/animations/enemies/snowman/snowman-sprite-right.png"
 function newSnowman() {
     snowman.update();
     snowman.draw();
@@ -52,3 +50,14 @@ function newSnowman() {
 }
 
 newSnowman();
+
+//! for testing only
+
+// todo put timing functionin snowman to call multiple carrots
+
+function newC() {
+    carrot.update();
+    requestAnimationFrame(newC);
+}
+
+newC();
