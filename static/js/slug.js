@@ -16,8 +16,6 @@ class Slug {
     }
 
     draw() {
-        ctx.fillStyle = "yellow";
-        ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(
             //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
             slugSprite,
