@@ -53,3 +53,5 @@ const handleWorms = () => {
         wormsArray.pop(wormsArray[0]);
     }
 };
+
+const worm = new Worm();

@@ -54,3 +54,5 @@ const handleSlugs = () => {
         slugsArray.pop(slugsArray[0]);
     }
 };
+
+const slug = new Slug()
