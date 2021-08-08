@@ -11,9 +11,7 @@ class Fish {
         this.frameY = 0; // sprite sheet y position (row)
         this.row = 0; // row counter for sprite sheet
         this.image = new Image();
-        this.image.src = `static/animations/fish/${fishColor}-fish.png`;
-
-        // this.color; // ??assign a value from a random array to select fish color??
+        this.image.src = `static/animations/fish/${fishColor}-fish.png`
     }
 
     update() {
@@ -63,8 +61,6 @@ class Fish {
         this.draw();
     }
 
-    // frameX is main frame rate
-
     draw() {
         // ctx.fillStyle = "purple"; // Collision box
         // ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -83,9 +79,8 @@ class Fish {
 }
 
 const handleFish = () => {
-    // every 250 frames, add obstalce to array
+    // every 250 frames, add obstacle to array
     if (gameFrame % 1100 === 0) {
-        console.log(fishIndex);
         fishArray.unshift(new Fish());
         if (fishIndex < 2) { // cycle through fish colors
             fishIndex++;

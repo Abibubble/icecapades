@@ -46,8 +46,8 @@ class Slug {
 }
 
 const handleSlugs = () => {
-    // every 250 frames, add obstalce to array
-    if (gameFrame % randomNumber === 0) {
+    // every x frames, add obstalce to array
+    if (gameFrame % (randomNumber + 300) === 0) {
         slugsArray.unshift(new Slug());
     }
     for (let i = 0; i < slugsArray.length; i++) {
