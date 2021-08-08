@@ -49,7 +49,7 @@ class Tux {
         //If ArrowDown pressed
         if (arrowDownPressed && !this.sliding && !this.jumping) {
             this.slide();
-               if (audio == 'on') {
+            if (audio == 'on') {
                 slideAudio.play();
             }
         }
@@ -62,13 +62,20 @@ class Tux {
         if (this.jumping) {
             this.jumpAnim();
         }
-        
+
         if (!busy && !tuxBeingHurt) { // If a collision isn't already being checked, and if Tux isn't already being hurt
             this.collision(); // Check for collisions
         }
 
-        if (spacePressed) {
-            setTimeout(snowballArray.unshift(new Snowball()), 3000);
+        if ((fire) &&
+            (currentAmmo > 0)) {
+            snowballArray.unshift(new Snowball());
+            currentAmmo--;
+            pushAmmo();
+            if (audio == 'on') {
+                throwSnowballAudio.play();
+            }
+            fire = false;
         }
     }
 
@@ -166,8 +173,8 @@ const tux = new Tux();
 
 // These are just boiler plate at the moment, please ignore them for now
 // if ((Fish.x > this.x && Fish.x < this.x + this.width) || (Fish.x + Fish.width > this.x && Fish.x + Fish.width < this.x + this.width)) {
-    //     tuxGetsAFish();
-    // }
-    // if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
-        //     tuxGetsASnowflake();
-        // }
+//     tuxGetsAFish();
+// }
+// if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
+//     tuxGetsASnowflake();
+// }
