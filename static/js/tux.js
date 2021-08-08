@@ -71,6 +71,10 @@ class Tux {
             (currentAmmo > 0)) {
             snowballArray.unshift(new Snowball());
             currentAmmo--;
+            pushAmmo();
+            if (audio == 'on') {
+                throwSnowballAudio.play();
+            }
             fire = false;
         }
     }

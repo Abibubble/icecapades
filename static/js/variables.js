@@ -8,3 +8,4 @@ const floorHeight = 45;
 let busy = false;
 let tuxBeingHurt = false;
 let fire = false;
+let currentAmmo = 10;
