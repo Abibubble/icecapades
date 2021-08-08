@@ -26,11 +26,6 @@ function tuxControl() {
 
 tuxControl();
 
-//-- snowman
-function newSnowman() {
-    snowman.update();
-    requestAnimationFrame(newSnowman);
-}
 
 //! for testing only
 
