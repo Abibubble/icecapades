@@ -36,7 +36,7 @@ class Snowflake {
     this.vy *= 0.9; 
     this.y += this.vy;
       if (this.y > canvas.height - tux.height * 3) {
-      this.x = this.x -= gameSpeed * 2; // fast left
+      this.x = this.x -= flakeSpeed * 2; // fast left
     }
     this.draw();
     // ?? hide image in a better way ??
