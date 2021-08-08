@@ -63,7 +63,7 @@ class Tux {
             this.jumpAnim();
         }
 
-        if (!busy && !tuxBeingHurt) { // If a collision isn't already being checked, and if Tux isn't already being hurt
+        if (!busy) { // If a collision isn't already being checked, and if Tux isn't already being hurt
             this.collision(); // Check for collisions
         }
 
@@ -131,37 +131,64 @@ class Tux {
     collision() {
         let currentEnemy = null; // Variable for enemy that's currently hurting Tux
         busy = true; // Checking for collision
+        
         for (let i = 0; i < slugsArray.length; i++) {
             let slugY = slugsArray[i].y; // Loop through slugs
             let slugX = slugsArray[i].x; // Get slug[i] x value
-            /* if (!tuxBeingHurt) { */ // if Tux isn't being hurt, allow to check for hit
             if ((slugX > this.x && slugX < this.x + this.width) || (slugX + slug.width > this.x && slugX + slug.width < this.x + this.width)) {
                 if ((slugY > this.y && slugY < this.y + this.height) || (slugY + slug.height > this.y && slugY + slug.height < this.y + this.height)) {
-                    /* tuxBeingHurt = true; */ // if hit, tux is being hurt
-                    /* currentEnemy = slugx; */ // store the current enemy
                     slugsArray.pop(slugsArray[i]);
-                    tuxIsHit(10); // Add damage to Tux
+                    tuxIsHit(15); // Add damage to Tux
                 }
             }
-            /* } */
         }
-        
         
         for (let i = 0; i < wormsArray.length; i++) { // See above
             let wormX = wormsArray[i].x;
             let wormY = wormsArray[i].y;
             if ((wormX > this.x && wormX < this.x + this.width) || (wormX + worm.width > this.x && wormX + worm.width < this.x + this.width)) {
                 if ((wormY > this.y && wormY < this.y + this.height) || (wormY + worm.height > this.y && wormY + worm.height < this.y + this.height)) {
-                    /* tuxBeingHurt = true; */
                     wormsArray.pop(wormsArray[i]);
                     tuxIsHit(15);
-                    console.log("OH NO! WORM!");
                 }
             }
         }
 
-        if (!((currentEnemy / 2) >= this.x)) { // I want this without the !, but it breaks everything. No clue why!
-            tuxBeingHurt = false; // But if currentEnemy x value is less than Tux's, Tux is no longer being hit
+        for (let i = 0; i < carrotArray.length; i++) { // See above
+            let carrotX = carrotArray[i].x;
+            let carrotY = carrotArray[i].y;
+            if ((carrotX > this.x && carrotX < this.x + this.width) || (carrotX + carrot.width > this.x && carrotX + carrot.width < this.x + this.width)) {
+                if ((carrotY > this.y && carrotY < this.y + this.height) || (carrotY + carrot.height > this.y && carrotY + carrot.height < this.y + this.height)) {
+                    carrotArray.pop(carrotArray[i]);
+                    tuxIsHit(10);
+                }
+            }
+        }
+
+        for (let i = 0; i < flakeArray.length; i++) { // See above
+            let snowflakeX = flakeArray[i].x;
+            let snowflakeY = flakeArray[i].y;
+            if ((snowflakeX > this.x && snowflakeX < this.x + this.width) || (snowflakeX + snowflake.width > this.x && snowflakeX + snowflake.width < this.x + this.width)) {
+                if ((snowflakeY > this.y && snowflakeY < this.y + this.height) || (snowflakeY + snowflake.height > this.y && snowflakeY + snowflake.height < this.y + this.height)) {
+                    flakeArray.pop(flakeArray[i]);
+                    tuxGetsASnowflake();
+                }
+            }
+        }
+
+        // for (let i = 0; i < fishArray.length; i++) { // See above
+        //     let fishX = fishArray[i].x;
+        //     let fishY = fishArray[i].y;
+        //     if ((fishX > this.x && fishX < this.x + this.width) || (fishX + fish.width > this.x && fishX + fish.width < this.x + this.width)) {
+        //         if ((fishY > this.y && fishY < this.y + this.height) || (fishY + fish.height > this.y && fishY + fish.height < this.y + this.height)) {
+        //             fishArray.pop(fishArray[i]);
+        //             tuxGetsAFish();
+        //         }
+        //     }
+        // }
+
+        if (!((currentEnemy / 2) >= this.x)) { // If currentEnemy x value is less than Tux's
+            tuxBeingHurt = false; // Tux is no longer being hit
             currentEnemy = null;
             busy = false; // Allow for collision checking again
         }
@@ -169,12 +196,3 @@ class Tux {
 }
 
 const tux = new Tux();
-
-
-// These are just boiler plate at the moment, please ignore them for now
-// if ((Fish.x > this.x && Fish.x < this.x + this.width) || (Fish.x + Fish.width > this.x && Fish.x + Fish.width < this.x + this.width)) {
-//     tuxGetsAFish();
-// }
-// if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
-//     tuxGetsASnowflake();
-// }

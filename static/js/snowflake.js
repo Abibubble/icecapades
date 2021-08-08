@@ -62,3 +62,5 @@ const handleSnowflake = () => {
       flakeArray.pop(flakeArray[0]);
   }
 };
+
+const snowflake = new Snowflake();

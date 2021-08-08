@@ -1,6 +1,6 @@
 const wormSprite = new Image();
 wormSprite.src = "static/animations/enemies/worm/worm-sprite1.png";
-const wormsArray = [];
+let wormsArray = [];
 
 class Worm {
     constructor() {
