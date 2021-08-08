@@ -79,7 +79,8 @@ class Snowball {
             }
         }
         //THIS NEEDS A CHECK FOR SNOWMAN BEING ALIVE
-        if ((snowman.x > this.x && snowman.x < this.x + this.width) || (snowman.x + snowman.width > this.x && snowman.x + snowman.width < this.x + this.width)) {
+        if ((snowman.hitBoxX <= this.hitBoxX + this.hitBoxWidth) &&
+            (snowman.hitBoxY <= this.hitBoxY + this.hitBoxHeight)) {
             snowmanHealth -= 10;
                 pushSnowmanHealth();
                 if (audio == 'on') {
