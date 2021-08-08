@@ -47,8 +47,8 @@ class Worm {
 }
 
 const handleWorms = () => {
-    // every 850 frames, add obstalce to array
-    if (gameFrame % randomNumber === 0) {
+    // every x frames, add obstalce to array
+    if (gameFrame % (randomNumber + 500) === 0) {
         wormsArray.unshift(new Worm());
     }
     for (let i = 0; i < wormsArray.length; i++) {

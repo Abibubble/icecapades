@@ -33,7 +33,11 @@ function tuxIsHit(hurt) {
 }
 
 function tuxGetsAFish() {
-    currentHealth += 20;
+    if (currentHealth <= 30) {
+        currentHealth += 20;
+    } else if (currentHealth > 30) {
+        currentHealth = 50;
+    }
     checkHealth();
     if (audio == 'on') {
         eatFishAudio.play();

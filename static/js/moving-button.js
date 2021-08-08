@@ -2,7 +2,6 @@
 
 function movingQuitButton() {
     let quitBad = document.getElementById("quit-bad");
-    console.log(quitBad);
     if (quitBad.style.bottom == "2px") {
         quitBad.style.bottom = "200px";
         quitBad.style.right = "500px";
