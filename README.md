@@ -362,7 +362,8 @@ A large amount of testing was done to ensure that all items were visible or hidd
 ### Solved Bugs
 
 1. Having one modal open didn't stop another modal opening too.
-    * We realised that the open modal function wasnt being called, we then added a check for a modal class in with other functions and this fixed the bug.
+    * We realised that the open modal function wasnt being called.
+    * We added a check for a modal class in with other functions and this fixed the bug.
 
 2. Stitching error, a background has a single line gap from top to bottom.
   *  the code below was used to close the stitching error in the background.
@@ -378,7 +379,7 @@ A large amount of testing was done to ensure that all items were visible or hidd
 
 ### Known Bugs
 
-* There is a stitching issue with the background image.
+* There is occasionally an enemy that doesn't die when hit.
 
 ### Lighthouse
 

@@ -9,6 +9,7 @@ function tuxControl() {
     handleFish();
     handleSnowflake();
     handleSnowball();
+    /* handleCarrot(); */
     tux.update();
     tux.draw();
     if (score >= 150) {
@@ -28,7 +29,6 @@ tuxControl();
 //-- snowman
 function newSnowman() {
     snowman.update();
-    /* snowman.draw(); */
     requestAnimationFrame(newSnowman);
 }
 
