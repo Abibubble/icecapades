@@ -4,6 +4,7 @@ let frameX = 0;
 let frameY = 0;
 const staggerFrames = 4;
 let gameSpeed = 6;
+const flakeSpeed = gameSpeed;
 const floorHeight = 45;
 let busy = false;
 let tuxBeingHurt = false;
