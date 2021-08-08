@@ -9,7 +9,6 @@ let healthBar = document.getElementById("health-bar");
 function pushHealth() {
     console.log("currentHealth = " + currentHealth);
     healthBar.style.width = currentHealth * 2 + "%";
-
 }
 
 function checkHealth() {
@@ -26,11 +25,13 @@ function checkHealth() {
 }
 
 function tuxIsHit(hurt) {
-    currentHealth -= hurt;
-    checkHealth();
     if (audio == 'on') {
-         hitAudio.play();
-        }
+        hitAudio.play();
+    }
+    setTimeout(() => {
+        currentHealth -= hurt;
+        checkHealth();
+    }, 600);
 }
 
 function tuxGetsAFish() {
@@ -51,13 +52,13 @@ let snowballBar = document.getElementById("snowball-bar");
 
 function pushAmmo() {
     snowballBar.style.width = currentAmmo * 10 + "%";
+    if (currentAmmo <= lowAmmo) {
+        snowballBar.style.color = "red";
+    }
 }
 
 function checkAmmo() {
     pushAmmo();
-    if (currentAmmo <= lowAmmo) {
-        snowballBar.style.color = "red";
-    }
 }
 
 function shoot() {
@@ -65,15 +66,15 @@ function shoot() {
         currentAmmo--;
         checkAmmo();
         if (audio == 'on') {
-         throwSnowballAudio.play();
-     }
+            throwSnowballAudio.play();
+        }
     }
-
 }
+
 function tuxGetsASnowflake() {
     currentAmmo += 2;
     checkAmmo();
     if (audio == 'on') {
-            reloadAudio.play();
-        }
+        reloadAudio.play();
+    }
 }
