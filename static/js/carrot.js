@@ -47,7 +47,7 @@ class Carrot {
     }
     
     if (!this.hit) {
-      this.x = this.x - gameSpeed; //fires left
+      this.x = this.x - flakeSpeed; //fires left
       if (carrotImpact) {
         // change image to fire ball
         this.originalHeight = 196;
@@ -67,18 +67,19 @@ class Carrot {
   }
 }
 
-/* const handleCarrot = () => {
-  if (gameFrame % (randomNumber + 350) === 0) {
+const handleCarrot = () => {
+  // every x frames, add obstacle to array
+  if (gameFrame % (randomNumber + 50) === 0) {
     carrotArray.unshift(new Carrot());
-}
+  }
 
-for (let i = 0; i < carrotArray.length; i++) {
+  for (let i = 0; i < carrotArray.length; i++) {
     carrotArray[i].update();
-}
+  }
 
-if (carrotArray.length > 20) {
+  if (carrotArray.length > 10) {
     carrotArray.pop(carrotArray[0]);
+  }
 }
-} */
 
 const carrot = new Carrot();

@@ -39,7 +39,7 @@ class Tux {
         }
 
         //If arrow pressed and char not jumping, call jump
-        if (arrowUpPressed && !this.jumping) {
+        if (arrowUpPressed && !this.jumping && !this.dead) {
             this.jump();
             if (audio == 'on') {
                 jumAudio.play();
@@ -52,7 +52,7 @@ class Tux {
         }
 
         //If ArrowDown pressed
-        if (arrowDownPressed && !this.sliding && !this.jumping && !endGame) {
+        if (arrowDownPressed && !this.sliding && !this.jumping && !this.dead && !endGame) {
             this.slide();
             gameSpeed *= 1.5;
             if (audio == 'on') {
@@ -66,6 +66,7 @@ class Tux {
             this.width = this.originalWidth;
             gameSpeed = 6;
         }
+
         if (this.jumping) {
             this.jumpAnim();
         }
@@ -74,8 +75,7 @@ class Tux {
             this.collision(); // Check for collisions
         }
 
-        if ((fire) &&
-            (currentAmmo > 0)) {
+        if ((fire) && (currentAmmo > 0)) {
             snowballArray.unshift(new Snowball());
             currentAmmo--;
             pushAmmo();
@@ -96,7 +96,6 @@ class Tux {
             this.hitBoxWidth = this.width * .7;
             this.hitBoxHeight = this.height * .9;
         }
-
     }
 
     draw() {
@@ -154,6 +153,8 @@ class Tux {
         gameSpeed = 0;
         this.dead = true;
         endGame = true;
+        tuxIsDead = true;
+        flakeSpeed = 0;
     }
 
     collision() {
@@ -187,8 +188,8 @@ class Tux {
             let carrotY = carrotArray[i].y;
             if ((carrotX > this.hitBoxX && carrotX < this.hitBoxX + this.hitBoxWidth) || (carrotX + carrot.width > this.hitBoxX && carrotX + carrot.width < this.hitBoxX + this.hitBoxWidth)) {
                 if ((carrotY > this.hitBoxY && carrotY < this.hitBoxY + this.hitBoxHeight) || (carrotY + carrot.height > this.hitBoxY && carrotY + carrot.height < this.hitBoxY + this.hitBoxHeight)) {
-                    carrotArray.pop(carrotArray[i]);
                     carrotImpact = true;
+                    carrotArray.pop(carrotArray[i]);
                     tuxIsHit(10);
                 }
             }

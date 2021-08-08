@@ -1,9 +1,8 @@
 let gameFrame = 0;
-let score = 0;
+let score = 130;
 let timerCount;
 const scoreContainer = document.querySelector('.score-container');
 
-canvas.style.backgroundColor = "lightblue"; //! for testing only
 /**
  * initiates game frame rate for all animations
  * maintained at constant speed
@@ -31,4 +30,3 @@ function scoreCount() {
 
 frameRate();
 scoreCount();
-
