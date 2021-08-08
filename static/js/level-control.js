@@ -1,6 +1,7 @@
 let gameFrame = 0;
 let score = 0;
 let timerCount;
+const scoreContainer = document.querySelector('.score-container');
 
 canvas.style.backgroundColor = "lightblue"; //! for testing only
 /**
@@ -10,6 +11,7 @@ canvas.style.backgroundColor = "lightblue"; //! for testing only
  */
 function frameRate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    scoreContainer.innerHTML = `Score: ${score}`;
     gameFrame++; //TODO: add posibility to modify  speed for individual character so they can move at different speed
     requestAnimationFrame(frameRate);
 }
@@ -20,10 +22,12 @@ function frameRate() {
  */
 function scoreCount() {
     timerCount = setInterval(function () {
-        score++; // increment score by 1
-        console.log(score);
+        if (!endGame) {
+            score++; // increment score by 1
+        }
     }, 1000); // 1000ms = 1 second
-}
+}   
 
 frameRate();
-// scoreCount();
+scoreCount();
+

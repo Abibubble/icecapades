@@ -17,6 +17,7 @@ class Tux {
         this.hitBoxY = this.y + 6;
         this.hitBoxWidth = this.width * .7;
         this.hitBoxHeight = this.height * .9;
+        this.dead = false;
     }
 
     update() {
@@ -97,7 +98,7 @@ class Tux {
     }
 
     draw() {
-        if (this.y > canvas.height - this.height - floorHeight && !this.sliding) {
+        if (this.y > canvas.height - this.height - floorHeight && !this.sliding && !this.dead) {
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.originalWidth = 154;
             this.frameX = frameX;
@@ -144,7 +145,13 @@ class Tux {
     }
 
     die() {
+        this.originalWidth = 144;
+        this.width = this.width + 20;
+        this.frameX = 0;
         playerImage.src = "static/animations/penguin/penguin_die04@2x.png";
+        gameSpeed = 0;
+        this.dead = true;
+        endGame = true;
     }
 
     collision() {
