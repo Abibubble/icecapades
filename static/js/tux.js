@@ -52,17 +52,19 @@ class Tux {
         }
 
         //If ArrowDown pressed
-        if (arrowDownPressed && !this.sliding && !this.jumping) {
+        if (arrowDownPressed && !this.sliding && !this.jumping && !endGame) {
             this.slide();
+            gameSpeed *= 1.5;
             if (audio == 'on') {
                 slideAudio.play();
             }
         }
 
         // Once let go of arrow down, set hitbox back to original position
-        if (!arrowDownPressed) {
+        if (!arrowDownPressed && !endGame) {
             this.height = this.originalHeight;
             this.width = this.originalWidth;
+            gameSpeed = 6;
         }
         if (this.jumping) {
             this.jumpAnim();

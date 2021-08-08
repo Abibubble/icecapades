@@ -9,9 +9,10 @@ function tuxControl() {
     handleFish();
     handleSnowflake();
     handleSnowball();
+    /* handleCarrot(); */
     tux.update();
     tux.draw();
-    if (score >= 150) {
+    if (score >= 10) {
         gameSpeed = 0;
         snowman.isSpawned = true;
         handleSnowman();
@@ -28,7 +29,6 @@ tuxControl();
 //-- snowman
 function newSnowman() {
     snowman.update();
-    /* snowman.draw(); */
     requestAnimationFrame(newSnowman);
 }
 
