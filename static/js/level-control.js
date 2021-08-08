@@ -14,6 +14,7 @@ function frameRate() {
     scoreContainer.innerHTML = `Score: ${score}`;
     gameFrame++; //TODO: add posibility to modify  speed for individual character so they can move at different speed
     requestAnimationFrame(frameRate);
+    randomNumber = Math.floor(Math.random() * 100) + 100;
 }
 
 /**
