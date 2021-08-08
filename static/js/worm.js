@@ -6,14 +6,17 @@ class Worm {
     constructor() {
         this.originalWidth = 500;
         this.originalHeight = 256;
-        this.x = canvas.width;
         this.height = this.originalHeight / 3;
         this.width = this.originalWidth / 3;
+        this.x = canvas.width;
+        this.y = canvas.height - this.height - floorHeight;
         this.color = "red";
         this.counted = false;
     }
 
     draw() {
+        ctx.fillStyle = "red";
+        ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(
             //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
             wormSprite,
@@ -22,10 +25,12 @@ class Worm {
             this.originalWidth, //this.originalWidth, //sw
             this.originalHeight, //this.originalHeight, //sh
             this.x, //dx
-            canvas.height - this.height - floorHeight, //dy
+            this.y, //dy
             this.width, //dw
             this.height //this.height + 10, dh
         );
+        /* console.log(this.y);
+        console.log(canvas.height - this.height - floorHeight); */
     }
     update() {
         this.x -= gameSpeed;
