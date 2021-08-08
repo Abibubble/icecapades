@@ -13,4 +13,5 @@ let currentAmmo = 10;
 let fishIndex = 0;
 const fishColorArray = ["purple", "yellow", "red"];
 let fishColor = fishColorArray[fishIndex];
-let randomNumber = Math.floor(Math.random() * 100) + 500;
+let randomNumber = Math.floor(Math.random() * 100);
+let snowmanHealth = 150;
