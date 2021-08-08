@@ -162,7 +162,6 @@ noscript {
   width: 100%;
   padding: 0 0;
   border-radius: 15px;
-  height: 20px;
   top: 16vh;
   z-index: 2;
 }
@@ -170,9 +169,10 @@ noscript {
 #snowman-name{
   position: absolute;
   left: 50%;
+  transform: translate(-50%, 0px);
   z-index: 3;
-  top: 35%;
-  font-size: 14px;
+  top: 26%;
+  font-size: 22px;
 }
 
 .boss-progress-overlay{

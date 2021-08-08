@@ -46,6 +46,9 @@ class Snowball {
             let slugX = slugsArray[i].x; // Get slug[i] x value
             if ((slugX > this.x && slugX < this.x + this.width) || (slugX + slug.width > this.x && slugX + slug.width < this.x + this.width)) {
                 slugsArray.pop(slugsArray[i]);
+                if (audio == 'on') {
+                    enemyHitSnowballAudio.play();
+                }
                 snowballArray.pop(snowballArray[i]);
             }
         }
@@ -54,6 +57,9 @@ class Snowball {
             let wormX = wormsArray[i].x; // Get slug[i] x value
             if ((wormX > this.x && wormX < this.x + this.width) || (wormX + worm.width > this.x && wormX + worm.width < this.x + this.width)) {
                 wormsArray.pop(wormsArray[i]);
+                if (audio == 'on') {
+                    enemyHitSnowballAudio.play();
+                }
                 snowballArray.pop(snowballArray[i]);
             }
         }
@@ -62,6 +68,9 @@ class Snowball {
             if ((snowman.x > this.x && snowman.x < this.x + this.width) || (snowman.x + snowman.width > this.x && snowman.x + snowman.width < this.x + this.width)) {
                 snowmanHealth -= 10;
                 pushSnowmanHealth();
+                 if (audio == 'on') {
+                    enemyHitSnowballAudio.play();
+                }
                 snowballArray.pop(snowballArray[i]);
                 if (snowmanHealth == 0) {
                     winModal.classList.remove("invisible");
