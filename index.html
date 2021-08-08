@@ -163,10 +163,10 @@
                         </p>
                         <p class="modal-p">Why don't you try again?</p>
                         <div class="modal-grid">
-                            <button class="replay game-over-button">
+                            <button class="replay game-over-button" onclick="restartGame()">
                                 Of course!
                             </button>
-                            <button class="replay game-over-button">
+                            <button class="replay game-over-button" onclick="restartGame()">
                                 Definitely!
                             </button>
                         </div>
@@ -195,7 +195,7 @@
                         <p class="modal-p">Thanks for playing</p>
                         <p class="modal-p">Would you like to play again?</p>
                         <div class="modal-grid">
-                            <button class="replay">Definitely!</button>
+                            <button class="replay" onclick="restartGame()">Definitely!</button>
                             <a href="/outro.html">
                                 <button class="quit-good">
                                     Not right now
@@ -263,6 +263,7 @@
     <script src="static/js/modals.js"></script>
     <script src="static/js/moving-button.js"></script>
     <script src="static/js/copyright.js"></script>
+    <script src="static/js/restart-game.js"></script>
     <!-- <script src="static/js/script.js"></script> -->
 </body>
 
