@@ -7,20 +7,20 @@ let dangerZone = 10;
 let healthBar = document.getElementById("health-bar");
 
 function pushHealth() {
-    console.log("currentHealth = " + currentHealth);
     healthBar.style.width = currentHealth * 2 + "%";
 }
 
 function checkHealth() {
-    pushHealth();
     if (currentHealth <= deadTux) {
+        healthBar.style.width = "0%";
         tux.die();
         gameOverModal.classList.remove("invisible");
         gameOverInner.classList.add("modal-animation");
+    } else if (currentHealth <= dangerZone) {
+        pushHealth();
+        healthBar.style.color = "red";
     } else {
-        if (currentHealth <= dangerZone) {
-            healthBar.style.color = "red";
-        }
+        pushHealth();
     }
 }
 
@@ -54,20 +54,20 @@ function pushAmmo() {
     }
 }
 
-function checkAmmo() {
-    pushAmmo();
-}
-
 function shoot() {
     if (currentAmmo > noAmmo) {
         currentAmmo--;
-        checkAmmo();
+        pushAmmo();
     }
 }
 
 function tuxGetsASnowflake() {
-    currentAmmo += 2;
-    checkAmmo();
+    if (currentAmmo <= 8) {
+        currentAmmo += 2;
+    } else if (currentAmmo == 9) {
+        currentAmmo++;
+    }
+    pushAmmo();
     if (audio == 'on') {
         reloadAudio.play();
     }
