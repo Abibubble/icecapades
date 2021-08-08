@@ -176,16 +176,16 @@ class Tux {
             }
         }
 
-        // for (let i = 0; i < fishArray.length; i++) { // See above
-        //     let fishX = fishArray[i].x;
-        //     let fishY = fishArray[i].y;
-        //     if ((fishX > this.x && fishX < this.x + this.width) || (fishX + fish.width > this.x && fishX + fish.width < this.x + this.width)) {
-        //         if ((fishY > this.y && fishY < this.y + this.height) || (fishY + fish.height > this.y && fishY + fish.height < this.y + this.height)) {
-        //             fishArray.pop(fishArray[i]);
-        //             tuxGetsAFish();
-        //         }
-        //     }
-        // }
+        for (let i = 0; i < fishArray.length; i++) { // See above
+            let fishX = fishArray[i].x;
+            let fishY = fishArray[i].y;
+            if ((fishX > this.x && fishX < this.x + this.width) || (fishX + fish.width > this.x && fishX + fish.width < this.x + this.width)) {
+                if ((fishY > this.y && fishY < this.y + this.height) || (fishY + fish.height > this.y && fishY + fish.height < this.y + this.height)) {
+                    fishArray.pop(fishArray[i]);
+                    tuxGetsAFish();
+                }
+            }
+        }
 
         if (!((currentEnemy / 2) >= this.x)) { // If currentEnemy x value is less than Tux's
             tuxBeingHurt = false; // Tux is no longer being hit
