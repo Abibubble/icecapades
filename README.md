@@ -123,7 +123,17 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 
 ### Audio
 
-* WHAT AUDIO IS USED (IF ANY) AND WHY.
+* All audio is controlled by the audio on / off button, so that the user can choose if they'd like to hear audio.
+* A cute 8-bit tune can be heard throughout the game when the user turns on the audio.
+* There are also sound effects when the user has the audio on, for the following actions:
+  * Tux jump
+  * Tux kills a slug
+  * An enemy is hit by a snowball
+  * Tux catches a fish
+  * Tux is hit
+  * Tux slides
+  * Tux collects a snowflake
+  * Tux throws a snowball
 
 ---
 
@@ -153,10 +163,6 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 
 * [Balsamiq](https://balsamiq.com/) was used to create the wireframes during the design process.
 
-<!-- #### Responsinator
-
-* [Responsinator](http://www.responsinator.com/) was used to help improve the responsive design on a variety of devices. -->
-
 #### Google DevTools
 
 * [Google DevTools](https://developer.chrome.com/docs/devtools/) was used to help me find what code correlated to what feature.
@@ -168,10 +174,6 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 #### Shields.​io
 
 * [Shields.io](https://shields.io/) was used to create the GitHub badges for this README.md file.
-
-<!-- #### Autoprefixer CSS online
-
-* [Autoprefixer CSS online](https://autoprefixer.github.io/) was used to ensure all prefixes for browsers were included correctly. -->
 
 #### Sprites
 
@@ -241,7 +243,7 @@ For a more detailed version of these steps, go to the [Github Docs](https://docs
 The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the project to ensure there were no syntax errors within the site.
 
 1. W3C Markup Validator
-    * [HTML Results](LINK)
+    * [HTML Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fabibubble.github.io%2Ficecapades%2F)
 
 2. W3C CSS Validator
     * [CSS Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fabibubble.github.io%2Ficecapades%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
@@ -255,47 +257,56 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the
 
 > A retro game that provides clear and substantial value to the user
 
-* HOW THE SITE COMPLETES EACH GOAL
+* It is a retro-style side-scrolling game.
+* It's a fun game with easy replayability.
 
 > Use an original or innovative idea, design or implementation
 
-* HOW THE SITE COMPLETES EACH GOAL
+* We have implemented this game using the HTML canvas element, with JavaScript to draw the game.
+* The character we have used is Tux, the Linux mascot. This links the game back to coding, and also allowed the theme to be an icy, winter-y theme.
 
 > Has a well structured and completed documentation (README & Wireframes)
 
-* HOW THE SITE COMPLETES EACH GOAL
+* The README file clearly documents all important aspects of our project, along with testing and design ideas.
+* The wireframes also show our planning and the clear vision we had for the finished game.
 
 > Is well-planned and executed (using GitHub projects)
 
-* HOW THE SITE COMPLETES EACH GOAL
+* [The Project board](https://github.com/Abibubble/icecapades/projects/1) is easily visible.
+* It shows our progress throughout the project.
 
 > Focus is realistic, and has an overall sense of completeness.
 
-* HOW THE SITE COMPLETES EACH GOAL
+* We had to scale back a few of our ideas, in order to be realistic for the deadline.
 
 #### First Time Visitor Goals
 
 > Intuitive controls
 
-* HOW THE SITE COMPLETES EACH GOAL
+* The game uses a mix of the two main standard gaming controls:
+  * W to Jump, S to Slide, and D to Shoot
+  * Up arrow key to Jump, Down arrow key to Slide, Space bar to Shoot
 
 > Clear rules/goals of the game
 
-* HOW THE SITE COMPLETES EACH GOAL
+* The controls and rules are clearly defined in the Instructions modal.
 
 > Simple and logical navigation
 
-* HOW THE SITE COMPLETES EACH GOAL
+* The site only has two pages.
+* The main page has easily understandard icons on all buttons
+* All buttons are clear to understand what they do.
 
 > Positive emotive response
 
-* HOW THE SITE COMPLETES EACH GOAL
+* We have used the nostalgia that a lot of people have for Tux.
+* For many youngsters, Tux taught them to type, and thus, holds a special place in their hearts.
 
 #### Returning Visitor Goals
 
 > Varied gameplay with increasing difficulty
 
-* HOW THE SITE COMPLETES EACH GOAL
+* The enemies are all randomised, so it varies constantly.
 
 #### Desktop / Laptop
 
