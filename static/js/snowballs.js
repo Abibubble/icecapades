@@ -36,7 +36,7 @@ class Snowball {
 
     update() {
         this.y = this.y;
-        this.x += gameSpeed * 2;
+        this.x += flakeSpeed * 2;
         if (gameFrame % staggerFrames === 0) {
             if (this.frameX > 5) this.frameX--;
             else this.frameX = 5;
@@ -78,14 +78,14 @@ class Snowball {
                 }
             }
         }
-
+        //THIS NEEDS A CHECK FOR SNOWMAN BEING ALIVE
         if ((snowman.x > this.x && snowman.x < this.x + this.width) || (snowman.x + snowman.width > this.x && snowman.x + snowman.width < this.x + this.width)) {
             snowmanHealth -= 10;
-            pushSnowmanHealth();
-            if (audio == 'on') {
-                enemyHitSnowballAudio.play();
-            }
-            snowballArray.pop(this);
+                pushSnowmanHealth();
+                if (audio == 'on') {
+                    enemyHitSnowballAudio.play();
+                }
+                snowballArray.pop(this);      
             if (snowmanHealth == 0) {
                 gameSpeed = 0;
                 endGame = true;  
@@ -95,7 +95,6 @@ class Snowball {
                 }
             }
         }
-
     }
 }
 

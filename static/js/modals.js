@@ -7,11 +7,13 @@ function toggleInstructions() {
     if (instructionsModal.classList.contains("invisible")) {
         gameSpeed = 0;
         endGame = true;
+        tux.weight = 0;
         instructionsModal.classList.remove("invisible");
         iInner.classList.add("modal-animation");
     } else {
         gameSpeed = 6;
         endGame = false;
+        tux.weight = .7;
         instructionsModal.classList.add("invisible");
         iInner.classList.remove("modal-animation");
     }
