@@ -13,6 +13,10 @@ class Tux {
         this.sliding = false;
         this.charSlideWidth = 40;
         this.charSlideheight = 20;
+        this.hitBoxX =  this.x + 15;
+        this.hitBoxY = this.y + 6;
+        this.hitBoxWidth = this.width * .7;
+        this.hitBoxHeight = this.height * .9;
     }
 
     update() {
@@ -77,11 +81,21 @@ class Tux {
             }
             fire = false;
         }
+        
+        if (!this.sliding) {
+            //update hit box area
+            this.hitBoxX =  this.x + 15;
+            this.hitBoxY = this.y + 6;
+            this.hitBoxWidth = this.width * .7;
+            this.hitBoxHeight = this.height * .9;
+        }
+
     }
 
     draw() {
         ctx.fillStyle = "red";
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        // ctx.fillRect(this.x + 15, this.y + 6, this.width * .7, this.height * .9);
+        ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
         if (this.y > canvas.height - this.height - floorHeight && !this.sliding) {
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.originalWidth = 154;
@@ -120,6 +134,10 @@ class Tux {
         this.originalWidth = 144;
         this.width = this.width + 20;
         this.frameX = 0;
+        this.hitBoxX =  this.x + 15;
+        this.hitBoxY = this.y + 35;
+        this.hitBoxWidth = this.width * .86;
+        this.hitBoxHeight = this.height * .7;
         playerImage.src = "static/animations/penguin/penguin_slide02@2x.png";
         this.sliding = true;
     }
