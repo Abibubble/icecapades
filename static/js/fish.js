@@ -2,18 +2,16 @@ let fishArray = [];
 class Fish {
     constructor() {
         this.x = canvas.width; // x position on canvas
-        this.y = canvas.height / 2.2 + (Math.random() * 175); // y position on canvas
-        this.vy = 0; // y velocity
+        this.y = canvas.height / 2.2 + (Math.random() * 125); // roughly middle of canvas
         this.originalWidth = 498; // individual sprite width from sprite sheet
         this.originalHeight = 327; // individual sprite height from sprite sheet
         this.width = this.originalWidth / 5; // sensible width for game
         this.height = this.originalHeight / 5; // sensible height for game
-        this.weight = 1; // gravity effect
         this.frameX = 0; // sprite sheet x position (column)
         this.frameY = 0; // sprite sheet y position (row)
         this.row = 0; // row counter for sprite sheet
         this.image = new Image();
-        this.image.src = `static/animations/fish/${fishColor}-fish.png`
+        this.image.src = `static/animations/fish/${fishColor}-fish.png`;
 
         // this.color; // ??assign a value from a random array to select fish color??
     }
