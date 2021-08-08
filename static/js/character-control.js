@@ -11,7 +11,7 @@ function tuxControl() {
     handleSnowball();
     tux.update();
     tux.draw();
-    if (score >= 10) {
+    if (score >= 150) {
         gameSpeed = 0;
         snowman.isSpawned = true;
         handleSnowman();
