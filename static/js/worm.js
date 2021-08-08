@@ -34,7 +34,7 @@ class Worm {
             this.counted = true;
         } */
         if (gameFrame % staggerFrames == 0) {
-            if (frameX < 2) this.frameX++;
+            if (this.frameX < 2) this.frameX++;
             else this.frameX = 0;
         }
         this.draw();
@@ -42,7 +42,7 @@ class Worm {
 }
 
 const handleWorms = () => {
-    // every 150 frames, add obstalce to array
+    // every 850 frames, add obstalce to array
     if (gameFrame % 850 === 0) {
         wormsArray.unshift(new Worm());
     }

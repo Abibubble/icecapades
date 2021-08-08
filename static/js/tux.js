@@ -63,7 +63,6 @@ class Tux {
         }
         if (this.jumping) {
             this.jumpAnim();
-
         }
         
         if (!busy && !tuxBeingHurt) { // If a collision isn't already being checked, and if Tux isn't already being hurt
