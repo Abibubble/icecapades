@@ -119,7 +119,8 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 [Here are the wireframes for desktop, mobile and tablet for this project](static/docs/icecapades.pdf).
 
 ### Features
-<!-- * WHAT FEATURES ARE ONE THE SITE, LIKE SCOREBOARD, FUNCTIONS, SCROLLING ALERT BAR, ETC. -->
+
+* WHAT FEATURES ARE ONE THE SITE, LIKE SCOREBOARD, FUNCTIONS, SCROLLING ALERT BAR, ETC.
 
 ### Audio
 
@@ -166,10 +167,6 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 #### Google DevTools
 
 * [Google DevTools](https://developer.chrome.com/docs/devtools/) was used to help me find what code correlated to what feature.
-
-<!-- #### Am I Responsive Design
-
-* [Am I Responsive Design](http://ami.responsivedesign.is/#) was used to check the responsive design of the quiz. -->
 
 #### Shields.​io
 
@@ -377,27 +374,23 @@ I tested my website using DevTools Lighthouse feature, and got these results:
 
 #### Desktop
 
-![Lighthouse desktop first try](assets/docs/lighthouse.png)
+![Lighthouse desktop first try](static/docs/lighthouse.png)
 
-#### Mobile
+#### Performance:
+* This has a good result, as we chose to not use any frameworks or libraries.
 
-![Lighthouse mobile first try](assets/docs/lighthousemobile.png)
+#### Accessibility:
+* All images have alt text.
+* All tap targets are correctly sized, and aren't overlapping other content.
+* All colors are WCAG AA compliant.
 
-#### Performance
+#### Best Practices:
+* This was knocked down due to issues in the console.
+* The console error is due to the webmanifest, which we couldn't find a fix for.
 
-* EXPLAIN SCORE AND HOW I IMPROVED IT IF NECESSARY
-
-#### Accessibility
-
-* EXPLAIN SCORE AND HOW I IMPROVED IT IF NECESSARY
-
-#### Best Practices
-
-* EXPLAIN SCORE AND HOW I IMPROVED IT IF NECESSARY
-
-#### SEO
-
-* EXPLAIN SCORE AND HOW I IMPROVED IT IF NECESSARY
+#### SEO:
+* All relevant meta tags have been included for full social media integration.
+* All search engine relevant meta tags have been included with full content.
 
 ---
 
