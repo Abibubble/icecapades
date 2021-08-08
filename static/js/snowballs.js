@@ -87,6 +87,8 @@ class Snowball {
             }
             snowballArray.pop(this);
             if (snowmanHealth == 0) {
+                gameSpeed = 0;
+                endGame = true;  
                 if (gameOverModal.classList.contains("invisible")) {
                     winModal.classList.remove("invisible");
                     winInner.classList.add("modal-animation");
