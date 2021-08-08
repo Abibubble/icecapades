@@ -171,8 +171,8 @@ noscript {
   left: 50%;
   transform: translate(-50%, 0px);
   z-index: 3;
-  top: 26%;
-  font-size: 22px;
+  top: 7%;
+  font-size: 20px;
 }
 
 .boss-progress-overlay{
