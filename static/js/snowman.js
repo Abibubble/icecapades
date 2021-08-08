@@ -6,13 +6,13 @@ class Snowman {
         this.height = this.originalHeight * 2.5; // sensible height for game
         this.frameX = 0; // sprite sheet x position (column)
         this.x = canvas.width - this.width; // x position on canvas
-        this.y = canvas.height - this.height - floorHeight; // y position on canvas
+        this.y = canvas.height - this.height - floorHeight + 20; // y position on canvas
         this.image = new Image();
         this.image.src = "static/animations/enemies/snowman/snowman-sprite-left.png";
-        this.hitBoxX =  this.x + 15;
-        this.hitBoxY = this.y + 20;
-        this.hitBoxWidth = this.width - 15;
-        this.hitBoxHeight = this.height - 20;
+        this.hitBoxX =  this.x + 55;
+        this.hitBoxY = this.y + 25;
+        this.hitBoxWidth = this.width - 120;
+        this.hitBoxHeight = this.height - 35;
         this.isSpawned = false;
     }
 
