@@ -62,6 +62,8 @@ class Tux {
 
         // Once let go of arrow down, set hitbox back to original position
         if (!arrowDownPressed && !endGame) {
+            tux.sliding = false;
+            playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.height = this.originalHeight;
             this.width = this.originalWidth;
             gameSpeed = 6;

@@ -36,8 +36,6 @@ window.addEventListener("keydown", (e) => {
 window.addEventListener("keyup", (e) => {
     if (e.key === "s" || e.key === "ArrowDown") {
         arrowDownPressed = false;
-        tux.sliding = false;
-        playerImage.src = "static/animations/penguin/walk_spritesheet.png";
     }
 });
 
