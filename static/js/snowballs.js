@@ -59,6 +59,7 @@ class Snowball {
         for (let i = 0; i < snowballArray.length; i++) {
             if ((snowman.x > this.x && snowman.x < this.x + this.width) || (snowman.x + snowman.width > this.x && snowman.x + snowman.width < this.x + this.width)) {
                 snowmanHealth -= 10;
+                pushSnowmanHealth();
                 snowballArray.pop(snowballArray[i]);
                 if (snowmanHealth == 0) {
                     winModal.classList.remove("invisible");
