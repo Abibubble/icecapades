@@ -1,4 +1,4 @@
-const flakeArray = [];
+let flakeArray = [];
 
 class Snowflake {
   constructor() {
