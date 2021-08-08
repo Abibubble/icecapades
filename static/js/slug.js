@@ -7,14 +7,17 @@ class Slug {
     constructor() {
         this.originalWidth = 298;
         this.originalHeight = 178;
-        this.x = canvas.width;
         this.height = this.originalHeight / 3; //testing
         this.width = this.originalWidth / 3;
+        this.x = canvas.width;
+        this.y = canvas.height - this.height - floorHeight;
         this.color = "red";
         this.counted = false;
     }
 
     draw() {
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(
             //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
             slugSprite,
@@ -23,7 +26,7 @@ class Slug {
             this.originalWidth, //this.originalWidth, //sw
             this.originalHeight, //this.originalHeight, //sh
             this.x, //dx
-            canvas.height - this.height - floorHeight, //dy
+            this.y, //dy
             this.width, //dw
             this.height //this.height + 10, dh
         );
