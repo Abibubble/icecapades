@@ -110,7 +110,10 @@ noscript {
   height: 6vh;
   background-color: #ADD8E6;
 } 
+.grid-item-boss {
+  height: 1vh;
 
+}
 /* ------------------------------ Overall */
 
 .height {
@@ -152,7 +155,45 @@ noscript {
 #health-bar, #snowball-bar {
   width: 100%;
 }
+.boss-health-container{
+    position: absolute;
+    width: 100%;
+    padding: 0 0;
+    border-radius: 15px;
+    height: 20px;
+    top: 16vh;
+    z-index: 2;
 
+}
+
+#snowman-name{
+  position: absolute;
+  left: 50%;
+  z-index: 3;
+  top: 30%;
+  font-size: 14px;
+}
+.boss-progress-overlay{
+    z-index: 2;
+    background-color: white;
+    border-radius: 15px;
+    height: 150%;
+    left: 0%;
+    padding: 0 10px;
+    width: 92%;
+    margin-left: 20px;
+    position: relative;
+    top: 0.5vh;
+}
+#boss-health-bar{
+  position: relative;
+  background-color: #ff0000;
+  height: 75%;
+  top: 13%;
+  z-index: 3;
+  border-radius: 10px;
+  width: 100%;
+}
 /* ------------------------------ Audio button */
 
 .audio-button {
