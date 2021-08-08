@@ -86,7 +86,7 @@ class Fish {
 
 const handleFish = () => {
     // every 250 frames, add obstalce to array
-    if (gameFrame % 100 === 0) {
+    if (gameFrame % 1100 === 0) {
         console.log(fishIndex);
         fishArray.unshift(new Fish());
         if (fishIndex < 2) { // cycle through fish colors
