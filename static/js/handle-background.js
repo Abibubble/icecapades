@@ -18,6 +18,7 @@ class Layer {
         this.speedModifier = speedModifier;
         this.speed = gameSpeed * this.speedModifier;
     }
+
     update(){
         this.speed = gameSpeed * this.speedModifier;
         if (this.x <= - this.width){
@@ -29,6 +30,7 @@ class Layer {
         this.x = Math.floor(this.x - this.speed);
         this.x2 = Math.floor(this.x2 - this.speed);
     }
+
     draw(){
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         ctx.drawImage(this.image, this.x2, this.y, this.width, this.height);
@@ -60,10 +62,6 @@ function handleBackground() {
     // layer4.update()
     // layer4.draw()
 }
-
-
-
-
 
 //---------------------------------------
 //
