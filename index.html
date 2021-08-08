@@ -68,7 +68,15 @@
 
         <main>
             <canvas id="canvas1"></canvas>
-
+            <div id="rotate-message">
+                <!-- Icon made by "Pixel perfect" "https://www.flaticon.com/authors/pixel-perfect" from "https://www.flaticon.com/" -->
+                <div id="message-content">
+                    <p>
+                        Please rotate your device or resize the window to landscape
+                    </p>
+                    <img src="static/rotate/rotate.png" alt="Please Rotate Device">
+                </div>
+            </div>
             <section class="progress-container">
                 <div class="progress-grid">
                     <div class="audio-buttons grid-item">
@@ -188,9 +196,11 @@
                         <p class="modal-p">Would you like to play again?</p>
                         <div class="modal-grid">
                             <button class="replay">Definitely!</button>
-                            <button class="quit-good" onclick="closeModal()">
-                                Not right now
-                            </button>
+                            <a href="/outro.html">
+                                <button class="quit-good">
+                                    Not right now
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
