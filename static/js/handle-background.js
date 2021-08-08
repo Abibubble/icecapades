@@ -11,7 +11,7 @@ class Layer {
     constructor(image, speedModifier) {
         this.x =0;
         this.y = 0;
-        this.width = 2560;
+        this.width = canvas.width;
         this.height = canvas.height;
         this.x2 = this.width;
         this.image = image;
