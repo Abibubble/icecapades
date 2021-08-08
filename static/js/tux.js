@@ -49,7 +49,7 @@ class Tux {
         //If ArrowDown pressed
         if (arrowDownPressed && !this.sliding && !this.jumping) {
             this.slide();
-               if (audio == 'on') {
+            if (audio == 'on') {
                 slideAudio.play();
             }
         }
@@ -62,13 +62,16 @@ class Tux {
         if (this.jumping) {
             this.jumpAnim();
         }
-        
+
         if (!busy && !tuxBeingHurt) { // If a collision isn't already being checked, and if Tux isn't already being hurt
             this.collision(); // Check for collisions
         }
 
-        if (spacePressed) {
-            setTimeout(snowballArray.unshift(new Snowball()), 3000);
+        if ((fire) &&
+            (currentAmmo > 0)) {
+            snowballArray.unshift(new Snowball());
+            currentAmmo--;
+            fire = false;
         }
     }
 
@@ -130,28 +133,28 @@ class Tux {
                 if ((slugx > this.x && slugx < this.x + this.width) || (slugx + Slug.width > this.x && slugx + Slug.width < this.x + this.width)) {
                     tuxBeingHurt = true; // if hit, tux is being hurt
                     currentEnemy = slugx; // store the current enemy
-                    console.log("tuxBeingHurt-slug = " + tuxBeingHurt);
+                    // console.log("tuxBeingHurt-slug = " + tuxBeingHurt);
                     tuxIsHit(10); // Add damage to Tux
                 }
             }
         }
-        
+
         for (let i = 0; i < wormsArray.length; i++) { // See above
             let wormx = wormsArray[i].x;
             if ((wormx > this.x && wormx < this.x + this.width) || (wormx + Worm.width > this.x && wormx + Worm.width < this.x + this.width)) {
                 tuxBeingHurt = true;
-                console.log("tuxBeingHurt-worm = " + tuxBeingHurt);
+                // console.log("tuxBeingHurt-worm = " + tuxBeingHurt);
                 tuxIsHit(15);
-                console.log("OH NO! WORM!");
+                // console.log("OH NO! WORM!");
             }
         }
 
-        console.log("currentEnemy = " + (currentEnemy / 2));
-        console.log("this.x = " + this.x);
+        // console.log("currentEnemy = " + (currentEnemy / 2));
+        // console.log("this.x = " + this.x);
         if (!((currentEnemy / 2) >= this.x)) { // I want this without the !, but it breaks everything. No clue why!
             tuxBeingHurt = false; // But if currentEnemy x value is less than Tux's, Tux is no longer being hit
             currentEnemy = null;
-            console.log("tuxBeingHurt-final = " + tuxBeingHurt);
+            // console.log("tuxBeingHurt-final = " + tuxBeingHurt);
             busy = false; // Allow for collision checking again
         }
     }
@@ -162,8 +165,8 @@ const tux = new Tux();
 
 // These are just boiler plate at the moment, please ignore them for now
 // if ((Fish.x > this.x && Fish.x < this.x + this.width) || (Fish.x + Fish.width > this.x && Fish.x + Fish.width < this.x + this.width)) {
-    //     tuxGetsAFish();
-    // }
-    // if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
-        //     tuxGetsASnowflake();
-        // }
+//     tuxGetsAFish();
+// }
+// if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
+//     tuxGetsASnowflake();
+// }
