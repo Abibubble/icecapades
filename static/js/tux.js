@@ -131,13 +131,14 @@ class Tux {
     collision() {
         let currentEnemy = null; // Variable for enemy that's currently hurting Tux
         busy = true; // Checking for collision
+        
         for (let i = 0; i < slugsArray.length; i++) {
             let slugY = slugsArray[i].y; // Loop through slugs
             let slugX = slugsArray[i].x; // Get slug[i] x value
             if ((slugX > this.x && slugX < this.x + this.width) || (slugX + slug.width > this.x && slugX + slug.width < this.x + this.width)) {
                 if ((slugY > this.y && slugY < this.y + this.height) || (slugY + slug.height > this.y && slugY + slug.height < this.y + this.height)) {
                     slugsArray.pop(slugsArray[i]);
-                    tuxIsHit(10); // Add damage to Tux
+                    tuxIsHit(15); // Add damage to Tux
                 }
             }
         }
@@ -149,6 +150,17 @@ class Tux {
                 if ((wormY > this.y && wormY < this.y + this.height) || (wormY + worm.height > this.y && wormY + worm.height < this.y + this.height)) {
                     wormsArray.pop(wormsArray[i]);
                     tuxIsHit(15);
+                }
+            }
+        }
+
+        for (let i = 0; i < carrotArray.length; i++) { // See above
+            let carrotX = carrotArray[i].x;
+            let carrotY = carrotArray[i].y;
+            if ((carrotX > this.x && carrotX < this.x + this.width) || (carrotX + carrot.width > this.x && carrotX + carrot.width < this.x + this.width)) {
+                if ((carrotY > this.y && carrotY < this.y + this.height) || (carrotY + carrot.height > this.y && carrotY + carrot.height < this.y + this.height)) {
+                    carrotArray.pop(carrotArray[i]);
+                    tuxIsHit(10);
                 }
             }
         }
@@ -175,8 +187,8 @@ class Tux {
             }
         }
 
-        if (!((currentEnemy / 2) >= this.x)) { // I want this without the !, but it breaks everything. No clue why!
-            tuxBeingHurt = false; // But if currentEnemy x value is less than Tux's, Tux is no longer being hit
+        if (!((currentEnemy / 2) >= this.x)) { // If currentEnemy x value is less than Tux's
+            tuxBeingHurt = false; // Tux is no longer being hit
             currentEnemy = null;
             busy = false; // Allow for collision checking again
         }
@@ -184,12 +196,3 @@ class Tux {
 }
 
 const tux = new Tux();
-
-
-// These are just boiler plate at the moment, please ignore them for now
-// if ((Fish.x > this.x && Fish.x < this.x + this.width) || (Fish.x + Fish.width > this.x && Fish.x + Fish.width < this.x + this.width)) {
-//     tuxGetsAFish();
-// }
-// if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
-//     tuxGetsASnowflake();
-// }
