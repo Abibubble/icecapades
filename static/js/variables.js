@@ -17,3 +17,4 @@ let randomNumber = Math.floor(Math.random() * 100) + 100;
 let snowmanHealth = 150;
 let carrotImpact = false;
 let endGame = false;
+const bossHealthBar = document.getElementById("boss-health-container");
