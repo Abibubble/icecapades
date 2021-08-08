@@ -52,15 +52,18 @@ class Snowflake {
  * - array max 5
  */
 const handleSnowflake = () => {
-  if (gameFrame % 300 === 0) {
-      flakeArray.unshift(new Snowflake());
-  }
-  for (let i = 0; i < flakeArray.length; i++) {
-      flakeArray[i].update();
-  }
-  if (flakeArray.length > 5) {
-      flakeArray.pop(flakeArray[0]);
+  if (!endGame) {
+    if (gameFrame % 300 === 0) {
+        flakeArray.unshift(new Snowflake());
+    }
+    for (let i = 0; i < flakeArray.length; i++) {
+        flakeArray[i].update();
+    }
+    if (flakeArray.length > 5) {
+        flakeArray.pop(flakeArray[0]);
+    }
   }
 };
+
 
 const snowflake = new Snowflake();

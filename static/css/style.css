@@ -197,6 +197,13 @@ noscript {
   width: 100%;
 }
 
+.score-container {
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+}
+
 /* ------------------------------ Audio button */
 
 .audio-button {
