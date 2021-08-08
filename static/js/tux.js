@@ -13,7 +13,7 @@ class Tux {
         this.sliding = false;
         this.charSlideWidth = 40;
         this.charSlideheight = 20;
-        this.hitBoxX =  this.x + 15;
+        this.hitBoxX = this.x + 15;
         this.hitBoxY = this.y + 6;
         this.hitBoxWidth = this.width * .7;
         this.hitBoxHeight = this.height * .9;
@@ -90,10 +90,10 @@ class Tux {
         if (currentAmmo === 0) {
             fire = false;
         }
-        
+
         if (!this.sliding) {
             //update hit box area
-            this.hitBoxX =  this.x + 15;
+            this.hitBoxX = this.x + 15;
             this.hitBoxY = this.y + 6;
             this.hitBoxWidth = this.width * .7;
             this.hitBoxHeight = this.height * .9;
@@ -139,7 +139,7 @@ class Tux {
         this.originalWidth = 144;
         this.width = this.width + 20;
         this.frameX = 0;
-        this.hitBoxX =  this.x + 15;
+        this.hitBoxX = this.x + 15;
         this.hitBoxY = this.y + 35;
         this.hitBoxWidth = this.width * .86;
         this.hitBoxHeight = this.height * .7;
@@ -162,14 +162,14 @@ class Tux {
     collision() {
         let currentEnemy = null; // Variable for enemy that's currently hurting Tux
         busy = true; // Checking for collision
-        
+
         for (let i = 0; i < slugsArray.length; i++) {
             let slugY = slugsArray[i].y; // Loop through slugs
             let slugX = slugsArray[i].x; // Get slug[i] x value
             if ((slugX > this.hitBoxX && slugX < this.hitBoxX + this.hitBoxWidth) || (slugX + slug.width > this.hitBoxX && slugX + slug.width < this.hitBoxX + this.hitBoxWidth)) {
                 if ((slugY > this.hitBoxY && slugY < this.hitBoxY + this.hitBoxHeight) || (slugY + slug.height > this.hitBoxY && slugY + slug.height < this.hitBoxY + this.hitBoxHeight)) {
-                    slugsArray.pop(slugsArray[i]);
-                    tuxIsHit(15); // Add damage to Tux
+                    slugsArray.splice(i, 1);
+                    tuxIsHit(10); // Add damage to Tux
                 }
             }
         }
@@ -190,7 +190,7 @@ class Tux {
             if ((carrotX > this.hitBoxX && carrotX < this.hitBoxX + this.hitBoxWidth) || (carrotX + carrot.width > this.hitBoxX && carrotX + carrot.width < this.hitBoxX + this.hitBoxWidth)) {
                 if ((carrotY > this.hitBoxY && carrotY < this.hitBoxY + this.hitBoxHeight) || (carrotY + carrot.height > this.hitBoxY && carrotY + carrot.height < this.hitBoxY + this.hitBoxHeight)) {
                     carrotImpact = true;
-                    carrotArray.pop(carrotArray[i]);
+                    carrotArray.splice(i, 1);
                     tuxIsHit(10);
                 }
             }
@@ -201,7 +201,7 @@ class Tux {
             let snowflakeY = flakeArray[i].y;
             if ((snowflakeX > this.hitBoxX && snowflakeX < this.hitBoxX + this.hitBoxWidth) || (snowflakeX + snowflake.width > this.hitBoxX && snowflakeX + snowflake.width < this.hitBoxX + this.hitBoxWidth)) {
                 if ((snowflakeY > this.hitBoxY && snowflakeY < this.hitBoxY + this.hitBoxHeight) || (snowflakeY + snowflake.height > this.hitBoxY && snowflakeY + snowflake.height < this.hitBoxY + this.hitBoxHeight)) {
-                    flakeArray.pop(flakeArray[i]);
+                    flakeArray.splice(i, 1);
                     tuxGetsASnowflake();
                 }
             }
@@ -212,7 +212,7 @@ class Tux {
             let fishY = fishArray[i].y;
             if ((fishX > this.hitBoxX && fishX < this.hitBoxX + this.hitBoxWidth) || (fishX + fish.width > this.hitBoxX && fishX + fish.width < this.hitBoxX + this.hitBoxWidth)) {
                 if ((fishY > this.hitBoxY && fishY < this.hitBoxY + this.hitBoxHeight) || (fishY + fish.height > this.hitBoxY && fishY + fish.height < this.hitBoxY + this.hitBoxHeight)) {
-                    fishArray.pop(fishArray[i]);
+                    fishArray.splice(i, 1);
                     tuxGetsAFish();
                 }
             }
