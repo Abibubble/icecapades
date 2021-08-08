@@ -43,8 +43,6 @@ function newFish() {
 newFish();
 
 //-- snowman
-const  snowmanImage = new Image()
-snowmanImage.src = "static/animations/enemies/snowman/snowman-sprite-right.png"
 function newSnowman() {
     snowman.update();
     snowman.draw();

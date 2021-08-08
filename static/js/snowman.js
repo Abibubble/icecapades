@@ -1,21 +1,17 @@
 class Snowman {
     constructor() {
-        this.x = 600; // x position on canvas
-        this.y = floorHeight; // y position on canvas
-        this.vy = 0; // y velocity
         this.originalWidth = 138; // individual sprite width from sprite sheet
         this.originalHeight = 142; // individual sprite height from sprite sheet
-        this.width = this.originalWidth * 3; // sensible width for game
-        this.height = this.originalHeight * 3; // sensible height for game
-        this.weight = 1; // gravity effect
+        this.width = this.originalWidth * 2.5; // sensible width for game
+        this.height = this.originalHeight * 2.5; // sensible height for game
         this.frameX = 0; // sprite sheet x position (column)
-        this.frameY = 0; // sprite sheet y position (row)
-        this.row = 0; // row counter for sprite sheet
-        // this.color; // ??assign a value from a random array to select fish color??
+        this.x = canvas.width - this.width; // x position on canvas
+        this.y = canvas.height - this.height - floorHeight; // y position on canvas
+        this.image = new Image();
+        this.image.src = "static/animations/enemies/snowman/snowman-sprite-left.png";
     }
 
     update() {
-        // let snowManColCalc = frameX % 2; // to cycle through 4 columns
         if (gameFrame % staggerFrames == 0) {
             if (frameX < 1) this.frameX++;
             else this.frameX = 0;
@@ -23,19 +19,15 @@ class Snowman {
         this.draw();
     }
 
-    // frameX is main frame rate
-
     draw() {
-        // ctx.fillStyle = "purple"; // Collision box
-        // ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(
-            snowmanImage, // sprite sheet
-            this.frameX * this.originalWidth, // x position of sprite sheet
-            this.frameY * this.originalHeight, // y position of sprite sheet
+            this.image, // sprite sheet
+            this.frameX * this.originalWidth, // x position on sprite sheet
+            0,
             this.originalWidth, // individual sprite width
             this.originalHeight, // individual sprite height
-            this.x, // x position of fish
-            this.y + 300, // height of fish
+            this.x, // x co-ord
+            this.y, // y co-ord
             this.width, // intended width
             this.height, // intended height
         );
