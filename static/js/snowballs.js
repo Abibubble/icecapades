@@ -80,8 +80,10 @@ class Snowball {
                 snowballArray.pop(snowballArray[i]);
                 snowballArray.pop(this);
                 if (snowmanHealth == 0) {
-                    winModal.classList.remove("invisible");
-                    winInner.classList.add("modal-animation");
+                    if (gameOverModal.classList.contains("invisible")) {
+                        winModal.classList.remove("invisible");
+                        winInner.classList.add("modal-animation");
+                    }
                 }
             }
         }
