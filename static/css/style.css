@@ -5,9 +5,6 @@
 }
 
 /* ? without this, there is a 4 pixel gap below the canvas and I don't know why */
-/* header and footer display with no spacing between */
-/* -- added background-color to match game background */
-/* -- removed horizontal scrollbar */
 body {
   display: flex;
   flex-direction: column;
@@ -17,45 +14,37 @@ body {
 
 /* ---------------------------------------------------------------------- Header */
 
-/* Add custom font */
 @font-face {
   font-family: snowtopcaps;
   src: url(../fonts/snowtopcaps.ttf);
 }
 
-/* snowtopcaps font class */
 .snowtopfont {
   font-family: snowtopcaps, Geneva, Tahoma, sans-serif;
 }
 
-/* Add gradient to header */
 header {
   height: 100px;
   background-image: linear-gradient(white, #ADD8E6);
 }
 
-/* header-box details */
 .header-box {
   text-align: center;
   width: 100%;
   margin-top: 5px;
 }
 
-/* divs within the header-box */
 .header-box div {
   display: inline-block;
   height: 100px;
   vertical-align: top;
 }
 
-/* Header sizes if the screen size is 601px */
 @media screen and (min-width: 601px) {
-/* Character image height */
   .header-character {
     height: 5rem;
   }
 
-  /* Set main heading text */
   header h1 {
     font-size: 4.5rem;
     text-align: center;
@@ -64,14 +53,11 @@ header {
   }
 }
 
-/* Header sizes if the screen size is 600px wide or less */
 @media screen and (max-width: 600px) {
-  /* Character image height */
   .header-character {
     height: 3.5rem;
   }
 
-  /* Set main heading text */
   header h1 {
     font-size: 3rem;
     text-align: center;
@@ -168,8 +154,6 @@ noscript {
 }
 
 /* ------------------------------ Audio button */
-
-
 
 .audio-button {
   z-index: 2;
@@ -309,6 +293,7 @@ button {
 
 .quit-good {
   background-color: aqua;
+  width: 100%;
 }
 
 /* ------------------------------ Modals transitions */
@@ -329,45 +314,39 @@ button {
 
 /* ---------------------------------------------------------------------- Footer */
 
-/* Add gradient to footer */
 footer {
   width: 100%;
   background-image: linear-gradient(#ADD8E6, white);
   bottom: 0px;
 }
 
-/* List items inline and space out */
 footer li {
   display: inline-block;
   padding: 5px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Center the text */
 .copyright {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Center the text */
 .team-github-links {
   text-align: center;
   margin: 0;
   padding: 0;
 }
 
-/* Remove default underline and keep text black */
 .team-github-links a {
   text-decoration: none;
   color: black;
 }
 
-/* Underline on hover */
 .team-github-links a:hover {
   text-decoration: underline;
 }
 
-/* -- rotate device -------------------- */
+/* ---------------------------------------------------------------------- Rotate device */
 
 #message-content {
   font-family: snowtopcaps, Geneva, Tahoma, sans-serif;
@@ -378,10 +357,12 @@ footer li {
   width: fit-content;
   margin: 2rem auto;
 }
+
 #message-content p {
   padding: 0 20vw;
   margin-bottom: 1.2rem;
 }
+
 #message-content img {
   height: 50vw;
   width: 50vw;
