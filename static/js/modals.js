@@ -8,6 +8,7 @@ function toggleInstructions() {
         gameSpeed = 0;
         endGame = true;
         tux.weight = 0;
+        console.log(gameSpeed);
         instructionsModal.classList.remove("invisible");
         iInner.classList.add("modal-animation");
     } else {
