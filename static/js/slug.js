@@ -58,4 +58,4 @@ const handleSlugs = () => {
     }
 };
 
-const slug = new Slug()
+const slug = new Slug();

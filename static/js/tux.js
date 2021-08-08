@@ -63,7 +63,7 @@ class Tux {
             this.jumpAnim();
         }
 
-        if (!busy && !tuxBeingHurt) { // If a collision isn't already being checked, and if Tux isn't already being hurt
+        if (!busy) { // If a collision isn't already being checked, and if Tux isn't already being hurt
             this.collision(); // Check for collisions
         }
 
@@ -134,28 +134,32 @@ class Tux {
         for (let i = 0; i < slugsArray.length; i++) {
             let slugY = slugsArray[i].y; // Loop through slugs
             let slugX = slugsArray[i].x; // Get slug[i] x value
-            /* if (!tuxBeingHurt) { */ // if Tux isn't being hurt, allow to check for hit
             if ((slugX > this.x && slugX < this.x + this.width) || (slugX + slug.width > this.x && slugX + slug.width < this.x + this.width)) {
                 if ((slugY > this.y && slugY < this.y + this.height) || (slugY + slug.height > this.y && slugY + slug.height < this.y + this.height)) {
-                    /* tuxBeingHurt = true; */ // if hit, tux is being hurt
-                    /* currentEnemy = slugx; */ // store the current enemy
                     slugsArray.pop(slugsArray[i]);
                     tuxIsHit(10); // Add damage to Tux
                 }
             }
-            /* } */
         }
-        
         
         for (let i = 0; i < wormsArray.length; i++) { // See above
             let wormX = wormsArray[i].x;
             let wormY = wormsArray[i].y;
             if ((wormX > this.x && wormX < this.x + this.width) || (wormX + worm.width > this.x && wormX + worm.width < this.x + this.width)) {
                 if ((wormY > this.y && wormY < this.y + this.height) || (wormY + worm.height > this.y && wormY + worm.height < this.y + this.height)) {
-                    /* tuxBeingHurt = true; */
                     wormsArray.pop(wormsArray[i]);
                     tuxIsHit(15);
-                    console.log("OH NO! WORM!");
+                }
+            }
+        }
+
+        for (let i = 0; i < flakeArray.length; i++) { // See above
+            let snowflakeX = flakeArray[i].x;
+            let snowflakeY = flakeArray[i].y;
+            if ((snowflakeX > this.x && snowflakeX < this.x + this.width) || (snowflakeX + snowflake.width > this.x && snowflakeX + snowflake.width < this.x + this.width)) {
+                if ((snowflakeY > this.y && snowflakeY < this.y + this.height) || (snowflakeY + snowflake.height > this.y && snowflakeY + snowflake.height < this.y + this.height)) {
+                    flakeArray.pop(flakeArray[i]);
+                    tuxGetsASnowflake();
                 }
             }
         }
