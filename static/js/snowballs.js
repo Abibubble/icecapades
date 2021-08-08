@@ -94,6 +94,7 @@ const handleSnowball = () => {
     for (let i = 0; i < snowballArray.length; i++) {
         snowballArray[i].update();
     }
+    
     if (snowballArray.length > 5) {
         snowballArray.pop(snowballArray[0]);
     }

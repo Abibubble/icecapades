@@ -13,22 +13,12 @@ function toggleInstructions() {
     }
 }
 
-// -------------------------------------------------------------------- Win / Game Over Modal
+// -------------------------------------------------------------------- Win / Game Over Modal Variables
 
 const winModal = document.getElementById("win-modal");
 const gameOverModal = document.getElementById("game-over-modal");
 const winInner = document.getElementById("win-inner");
 const gameOverInner = document.getElementById("game-over-inner");
-
-function openModal() {
-    if (this.id == winModal.id) {
-        winModal.classList.remove("invisible");
-        winInner.classList.add("modal-animation");
-    } else if (this.id == gameOverModal.id) {
-        gameOverModal.classList.remove("invisible");
-        gameOverInner.classList.add("modal-animation");
-    }
-}
 
 // -------------------------------------------------------------------- Close modal
 
