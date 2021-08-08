@@ -173,14 +173,13 @@ class Tux {
                 }
             }
         }
-        
+
         for (let i = 0; i < wormsArray.length; i++) { // See above
-            let wormX = wormsArray[i].x;
-            let wormY = wormsArray[i].y;
-            if ((wormX > this.hitBoxX && wormX < this.hitBoxX + this.hitBoxWidth) || (wormX + worm.width > this.hitBoxX && wormX + worm.width < this.hitBoxX + this.hitBoxWidth)) {
-                if ((wormY > this.hitBoxY && wormY < this.hitBoxY + this.hitBoxHeight) || (wormY + worm.height > this.hitBoxY && wormY + worm.height < this.hitBoxY + this.hitBoxHeight)) {
-                    wormsArray.pop(wormsArray[i]);
-                    tuxIsHit(15);
+            let collideWith = wormsArray[i]; //  wormInst;
+            if ((collideWith.hitBoxX > this.hitBoxX && collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) || (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX && collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+                if ((collideWith.hitBoxY > this.hitBoxY && collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) || (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY && collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
+                    wormsArray.splice(i, 1); //remove collided worm from array
+                    tuxIsHit(15); // drop health by 15
                 }
             }
         }
