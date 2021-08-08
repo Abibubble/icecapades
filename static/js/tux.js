@@ -97,9 +97,6 @@ class Tux {
     }
 
     draw() {
-        ctx.fillStyle = "red";
-        // ctx.fillRect(this.x + 15, this.y + 6, this.width * .7, this.height * .9);
-        ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
         if (this.y > canvas.height - this.height - floorHeight && !this.sliding) {
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.originalWidth = 154;
