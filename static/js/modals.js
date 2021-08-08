@@ -5,9 +5,13 @@ const iInner = document.getElementById("i-inner");
 
 function toggleInstructions() {
     if (instructionsModal.classList.contains("invisible")) {
+        gameSpeed = 0;
+        endGame = true;
         instructionsModal.classList.remove("invisible");
         iInner.classList.add("modal-animation");
     } else {
+        gameSpeed = 6;
+        endGame = false;
         instructionsModal.classList.add("invisible");
         iInner.classList.remove("modal-animation");
     }
