@@ -1,5 +1,3 @@
-
-
 class Tux {
     constructor() {
         this.x = 150;
@@ -63,7 +61,6 @@ class Tux {
         }
         if (this.jumping) {
             this.jumpAnim();
-
         }
         
         if (!busy && !tuxBeingHurt) { // If a collision isn't already being checked, and if Tux isn't already being hurt
@@ -79,6 +76,7 @@ class Tux {
             this.originalWidth = 154;
             this.frameX = frameX;
         }
+        
         ctx.drawImage(
             playerImage,
             this.frameX * this.originalWidth,
