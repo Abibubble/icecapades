@@ -12,9 +12,19 @@ class Worm {
         this.y = canvas.height - this.height - floorHeight;
         this.color = "red";
         this.counted = false;
+        this.hitBoxWidth = this.width * .83;
+        this.hitBoxHeight = this.height * .7;
+        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxY = this.y + this.height * .3;
     }
 
     draw() {
+
+        // * remove - for testing only
+        ctx.fillStyle = "red";
+        ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
+        // *
+
         ctx.drawImage(
             //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
             wormSprite,
@@ -31,20 +41,28 @@ class Worm {
 
     update() {
         this.x -= gameSpeed;
+        // ?what is the below comment, can we remove it?
         /* if (!this.counted && this.x < slug.x) {
             score++;
             this.counted = true;
         } */
         if (gameFrame % staggerFrames == 0) {
-            if (this.frameX < 2) this.frameX++;
+            // < (number of sprites per animation) - 1
+            if (this.frameX < 3) this.frameX++;
             else this.frameX = 0;
         }
+        // update hitbox position with instance of object
+        this.hitBoxWidth = this.width * .83;
+        this.hitBoxHeight = this.height * .7;
+        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxY = this.y + this.height * .3;
         this.draw();
     }
 }
 
 const handleWorms = () => {
     // every x frames, add obstacle to array
+    // if (gameFrame % 50 === 0) { //testing speed
     if (gameFrame % (randomNumber + 350) === 0) {
         wormsArray.unshift(new Worm());
     }
