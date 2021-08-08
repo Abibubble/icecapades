@@ -5,9 +5,14 @@ let currentHealth = 50;
 let deadTux = 0;
 let dangerZone = 10;
 let healthBar = document.getElementById("health-bar");
+let snowmanHealthBar = document.getElementById("boss-health-bar");
 
 function pushHealth() {
     healthBar.style.width = currentHealth * 2 + "%";
+}
+
+function pushSnowmanHealth(){
+    snowmanHealthBar.style.width = snowmanHealth/3 * 2 + "%";
 }
 
 function checkHealth() {
