@@ -46,6 +46,7 @@ class Snowball {
             let slugX = slugsArray[i].x; // Get slug[i] x value
             if ((slugX > this.x && slugX < this.x + this.width) || (slugX + slug.width > this.x && slugX + slug.width < this.x + this.width)) {
                 slugsArray.pop(slugsArray[i]);
+                snowballArray.pop(snowballArray[i]);
             }
         }
 
@@ -53,6 +54,7 @@ class Snowball {
             let wormX = wormsArray[i].x; // Get slug[i] x value
             if ((wormX > this.x && wormX < this.x + this.width) || (wormX + worm.width > this.x && wormX + worm.width < this.x + this.width)) {
                 wormsArray.pop(wormsArray[i]);
+                snowballArray.pop(snowballArray[i]);
             }
         }
 
