@@ -20,21 +20,6 @@ function tuxControl() {
 
 tuxControl();
 
-/* // -- worm
-const wormImage = new Image();
-wormImage.src = "static/animations/enemies/worm/worm-sprite1.png";
-
-function newWorm() {
-    worm.update();
-    worm.draw();
-    requestAnimationFrame(newWorm);
-}
-
-newWorm(); // place inside a create function */
-
-//-- fish
-
-
 //-- snowman
 function newSnowman() {
     snowman.update();

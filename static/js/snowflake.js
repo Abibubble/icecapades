@@ -11,7 +11,7 @@ class Snowflake {
     this.y = -20;
     this.collected = false;
     this.image = new Image ();
-    this.image.src = "static/background/object_snowflake.png";
+    this.image.src = "static/animations/projectiles/object_snowflake.png";
     this.weight = .4;
     this.vy = 0;
   }
@@ -35,9 +35,11 @@ class Snowflake {
     this.vy += this.weight;
     this.vy *= 0.9; 
     this.y += this.vy;
-      if (this.y > canvas.height - tux.height * 3) {
+
+    if (this.y > canvas.height - tux.height * 3) {
       this.x = this.x -= flakeSpeed * 2; // fast left
     }
+
     this.draw();
     // ?? hide image in a better way ??
     if (this.collected) {
@@ -55,9 +57,11 @@ const handleSnowflake = () => {
   if (gameFrame % 300 === 0) {
       flakeArray.unshift(new Snowflake());
   }
+
   for (let i = 0; i < flakeArray.length; i++) {
       flakeArray[i].update();
   }
+  
   if (flakeArray.length > 5) {
       flakeArray.pop(flakeArray[0]);
   }

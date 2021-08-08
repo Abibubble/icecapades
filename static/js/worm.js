@@ -27,8 +27,8 @@ class Worm {
             this.width, //dw
             this.height //this.height + 10, dh
         );
-
     }
+
     update() {
         this.x -= gameSpeed;
         /* if (!this.counted && this.x < slug.x) {
@@ -48,9 +48,11 @@ const handleWorms = () => {
     if (gameFrame % (randomNumber + 350) === 0) {
         wormsArray.unshift(new Worm());
     }
+
     for (let i = 0; i < wormsArray.length; i++) {
         wormsArray[i].update();
     }
+    
     if (wormsArray.length > 20) {
         wormsArray.pop(wormsArray[0]);
     }

@@ -37,6 +37,7 @@ class Fish {
             default:
                 this.frameX = 0;
         }
+
         let fishRowCalc = this.row % 5; // cycle through 5 columns
         switch (fishRowCalc) {
             case 0:
@@ -57,6 +58,7 @@ class Fish {
             default:
                 this.frameY = 0;
         }
+
         this.x -= gameSpeed;
         this.draw();
     }
@@ -90,9 +92,11 @@ const handleFish = () => {
             fishColor = fishColorArray[fishIndex];
         }
     }
+
     for (let i = 0; i < fishArray.length; i++) {
         fishArray[i].update();
     }
+    
     if (fishArray.length > 10) {
         fishArray.pop(fishArray[0]);
     }

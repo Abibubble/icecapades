@@ -15,6 +15,7 @@ function handleBackground() {
     } else {
         BG.x1 -= gameSpeed;
     }
+    
     if (BG.x2 <= -BG.width + gameSpeed) {
         BG.x2 = BG.width;
     } else {
