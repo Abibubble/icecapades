@@ -14,8 +14,8 @@ function handleChange() {
     let headerHeight = document.getElementsByTagName("header")[0].offsetHeight;
     let footerHeight = document.getElementsByTagName("footer")[0].offsetHeight;
     canvasWidth = canvas.width = window.innerWidth;
-    canvasHeight = canvas.height =
-        window.innerHeight - (headerHeight + footerHeight);
+    canvasHeight = canvas.height = window.innerHeight - (headerHeight + footerHeight);
+
     if (canvasHeight > canvasWidth) {
         // portrait
         newSpriteWidth = canvasHeight / 7.5;
@@ -66,13 +66,14 @@ frameRate();
 function walk() {
     let spawnx = 30;
     let spawny = walkWidth; //height where it would be shown
+
     ctx.clearRect(
         spawnx,
         canvasHeight - (newSpriteHeight + floorHeight),
         walkWidth + 141,
         spriteHeight + 200
     ); //ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // ctx.fillRect(100,50,100,100);
+
     //! reference for values https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
     // ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
     let position = Math.floor(gameFrame / staggerFrames) % 4; // 4= Length of sprite images
@@ -139,6 +140,7 @@ function jump() {
         newSpriteWidth,
         newSpriteHeight
     );
+
     // change jumpCount value for duration of jump animation
     if (jumpCount < 75) {
         jumpDirection = "up";
@@ -155,7 +157,6 @@ function jump() {
         }
     }
 }
-
 
 document.body.onkeyup = function (e) {
     if (e.keyCode == 38) {
@@ -177,6 +178,7 @@ const wormHeight = 256;
 let spriteSize = 100;
 let spawnx = canvasWidth;
 let spawny = 0; //height where it would be shown
+
 function showWorm() {
     let position = Math.floor(gameFrame / staggerFrames) % 4; // 4= Length of sprite images
     ctx.clearRect(
@@ -185,6 +187,7 @@ function showWorm() {
         wormWidth,
         wormHeight
     );
+
     ctx.drawImage(
         wormImage,
         wormWidth * position,
@@ -196,8 +199,10 @@ function showWorm() {
         newSpriteWidth - spriteSize,
         newSpriteHeight - spriteSize
     );
+
     requestAnimationFrame(showWorm);
     gameFrame++;
+
     if (spawnx == -100) {
         spawnx = canvasWidth + 10;
     }
@@ -212,6 +217,7 @@ const slugWidth = 299;
 const slugHeight = 178;
 let spawnslugx = canvasWidth;
 let spawnslugy = 0;
+
 function showSlug() {
     let position = Math.floor(gameFrame / staggerFrames) % 3; // 4= Length of sprite images
     ctx.clearRect(
@@ -220,6 +226,7 @@ function showSlug() {
         slugWidth,
         slugHeight
     );
+
     ctx.drawImage(
         slugImage,
         slugWidth * position,
@@ -231,8 +238,10 @@ function showSlug() {
         newSpriteWidth - spriteSize,
         newSpriteHeight - spriteSize
     );
+
     requestAnimationFrame(showSlug);
     gameFrame++;
+    
     if (spawnslugx == -299) {
         //let slug to go behind screen
         spawnslugx = canvasWidth + 10;

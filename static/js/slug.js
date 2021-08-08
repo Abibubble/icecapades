@@ -29,6 +29,7 @@ class Slug {
             this.height //this.height + 10, dh
         );
     }
+    
     update() {
         this.x -= gameSpeed;
         /* if (!this.counted && this.x < slug.x) {
