@@ -19,8 +19,10 @@ function checkHealth() {
     if (currentHealth <= deadTux) {
         healthBar.style.width = "0%";
         tux.die();
-        gameOverModal.classList.remove("invisible");
-        gameOverInner.classList.add("modal-animation");
+        if (winModal.classList.contains("invisible")) {
+            gameOverModal.classList.remove("invisible");
+            gameOverInner.classList.add("modal-animation");
+        }
     } else if (currentHealth <= dangerZone) {
         pushHealth();
         healthBar.style.color = "red";
