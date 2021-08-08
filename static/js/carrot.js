@@ -67,4 +67,18 @@ class Carrot {
   }
 }
 
+/* const handleCarrot = () => {
+  if (gameFrame % (randomNumber + 350) === 0) {
+    carrotArray.unshift(new Carrot());
+}
+
+for (let i = 0; i < carrotArray.length; i++) {
+    carrotArray[i].update();
+}
+
+if (carrotArray.length > 20) {
+    carrotArray.pop(carrotArray[0]);
+}
+} */
+
 const carrot = new Carrot();
