@@ -3,9 +3,11 @@ function restartGame() {
     currentAmmo = 10;
     gameFrame = 0;
     score = 0;
+    fishArray = [];
     slugsArray = [];
     wormsArray = [];
+    flakeArray = [];
     checkHealth();
-    checkAmmo();
+    pushAmmo();
     closeModal();
 }
