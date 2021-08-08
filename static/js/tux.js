@@ -81,6 +81,10 @@ class Tux {
             }
             fire = false;
         }
+
+        if (currentAmmo === 0) {
+            fire = false;
+        }
         
         if (!this.sliding) {
             //update hit box area
