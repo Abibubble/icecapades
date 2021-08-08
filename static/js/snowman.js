@@ -9,6 +9,10 @@ class Snowman {
         this.y = canvas.height - this.height - floorHeight; // y position on canvas
         this.image = new Image();
         this.image.src = "static/animations/enemies/snowman/snowman-sprite-left.png";
+        this.hitBoxX =  this.x + 15;
+        this.hitBoxY = this.y + 20;
+        this.hitBoxWidth = this.width - 15;
+        this.hitBoxHeight = this.height - 20;
     }
 
     update() {

@@ -29,8 +29,7 @@ class Worm {
             this.width, //dw
             this.height //this.height + 10, dh
         );
-        /* console.log(this.y);
-        console.log(canvas.height - this.height - floorHeight); */
+
     }
     update() {
         this.x -= gameSpeed;
@@ -47,8 +46,8 @@ class Worm {
 }
 
 const handleWorms = () => {
-    // every x frames, add obstalce to array
-    if (gameFrame % (randomNumber + 500) === 0) {
+    // every x frames, add obstacle to array
+    if (gameFrame % (randomNumber + 350) === 0) {
         wormsArray.unshift(new Worm());
     }
     for (let i = 0; i < wormsArray.length; i++) {
