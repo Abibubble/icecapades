@@ -33,7 +33,7 @@ function tuxIsHit(hurt) {
 }
 
 function tuxGetsAFish() {
-    if (currentHeath <= 30) {
+    if (currentHealth <= 30) {
         currentHealth += 20;
     } else if (currentHealth > 30) {
         currentHealth = 50;

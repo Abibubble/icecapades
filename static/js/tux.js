@@ -13,6 +13,10 @@ class Tux {
         this.sliding = false;
         this.charSlideWidth = 40;
         this.charSlideheight = 20;
+        this.hitBoxX =  this.x + 15;
+        this.hitBoxY = this.y + 6;
+        this.hitBoxWidth = this.width * .7;
+        this.hitBoxHeight = this.height * .9;
     }
 
     update() {
@@ -77,11 +81,21 @@ class Tux {
             }
             fire = false;
         }
+        
+        if (!this.sliding) {
+            //update hit box area
+            this.hitBoxX =  this.x + 15;
+            this.hitBoxY = this.y + 6;
+            this.hitBoxWidth = this.width * .7;
+            this.hitBoxHeight = this.height * .9;
+        }
+
     }
 
     draw() {
         ctx.fillStyle = "red";
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        // ctx.fillRect(this.x + 15, this.y + 6, this.width * .7, this.height * .9);
+        ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
         if (this.y > canvas.height - this.height - floorHeight && !this.sliding) {
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.originalWidth = 154;
@@ -120,6 +134,10 @@ class Tux {
         this.originalWidth = 144;
         this.width = this.width + 20;
         this.frameX = 0;
+        this.hitBoxX =  this.x + 15;
+        this.hitBoxY = this.y + 35;
+        this.hitBoxWidth = this.width * .86;
+        this.hitBoxHeight = this.height * .7;
         playerImage.src = "static/animations/penguin/penguin_slide02@2x.png";
         this.sliding = true;
     }
@@ -135,8 +153,8 @@ class Tux {
         for (let i = 0; i < slugsArray.length; i++) {
             let slugY = slugsArray[i].y; // Loop through slugs
             let slugX = slugsArray[i].x; // Get slug[i] x value
-            if ((slugX > this.x && slugX < this.x + this.width) || (slugX + slug.width > this.x && slugX + slug.width < this.x + this.width)) {
-                if ((slugY > this.y && slugY < this.y + this.height) || (slugY + slug.height > this.y && slugY + slug.height < this.y + this.height)) {
+            if ((slugX > this.hitBoxX && slugX < this.hitBoxX + this.hitBoxWidth) || (slugX + slug.width > this.hitBoxX && slugX + slug.width < this.hitBoxX + this.hitBoxWidth)) {
+                if ((slugY > this.hitBoxY && slugY < this.hitBoxY + this.hitBoxHeight) || (slugY + slug.height > this.hitBoxY && slugY + slug.height < this.hitBoxY + this.hitBoxHeight)) {
                     slugsArray.pop(slugsArray[i]);
                     tuxIsHit(15); // Add damage to Tux
                 }
@@ -146,8 +164,8 @@ class Tux {
         for (let i = 0; i < wormsArray.length; i++) { // See above
             let wormX = wormsArray[i].x;
             let wormY = wormsArray[i].y;
-            if ((wormX > this.x && wormX < this.x + this.width) || (wormX + worm.width > this.x && wormX + worm.width < this.x + this.width)) {
-                if ((wormY > this.y && wormY < this.y + this.height) || (wormY + worm.height > this.y && wormY + worm.height < this.y + this.height)) {
+            if ((wormX > this.hitBoxX && wormX < this.hitBoxX + this.hitBoxWidth) || (wormX + worm.width > this.hitBoxX && wormX + worm.width < this.hitBoxX + this.hitBoxWidth)) {
+                if ((wormY > this.hitBoxY && wormY < this.hitBoxY + this.hitBoxHeight) || (wormY + worm.height > this.hitBoxY && wormY + worm.height < this.hitBoxY + this.hitBoxHeight)) {
                     wormsArray.pop(wormsArray[i]);
                     tuxIsHit(15);
                 }
@@ -157,9 +175,10 @@ class Tux {
         for (let i = 0; i < carrotArray.length; i++) { // See above
             let carrotX = carrotArray[i].x;
             let carrotY = carrotArray[i].y;
-            if ((carrotX > this.x && carrotX < this.x + this.width) || (carrotX + carrot.width > this.x && carrotX + carrot.width < this.x + this.width)) {
-                if ((carrotY > this.y && carrotY < this.y + this.height) || (carrotY + carrot.height > this.y && carrotY + carrot.height < this.y + this.height)) {
+            if ((carrotX > this.hitBoxX && carrotX < this.hitBoxX + this.hitBoxWidth) || (carrotX + carrot.width > this.hitBoxX && carrotX + carrot.width < this.hitBoxX + this.hitBoxWidth)) {
+                if ((carrotY > this.hitBoxY && carrotY < this.hitBoxY + this.hitBoxHeight) || (carrotY + carrot.height > this.hitBoxY && carrotY + carrot.height < this.hitBoxY + this.hitBoxHeight)) {
                     carrotArray.pop(carrotArray[i]);
+                    carrotImpact = true;
                     tuxIsHit(10);
                 }
             }
@@ -168,8 +187,8 @@ class Tux {
         for (let i = 0; i < flakeArray.length; i++) { // See above
             let snowflakeX = flakeArray[i].x;
             let snowflakeY = flakeArray[i].y;
-            if ((snowflakeX > this.x && snowflakeX < this.x + this.width) || (snowflakeX + snowflake.width > this.x && snowflakeX + snowflake.width < this.x + this.width)) {
-                if ((snowflakeY > this.y && snowflakeY < this.y + this.height) || (snowflakeY + snowflake.height > this.y && snowflakeY + snowflake.height < this.y + this.height)) {
+            if ((snowflakeX > this.hitBoxX && snowflakeX < this.hitBoxX + this.hitBoxWidth) || (snowflakeX + snowflake.width > this.hitBoxX && snowflakeX + snowflake.width < this.hitBoxX + this.hitBoxWidth)) {
+                if ((snowflakeY > this.hitBoxY && snowflakeY < this.hitBoxY + this.hitBoxHeight) || (snowflakeY + snowflake.height > this.hitBoxY && snowflakeY + snowflake.height < this.hitBoxY + this.hitBoxHeight)) {
                     flakeArray.pop(flakeArray[i]);
                     tuxGetsASnowflake();
                 }
@@ -179,8 +198,8 @@ class Tux {
         for (let i = 0; i < fishArray.length; i++) { // See above
             let fishX = fishArray[i].x;
             let fishY = fishArray[i].y;
-            if ((fishX > this.x && fishX < this.x + this.width) || (fishX + fish.width > this.x && fishX + fish.width < this.x + this.width)) {
-                if ((fishY > this.y && fishY < this.y + this.height) || (fishY + fish.height > this.y && fishY + fish.height < this.y + this.height)) {
+            if ((fishX > this.hitBoxX && fishX < this.hitBoxX + this.hitBoxWidth) || (fishX + fish.width > this.hitBoxX && fishX + fish.width < this.hitBoxX + this.hitBoxWidth)) {
+                if ((fishY > this.hitBoxY && fishY < this.hitBoxY + this.hitBoxHeight) || (fishY + fish.height > this.hitBoxY && fishY + fish.height < this.hitBoxY + this.hitBoxHeight)) {
                     fishArray.pop(fishArray[i]);
                     tuxGetsAFish();
                 }

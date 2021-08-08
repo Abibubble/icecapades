@@ -47,26 +47,33 @@ class Carrot {
     }
     if (!this.hit) {
       this.x = this.x - gameSpeed; //fires left
-      if ((tux.y + tux.height <= this.y) &&
-        (tux.y <= this.y + this.height)) {
-        // tux y position doesn't cause impact
-      } else {
-        if (this.x <= tux.x + tux.width * .9) {
-          // change image to fire ball
-          this.originalHeight = 196;
-          this.originalWidth = 512;
-          this.image.src = "static/animations/projectiles/flames.png"
-        }
-        if (this.x <= tux.x + tux.width * .5) {
-          this.hit = true;
-          carrotArray.pop(this);
-        }
+      // if ((tux.hitBoxY + tux.hitBoxHeight <= this.y) &&
+      //   (tux.hitBoxY <= this.y + this.height)) {
+      //   // tux y position doesn't cause impact
+      // } else {
+      //   if (this.x <= tux.hitBoxX + tux.hitBoxWidth * .9) {
+      //     // change image to fire ball
+      //     this.originalHeight = 196;
+      //     this.originalWidth = 512;
+      //     this.image.src = "static/animations/projectiles/flames.png"
+      //   }
+      //   if (this.x <= tux.x + tux.width * .5) {
+      //     this.hit = true;
+      //     carrotArray.pop(this);
+      //   }
+      // }
+      if (carrotImpact) {
+        // change image to fire ball
+        this.originalHeight = 196;
+        this.originalWidth = 512;
+        this.image.src = "static/animations/projectiles/flames.png"
+        this.frameX = 2;
       }
     }
-    if (this.hit) {
+    if (carrotImpact) {
       this.x = this.x; //freeze image
-      this.frameX = 2;
       setTimeout(this.hideImage.bind(this), 200); //delay and destroy
+      carrotImpact = false;
     }
     this.draw();
   }
