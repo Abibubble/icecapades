@@ -1,4 +1,5 @@
 function restartGame() {
+    snowmanHealth = 150;
     currentHealth = 50;
     currentAmmo = 10;
     gameFrame = 0;
@@ -10,4 +11,5 @@ function restartGame() {
     checkHealth();
     pushAmmo();
     closeModal();
+    pushSnowmanHealth();
 }
