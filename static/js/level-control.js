@@ -1,5 +1,5 @@
 let gameFrame = 0;
-let score = 130;
+let score = 0;
 let timerCount;
 const scoreContainer = document.querySelector('.score-container');
 
@@ -26,7 +26,7 @@ function scoreCount() {
             score++; // increment score by 1
         }
     }, 1000); // 1000ms = 1 second
-}   
+}
 
 frameRate();
 scoreCount();
