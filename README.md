@@ -9,14 +9,11 @@
 
 [Here is a link to the final project](https://abibubble.github.io/icecapades)
 
-<!-- BASIC DESCRIPTION OF PROJECT
-It is designed to be responsive on a wide range of devices, whilst also being easy to navigate through. -->
 Icecapades is a modern take on the classic endless runner games. With simple controls and enjoyable gameplay, it aims to provide countless hours of entertainment.
 
-<!-- WHY DID I CHOOSE THIS PROJECT -->
 We chose this as our hackathon project to give an innovative new twist on a well known (and incredibly frustrating) style of gameplay. Repeatedly trying the same things in an attempt to achieve different results, perhaps something that is a little too relateable by many software developers!
 
-![Final project image home page](assets/docs/finalpage.png)
+![Final project image home page](static/docs/finalpage.png)
 
 ## Contents
 
@@ -66,9 +63,8 @@ We chose this as our hackathon project to give an innovative new twist on a well
 ## User Experience (UX)
 
 ### Initial Discussion
-<!-- WHAT I WANTED FROM THIS PROJECT -->
-The criteria for the August - [Code Institute](https://codeinstitute.net) - hackathon is **Retro Gaming**.  
-We intend to provide a user friendly, thoroughly enjoyable application that takes the user back to when games were great. Simple to play, extremely hard to put down. We are aiming for square eyes and cramping fingers as our users endeavour to go one step further than their peers.
+The criteria for the August 2021 [Code Institute](https://codeinstitute.net) Hackathon is **Retro Gaming**.  
+We intend to provide a user friendly, thoroughly enjoyable application that takes the user back to when games were great. Simple to play, extremely hard to put down. We are aiming for square eyes and cramping fingers as our users endeavour to get Tux safely back home.
 
 ---
 
@@ -76,7 +72,6 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 
 #### Client Needs
 
-<!-- * WHAT THE CLIENT WANTS, NOT THE USER -->
 * A retro game that provides clear and substantial value to the user
 * Use an original or innovative idea, design or implementation
 * Has a well structured and completed documentation (README & Wireframes)
@@ -84,27 +79,22 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 * Focus is realistic, and has an overall sense of completeness.
 
 #### First Time Visitor
-<!-- * WHAT A FIRST TIME VISITOR WANTS, LIKE EASY TO UNDERSTAND, EASY TO NAVIGATE -->
+
 * Intuitive controls
 * Clear rules/goals of the game
 * Simple and logical navigation
 * Positive emotive response
 
 #### Returning Visitor
-<!-- * LIKE REPLAYABILITY, WHY THEY WANT TO RETURN TO THE SITE, EXTRA FEATURES -->
-* High score feature
-* Varied gameplay with increasing difficulty
 
-#### Frequent Visitor
-<!-- * WHY SOMEONE WOULD COME BACK REPEATEDLY, AND WHAT THEY'D WANT, LIKE EASY TO BOOK SOMETHING, OR A SCOREBOARD, ETC. -->
-* Score board to compare other user's scores
+* Varied gameplay with increasing difficulty
 
 ---
 
 ## Design
 
 ### Color Scheme
-<!-- * WHAT COLORS USED AND WHY -->
+
 * The game is focused around an ice/snow theme. This allowed us to utilise a blue/white colour scheme, with some more vibrant colours to highlight relevant elements.
 
 ### Typography
@@ -112,10 +102,10 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 * We have chosen the Snowtop Caps font for our heading from [1001fonts](https://www.1001fonts.com/snowtop-caps-font.html) as it fits our ice/snow theme and is also free to use for commercial use.
 
 ### Imagery
-<!-- * WHAT IMAGES ARE USED AND WHY -->
+
 We have chosen Tux, the Linux logo, as our playable character. He is related to code, fits into a theme very easily and promotes a positive emotive response.  
 His enemies are a couple of 'juiced-up' worms and slugs, seeking revenge on a bird for all their relatives that have been eaten throughout the years.  
-The boss is a snowman. This is in-keeping with the icy theme and provides a tangible enemy with fun projectiles.
+The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy theme and provides a tangible enemy with fun projectiles.
 
 * To save time, we have utilised some free sprite libraries for animated characters and backgrounds. They were sourced from:
   * [gameartguppy](https://www.gameartguppy.com/)
@@ -126,7 +116,7 @@ The boss is a snowman. This is in-keeping with the icy theme and provides a tang
 
 ### Wireframes
 
-[Here are the wireframes for desktop, mobile and tablet for this project](/static/docs/icecapades.pdf).
+[Here are the wireframes for desktop, mobile and tablet for this project](static/docs/icecapades.pdf).
 
 ### Features
 <!-- * WHAT FEATURES ARE ONE THE SITE, LIKE SCOREBOARD, FUNCTIONS, SCROLLING ALERT BAR, ETC. -->
@@ -176,7 +166,6 @@ The boss is a snowman. This is in-keeping with the icy theme and provides a tang
 * [Am I Responsive Design](http://ami.responsivedesign.is/#) was used to check the responsive design of the quiz. -->
 
 #### Shields.​io
-<!-- zero width space used to prevent link duplicating in header &#8203; -->
 
 * [Shields.io](https://shields.io/) was used to create the GitHub badges for this README.md file.
 
@@ -188,7 +177,13 @@ The boss is a snowman. This is in-keeping with the icy theme and provides a tang
 
 * [Stitches](http://draeton.github.io/stitches/) was used to generate animation sprites to simplify the coding process.
 
-BOOTSTRAP, JASMINE TESTING, JQUERY, ETC. USED?
+#### Favicon
+
+* [Favicon.io](https://favicon.io/) was used to create a favicon from an image.
+
+#### Adobe Online
+
+* [Adobe Online](https://www.adobe.com/express/feature/image/transparent-background) was used to remove the background for the favicon image.
 
 ---
 
@@ -199,10 +194,10 @@ BOOTSTRAP, JASMINE TESTING, JQUERY, ETC. USED?
 This site was deployed to GitHub Pages by following these steps:
 
 1. Login or Sign Up to [GitHub](www.github.com).
-2. Create a new repository named "REPO".
+2. Create a new repository named "icecapades".
 3. Once created, click on "Settings" on the navigation bar under the repository title.
 4. Scroll down to "GitHub Pages".
-5. Under "Source", choose which branch to deploy. I chose "master", but this is sometimes shown as "main".
+5. Under "Source", choose which branch to deploy. I chose "main", but this is sometimes shown as "master".
 6. Choose which folder to deploy from, usually "/root".
 7. Click "Save", then wait for it to be deployed. It can take some time for the page to be fully deployed.
 8. Your URL will be displayed above "Source".
@@ -210,13 +205,13 @@ This site was deployed to GitHub Pages by following these steps:
 ### How to Fork it
 
 1. Login or Sign Up to [GitHub](www.github.com).
-2. On GitHub, go to [Abibubble/REPO](https://github.com/Abibubble/icecapades).
+2. On GitHub, go to [Abibubble/icecapades](https://github.com/Abibubble/icecapades).
 3. In the top right, click "Fork".
 
 ### How to Clone it
 
 1. Login or Sign Up to [GitHub](www.github.com).
-2. Fork the repository Abibubble/REPO using the steps above in [How to Fork it](#how-to-fork-it).
+2. Fork the repository Abibubble/icecapades using the steps above in [How to Fork it](#how-to-fork-it).
 3. Above the file list, click "Code".
 4. Choose if you want to clone using HTTPS, SSH, or GitHub CLI, then click the copy button to the right.
 5. Open Git Bash.
@@ -249,7 +244,7 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the
     * [HTML Results](LINK)
 
 2. W3C CSS Validator
-    * [CSS Results](LINK)
+    * [CSS Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fabibubble.github.io%2Ficecapades%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 3. JSHint
     * [JSHint](https://jshint.com/)
@@ -298,23 +293,9 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the
 
 #### Returning Visitor Goals
 
-> High score feature
-
-* HOW THE SITE COMPLETES EACH GOAL
-
 > Varied gameplay with increasing difficulty
 
 * HOW THE SITE COMPLETES EACH GOAL
-
-#### Frequent Visitor Goals
-
-> Score board to compare other user's scores
-
-* HOW THE SITE COMPLETES EACH GOAL
-
-### Full Testing
-
-[Click here](assets/docs/testing.md) to view the full testing steps that were completed on every device and browser, and screenshots of testing.
 
 #### Desktop / Laptop
 
@@ -327,10 +308,7 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the
 3. Mozilla Firefox
     * All tested and working correctly.
 
-4. Internet Explorer
-    * All tested and working correctly.
-
-5. Safari
+4. Safari
     * All tested and working correctly.
 
 #### Tablet
@@ -351,8 +329,7 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the
 
 ### Further Testing
 
-The website was tested on Google Chrome, Firefox, Internet Explorer, Microsoft Edge, Safari and Samsung Internet browsers.
-The website was viewed on a variety of devices, including:
+The website was tested on Google Chrome, Firefox, Microsoft Edge, Safari and Samsung Internet browsers. It was not tested on Internet Explorer, as it has been depreciated and is not recommended for use. The website was viewed on a variety of devices, including:
 
 * Custom built desktop PC, running Windows 10
 * Acer Aspire V Nitro Laptop, running Windows 10
@@ -372,8 +349,7 @@ The website was viewed on a variety of devices, including:
 * Samsung A20
 * xBox One
 
-A large amount of testing was done to ensure that all pages were visible or hidden correctly, all buttons worked as they should, and the site worked as it should.
-Friends, family members, and other developers were asked to review the site and documentation to point out any bugs and/or user experience issues that they came across.
+A large amount of testing was done to ensure that all items were visible or hidden correctly, all characters and items were animated correctly, all buttons worked as they should, and the game worked as it should.
 
 ### Solved Bugs
 
@@ -382,7 +358,7 @@ Friends, family members, and other developers were asked to review the site and 
 
 ### Known Bugs
 
-* ANY BUGS LEFT IN THE CODE AFTER FINAL DEPLOYMENT, FOR FIXING IN FUTURE RELEASES
+* There is a stitching issue with the background image.
 
 ### Lighthouse
 
@@ -420,19 +396,25 @@ I tested my website using DevTools Lighthouse feature, and got these results:
 
 * [Font Awesome](https://fontawesome.com/): Library of icons used for social media and download links.
 * [Autoprefixer CSS online](https://autoprefixer.github.io/): To aid in the CSS prefixing.
-* ANY CODE I USED FROM OTHER PEOPLE OR SITES AND WHO IT'S FROM, INCLUDING CREDITING ANYONE WHO HELPED ME FIX BUGS
 
 ### Content
 
-* WHO OWNS THE CONTENT OF THE SITE
+* Unless otherwise mentioned, all content was created the the 1-Bit Short of a Flappy Disk team from [Code Institute](https://codeinstitute.net/).
 
 ### Audio Rights
 
-* WHO OWNS THE AUDIO AND WHO EDITED THE AUDIO
+* Game Audio - [Melody Loops](https://www.melodyloops.com/my-music/longoloops/slightly-anxious/)
+* Sound effects - [ZapSplat](https://www.zapsplat.com/sound-effect-category/body-impacts/page/7/)
 
 ### Media Rights
 
-* WHO OWNS ANY MEDIA ON THE SITE, SUCH AS IMAGES AND VIDEOS
+* Character and background sprites:
+  * [gameartguppy](https://www.gameartguppy.com/)
+  * [opengameart](https://opengameart.org/)
+  * [gamedeveloperstudio](https://www.gamedeveloperstudio.com/)
+  * [gamedevmarket](https://www.gamedevmarket.net/)
+  * [opengameart](https://opengameart.org/content/easter-carrot-pick-up-item)
+* Additional images to create the animation were generated using [Paint 3D](https://www.microsoft.com/en-gb/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab).
 
 ### Acknowledgements
 
