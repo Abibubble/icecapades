@@ -1,7 +1,8 @@
+let fishArray = [];
 class Fish {
     constructor() {
-        this.x = 500; // x position on canvas
-        this.y = floorHeight; // y position on canvas
+        this.x = canvas.width; // x position on canvas
+        this.y = canvas.height / 2.2 + (Math.random() * 175); // y position on canvas
         this.vy = 0; // y velocity
         this.originalWidth = 498; // individual sprite width from sprite sheet
         this.originalHeight = 327; // individual sprite height from sprite sheet
@@ -11,6 +12,9 @@ class Fish {
         this.frameX = 0; // sprite sheet x position (column)
         this.frameY = 0; // sprite sheet y position (row)
         this.row = 0; // row counter for sprite sheet
+        this.image = new Image();
+        this.image.src = `static/animations/fish/${fishColor}-fish.png`
+
         // this.color; // ??assign a value from a random array to select fish color??
     }
 
@@ -57,8 +61,8 @@ class Fish {
             default:
                 this.frameY = 0;
         }
-
-        // TODO update this.x and this.y
+        this.x -= gameSpeed;
+        this.draw();
     }
 
     // frameX is main frame rate
@@ -67,17 +71,38 @@ class Fish {
         // ctx.fillStyle = "purple"; // Collision box
         // ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(
-            fishImage, // sprite sheet
+            this.image, // sprite sheet
             this.frameX * this.originalWidth, // x position of sprite sheet
             this.frameY * this.originalHeight, // y position of sprite sheet
             this.originalWidth, // individual sprite width
             this.originalHeight, // individual sprite height
             this.x, // x position of fish
-            this.y + 300, // height of fish
+            this.y, // height of fish
             this.width, // intended width
             this.height, // intended height
         );
     }
 }
+
+const handleFish = () => {
+    // every 250 frames, add obstalce to array
+    if (gameFrame % 1100 === 0) {
+        console.log(fishIndex);
+        fishArray.unshift(new Fish());
+        if (fishIndex < 2) { // cycle through fish colors
+            fishIndex++;
+            fishColor = fishColorArray[fishIndex];
+        } else {
+            fishIndex = 0;
+            fishColor = fishColorArray[fishIndex];
+        }
+    }
+    for (let i = 0; i < fishArray.length; i++) {
+        fishArray[i].update();
+    }
+    if (fishArray.length > 10) {
+        fishArray.pop(fishArray[0]);
+    }
+};
 
 const fish = new Fish();

@@ -6,6 +6,7 @@ function tuxControl() {
     handleBackground();
     handleSlugs();
     handleWorms();
+    handleFish();
     handleSnowflake();
     handleSnowball();
     tux.update();
@@ -32,16 +33,7 @@ function newWorm() {
 newWorm(); // place inside a create function */
 
 //-- fish
-const fishImage = new Image();
-fishImage.src = "static/animations/fish/purple-fish.png";
 
-function newFish() {
-    fish.update();
-    fish.draw();
-    requestAnimationFrame(newFish);
-}
-
-newFish();
 
 //-- snowman
 function newSnowman() {
