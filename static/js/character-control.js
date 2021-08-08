@@ -50,3 +50,14 @@ function newSnowman() {
 }
 
 newSnowman();
+
+//! for testing only
+
+// todo put timing functionin snowman to call multiple carrots
+
+function newC() {
+    carrot.update();
+    requestAnimationFrame(newC);
+}
+
+newC();
