@@ -76,7 +76,7 @@ class Tux {
             this.originalWidth = 154;
             this.frameX = frameX;
         }
-        
+
         ctx.drawImage(
             playerImage,
             this.frameX * this.originalWidth,
@@ -120,7 +120,7 @@ class Tux {
     }
 
     collision() {
-        let currentEnemy; // Variable for enemy that's currently hurting Tux
+        let currentEnemy = null; // Variable for enemy that's currently hurting Tux
         busy = true; // Checking for collision
         for (let i = 0; i < slugsArray.length; i++) { // Loop through slugs
             let slugx = slugsArray[i].x; // Get slug[i] x value
@@ -144,20 +144,24 @@ class Tux {
             }
         }
 
-        if (!(currentEnemy / 2) < this.x) { // I want this without the !, but it breaks everything. No clue why!
+        console.log("currentEnemy = " + (currentEnemy / 2));
+        console.log("this.x = " + this.x);
+        if (!((currentEnemy / 2) >= this.x)) { // I want this without the !, but it breaks everything. No clue why!
             tuxBeingHurt = false; // But if currentEnemy x value is less than Tux's, Tux is no longer being hit
+            currentEnemy = null;
             console.log("tuxBeingHurt-final = " + tuxBeingHurt);
             busy = false; // Allow for collision checking again
         }
-        
-        // These are just boiler plate at the moment, please ignore them for now
-        // if ((Fish.x > this.x && Fish.x < this.x + this.width) || (Fish.x + Fish.width > this.x && Fish.x + Fish.width < this.x + this.width)) {
-            //     tuxGetsAFish();
-            // }
-            // if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
-                //     tuxGetsASnowflake();
-                // }
     }
 }
-        
+
 const tux = new Tux();
+
+
+// These are just boiler plate at the moment, please ignore them for now
+// if ((Fish.x > this.x && Fish.x < this.x + this.width) || (Fish.x + Fish.width > this.x && Fish.x + Fish.width < this.x + this.width)) {
+    //     tuxGetsAFish();
+    // }
+    // if ((Snowflake.x > this.x && Snowflake.x < this.x + this.width) || (Snowflake.x + Snowflake.width > this.x && Snowflake.x + Snowflake.width < this.x + this.width)) {
+        //     tuxGetsASnowflake();
+        // }
