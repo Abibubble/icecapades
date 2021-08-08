@@ -98,7 +98,7 @@ class Tux {
     }
 
     draw() {
-        if (this.y > canvas.height - this.height - floorHeight && !this.sliding && !this.dead) {
+        if (this.y > canvas.height - this.height - floorHeight && !this.sliding && !this.dead && !endGame) {
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.originalWidth = 154;
             this.frameX = frameX;
