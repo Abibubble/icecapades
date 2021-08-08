@@ -120,7 +120,13 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 
 ### Features
 
-* 
+* Tux can slide by holding the down arrow button. Tux lays down which makes him move faster and also avoid obstacles.
+* Modals have been used to show the instructions of the game, when the game has been won or when Tux has been killed.
+* Brian, the evil snowman boss of the game is introduced at the end of the level as the boss fight.
+* Snowflakes which are collected by Tux to add more ammo, and can be used to kill enemies during game play.
+* Snowball bar has been added to show how many snowballs Tux has left.
+* Health bar has been added to indicate how much health Tux has during game play.
+* Fish that are collected during game play increase Tux's health.
 
 ### Audio
 
