@@ -4,13 +4,14 @@ let spacePressed = false;
 let spaceHeld = false;
 let arrowDownPressed = false;
 let arrowUpPressed = false;
+let tuxIsDead = false;
 
 // D key or Space bar to Shoot
 window.addEventListener("keydown", (e) => {
     if (e.key === "d" || e.key === " " || e.key === "ArrowRight") {
         e.preventDefault();
         spacePressed = true;
-        if (!spaceHeld){
+        if (!spaceHeld  && !tuxIsDead){
             fire = true;
         }
         spaceHeld = true;
