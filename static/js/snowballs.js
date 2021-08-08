@@ -11,7 +11,8 @@ class Snowball {
         this.x = tux.x + tux.width;
         this.height = this.originalHeight / 3;
         this.width = this.originalWidth / 3;
-        this.y = tux.y + tux.height / 2;
+        this.y = tux.y;
+        this.frameX = 5;
     }
 
     draw() {
@@ -22,20 +23,32 @@ class Snowball {
             this.originalWidth,
             this.originalHeight,
             this.x,
-            canvas.height - this.height - floorHeight,
+            this.y,
             this.width,
             this.height
         );
     }
     update() {
-        this.x += gameSpeed * 3;
+        this.x += gameSpeed * 2;
         if (gameFrame % staggerFrames == 0) {
-            if (frameX < 5) this.frameX++;
-            else this.frameX = 0;
+            if (frameX < 5) this.frameX--;
+            else this.frameX = 5;
         }
         this.draw();
     }
 }
 
-const snowball = new Snowball();
-snowball;
+// const snowball = new Snowball();
+// snowball;
+
+const handleSnowball = () => {
+    if (gameFrame % 300 === 0) {
+        snowballArray.unshift(new Snowball());
+    }
+    for (let i = 0; i < snowballArray.length; i++) {
+        snowballArray[i].update();
+    }
+    if (snowballArray.length > 5) {
+        snowballArray.pop(snowballArray[0]);
+    }
+  };

@@ -7,6 +7,7 @@ function tuxControl() {
     handleSlugs();
     handleWorms();
     handleSnowflake();
+    handleSnowball();
     tux.update();
     tux.draw();
     if (gameFrame % staggerFrames == 0) {

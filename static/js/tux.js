@@ -7,8 +7,8 @@ class Tux {
         this.vy = 0;
         this.originalWidth = 154;
         this.originalHeight = 138;
-        this.width = this.originalWidth;
-        this.height = this.originalHeight;
+        this.width = this.originalWidth + 5;
+        this.height = this.originalHeight + 10;
         this.weight = 1;
         this.frameX = 0;
         this.jumping = true;
@@ -87,10 +87,8 @@ class Tux {
             this.originalHeight,
             this.x,
             this.y,
-            this.width + 5,
-            this.height + 10,
-            this.originalWidth,
-            this.originalHeight
+            this.width,
+            this.height,
         );
     }
 
