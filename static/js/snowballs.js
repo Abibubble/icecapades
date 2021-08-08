@@ -46,8 +46,8 @@ class Snowball {
         this.hitBoxWidth = this.width - 65;
         this.hitBoxHeight = this.height - 55;
         this.draw();
-
         this.hit();
+        if (this.x > canvas.width) snowballArray.pop(this);
     }
 
     hit() {
@@ -57,10 +57,10 @@ class Snowball {
             if ((collideWith.x > this.hitBoxX && collideWith.x < this.hitBoxX + this.hitBoxWidth) || (collideWith.x + collideWith.width > this.hitBoxX && collideWith.x + collideWith.width < this.hitBoxX + this.hitBoxWidth)) {
                 if ((collideWith.y > this.hitBoxY && collideWith.y < this.hitBoxY + this.hitBoxHeight) || (collideWith.y + collideWith.height > this.hitBoxY && collideWith.y + collideWith.height < this.hitBoxY + this.hitBoxHeight)) {
                     slugsArray.pop(collideWith);
+                    snowballArray.pop(this);
                     if (audio == 'on') {
                         enemyHitSnowballAudio.play();
                     }
-                    snowballArray.pop(this);
                 }
             }
         }
@@ -79,19 +79,22 @@ class Snowball {
             }
         }
         //THIS NEEDS A CHECK FOR SNOWMAN BEING ALIVE
-        if ((snowman.x > this.x && snowman.x < this.x + this.width) || (snowman.x + snowman.width > this.x && snowman.x + snowman.width < this.x + this.width)) {
-            snowmanHealth -= 10;
-                pushSnowmanHealth();
-                if (audio == 'on') {
-                    enemyHitSnowballAudio.play();
-                }
-                snowballArray.pop(this);      
-            if (snowmanHealth == 0) {
-                gameSpeed = 0;
-                endGame = true;  
-                if (gameOverModal.classList.contains("invisible")) {
-                    winModal.classList.remove("invisible");
-                    winInner.classList.add("modal-animation");
+        if (score >= 150) {
+            if ((snowman.hitBoxX <= this.hitBoxX + this.hitBoxWidth) &&
+                (snowman.hitBoxY <= this.hitBoxY + this.hitBoxHeight)) {
+                snowmanHealth -= 10;
+                    pushSnowmanHealth();
+                    if (audio == 'on') {
+                        enemyHitSnowballAudio.play();
+                    }
+                    snowballArray.pop(this);      
+                if (snowmanHealth == 0) {
+                    gameSpeed = 0;
+                    endGame = true;  
+                    if (gameOverModal.classList.contains("invisible")) {
+                        winModal.classList.remove("invisible");
+                        winInner.classList.add("modal-animation");
+                    }
                 }
             }
         }

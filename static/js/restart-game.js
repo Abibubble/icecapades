@@ -12,4 +12,5 @@ function restartGame() {
     pushAmmo();
     closeModal();
     pushSnowmanHealth();
+    bossHealthBar.classList.add("invisible");
 }

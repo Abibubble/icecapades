@@ -9,36 +9,23 @@ function tuxControl() {
     handleFish();
     handleSnowflake();
     handleSnowball();
-    /* handleCarrot(); */
     tux.update();
     tux.draw();
+
     if (score >= 150) {
         gameSpeed = 0;
         snowman.isSpawned = true;
+        bossHealthBar.classList.remove("invisible");
         handleSnowman();
+        handleCarrot();
     }
+
     if (gameFrame % staggerFrames == 0) {
         if (frameX < 3) frameX++;
         else frameX = 0;
     }
+
     requestAnimationFrame(tuxControl);
 }
 
 tuxControl();
-
-//-- snowman
-function newSnowman() {
-    snowman.update();
-    requestAnimationFrame(newSnowman);
-}
-
-//! for testing only
-
-// todo put timing functionin snowman to call multiple carrots
-
-function newC() {
-    carrot.update();
-    requestAnimationFrame(newC);
-}
-
-newC();
