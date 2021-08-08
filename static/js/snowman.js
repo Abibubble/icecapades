@@ -24,6 +24,9 @@ class Snowman {
     }
 
     draw() {
+        ctx.fillStyle = "red";
+        // ctx.fillRect(this.x + 15, this.y + 6, this.width * .7, this.height * .9);
+        ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
         ctx.drawImage(
             this.image, // sprite sheet
             this.frameX * this.originalWidth, // x position on sprite sheet
