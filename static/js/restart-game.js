@@ -3,6 +3,8 @@ function restartGame() {
     currentAmmo = 10;
     gameFrame = 0;
     score = 0;
+    slugsArray = [];
+    wormsArray = [];
     checkHealth();
     checkAmmo();
     closeModal();
