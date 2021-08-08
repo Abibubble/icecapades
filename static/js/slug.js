@@ -35,7 +35,7 @@ class Slug {
             this.counted = true;
         } */
         if (gameFrame % staggerFrames == 0) {
-            if (frameX < 2) this.frameX++;
+            if (this.frameX < 2) this.frameX++;
             else this.frameX = 0;
         }
         this.draw();
@@ -43,7 +43,7 @@ class Slug {
 }
 
 const handleSlugs = () => {
-    // every 150 frames, add obstalce to array
+    // every 250 frames, add obstalce to array
     if (gameFrame % 250 === 0) {
         slugsArray.unshift(new Slug());
     }
@@ -54,3 +54,5 @@ const handleSlugs = () => {
         slugsArray.pop(slugsArray[0]);
     }
 };
+
+const slug = new Slug()
