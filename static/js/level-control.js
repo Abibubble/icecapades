@@ -2,6 +2,7 @@ let gameFrame = 0;
 let score = 0;
 let timerCount;
 const scoreContainer = document.querySelector('.score-container');
+const floorHeight = canvas.height * .065;
 
 /**
  * initiates game frame rate for all animations
