@@ -4,14 +4,13 @@ let slugsArray = [];
 
 class Slug {
     constructor() {
-        // see worm.js for comments on values
+        // See worm.js for comments on values
         this.originalWidth = 298;
         this.originalHeight = 178;
         this.height = this.originalHeight / 2.5;
         this.width = this.originalWidth / 2.5;
         this.x = canvas.width;
         this.y = canvas.height - this.height - floorHeight;
-        this.counted = false; // ? not needed??
         // ! DO NOT CHANGE HIT BOX
         this.hitBoxWidth = this.width * .83;
         this.hitBoxHeight = this.height * .9;
@@ -21,7 +20,7 @@ class Slug {
 
     draw() {
         ctx.drawImage(
-            //(sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+            //(sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
             slugSprite,
             this.frameX * this.originalWidth,
             0,
@@ -36,17 +35,14 @@ class Slug {
 
     update() {
         this.x -= gameSpeed;
-        // ?what is the below comment, can we remove it?
-        /* if (!this.counted && this.x < slug.x) {
-            score++;
-            this.counted = true;
-        } */
+
         if (endGame) {
             this.frameX = this.frameX;
         } else if (gameFrame % staggerFrames == 0) {
             if (this.frameX < 2) this.frameX++;
             else this.frameX = 0;
         }
+
         this.hitBoxWidth = this.width * .83;
         this.hitBoxHeight = this.height * .9;
         this.hitBoxX = this.x + (this.width * .05);
@@ -56,13 +52,15 @@ class Slug {
 }
 
 const handleSlugs = () => {
-    // every x frames, add obstacle to array
+    // Every x frames, add obstacle to array
     if (gameFrame % (randomNumber + 150) === 0) {
         slugsArray.unshift(new Slug());
     }
+
     for (let i = 0; i < slugsArray.length; i++) {
         slugsArray[i].update();
     }
+    
     if (slugsArray.length > 20) {
         slugsArray.pop(slugsArray[0]);
     }

@@ -4,13 +4,12 @@ let wormsArray = [];
 
 class Worm {
     constructor() {
-        this.originalWidth = 500; //original sprite width
-        this.originalHeight = 256; //priginal sprite height
-        this.height = this.originalHeight / 2.5; //2.5
+        this.originalWidth = 500; // Original sprite width
+        this.originalHeight = 256; // Original sprite height
+        this.height = this.originalHeight / 2.5;
         this.width = this.originalWidth / 2.5;
-        this.x = canvas.width; //start x co-ord
-        this.y = canvas.height - this.height - floorHeight; // y co-ord
-        this.counted = false; //? not needed??
+        this.x = canvas.width; // Start x co-ord
+        this.y = canvas.height - this.height - floorHeight; // Start y co-ord
         /* ! DO NOT CHANGE HIT BOX
         if size needs changing, change height/width by modifying
         the denominator value marked shown as comment in height
@@ -23,36 +22,29 @@ class Worm {
 
     draw() {
         ctx.drawImage(
-            //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+            //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
             wormSprite,
-            this.frameX * this.originalWidth, //start x pos. on sprite sheet
-            0, //start y pos. on sprite sheet
-            this.originalWidth, //start width of single sprite
-            this.originalHeight, //start height
-            this.x, //destination x co-ord
-            this.y, //destination y co-ord
-            this.width, //destination width (width to be drawn)
-            this.height //destination height
+            this.frameX * this.originalWidth, // Start x pos. on sprite sheet
+            0, // Start y pos. on sprite sheet
+            this.originalWidth, // Start width of single sprite
+            this.originalHeight, // Start height
+            this.x, // Destination x co-ord
+            this.y, // Destination y co-ord
+            this.width, // Destination width (width to be drawn)
+            this.height // Destination height
         );
     }
 
     update() {
         this.x -= gameSpeed;
-        // ?what is the below comment, can we remove it?
-        /* if (!this.counted && this.x < slug.x) {
-            score++;
-            this.counted = true;
-        } */
-
-        
-        if (endGame) { //check for pause
+        if (endGame) { // Check for pause
             this.frameX = this.frameX;
         } else if (gameFrame % staggerFrames == 0) {
-            // < (number of sprites per animation) - 1
-            if (this.frameX < 3) this.frameX++; // update sprite
+            // (number of sprites per animation) - 1
+            if (this.frameX < 3) this.frameX++; // Update sprite
             else this.frameX = 0;
         }
-        // update hitbox position with instance of object
+        // Update hitbox position with instance of object
         this.hitBoxWidth = this.width * .83;
         this.hitBoxHeight = this.height * .7;
         this.hitBoxX = this.x + (this.width * .05);
@@ -62,17 +54,17 @@ class Worm {
 }
 
 const handleWorms = () => {
-    // every x frames, add obstacle to array
+    // Every x frames, add obstacle to array
     if (gameFrame % (randomNumber + 350) === 0) {
         wormsArray.unshift(new Worm());
     }
 
-    // update each worm
+    // Update each worm
     for (let i = 0; i < wormsArray.length; i++) {
         wormsArray[i].update();
     }
 
-    //stop array getting too big for speed
+    // Stop array getting too big for speed
     if (wormsArray.length > 20) {
         wormsArray.pop(wormsArray[0]);
     }

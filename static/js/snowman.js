@@ -1,10 +1,10 @@
 class Snowman {
     constructor() {
-        this.originalWidth = 138; // individual sprite width from sprite sheet
-        this.originalHeight = 142; // individual sprite height from sprite sheet
-        this.width = this.originalWidth * 2.5; // sensible width for game
-        this.height = this.originalHeight * 2.5; // sensible height for game
-        this.frameX = 0; // sprite sheet x position (column)
+        this.originalWidth = 138; // Individual sprite width from sprite sheet
+        this.originalHeight = 142; // Individual sprite height from sprite sheet
+        this.width = this.originalWidth * 2.5; // Sensible width for game
+        this.height = this.originalHeight * 2.5; // Sensible height for game
+        this.frameX = 0; // Sprite sheet x position (column)
         this.x = canvas.width - this.width; // x position on canvas
         this.y = canvas.height - this.height - floorHeight + 20; // y position on canvas
         this.image = new Image();
@@ -26,15 +26,15 @@ class Snowman {
 
     draw() {
         ctx.drawImage(
-            this.image, // sprite sheet
+            this.image, // Sprite sheet
             this.frameX * this.originalWidth, // x position on sprite sheet
             0,
-            this.originalWidth, // individual sprite width
-            this.originalHeight, // individual sprite height
+            this.originalWidth, // Individual sprite width
+            this.originalHeight, // Individual sprite height
             this.x, // x co-ord
             this.y, // y co-ord
-            this.width, // intended width
-            this.height, // intended height
+            this.width, // Intended width
+            this.height, // Intended height
         );
     }
 }

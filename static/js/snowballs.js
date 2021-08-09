@@ -1,4 +1,3 @@
-// -------------------------------------------------------------------- Snowballs Bar
 const snowballSprite = new Image();
 snowballSprite.src = "static/animations/projectiles/snowball.png";
 const snowballArray = [];
@@ -48,9 +47,10 @@ class Snowball {
         if (this.x > canvas.width) snowballArray.pop(this);
     }
 
+    // When a snowball hits an enemy
     hit() {
         for (let i = 0; i < slugsArray.length; i++) { 
-            let collideWith = slugsArray[i]; // slug instance
+            let collideWith = slugsArray[i]; // Slug instance
             if ((collideWith.hitBoxX > this.hitBoxX &&
                 collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
             (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
@@ -70,7 +70,7 @@ class Snowball {
         }
 
         for (let i = 0; i < wormsArray.length; i++) {
-            let collideWith =  wormsArray[i]; // worm instance
+            let collideWith =  wormsArray[i]; // Worm instance
             if ((collideWith.hitBoxX > this.hitBoxX &&
                 collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
             (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
@@ -79,27 +79,31 @@ class Snowball {
                     collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
                 (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
                     collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
-                    wormsArray.splice(i, 1); //remove the hit worm
-                    if (audio == 'on') { //play audio if enabled
+                    wormsArray.splice(i, 1); // Remove the hit worm
+                    if (audio == 'on') { // Play audio if enabled
                         enemyHitSnowballAudio.play();
                     }
-                    let thisBall = snowballArray.indexOf(this); //get index of ball that hit worm
-                    snowballArray.splice(thisBall, 1); //remove appropriate ball
+                    let thisBall = snowballArray.indexOf(this); // Get index of ball that hit worm
+                    snowballArray.splice(thisBall, 1); // Remove appropriate ball
                 }
             }
         }
 
-        if (score >= 150) { //only apply once snowman reached
+        if (score >= 150) { // Only apply once snowman reached
             if ((snowman.hitBoxX <= this.hitBoxX + this.hitBoxWidth) &&
                 (snowman.hitBoxY <= this.hitBoxY + this.hitBoxHeight)) {
-                snowmanHealth -= 10; //reduce Brian's health
-                    pushSnowmanHealth(); //update Brian's health bar
-                    if (audio == 'on') {
-                        enemyHitSnowballAudio.play();
-                    }
-                    let thisBall = snowballArray.indexOf(this);
-                    snowballArray.splice(thisBall, 1);      
-                if (snowmanHealth == 0) { // win
+                snowmanHealth -= 10; // Reduce Brian's health
+                pushSnowmanHealth(); // Update Brian's health bar
+
+                if (audio == 'on') {
+                    enemyHitSnowballAudio.play();
+                }
+
+                let thisBall = snowballArray.indexOf(this);
+                snowballArray.splice(thisBall, 1); 
+
+                // Win
+                if (snowmanHealth == 0) {
                     gameSpeed = 0;
                     endGame = true;
                     if (gameOverModal.classList.contains("invisible")) {
@@ -114,12 +118,12 @@ class Snowball {
 
 const handleSnowball = () => {
     if (!endGame) {
-    for (let i = 0; i < snowballArray.length; i++) {
-        snowballArray[i].update();
-    }
+        for (let i = 0; i < snowballArray.length; i++) {
+            snowballArray[i].update();
+        }
 
-    if (snowballArray.length > 20) {
-        snowballArray.pop(snowballArray[0]);
+        if (snowballArray.length > 20) {
+            snowballArray.pop(snowballArray[0]);
+        }
     }
-}
 };
