@@ -172,7 +172,7 @@ class Tux {
                     (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
                         collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                     slugsArray.splice(i, 1);
-                    // tuxIsHit(10); // Add damage to Tux
+                    tuxIsHit(10); // Add damage to Tux
                 }
             }
         }
@@ -188,7 +188,7 @@ class Tux {
                     (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
                         collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                     wormsArray.splice(i, 1); //remove collided worm from array
-                    // tuxIsHit(15); // drop health by 15
+                    tuxIsHit(15); // drop health by 15
                 }
             }
         }
@@ -205,7 +205,7 @@ class Tux {
                         (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
                             collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                         collideWith.hit = true;
-                        // tuxIsHit(10);
+                        tuxIsHit(10);
                     }
                 }
             }

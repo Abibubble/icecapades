@@ -15,15 +15,11 @@ class Slug {
         // ! DO NOT CHANGE HIT BOX
         this.hitBoxWidth = this.width * .83;
         this.hitBoxHeight = this.height * .9;
-        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxX = this.x + (this.width * .05);
         this.hitBoxY = this.y + this.height * .1;
     }
 
     draw() {
-        // * remove - for testing only
-        ctx.fillStyle = "red";
-        ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
-        // *
         ctx.drawImage(
             //(sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
             slugSprite,
@@ -37,7 +33,7 @@ class Slug {
             this.height
         );
     }
-    
+
     update() {
         this.x -= gameSpeed;
         // ?what is the below comment, can we remove it?
@@ -51,7 +47,7 @@ class Slug {
         }
         this.hitBoxWidth = this.width * .83;
         this.hitBoxHeight = this.height * .9;
-        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxX = this.x + (this.width * .05);
         this.hitBoxY = this.y + this.height * .1;
         this.draw();
     }
@@ -59,7 +55,6 @@ class Slug {
 
 const handleSlugs = () => {
     // every x frames, add obstacle to array
-    //  if (gameFrame % 80 === 0) { //testing speed
     if (gameFrame % (randomNumber + 150) === 0) {
         slugsArray.unshift(new Slug());
     }

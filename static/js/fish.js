@@ -14,7 +14,7 @@ class Fish {
         this.image.src = `static/animations/fish/${fishColor}-fish.png`
         this.hitBoxWidth = this.width * .83;
         this.hitBoxHeight = this.height * .87;
-        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxX = this.x + (this.width * .05);
         this.hitBoxY = this.y + this.height * .1;
     }
 
@@ -23,7 +23,7 @@ class Fish {
         switch (fishColCalc) {
             case 0:
                 this.frameX = 0;
-                if (this.row <= 4) {  // for no.of rows
+                if (this.row <= 4) { // for no.of rows
                     this.row++; // increase row no. at end of row
                 } else {
                     this.row = 0;
@@ -64,10 +64,10 @@ class Fish {
         }
 
         this.x -= gameSpeed;
-        
+
         this.hitBoxWidth = this.width * .83;
         this.hitBoxHeight = this.height * .87;
-        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxX = this.x + (this.width * .05);
         this.hitBoxY = this.y + this.height * .1;
         this.draw();
     }
@@ -88,7 +88,6 @@ class Fish {
 }
 
 const handleFish = () => {
-    // every 250 frames, add obstacle to array
     if (gameFrame % 1100 === 0) {
         fishArray.unshift(new Fish());
         if (fishIndex < 2) { // cycle through fish colors
@@ -103,7 +102,7 @@ const handleFish = () => {
     for (let i = 0; i < fishArray.length; i++) {
         fishArray[i].update();
     }
-    
+
     if (fishArray.length > 10) {
         fishArray.pop(fishArray[0]);
     }

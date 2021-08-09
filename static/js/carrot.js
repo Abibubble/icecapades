@@ -66,7 +66,6 @@ class Carrot {
 }
 
 const handleCarrot = () => {
-  // every x frames, add obstacle to array
   if (gameFrame % 120 === 0) {
     carrotArray.push(new Carrot());
   }
