@@ -113,6 +113,7 @@ class Snowball {
 }
 
 const handleSnowball = () => {
+    if (!endGame) {
     for (let i = 0; i < snowballArray.length; i++) {
         snowballArray[i].update();
     }
@@ -120,4 +121,5 @@ const handleSnowball = () => {
     if (snowballArray.length > 20) {
         snowballArray.pop(snowballArray[0]);
     }
+}
 };

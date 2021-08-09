@@ -105,6 +105,10 @@ class Tux {
             this.frameX = frameX;
         }
 
+        if (score >= 150 && !this.jumping && !this.sliding) {
+            this.frameX = 1;
+        }
+
         ctx.drawImage(
             playerImage,
             this.frameX * this.originalWidth,

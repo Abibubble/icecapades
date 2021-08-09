@@ -41,7 +41,9 @@ class Slug {
             score++;
             this.counted = true;
         } */
-        if (gameFrame % staggerFrames == 0) {
+        if (endGame) {
+            this.frameX = this.frameX;
+        } else if (gameFrame % staggerFrames == 0) {
             if (this.frameX < 2) this.frameX++;
             else this.frameX = 0;
         }
