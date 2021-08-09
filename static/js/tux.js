@@ -139,7 +139,7 @@ class Tux {
         }
 
         // Stop frame rate if in boss battle
-        if (score >= 150 && !this.jumping && !this.sliding) {
+        if (score >= 150 && !this.jumping && !this.sliding && !this.dead) {
             this.frameX = 1;
         }
 
