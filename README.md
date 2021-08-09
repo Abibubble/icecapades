@@ -17,6 +17,8 @@ Unfortunately this game is not responsive to all mobile devices. It's best playe
 
 ![Final project image home page](static/docs/finalpage.png)
 
+![Final project image boss page](static/docs/finalbosspage.png)
+
 ## Contents
 
 * [User Experience (UX)](#user-experience-(ux))
