@@ -3,6 +3,7 @@
 const instructionsModal = document.getElementById("instructions-modal");
 const iInner = document.getElementById("i-inner");
 
+// Toggles instructions modal open + closed, and pauses game
 function toggleInstructions() {
     if (instructionsModal.classList.contains("invisible")) {
         gameSpeed = 0;
@@ -22,6 +23,7 @@ function toggleInstructions() {
 
 // -------------------------------------------------------------------- Win / Game Over Modal Variables
 
+// Variables to reference in other script files
 const winModal = document.getElementById("win-modal");
 const gameOverModal = document.getElementById("game-over-modal");
 const winInner = document.getElementById("win-inner");
@@ -31,6 +33,7 @@ const gameOverInner = document.getElementById("game-over-inner");
 
 const closeButton = document.getElementById("close-modal-button");
 
+// Closes win and game over modals
 function closeModal() {
     winModal.classList.add("invisible");
     gameOverModal.classList.add("invisible");

@@ -1,5 +1,6 @@
 // -------------------------------------------------------------------- Moving button
 
+// Moves quit butotn on game over modal and updates the text
 function movingQuitButton() {
     let quitBad = document.getElementById("quit-bad");
     
