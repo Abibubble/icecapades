@@ -1,5 +1,8 @@
 let carrotArray = [];
 
+const carrotHeights = [1.2, 1.4, 1.7, 2, 2.4, 3, 3.4];
+let carrotMod = carrotHeights[Math.floor(Math.random() * carrotHeights.length)];
+
 class Carrot {
   constructor() {
     this.originalHeight = 60;
@@ -8,12 +11,11 @@ class Carrot {
     this.height = this.originalHeight * .8;
     this.frameX = 0;
     this.x = snowman.x + 40;
-    this.y = snowman.y + snowman.height / 1.9;
+    this.y = snowman.y + snowman.height / carrotMod;
     this.hit = false;
+    this.stopped = false;
     this.image = new Image();
-    this.image.src = "static/animations/projectiles/carrot_sprite.png";
-    this.impact = false;
-    this.boom = false;
+    this.image.src = "static/animations/projectiles/carrot_sprite_with_fire.png";
     // ! DO NOT CHANGE HIT BOX
     this.hitBoxWidth = this.width * .83;
     this.hitBoxHeight = this.height * .82;
@@ -21,20 +23,7 @@ class Carrot {
     this.hitBoxY = this.y + this.height * .14;
   }
 
-  /**
-   * removes image
-   * set hit to false (may not be needed)
-   * - there is probably a better way!?
-   */
-  destroyCarrot() {
-    carrotArray.splice(carrotArray.indexOf(i));
-  }
-
   draw() {
-    // * remove - for testing only
-    ctx.fillStyle = "red";
-    ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
-    // *
     ctx.drawImage(
       this.image,
       this.frameX * this.originalWidth,
@@ -49,6 +38,8 @@ class Carrot {
   }
 
   update() {
+    // each carrot will have varied height modifier
+    carrotMod = carrotHeights[Math.floor(Math.random() * carrotHeights.length)];
     this.hitBoxWidth = this.width * .83;
     this.hitBoxHeight = this.height * .82;
     this.hitBoxX = this.x;
@@ -58,56 +49,25 @@ class Carrot {
       else this.frameX = 0;
     }
 
-    if (!this.hit) {
+    if (!this.stopped && !endGame) {
       this.x = this.x - flakeSpeed; //fires left
     }
-
-    if (this.impact) {
+    if (this.x <= tux.x + tux.width && this.hit) {
       // change image to fire ball
-      this.originalHeight = 196;
-      this.originalWidth = 512;
-      this.image.src = "static/animations/projectiles/flames.png"
-      this.frameX = 2;
-      this.boom = true;
+      this.frameX = 4;
+    }
+    if (this.x <= tux.x + tux.width / 2 &&
+      this.hit === true) {
+      this.stopped = true;
     }
 
-    if (this.boom === true) {
-      if (this.x <= tux.x + tux.width / 2) {
-        this.hit = true;
-      }
-    }
-
-
-    // why cant i destroy just one carrot!!??!!?
-    if (this.hit === true) {
-      setTimeout(function(){
-        carrotArray.splice(carrotArray.indexOf(this),1),
-        500
-      })
-    }
-
-    {
-      let collideWith = tux;
-      if ((collideWith.hitBoxX > this.hitBoxX &&
-          collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
-        (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
-          collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
-        if ((collideWith.hitBoxY > this.hitBoxY &&
-            collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
-          (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
-            collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
-          this.impact = true;
-        }
-      }
-    }
     this.draw();
   }
 }
 
 const handleCarrot = () => {
   // every x frames, add obstacle to array
-  if (gameFrame % 100 === 0) { //testing speed
-    // if (gameFrame % (randomNumber + 50) === 0) {
+  if (gameFrame % 120 === 0) {
     carrotArray.push(new Carrot());
   }
 
@@ -115,8 +75,8 @@ const handleCarrot = () => {
     carrotArray[i].update();
   }
 
-  if (carrotArray.length > 10) {
-    carrotArray.pop(carrotArray[0]);
+  if (carrotArray.length > 15) {
+    carrotArray.shift(carrotArray[0]);
   }
 }
 

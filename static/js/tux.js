@@ -166,13 +166,13 @@ class Tux {
         for (let i = 0; i < slugsArray.length; i++) {
             let collideWith = slugsArray[i]; // slug instance
             if ((collideWith.hitBoxX > this.hitBoxX &&
-                collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
-            (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
-                collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
-            if ((collideWith.hitBoxY > this.hitBoxY &&
-                    collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
-                (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
-                    collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
+                    collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+                (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+                    collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+                if ((collideWith.hitBoxY > this.hitBoxY &&
+                        collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+                    (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+                        collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                     slugsArray.splice(i, 1);
                     tuxIsHit(10); // Add damage to Tux
                 }
@@ -195,23 +195,27 @@ class Tux {
             }
         }
 
-        // for (let i = 0; i < carrotArray.length; i++) {
-        //     let collideWith = carrotArray[i]; //  carrot instance
-        //     if ((collideWith.hitBoxX > this.hitBoxX &&
-        //             collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
-        //         (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
-        //             collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
-        //         if ((collideWith.hitBoxY > this.hitBoxY &&
-        //                 collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
-        //             (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
-        //                 collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
-        //             collideWith.impact = true;
-        //             setTimeout(function() {removeCarrot(i)}, 2000);
-        //             // carrotArray.splice(i, 1);
-        //             // tuxIsHit(10);
-        //         }
-        //     }
-        // }
+        for (let i = 0; i < carrotArray.length; i++) {
+            let collideWith = carrotArray[i]; //  carrot instance
+            if (!collideWith.hit) {
+                if ((collideWith.hitBoxX > this.hitBoxX &&
+                        collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+                    (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+                        collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+                    if ((collideWith.hitBoxY > this.hitBoxY &&
+                            collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+                        (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+                            collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
+                        collideWith.hit = true;
+                        tuxIsHit(10);
+                    }
+                }
+            }
+            if (collideWith.x <= this.x + this.width / 2 &&
+                collideWith.hit === true) {
+                carrotArray.splice(i, 1);
+            }
+        }
 
         for (let i = 0; i < flakeArray.length; i++) { // See above
             let snowflakeX = flakeArray[i].x;
