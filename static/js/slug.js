@@ -59,8 +59,8 @@ class Slug {
 
 const handleSlugs = () => {
     // every x frames, add obstacle to array
-     if (gameFrame % 80 === 0) { //testing speed
-    // if (gameFrame % (randomNumber + 150) === 0) {
+    //  if (gameFrame % 80 === 0) { //testing speed
+    if (gameFrame % (randomNumber + 150) === 0) {
         slugsArray.unshift(new Slug());
     }
     for (let i = 0; i < slugsArray.length; i++) {
