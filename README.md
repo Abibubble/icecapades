@@ -105,6 +105,7 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 ### Color Scheme
 
 * The game is focused around an ice/snow theme. This allowed us to utilise a blue/white color scheme, with some more vibrant colors to highlight relevant elements.
+* We originally used aqua for the progress bars and the rotate message text, but when this was checked by a colorblind user, he wasn't able to see the aqua color. Due to this, we changed it to blue for better visibility.
 
 ### Typography
 
@@ -438,6 +439,7 @@ We tested our game using DevTools Lighthouse feature, and got these results:
 * All images have alt text.
 * All tap targets are correctly sized, and aren't overlapping other content.
 * All colors are WCAG AA compliant.
+* The game was checked by a colorblind user, and the colors were edited accordingly to be fully visible and accessible.
 
 #### Best Practices:
 * This was knocked down due to issues in the console.
