@@ -27,6 +27,7 @@ We chose this as our hackathon project to give an innovative new twist on a well
   * [Imagery](#imagery)
   * [Wireframes](#wireframes)
   * [Features](#features)
+  * [Future Features](#future-features)
   * [Audio](#audio)
 
 * [Teamwork](#teamwork)
@@ -130,6 +131,11 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 * Health bar has been added to indicate how much health Tux has during game play.
 * Fish that are collected during game play increase Tux's health.
 * An Easter Egg when you win the game - we won't spoil the surprise, you'll have to get Tux home safely!
+
+### Future Features
+
+* Give enemies their own movement speed.
+* Leaderboard so users can see how they did compared to their friends.
 
 ### Audio
 
