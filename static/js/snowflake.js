@@ -64,7 +64,7 @@ class Snowflake {
  */
 const handleSnowflake = () => {
   if (!endGame) {
-    if (gameFrame % 100 === 0) {
+    if (gameFrame % 300 === 0) {
       flakeArray.unshift(new Snowflake());
     }
 
