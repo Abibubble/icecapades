@@ -66,7 +66,16 @@ class Tux {
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.height = this.originalHeight;
             this.width = this.originalWidth;
-            gameSpeed = 6;
+            if (score <= 75) {
+                gameSpeed = 6;
+                this.weight = .7;
+            } else if (66< score && score <= 120) {
+                gameSpeed = 9;
+                this.weight = .8;
+            } else if (120 < score && score < 150) {
+                gameSpeed = 12;
+                this.weight = .9;
+            }
         }
 
         // Once let go of arrow down, set hitbox back to original position
