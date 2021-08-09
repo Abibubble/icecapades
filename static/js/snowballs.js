@@ -65,8 +65,14 @@ class Snowball {
 
         for (let i = 0; i < wormsArray.length; i++) {
             let collideWith =  wormsArray[i]; // worm instance
-            if ((collideWith.x > this.hitBoxX && collideWith.x < this.hitBoxX + this.hitBoxWidth) || (collideWith.x + collideWith.width > this.hitBoxX && collideWith.x + collideWith.width < this.hitBoxX + this.hitBoxWidth)) {
-                if ((collideWith.y > this.hitBoxY && collideWith.y < this.hitBoxY + this.hitBoxHeight) || (collideWith.y + collideWith.height > this.hitBoxY && collideWith.y + collideWith.height < this.hitBoxY + this.hitBoxHeight)) {
+            if ((collideWith.hitBoxX > this.hitBoxX &&
+                collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+            (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+                collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+            if ((collideWith.hitBoxY > this.hitBoxY &&
+                    collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+                (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+                    collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                     wormsArray.splice(i, 1); //remove the hit worm
                     if (audio == 'on') { //play audio if enabled
                         enemyHitSnowballAudio.play();
