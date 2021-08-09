@@ -24,10 +24,17 @@ function frameRate() {
 function scoreCount() {
     timerCount = setInterval(function () {
         if (!endGame) {
+            windowHasFocus = document.hasFocus();
+            console.log(windowHasFocus);
+        }
+        if (!endGame && windowHasFocus) {
             score++; // increment score by 1
         }
     }, 1000); // 1000ms = 1 second
 }
 
 frameRate();
+
 scoreCount();
+
+
