@@ -144,6 +144,7 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 
 * Give enemies their own individual movement speed.
 * A leaderboard, so users can see how they did compared to their friends.
+* Add div boxes with a high z-index to use as controls on touchscreen devices.
 
 ### Audio
 
