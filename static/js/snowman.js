@@ -9,7 +9,7 @@ class Snowman {
         this.y = canvas.height - this.height - floorHeight + 20; // y position on canvas
         this.image = new Image();
         this.image.src = "static/animations/enemies/snowman/snowman-sprite-left.png";
-        this.hitBoxX =  this.x + 55;
+        this.hitBoxX = this.x + 55;
         this.hitBoxY = this.y + 25;
         this.hitBoxWidth = this.width - 120;
         this.hitBoxHeight = this.height - 35;
@@ -25,9 +25,6 @@ class Snowman {
     }
 
     draw() {
-        ctx.fillStyle = "red";
-        // ctx.fillRect(this.x + 15, this.y + 6, this.width * .7, this.height * .9);
-        ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
         ctx.drawImage(
             this.image, // sprite sheet
             this.frameX * this.originalWidth, // x position on sprite sheet

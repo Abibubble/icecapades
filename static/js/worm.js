@@ -17,17 +17,11 @@ class Worm {
         */
         this.hitBoxWidth = this.width * .83;
         this.hitBoxHeight = this.height * .7;
-        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxX = this.x + (this.width * .05);
         this.hitBoxY = this.y + this.height * .3;
     }
 
     draw() {
-
-        // * remove - for testing only
-        ctx.fillStyle = "red";
-        ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
-        // *
-
         ctx.drawImage(
             //sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
             wormSprite,
@@ -58,7 +52,7 @@ class Worm {
         // update hitbox position with instance of object
         this.hitBoxWidth = this.width * .83;
         this.hitBoxHeight = this.height * .7;
-        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxX = this.x + (this.width * .05);
         this.hitBoxY = this.y + this.height * .3;
         this.draw();
     }
@@ -66,7 +60,6 @@ class Worm {
 
 const handleWorms = () => {
     // every x frames, add obstacle to array
-    // if (gameFrame % 50 === 0) { //testing speed
     if (gameFrame % (randomNumber + 350) === 0) {
         wormsArray.unshift(new Worm());
     }
@@ -75,7 +68,7 @@ const handleWorms = () => {
     for (let i = 0; i < wormsArray.length; i++) {
         wormsArray[i].update();
     }
-    
+
     //stop array getting too big for speed
     if (wormsArray.length > 20) {
         wormsArray.pop(wormsArray[0]);
