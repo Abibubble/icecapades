@@ -164,10 +164,15 @@ class Tux {
         busy = true; // Checking for collision
 
         for (let i = 0; i < slugsArray.length; i++) {
-            let slugY = slugsArray[i].y; // Loop through slugs
-            let slugX = slugsArray[i].x; // Get slug[i] x value
-            if ((slugX > this.hitBoxX && slugX < this.hitBoxX + this.hitBoxWidth) || (slugX + slug.width > this.hitBoxX && slugX + slug.width < this.hitBoxX + this.hitBoxWidth)) {
-                if ((slugY > this.hitBoxY && slugY < this.hitBoxY + this.hitBoxHeight) || (slugY + slug.height > this.hitBoxY && slugY + slug.height < this.hitBoxY + this.hitBoxHeight)) {
+            let collideWith = slugsArray[i]; // slug instance
+            if ((collideWith.hitBoxX > this.hitBoxX &&
+                collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+            (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+                collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+            if ((collideWith.hitBoxY > this.hitBoxY &&
+                    collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+                (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+                    collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                     slugsArray.splice(i, 1);
                     tuxIsHit(10); // Add damage to Tux
                 }

@@ -49,16 +49,22 @@ class Snowball {
     }
 
     hit() {
-        for (let i = 0; i < slugsArray.length; i++) {
-            let slugInst = slugsArray[i]; // Get slug[i]
-            let collideWith = slugInst;
-            if ((collideWith.x > this.hitBoxX && collideWith.x < this.hitBoxX + this.hitBoxWidth) || (collideWith.x + collideWith.width > this.hitBoxX && collideWith.x + collideWith.width < this.hitBoxX + this.hitBoxWidth)) {
-                if ((collideWith.y > this.hitBoxY && collideWith.y < this.hitBoxY + this.hitBoxHeight) || (collideWith.y + collideWith.height > this.hitBoxY && collideWith.y + collideWith.height < this.hitBoxY + this.hitBoxHeight)) {
-                    slugsArray.pop(collideWith);
-                    snowballArray.pop(this);
+        for (let i = 0; i < slugsArray.length; i++) { 
+            let collideWith = slugsArray[i]; // slug instance
+            if ((collideWith.hitBoxX > this.hitBoxX &&
+                collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+            (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+                collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+            if ((collideWith.hitBoxY > this.hitBoxY &&
+                    collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+                (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+                    collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
+                    slugsArray.splice(i, 1);
                     if (audio == 'on') {
                         enemyHitSnowballAudio.play();
                     }
+                    let thisBall = snowballArray.indexOf(this);
+                    snowballArray.splice(thisBall, 1);
                 }
             }
         }
