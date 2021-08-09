@@ -372,7 +372,7 @@ The website was tested on Google Chrome, Firefox, Microsoft Edge, Safari and Sam
 * Amazon Fire tablet 7
 * xBox One
 
-A large amount of testing was done to ensure that all items were visible or hidden correctly, all characters and items were animated correctly, all buttons worked as they should, and the game worked as it should.
+A large amount of testing was done to ensure that all items were visible or hidden correctly, all characters and items were animated correctly, all buttons worked as they should, and the game played as it should.
 
 ### Solved Bugs
 
@@ -414,7 +414,7 @@ We tested our game using DevTools Lighthouse feature, and got these results:
 
 #### Best Practices:
 * This was knocked down due to issues in the console.
-* The console error is due to the webmanifest, which we couldn't find a fix for.
+* The console error is due to the Permissions-Policy header, which we couldn't find a fix for.
 
 #### SEO:
 * All relevant meta tags have been included for full social media integration.
