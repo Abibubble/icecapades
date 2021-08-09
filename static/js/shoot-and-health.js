@@ -28,7 +28,7 @@ function checkHealth() {
         }
     } else if (currentHealth <= dangerZone) {
         pushHealth();
-        healthBar.style.color = "red";
+        healthBar.style.backgroundColor = "red";
     } else {
         pushHealth();
     }
@@ -67,7 +67,7 @@ let snowballBar = document.getElementById("snowball-bar");
 function pushAmmo() {
     snowballBar.style.width = currentAmmo * 10 + "%";
     if (currentAmmo <= lowAmmo) {
-        snowballBar.style.color = "red";
+        snowballBar.style.backgroundColor = "red";
     }
 }
 
