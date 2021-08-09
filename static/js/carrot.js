@@ -46,22 +46,22 @@ class Carrot {
       else this.frameX = 0;
     }
     
-    if (!this.hit) {
-      this.x = this.x - flakeSpeed; //fires left
-      if (carrotImpact) {
-        // change image to fire ball
-        this.originalHeight = 196;
-        this.originalWidth = 512;
-        this.image.src = "static/animations/projectiles/flames.png"
-        this.frameX = 2;
-      }
-    }
+    // if (!this.hit) {
+    //   this.x = this.x - flakeSpeed; //fires left
+    //   if (carrotImpact) {
+    //     // change image to fire ball
+    //     this.originalHeight = 196;
+    //     this.originalWidth = 512;
+    //     this.image.src = "static/animations/projectiles/flames.png"
+    //     this.frameX = 2;
+    //   }
+    // }
 
-    if (carrotImpact) {
-      this.x = this.x; //freeze image
-      setTimeout(this.hideImage.bind(this), 200); //delay and destroy
-      carrotImpact = false;
-    }
+    // if (carrotImpact) {
+    //   this.x = this.x; //freeze image
+    //   setTimeout(this.hideImage.bind(this), 200); //delay and destroy
+    //   carrotImpact = false;
+    // }
 
     this.draw();
   }
