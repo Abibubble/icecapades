@@ -404,6 +404,8 @@ A large amount of testing was done to ensure that all items were visible or hidd
 ### Known Bugs
 
 * There is occasionally an enemy that doesn't die when hit.
+* If you hold slide, then change tab on your browser, Tux auto-slides for the rest of the game.
+* Game is not responsive on all screen sizes.
 
 ### Lighthouse
 
