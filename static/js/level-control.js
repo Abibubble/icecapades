@@ -7,7 +7,7 @@ const floorHeight = canvas.height * .065;
 // Initiates game frame rate for all animations, maintained at constant speed, clears canvas every frame
 function frameRate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    scoreContainer.innerHTML = `Score: ${score}`;
+    scoreContainer.innerHTML = `Time: ${timeConverter(score)}`;
     gameFrame++;
     requestAnimationFrame(frameRate);
     randomNumber = Math.floor(Math.random() * 100) + 100;
