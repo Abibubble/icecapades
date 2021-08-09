@@ -1,10 +1,11 @@
-/* remove margins and padding from all elements */
+/* Remove margins and padding from all elements */
 * {
   margin: 0;
   padding: 0;
+  font-family: Arial;
 }
 
-/* ? without this, there is a 4 pixel gap below the canvas and I don't know why */
+/* Without this, there is a 4px gap below the canvas and I don't know why */
 body {
   display: flex;
   flex-direction: column;
@@ -223,6 +224,7 @@ noscript {
 
 /* ------------------------------ Instructions button */
 
+/* Hover and focus */
 .instructions-click:hover,
 .instructions-click:focus,
 .play-icon:hover + #play-button,

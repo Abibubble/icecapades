@@ -6,7 +6,7 @@ class Snowflake {
     this.originalWidth = 64;
     this.width = this.originalWidth;
     this.height = this.originalHeight;
-    // random start position of snowflake
+    // Random start position of snowflake
     this.x = (tux.x + tux.width - this.width / 2) + Math.random() * 500;
     this.y = -20;
     this.collected = false;
@@ -35,7 +35,7 @@ class Snowflake {
   }
 
   update() {
-    this.x = this.x - .8; //slowly move left
+    this.x = this.x - .8; // Slowly move left
     this.vy += this.weight;
     this.vy *= 0.9;
     this.y += this.vy;
@@ -45,12 +45,12 @@ class Snowflake {
     this.hitBoxY = this.y + this.height * .15;
 
     if (this.y > canvas.height - tux.height * 3) {
-      this.x = this.x -= flakeSpeed * 2; // fast left
+      this.x = this.x -= flakeSpeed * 2; // Fast left
       this.hitBoxX = this.x + this.width * .15;
     }
 
     this.draw();
-    // ?? hide image in a better way ??
+
     if (this.collected) {
       this.width = 0;
       this.height = 0;
@@ -58,10 +58,7 @@ class Snowflake {
   }
 }
 
-/**
- * create snowflakes
- * - array max 5
- */
+// Create snowflakes array - max 5
 const handleSnowflake = () => {
   if (!endGame) {
     if (gameFrame % 300 === 0) {

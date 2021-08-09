@@ -9,9 +9,11 @@
 
 [Here is a link to the final project](https://abibubble.github.io/icecapades)
 
-Icecapades is a modern take on the classic endless runner games. With simple controls and enjoyable gameplay, it aims to provide countless hours of entertainment.
+Icecapades is a modern take on the classic endless runner games. With simple controls and enjoyable gameplay, it aims to provide countless hours of entertainment. It even has a secret easter egg to find!
 
 We chose this as our hackathon project to give an innovative new twist on a well known (and incredibly frustrating) style of gameplay. Repeatedly trying the same things in an attempt to achieve different results, perhaps something that is a little too relateable by many software developers!
+
+Unfortunately this game is not responsive to all mobile devices. It's best played on a regular-sized desktop screen.
 
 ![Final project image home page](static/docs/finalpage.png)
 
@@ -27,6 +29,7 @@ We chose this as our hackathon project to give an innovative new twist on a well
   * [Imagery](#imagery)
   * [Wireframes](#wireframes)
   * [Features](#features)
+  * [Future Features](#future-features)
   * [Audio](#audio)
 
 * [Teamwork](#teamwork)
@@ -130,6 +133,11 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 * Health bar has been added to indicate how much health Tux has during game play.
 * Fish that are collected during game play increase Tux's health.
 * An Easter Egg when you win the game - we won't spoil the surprise, you'll have to get Tux home safely!
+
+### Future Features
+
+* Give enemies their own movement speed.
+* Leaderboard so users can see how they did compared to their friends.
 
 ### Audio
 

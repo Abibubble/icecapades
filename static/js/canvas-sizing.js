@@ -17,21 +17,23 @@ const messageContent = `<!-- Icon made by "Pixel perfect" "https://www.flaticon.
 const progressCont = document.getElementsByClassName("progress-container")[0];
 
 window.addEventListener("resize", handleChange);
-/**
- * Sets canvas to fill space between header and footer
- */
+
+// Sets canvas to fill space between header and footer
 function handleChange() {
     let headerHeight = document.getElementsByTagName("header")[0].offsetHeight;
     let footerHeight = document.getElementsByTagName("footer")[0].offsetHeight;
     canvasWidth = canvas.width = window.innerWidth;
     canvasHeight = canvas.height = window.innerHeight - (headerHeight + footerHeight);
-    if (canvasHeight > canvasWidth) { // portrait
+    
+    if (canvasHeight > canvasWidth) {
+        // portrait
         canvas.style.visibility = "hidden";
         progressCont.style.visibility = "hidden";
         canvas.style.display = "none";
         progressCont.style.display = "none";
         rotateMessage.innerHTML = messageContent;
-    } else { // landscape
+    } else {
+        // landscape
         canvas.style.visibility = "visible";
         canvas.style.display = "initial";
         progressCont.style.visibility = "visible";

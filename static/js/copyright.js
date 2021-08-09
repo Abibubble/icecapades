@@ -1,4 +1,4 @@
-// ----------- Auto-updating copyright---------------------------------------------------------
+// -------------------------------------------------------------------- Auto-updating copyright
 
 function copyrightYear() {
     var d = new Date();
