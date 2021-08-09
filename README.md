@@ -11,11 +11,15 @@
 
 Icecapades is a modern take on the classic endless runner games. With simple controls and enjoyable gameplay, it aims to provide countless hours of entertainment. It even has a secret easter egg to find!
 
-We chose this as our hackathon project to give an innovative new twist on a well known (and incredibly frustrating) style of gameplay. Repeatedly trying the same things in an attempt to achieve different results, perhaps something that is a little too relateable by many software developers!
+We chose this as our hackathon project to give an innovative new twist on a well known (and incredibly frustrating) style of gameplay. Repeatedly trying the same things in an attempt to achieve different results, perhaps something that is a little too relatable by many software developers!
+
+We have built this game using HTML, CSS and Vanilla JavaScript. We chose not to use any libraries or frameworks to help build the game, due to security and dependancy issues.
 
 Unfortunately this game is not responsive to all mobile devices. It's best played on a regular-sized desktop screen.
 
 ![Final project image home page](static/docs/finalpage.png)
+
+![Final project image boss page](static/docs/finalbosspage.png)
 
 ## Contents
 
@@ -100,17 +104,19 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 
 ### Color Scheme
 
-* The game is focused around an ice/snow theme. This allowed us to utilise a blue/white colour scheme, with some more vibrant colours to highlight relevant elements.
+* The game is focused around an ice/snow theme. This allowed us to utilise a blue/white color scheme, with some more vibrant colors to highlight relevant elements.
 
 ### Typography
 
 * We have chosen the Snowtop Caps font for our heading from [1001fonts](https://www.1001fonts.com/snowtop-caps-font.html) as it fits our ice/snow theme and is also free to use for commercial use.
+* [Orbitron](https://fonts.google.com/specimen/Orbitron?preview.text=1:12&preview.text_type=custom&query=orbi) font has also been used for the timer text, so make it stand out from the rest of the text.
+* We have used Arial as our default font, as it's an HTML staple font, which avoids issues if the user's browser doesn't support our chosen fonts.
 
 ### Imagery
 
-We have chosen Tux, the Linux logo, as our playable character. He is related to code, fits into a theme very easily and promotes a positive emotive response.  
-His enemies are a couple of 'juiced-up' worms and slugs, seeking revenge on a bird for all their relatives that have been eaten throughout the years.  
-The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy theme and provides a tangible enemy with fun projectiles.
+* We have chosen Tux, the Linux logo, as our playable character. He is related to code, fits into a theme very easily and promotes a positive emotive response.
+* His enemies are a couple of 'juiced-up' worms and slugs, seeking revenge on a bird for all their relatives that have been eaten throughout the years.  
+* The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy theme and provides a tangible enemy with fun projectiles.
 
 * To save time, we have utilised some free sprite libraries for animated characters and backgrounds. They were sourced from:
   * [gameartguppy](https://www.gameartguppy.com/)
@@ -136,12 +142,12 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 
 ### Future Features
 
-* Give enemies their own movement speed.
-* Leaderboard so users can see how they did compared to their friends.
+* Give enemies their own individual movement speed.
+* A leaderboard, so users can see how they did compared to their friends.
 
 ### Audio
 
-* All audio is controlled by the audio on / off button, so that the user can choose if they'd like to hear audio.
+* All audio is controlled by the audio on / off button, so that the user can choose if they'd like to hear audio or not.
 * A cute 8-bit tune can be heard throughout the game when the user turns on the audio.
 * There are also sound effects when the user has the audio on, for the following actions:
   * Tux jump
@@ -185,6 +191,9 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 * Seventh call, working through hit mechanics, the final boss battle, and bug fixes.
 ![Call #7](static/docs/call7.png)
 
+* Eighth call, doing final bug fixes and quality of life updates.
+![Call #8](static/docs/call8.png)
+
 ---
 
 ## Technologies Used
@@ -203,7 +212,7 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 
 #### Git
 
-* [Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
+* [Git](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to add and commit to Git and push to GitHub.
 
 #### GitHub
 
@@ -304,7 +313,7 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the
 > A retro game that provides clear and substantial value to the user
 
 * It is a retro-style side-scrolling game.
-* It's a fun game with easy replayability.
+* It's a fun game with easy replay-ability.
 
 > Use an original or innovative idea, design or implementation
 
@@ -340,7 +349,7 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the
 > Simple and logical navigation
 
 * The site only has two pages.
-* The main page has easily understandard icons on all buttons
+* The main page has easily understood standard icons on all buttons
 * All buttons are clear to understand what they do.
 
 > Positive emotive response
@@ -386,11 +395,11 @@ A large amount of testing was done to ensure that all items were visible or hidd
 ### Solved Bugs
 
 1. Having one modal open didn't stop another modal opening too.
-    * We realised that the open modal function wasnt being called.
-    * We added a check for a modal class in with other functions and this fixed the bug.
+  * We realised that the open modal function wasn't being called.
+  * We added a check for a modal class in with other functions and this fixed the bug.
 
-2. Stitching error, a background has a single line gap from top to bottom.
-  *  the code below was used to close the stitching error in the background.
+2. Stitching error, the background has a single line gap from top to bottom.
+  * The code below was used to close the stitching error in the background:
   
   ```
   if (this.x <= - this.width){
@@ -401,12 +410,17 @@ A large amount of testing was done to ensure that all items were visible or hidd
   }
   ```
 
+3. The user could enter the console and update currentHealth and currentAmmo higher than maximum.
+  * We added an if statement, so that if currentHealth or currentAmmo are higher than the maximum, it resets back to maximum.
+
 ### Known Bugs
 
 * There is occasionally an enemy that doesn't die when hit.
 * If you hold slide, then change tab on your browser, Tux auto-slides for the rest of the game.
 * Game is not responsive on all screen sizes.
 * When the user pauses the game, on restart, a lot of enemies are spawned.
+
+![Bethesda bug or feature?](static/docs/bug-feature.png)
 
 ### Lighthouse
 
