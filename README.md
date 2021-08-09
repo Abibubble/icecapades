@@ -29,6 +29,8 @@ We chose this as our hackathon project to give an innovative new twist on a well
   * [Features](#features)
   * [Audio](#audio)
 
+* [Teamwork](#teamwork)
+
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
   * [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
@@ -141,6 +143,38 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
   * Tux slides
   * Tux collects a snowflake
   * Tux throws a snowball
+
+---
+
+## Teamwork
+* As a team, we got on incredibly well. After a slightly nervous first call, we settled in as a team, and really started working together.
+* We had calls open in Slack throughout the time we had (after 6pm Wednesday - Friday and all day Saturday and Sunday).
+* This provided an open and friendly space for all questions.
+* Once two of the team were online, the call was started, and it then ran until all but one team member signed off for the night.
+* There was no pressure to join the calls, but the calls were there for people to jump in and out of as they wished.
+* We ensured that everyone had the space to have their say.
+* Having a call running also meant that if anyone was stuck, or didn't understand something, they could jump on the call, have a little learning moment, and then get back on with their work.
+* This also meant that while some members of our team had more code lines typed in, everyone was involved in the work.
+* Out personalities also meshed very well, so the Slack calls were filled with laughing, joking, and fun, while also being a safe learning space for everyone.
+
+* First introduction call, meeting each other, discussing basic ideas
+![Call #1](cstatic/docs/call1.png)
+
+* Second call, deciding on actual final game ideas, getting sprites for characters and world building.
+![Call #2](cstatic/docs/call2.png)
+
+* Third call, building the base HTML, styling the progress bar, and adding characters onto the canvas.
+![Call #3](cstatic/docs/call3.png)
+
+* Fourth call, working through movements, fish and snowflake drops, and enemy population.
+![Call #4](cstatic/docs/call4.png)
+
+* We did a couple of little breakout calls, to target specific issues in pairs for more focus.
+![Call #5](cstatic/docs/call5.png)
+![Call #6](cstatic/docs/call6.png)
+
+* Seventh call, working through hit mechanics, the final boss battle, and bug fixes.
+![Call #7](cstatic/docs/call7.png)
 
 ---
 
