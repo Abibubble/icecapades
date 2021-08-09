@@ -25,7 +25,6 @@ function scoreCount() {
 }
 
 frameRate();
-
 scoreCount();
 
 
