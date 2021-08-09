@@ -44,7 +44,10 @@ class Worm {
             this.counted = true;
         } */
 
-        if (gameFrame % staggerFrames == 0) {
+        
+        if (endGame) { //check for pause
+            this.frameX = this.frameX;
+        } else if (gameFrame % staggerFrames == 0) {
             // < (number of sprites per animation) - 1
             if (this.frameX < 3) this.frameX++; // update sprite
             else this.frameX = 0;
