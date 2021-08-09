@@ -85,9 +85,7 @@ class Tux {
                 throwSnowballAudio.play();
             }
             fire = false;
-        }
-
-        if (currentAmmo === 0) {
+        } else {
             fire = false;
         }
 
