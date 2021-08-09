@@ -40,7 +40,7 @@ class Tux {
         }
 
         //If arrow pressed and char not jumping, call jump
-        if (arrowUpPressed && !this.jumping && !this.dead && !this.sliding && !endGame) {
+        if (arrowUpPressed && !this.jumping && !this.dead && !endGame) {
             this.jump();
             if (audio == 'on') {
                 jumAudio.play();
