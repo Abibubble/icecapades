@@ -17,3 +17,4 @@ let randomNo = ((Math.random() * 10000) * Math.random());
 let snowmanHealth = 150;
 let endGame = false;
 const bossHealthBar = document.getElementById("boss-health-container");
+let windowHasFocus = document.hasFocus();
