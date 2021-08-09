@@ -195,17 +195,23 @@ class Tux {
             }
         }
 
-        for (let i = 0; i < carrotArray.length; i++) { // See above
-            let carrotX = carrotArray[i].x;
-            let carrotY = carrotArray[i].y;
-            if ((carrotX > this.hitBoxX && carrotX < this.hitBoxX + this.hitBoxWidth) || (carrotX + carrot.width > this.hitBoxX && carrotX + carrot.width < this.hitBoxX + this.hitBoxWidth)) {
-                if ((carrotY > this.hitBoxY && carrotY < this.hitBoxY + this.hitBoxHeight) || (carrotY + carrot.height > this.hitBoxY && carrotY + carrot.height < this.hitBoxY + this.hitBoxHeight)) {
-                    carrotImpact = true;
-                    carrotArray.splice(i, 1);
-                    tuxIsHit(10);
-                }
-            }
-        }
+        // for (let i = 0; i < carrotArray.length; i++) {
+        //     let collideWith = carrotArray[i]; //  carrot instance
+        //     if ((collideWith.hitBoxX > this.hitBoxX &&
+        //             collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+        //         (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+        //             collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+        //         if ((collideWith.hitBoxY > this.hitBoxY &&
+        //                 collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+        //             (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+        //                 collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
+        //             collideWith.impact = true;
+        //             setTimeout(function() {removeCarrot(i)}, 2000);
+        //             // carrotArray.splice(i, 1);
+        //             // tuxIsHit(10);
+        //         }
+        //     }
+        // }
 
         for (let i = 0; i < flakeArray.length; i++) { // See above
             let snowflakeX = flakeArray[i].x;

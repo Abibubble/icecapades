@@ -4,20 +4,20 @@ playerImage.src = "static/animations/penguin/penguin_walk.png";
 
 function tuxControl() {
     handleBackground();
-    handleSlugs();
-    handleWorms();
+    // handleSlugs();
+    // handleWorms();
     handleFish();
     handleSnowflake();
     handleSnowball();
     tux.update();
     tux.draw();
+        handleCarrot();
 
     if (score >= 150) {
         gameSpeed = 0;
         snowman.isSpawned = true;
         bossHealthBar.classList.remove("invisible");
         handleSnowman();
-        handleCarrot();
     }
 
     if (gameFrame % staggerFrames == 0) {
