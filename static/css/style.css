@@ -191,7 +191,7 @@ noscript {
 
 #boss-health-bar{
   position: relative;
-  background-color: lime;
+  background-color: limegreen;
   height: 75%;
   top: 13%;
   z-index: 3;
@@ -334,7 +334,7 @@ button {
 }
 
 .replay {
-  background-color:forestgreen;
+  background-color: limegreen;
 }
 
 .game-over-button {
