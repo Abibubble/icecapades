@@ -7,14 +7,17 @@ let dangerZone = 10;
 let healthBar = document.getElementById("health-bar");
 let snowmanHealthBar = document.getElementById("boss-health-bar");
 
+// Update health bar progress
 function pushHealth() {
     healthBar.style.width = currentHealth * 2 + "%";
 }
 
+// Update boss health bar progress
 function pushSnowmanHealth(){
     snowmanHealthBar.style.width = snowmanHealth/3 * 2 + "%";
 }
 
+// Checks if Tux is dead, updates progress bar
 function checkHealth() {
     if (currentHealth <= deadTux) {
         healthBar.style.width = "0%";
@@ -31,6 +34,7 @@ function checkHealth() {
     }
 }
 
+// When Tux is hit, play hit audio and update health
 function tuxIsHit(hurt) {
     if (audio == 'on') {
         hitAudio.play();
@@ -39,6 +43,7 @@ function tuxIsHit(hurt) {
     checkHealth();
 }
 
+// When Tux catches a fish, play fish audio and update health
 function tuxGetsAFish() {
     if (currentHealth <= 30) {
         currentHealth += 20;
@@ -58,6 +63,7 @@ let noAmmo = 0;
 let lowAmmo = 3;
 let snowballBar = document.getElementById("snowball-bar");
 
+// Update snowballs bar progress
 function pushAmmo() {
     snowballBar.style.width = currentAmmo * 10 + "%";
     if (currentAmmo <= lowAmmo) {
@@ -65,6 +71,7 @@ function pushAmmo() {
     }
 }
 
+// Update ammo when Tux fires a snowball
 function shoot() {
     if (currentAmmo > noAmmo) {
         currentAmmo--;
@@ -72,6 +79,7 @@ function shoot() {
     }
 }
 
+// Increase snowballs when Tux catches a snowflake, and plays audio
 function tuxGetsASnowflake() {
     if (currentAmmo <= 8) {
         currentAmmo += 2;

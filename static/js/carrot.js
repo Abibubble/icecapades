@@ -16,7 +16,7 @@ class Carrot {
     this.stopped = false;
     this.image = new Image();
     this.image.src = "static/animations/projectiles/carrot_sprite_with_fire.png";
-    // ! DO NOT CHANGE HIT BOX
+    // DO NOT CHANGE HIT BOX
     this.hitBoxWidth = this.width * .83;
     this.hitBoxHeight = this.height * .82;
     this.hitBoxX = this.x;
@@ -38,7 +38,7 @@ class Carrot {
   }
 
   update() {
-    // each carrot will have varied height modifier
+    // Each carrot will have varied height modifier
     carrotMod = carrotHeights[Math.floor(Math.random() * carrotHeights.length)];
     this.hitBoxWidth = this.width * .83;
     this.hitBoxHeight = this.height * .82;
@@ -50,12 +50,15 @@ class Carrot {
     }
 
     if (!this.stopped && !endGame) {
-      this.x = this.x - flakeSpeed; //fires left
+      // Fires left
+      this.x = this.x - flakeSpeed;
     }
+    
     if (this.x <= tux.x + tux.width && this.hit) {
-      // change image to fire ball
+      // Change image to fire ball
       this.frameX = 4;
     }
+
     if (this.x <= tux.x + tux.width / 2 &&
       this.hit === true) {
       this.stopped = true;

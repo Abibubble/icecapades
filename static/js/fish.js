@@ -2,14 +2,14 @@ let fishArray = [];
 class Fish {
     constructor() {
         this.x = canvas.width; // x position on canvas
-        this.y = canvas.height / 2.2 + (Math.random() * 125); // roughly middle of canvas
-        this.originalWidth = 498; // individual sprite width from sprite sheet
-        this.originalHeight = 327; // individual sprite height from sprite sheet
-        this.width = this.originalWidth / 5; // sensible width for game
-        this.height = this.originalHeight / 5; // sensible height for game
-        this.frameX = 0; // sprite sheet x position (column)
-        this.frameY = 0; // sprite sheet y position (row)
-        this.row = 0; // row counter for sprite sheet
+        this.y = canvas.height / 2.2 + (Math.random() * 125); // Roughly middle of canvas
+        this.originalWidth = 498; // Individual sprite width from sprite sheet
+        this.originalHeight = 327; // Individual sprite height from sprite sheet
+        this.width = this.originalWidth / 5; // Sensible width for game
+        this.height = this.originalHeight / 5; // Sensible height for game
+        this.frameX = 0; // Sprite sheet x position (column)
+        this.frameY = 0; // Sprite sheet y position (row)
+        this.row = 0; // Row counter for sprite sheet
         this.image = new Image();
         this.image.src = `static/animations/fish/${fishColor}-fish.png`
         this.hitBoxWidth = this.width * .83;
@@ -19,12 +19,12 @@ class Fish {
     }
 
     update() {
-        let fishColCalc = frameX % 4; // to cycle through 4 columns
+        let fishColCalc = frameX % 4; // To cycle through 4 columns
         switch (fishColCalc) {
             case 0:
                 this.frameX = 0;
-                if (this.row <= 4) { // for no.of rows
-                    this.row++; // increase row no. at end of row
+                if (this.row <= 4) { // For no.of rows
+                    this.row++; // Increase row no. at end of row
                 } else {
                     this.row = 0;
                 }
@@ -42,7 +42,7 @@ class Fish {
                 this.frameX = 0;
         }
 
-        let fishRowCalc = this.row % 5; // cycle through 5 columns
+        let fishRowCalc = this.row % 5; // Cycle through 5 columns
         switch (fishRowCalc) {
             case 0:
                 this.frameY = 0;
@@ -74,15 +74,15 @@ class Fish {
 
     draw() {
         ctx.drawImage(
-            this.image, // sprite sheet
+            this.image, // Sprite sheet
             this.frameX * this.originalWidth, // x position of sprite sheet
             this.frameY * this.originalHeight, // y position of sprite sheet
-            this.originalWidth, // individual sprite width
-            this.originalHeight, // individual sprite height
+            this.originalWidth, // Individual sprite width
+            this.originalHeight, // Individual sprite height
             this.x, // x position of fish
-            this.y, // height of fish
-            this.width, // intended width
-            this.height, // intended height
+            this.y, // Height of fish
+            this.width, // Intended width
+            this.height, // Intended height
         );
     }
 }
@@ -90,7 +90,7 @@ class Fish {
 const handleFish = () => {
     if (gameFrame % 1100 === 0) {
         fishArray.unshift(new Fish());
-        if (fishIndex < 2) { // cycle through fish colors
+        if (fishIndex < 2) { // Cycle through fish colors
             fishIndex++;
             fishColor = fishColorArray[fishIndex];
         } else {

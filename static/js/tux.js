@@ -169,7 +169,7 @@ class Tux {
         flakeSpeed = 0;
     }
 
-    collision() {
+    collision() { // Tux is hit by an enemy or projectile, or collects a projectile
         let currentEnemy = null; // Variable for enemy that's currently hurting Tux
         busy = true; // Checking for collision
 
