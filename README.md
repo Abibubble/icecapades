@@ -158,23 +158,23 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 * Out personalities also meshed very well, so the Slack calls were filled with laughing, joking, and fun, while also being a safe learning space for everyone.
 
 * First introduction call, meeting each other, discussing basic ideas
-![Call #1](cstatic/docs/call1.png)
+![Call #1](static/docs/call1.png)
 
 * Second call, deciding on actual final game ideas, getting sprites for characters and world building.
-![Call #2](cstatic/docs/call2.png)
+![Call #2](static/docs/call2.png)
 
 * Third call, building the base HTML, styling the progress bar, and adding characters onto the canvas.
-![Call #3](cstatic/docs/call3.png)
+![Call #3](static/docs/call3.png)
 
 * Fourth call, working through movements, fish and snowflake drops, and enemy population.
-![Call #4](cstatic/docs/call4.png)
+![Call #4](static/docs/call4.png)
 
 * We did a couple of little breakout calls, to target specific issues in pairs for more focus.
-![Call #5](cstatic/docs/call5.png)
-![Call #6](cstatic/docs/call6.png)
+![Call #5](static/docs/call5.png)
+![Call #6](static/docs/call6.png)
 
 * Seventh call, working through hit mechanics, the final boss battle, and bug fixes.
-![Call #7](cstatic/docs/call7.png)
+![Call #7](static/docs/call7.png)
 
 ---
 
