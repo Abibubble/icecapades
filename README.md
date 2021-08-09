@@ -193,7 +193,7 @@ We intend to provide a user friendly, thoroughly enjoyable application that take
 * Seventh call, working through hit mechanics, the final boss battle, and bug fixes.
 ![Call #7](static/docs/call7.png)
 
-* Eighth call, doing final bug fixes and quality of life updates.
+* Eighth call, doing final bug fixes, quality of life updates and final play tests.
 ![Call #8](static/docs/call8.png)
 
 ---
@@ -421,6 +421,7 @@ A large amount of testing was done to ensure that all items were visible or hidd
 * If you hold slide, then change tab on your browser, Tux auto-slides for the rest of the game.
 * Game is not responsive on all screen sizes.
 * When the user pauses the game, on restart, a lot of enemies are spawned.
+* The user can update score to 150 in the console to immediately get to the boss battle. This has been left in for testing and judging.
 
 ![Bethesda bug or feature?](static/docs/bug-feature.png)
 
