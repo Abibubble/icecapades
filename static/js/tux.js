@@ -1,5 +1,6 @@
 class Tux {
     constructor() {
+        // Set Tux values
         this.x = 150;
         this.y = floorHeight;
         this.vy = 0;
@@ -39,7 +40,7 @@ class Tux {
         }
 
         //If arrow pressed and char not jumping, call jump
-        if (arrowUpPressed && !this.jumping && !this.dead) {
+        if (arrowUpPressed && !this.jumping && !this.dead && !this.sliding && !endGame) {
             this.jump();
             if (audio == 'on') {
                 jumAudio.play();
@@ -62,21 +63,24 @@ class Tux {
 
         // Once let go of arrow down, set hitbox back to original position
         if (!arrowDownPressed && !endGame) {
-            tux.sliding = false;
+            this.sliding = false;
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.height = this.originalHeight;
             this.width = this.originalWidth;
             gameSpeed = 6;
         }
 
-        if (this.jumping) {
+        // If not jumping or sliding already, allow jump animation
+        if (this.jumping && !this.sliding) {
             this.jumpAnim();
         }
 
-        if (!busy) { // If a collision isn't already being checked, and if Tux isn't already being hurt
+        // If a collision isn't already being checked, and if Tux isn't already being hurt
+        if (!busy) {
             this.collision(); // Check for collisions
         }
 
+        // if firing and has ammo, fire
         if ((fire) && (currentAmmo > 0)) {
             snowballArray.unshift(new Snowball());
             currentAmmo--;
@@ -89,8 +93,8 @@ class Tux {
             fire = false;
         }
 
+        //update hit box area
         if (!this.sliding) {
-            //update hit box area
             this.hitBoxX = this.x + 15;
             this.hitBoxY = this.y + 6;
             this.hitBoxWidth = this.width * .7;
@@ -99,12 +103,14 @@ class Tux {
     }
 
     draw() {
+        // Draw Tux
         if (this.y > canvas.height - this.height - floorHeight && !this.sliding && !this.dead && !endGame) {
             playerImage.src = "static/animations/penguin/walk_spritesheet.png";
             this.originalWidth = 154;
             this.frameX = frameX;
         }
 
+        // Stop frame rate if in boss battle
         if (score >= 150 && !this.jumping && !this.sliding) {
             this.frameX = 1;
         }
@@ -134,7 +140,9 @@ class Tux {
         if (this.y >= canvas.height - this.height - 80) this.frameX = 0;
         else if (this.y >= canvas.height - this.height - 160) this.frameX = 1;
         else this.frameX = 2;
-        playerImage.src = "static/animations/penguin/penguin_jump@2x.png";
+        if (!this.sliding){
+            playerImage.src = "static/animations/penguin/penguin_jump@2x.png";
+        }
     }
 
     slide() {
@@ -166,7 +174,7 @@ class Tux {
         busy = true; // Checking for collision
 
         for (let i = 0; i < slugsArray.length; i++) {
-            let collideWith = slugsArray[i]; // slug instance
+            let collideWith = slugsArray[i]; // Slug instance
             if ((collideWith.hitBoxX > this.hitBoxX &&
                     collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
                 (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
@@ -176,13 +184,13 @@ class Tux {
                     (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
                         collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                     slugsArray.splice(i, 1);
-                    tuxIsHit(10); // Add damage to Tux
+                    tuxIsHit(10); // Drop health by 10
                 }
             }
         }
 
         for (let i = 0; i < wormsArray.length; i++) {
-            let collideWith = wormsArray[i]; //  worm instance
+            let collideWith = wormsArray[i]; //  Worm instance
             if ((collideWith.hitBoxX > this.hitBoxX &&
                     collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
                 (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
@@ -191,14 +199,14 @@ class Tux {
                         collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
                     (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
                         collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
-                    wormsArray.splice(i, 1); //remove collided worm from array
-                    tuxIsHit(15); // drop health by 15
+                    wormsArray.splice(i, 1); // Remove collided worm from array
+                    tuxIsHit(15); // Drop health by 15
                 }
             }
         }
 
         for (let i = 0; i < carrotArray.length; i++) {
-            let collideWith = carrotArray[i]; //  carrot instance
+            let collideWith = carrotArray[i]; // Carrot instance
             if (!collideWith.hit) {
                 if ((collideWith.hitBoxX > this.hitBoxX &&
                         collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
@@ -209,13 +217,13 @@ class Tux {
                         (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
                             collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                         collideWith.hit = true;
-                        tuxIsHit(10);
+                        tuxIsHit(10); // Drop health by 10
                     }
                 }
             }
             if (collideWith.x <= this.x + this.width / 2 &&
                 collideWith.hit === true) {
-                carrotArray.splice(i, 1);
+                carrotArray.splice(i, 1); // Remove collided carrot from array
             }
         }
 
@@ -229,8 +237,8 @@ class Tux {
                         collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
                     (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
                         collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
-                    flakeArray.splice(i, 1);
-                    tuxGetsASnowflake();
+                    flakeArray.splice(i, 1); // Remove collided snowflake from array
+                    tuxGetsASnowflake(); // Add to snowballs
                 }
             }
         }
@@ -245,8 +253,8 @@ class Tux {
                         collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
                     (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
                         collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
-                    fishArray.splice(i, 1);
-                    tuxGetsAFish();
+                    fishArray.splice(i, 1);// Remove collided fish from array
+                    tuxGetsAFish(); // Add to health
                 }
             }
         }
