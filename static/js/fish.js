@@ -12,6 +12,10 @@ class Fish {
         this.row = 0; // row counter for sprite sheet
         this.image = new Image();
         this.image.src = `static/animations/fish/${fishColor}-fish.png`
+        this.hitBoxWidth = this.width * .83;
+        this.hitBoxHeight = this.height * .87;
+        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxY = this.y + this.height * .1;
     }
 
     update() {
@@ -60,12 +64,15 @@ class Fish {
         }
 
         this.x -= gameSpeed;
+        
+        this.hitBoxWidth = this.width * .83;
+        this.hitBoxHeight = this.height * .87;
+        this.hitBoxX =  this.x + (this.width * .05);
+        this.hitBoxY = this.y + this.height * .1;
         this.draw();
     }
 
     draw() {
-        // ctx.fillStyle = "purple"; // Collision box
-        // ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(
             this.image, // sprite sheet
             this.frameX * this.originalWidth, // x position of sprite sheet

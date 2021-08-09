@@ -234,10 +234,15 @@ class Tux {
         }
 
         for (let i = 0; i < fishArray.length; i++) { // See above
-            let fishX = fishArray[i].x;
-            let fishY = fishArray[i].y;
-            if ((fishX > this.hitBoxX && fishX < this.hitBoxX + this.hitBoxWidth) || (fishX + fish.width > this.hitBoxX && fishX + fish.width < this.hitBoxX + this.hitBoxWidth)) {
-                if ((fishY > this.hitBoxY && fishY < this.hitBoxY + this.hitBoxHeight) || (fishY + fish.height > this.hitBoxY && fishY + fish.height < this.hitBoxY + this.hitBoxHeight)) {
+            let collideWith = fishArray[i];
+            if ((collideWith.hitBoxX > this.hitBoxX &&
+                    collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+                (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+                    collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+                if ((collideWith.hitBoxY > this.hitBoxY &&
+                        collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+                    (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+                        collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                     fishArray.splice(i, 1);
                     tuxGetsAFish();
                 }
