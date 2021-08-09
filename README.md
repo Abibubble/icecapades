@@ -359,22 +359,6 @@ The W3C Markup Validator, W3C CSS Validator and JSHint were used to validate the
 4. Safari
     * All tested and working correctly.
 
-#### Tablet
-
-1. Safari
-    * All tested and working correctly.
-
-#### Mobile Devices
-
-1. Google Chrome
-    * All tested and working correctly.
-
-2. Safari
-    * All tested and working correctly.
-
-3. Samsung Internet
-    * All tested and working correctly.
-
 ### Further Testing
 
 The website was tested on Google Chrome, Firefox, Microsoft Edge, Safari and Samsung Internet browsers. It was not tested on Internet Explorer, as it has been depreciated and is not recommended for use. The website was viewed on a variety of devices, including:
@@ -386,15 +370,6 @@ The website was tested on Google Chrome, Firefox, Microsoft Edge, Safari and Sam
 * MacBookAir7,2 (13-inch, 2017)
 * iPad 6,11 5th generation, running iOS 10.3
 * Amazon Fire tablet 7
-* iPhone 7
-* iPhone X
-* iPhone 12
-* OPPO Find X2
-* OPPO Find X2 Lite
-* Samsung Galaxy A70
-* Samsung Galaxy S9
-* Samsung Galaxy S10+
-* Samsung A20
 * xBox One
 
 A large amount of testing was done to ensure that all items were visible or hidden correctly, all characters and items were animated correctly, all buttons worked as they should, and the game worked as it should.
@@ -423,7 +398,7 @@ A large amount of testing was done to ensure that all items were visible or hidd
 
 ### Lighthouse
 
-I tested my website using DevTools Lighthouse feature, and got these results:
+We tested our game using DevTools Lighthouse feature, and got these results:
 
 #### Desktop
 
