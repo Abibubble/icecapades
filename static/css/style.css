@@ -147,7 +147,7 @@ noscript {
 
 .progress-bar-inner {
   position: relative;
-  background-color: aqua;
+  background-color: blue;
   height: 75%;
   top: 13%;
   z-index: 3;
@@ -215,7 +215,7 @@ noscript {
 .audio-button:hover,
 .audio-button:focus {
   box-sizing: border-box;
-  border: 1px solid aqua;
+  border: 2px solid blue;
 }
 
 .hide {
@@ -231,7 +231,7 @@ noscript {
 .pause-icon:hover + #pause-button,
 .instructions-i:hover + .instructions-click {
   box-sizing: border-box;
-  border: 1px solid aqua;
+  border: 2px solid blue;
   cursor: pointer;
 }
 
@@ -404,7 +404,7 @@ footer li {
 #message-content {
   font-family: snowtopcaps, Geneva, Tahoma, sans-serif;
   font-size: 3rem;
-  color: aqua;
+  color: blue;
   text-shadow: .3rem .3rem .5rem grey, -.3rem -.3rem .5rem grey;
   text-align: center;
   width: fit-content;

@@ -38,7 +38,7 @@ function checkHealth() {
         pushHealth();
         healthBar.style.backgroundColor = "red";
     } else {
-        healthBar.style.backgroundColor = "aqua";
+        healthBar.style.backgroundColor = "blue";
         pushHealth();
     }
 }
@@ -81,7 +81,7 @@ function pushAmmo() {
     if (currentAmmo <= lowAmmo) {
         snowballBar.style.backgroundColor = "red";
     } else {
-        snowballBar.style.backgroundColor = "aqua";
+        snowballBar.style.backgroundColor = "blue";
     }
 }
 
