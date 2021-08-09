@@ -1,3 +1,6 @@
+// -------------------------------------------------------------------- Restart the game
+
+// Resets all variables to game start
 function restartGame() {
     snowmanHealth = 150;
     currentHealth = 50;

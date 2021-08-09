@@ -3,6 +3,7 @@
 let audio = "off";
 const gameAudio = new Audio('static/audio/game.mp3');
 gameAudio.loop = true;
+
 const playButton = document.getElementById("play-button");
 const playIcon = document.getElementById("play-icon");
 const pauseButton = document.getElementById("pause-button");
@@ -35,7 +36,8 @@ function toggleAudio() {
     checkAudioButtons();
 }
 
-//-----------Tux sound effects
+// -------------------------------------------------------------------- Tux sound effects
+
 const jumAudio = new Audio('static/audio/jump.wav');
 jumAudio.loop = false;
 
