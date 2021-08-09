@@ -19,8 +19,6 @@ class Snowball {
     }
 
     draw() {
-        ctx.fillStyle = "red";
-        ctx.fillRect(this.hitBoxX, this.hitBoxY, this.hitBoxWidth, this.hitBoxHeight);
         ctx.drawImage(
             snowballSprite,
             this.frameX * this.originalWidth,
@@ -51,46 +49,59 @@ class Snowball {
     }
 
     hit() {
-        for (let i = 0; i < slugsArray.length; i++) {
-            let slugInst = slugsArray[i]; // Get slug[i]
-            let collideWith = slugInst;
-            if ((collideWith.x > this.hitBoxX && collideWith.x < this.hitBoxX + this.hitBoxWidth) || (collideWith.x + collideWith.width > this.hitBoxX && collideWith.x + collideWith.width < this.hitBoxX + this.hitBoxWidth)) {
-                if ((collideWith.y > this.hitBoxY && collideWith.y < this.hitBoxY + this.hitBoxHeight) || (collideWith.y + collideWith.height > this.hitBoxY && collideWith.y + collideWith.height < this.hitBoxY + this.hitBoxHeight)) {
-                    slugsArray.pop(collideWith);
-                    snowballArray.pop(this);
+        for (let i = 0; i < slugsArray.length; i++) { 
+            let collideWith = slugsArray[i]; // slug instance
+            if ((collideWith.hitBoxX > this.hitBoxX &&
+                collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+            (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+                collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+            if ((collideWith.hitBoxY > this.hitBoxY &&
+                    collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+                (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+                    collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
+                    slugsArray.splice(i, 1);
                     if (audio == 'on') {
                         enemyHitSnowballAudio.play();
                     }
+                    let thisBall = snowballArray.indexOf(this);
+                    snowballArray.splice(thisBall, 1);
                 }
             }
         }
 
         for (let i = 0; i < wormsArray.length; i++) {
-            let wormInst = wormsArray[i];
-            let collideWith = wormInst;
-            if ((collideWith.x > this.hitBoxX && collideWith.x < this.hitBoxX + this.hitBoxWidth) || (collideWith.x + collideWith.width > this.hitBoxX && collideWith.x + collideWith.width < this.hitBoxX + this.hitBoxWidth)) {
-                if ((collideWith.y > this.hitBoxY && collideWith.y < this.hitBoxY + this.hitBoxHeight) || (collideWith.y + collideWith.height > this.hitBoxY && collideWith.y + collideWith.height < this.hitBoxY + this.hitBoxHeight)) {
-                    wormsArray.pop(collideWith);
-                    if (audio == 'on') {
+            let collideWith =  wormsArray[i]; // worm instance
+            if ((collideWith.hitBoxX > this.hitBoxX &&
+                collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+            (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+                collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+            if ((collideWith.hitBoxY > this.hitBoxY &&
+                    collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+                (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+                    collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
+                    wormsArray.splice(i, 1); //remove the hit worm
+                    if (audio == 'on') { //play audio if enabled
                         enemyHitSnowballAudio.play();
                     }
-                    snowballArray.pop(this);
+                    let thisBall = snowballArray.indexOf(this); //get index of ball that hit worm
+                    snowballArray.splice(thisBall, 1); //remove appropriate ball
                 }
             }
         }
-        //THIS NEEDS A CHECK FOR SNOWMAN BEING ALIVE
-        if (score >= 150) {
+
+        if (score >= 150) { //only apply once snowman reached
             if ((snowman.hitBoxX <= this.hitBoxX + this.hitBoxWidth) &&
                 (snowman.hitBoxY <= this.hitBoxY + this.hitBoxHeight)) {
-                snowmanHealth -= 10;
-                    pushSnowmanHealth();
+                snowmanHealth -= 10; //reduce Brian's health
+                    pushSnowmanHealth(); //update Brian's health bar
                     if (audio == 'on') {
                         enemyHitSnowballAudio.play();
                     }
-                    snowballArray.pop(this);      
-                if (snowmanHealth == 0) {
+                    let thisBall = snowballArray.indexOf(this);
+                    snowballArray.splice(thisBall, 1);      
+                if (snowmanHealth == 0) { // win
                     gameSpeed = 0;
-                    endGame = true;  
+                    endGame = true;
                     if (gameOverModal.classList.contains("invisible")) {
                         winModal.classList.remove("invisible");
                         winInner.classList.add("modal-animation");

@@ -13,4 +13,9 @@ function restartGame() {
     closeModal();
     pushSnowmanHealth();
     bossHealthBar.classList.add("invisible");
+    gameSpeed = 6;
+    tux.dead = false;
+    endGame = false;
+    tuxIsDead = false;
+    flakeSpeed = gameSpeed;
 }

@@ -11,13 +11,15 @@ function tuxControl() {
     handleSnowball();
     tux.update();
     tux.draw();
-
     if (score >= 150) {
         gameSpeed = 0;
         snowman.isSpawned = true;
         bossHealthBar.classList.remove("invisible");
         handleSnowman();
-        handleCarrot();
+        if(!endGame) { //stop carrots on end game
+            // ! check for pause function!!
+            handleCarrot();
+        }
     }
 
     if (gameFrame % staggerFrames == 0) {
