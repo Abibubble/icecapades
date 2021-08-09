@@ -18,9 +18,9 @@ function pushHealth() {
 // Update boss health bar progress
 function pushSnowmanHealth() {
     if (snowmanHealth > 30) {
-        snowmanHealthBar.style.backgroundColor = 'green'
+        snowmanHealthBar.style.backgroundColor = 'limegreen';
     } else {
-        snowmanHealthBar.style.backgroundColor = 'red'
+        snowmanHealthBar.style.backgroundColor = 'red';
     }
     snowmanHealthBar.style.width = snowmanHealth/3 * 2 + "%";
 }

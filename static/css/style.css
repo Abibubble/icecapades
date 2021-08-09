@@ -26,7 +26,8 @@ body {
 }
 
 header {
-  height: 100px;
+  height: 10.5vh;
+  padding-top: 1vh;
   background-image: linear-gradient(white, #ADD8E6);
 }
 
@@ -191,7 +192,7 @@ noscript {
 
 #boss-health-bar{
   position: relative;
-  background-color: 'green';
+  background-color: limegreen;
   height: 75%;
   top: 13%;
   z-index: 3;
@@ -334,7 +335,7 @@ button {
 }
 
 .replay {
-  background-color:forestgreen;
+  background-color: limegreen;
 }
 
 .game-over-button {
