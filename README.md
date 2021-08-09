@@ -129,6 +129,7 @@ The boss is a snowman, called Brian Shady Grady. This is in-keeping with the icy
 * Snowball bar has been added to show how many snowballs Tux has left.
 * Health bar has been added to indicate how much health Tux has during game play.
 * Fish that are collected during game play increase Tux's health.
+* An Easter Egg when you win the game - we won't spoil the surprise, you'll have to get Tux home safely!
 
 ### Audio
 
