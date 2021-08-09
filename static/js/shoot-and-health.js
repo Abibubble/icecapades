@@ -9,6 +9,9 @@ let snowmanHealthBar = document.getElementById("boss-health-bar");
 
 // Update health bar progress
 function pushHealth() {
+    if (currentHealth > maxHealth) {
+        currentHealth = maxHealth;
+    }
     healthBar.style.width = currentHealth * 2 + "%";
 }
 
@@ -66,6 +69,9 @@ let snowballBar = document.getElementById("snowball-bar");
 
 // Update snowballs bar progress
 function pushAmmo() {
+    if (currentAmmo > maxSnowballs) {
+        currentAmmo = maxSnowballs;
+    }
     snowballBar.style.width = currentAmmo * 10 + "%";
     if (currentAmmo <= lowAmmo) {
         snowballBar.style.backgroundColor = "red";
