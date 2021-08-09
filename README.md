@@ -416,6 +416,8 @@ A large amount of testing was done to ensure that all items were visible or hidd
 * Game is not responsive on all screen sizes.
 * When the user pauses the game, on restart, a lot of enemies are spawned.
 
+![Bethesda bug or feature?](static/docs/bug-feature.png)
+
 ### Lighthouse
 
 We tested our game using DevTools Lighthouse feature, and got these results:
