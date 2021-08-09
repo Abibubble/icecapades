@@ -174,10 +174,16 @@ class Tux {
             }
         }
 
-        for (let i = 0; i < wormsArray.length; i++) { // See above
-            let collideWith = wormsArray[i]; //  wormInst;
-            if ((collideWith.hitBoxX > this.hitBoxX && collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) || (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX && collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
-                if ((collideWith.hitBoxY > this.hitBoxY && collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) || (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY && collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
+        for (let i = 0; i < wormsArray.length; i++) {
+            let collideWith = wormsArray[i]; //  worm instance
+            if ((collideWith.hitBoxX > this.hitBoxX &&
+                    collideWith.hitBoxX < this.hitBoxX + this.hitBoxWidth) ||
+                (collideWith.hitBoxX + collideWith.hitBoxWidth > this.hitBoxX &&
+                    collideWith.hitBoxX + collideWith.hitBoxWidth < this.hitBoxX + this.hitBoxWidth)) {
+                if ((collideWith.hitBoxY > this.hitBoxY &&
+                        collideWith.hitBoxY < this.hitBoxY + this.hitBoxHeight) ||
+                    (collideWith.hitBoxY + collideWith.hitBoxHeight > this.hitBoxY &&
+                        collideWith.hitBoxY + collideWith.hitBoxHeight < this.hitBoxY + this.hitBoxHeight)) {
                     wormsArray.splice(i, 1); //remove collided worm from array
                     tuxIsHit(15); // drop health by 15
                 }
