@@ -2,7 +2,7 @@ let fishArray = [];
 class Fish {
     constructor() {
         this.x = canvas.width; // x position on canvas
-        this.y = canvas.height / 2.2 + (Math.random() * 125); // Roughly middle of canvas
+        this.y = canvas.height - (floorHeight + 1.5 * tux.height) - (Math.random() * 1.5 * tux.height); // within tux jump range
         this.originalWidth = 498; // Individual sprite width from sprite sheet
         this.originalHeight = 327; // Individual sprite height from sprite sheet
         this.width = this.originalWidth / 5; // Sensible width for game
