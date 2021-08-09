@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 /* Remove margins and padding from all elements */
 * {
   margin: 0;
@@ -199,6 +200,8 @@ noscript {
 }
 
 .score-container {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: thin;
   color: black;
   font-weight: bold;
   font-size: 1.2rem;
